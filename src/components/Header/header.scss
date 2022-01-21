@@ -20,7 +20,7 @@
       display: flex;
       align-items: center;
       &>h1 {
-        margin-left: vars.$gutter;
+        margin-left:  calc(vars.$gutter * 1.5);
         color: vars.$fontColor;
         font-weight: 800;
         font-size: 1.5em;
@@ -31,13 +31,13 @@
       &.home {
         width: 80px;
         height: auto;
-        margin-left: vars.$gutter;
+        margin-left:  calc(vars.$gutter * 1.5);
       }
       // Profile logo
       &.profile {
         width: 50px;
         height: auto;
-        margin-right: vars.$gutter;
+        margin-right:  calc(vars.$gutter * 1.5);
       }
 
     }
@@ -46,7 +46,7 @@
       display: flex;
       flex-wrap: wrap;
 
-      margin-right: vars.$gutter;
+      margin-right:  calc(vars.$gutter * 1.5);
     }
 
     // Profile menu
@@ -102,7 +102,7 @@
     &.home {
       width: 200px;
       height: auto;
-      margin: vars.$gutter;
+      margin: calc(vars.$gutter * 1.5);
     }
     // Profile logo
     &.profile {
@@ -116,9 +116,9 @@
 
   // Profile menu
   &-profilemenu {
-    margin-bottom: vars.$gutter;
+    margin-bottom:  calc(vars.$gutter * 1.5);
     & > li {
-      padding: 0.2em;
+      padding: calc(vars.$gutter / 5);
       color: vars.$fontColor;
     }
     & > li:hover {
@@ -140,10 +140,12 @@
       font-size: larger;
     }
 
-    &--icon {
-
+    input,&--quicksearch {
+      background-color: vars.$secondaryColor;
+      margin-top: calc(vars.$gutter / 2);
+      border: none;
+      border-radius: 5px;
     }
-
     
     &--icon > div {
 
