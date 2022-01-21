@@ -27,6 +27,7 @@ const Header = () => (
           <li>Suggestions</li>
           <li>Recherche</li>
           <li><input className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
+          <li>Nous contacter</li>
         </ul>
       </div>
     </nav>
