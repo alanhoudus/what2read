@@ -11,24 +11,16 @@ const Header = () => (
         <img alt="placeholder" src={placeholder} className="header-logo book" />
         <h1>What2Read</h1>
       </div>
-      <img alt="profileicon" src={profileicon} className="header-logo profile" />
-      <ul className="header-profilemenu">
-        <li>Mon profil</li>
-        <li>Mes favoris</li>
-        <li>Mes reviews</li>
-        <li>Mes lectures</li>
-        <li>Se déconnecter</li>
-      </ul>
-      <div className="header-burgermenu--icon">
-        <span />
-        <span />
-        <span />
+      <div className="header-menus">
+        <img alt="profileicon" src={profileicon} className="header-logo profile" />
+        <ul className="header-profilemenu" />
+        <div className="header-burgermenu--icon">
+          <div />
+          <div />
+          <div />
+        </div>
+        <ul className="header-burgermenu" />
       </div>
-      <ul className="header-burgermenu">
-        <li>Accueil</li>
-        <li>Suggestions</li>
-        <li>Recherche</li>
-      </ul>
     </nav>
   </header>
 );
