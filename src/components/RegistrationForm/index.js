@@ -18,7 +18,7 @@ const RegistrationForm = () => (
       <Field type="password" className="registration-field" placeholder="User126" />
       <h3>Ma présentation : </h3>
       <Field type="text" className="registration-field registration-field--presentation" placeholder="" />
-      <button className="registration-button" >Rejoindre</button>
+      <button type="submit" className="registration-button">Rejoindre</button>
       <p className="registration-required">* champs obligatoires</p>
     </div>
   </div>
