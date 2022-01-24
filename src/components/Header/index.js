@@ -29,6 +29,12 @@ const Header = () => (
         <ul className="header-profilemenu">
           <li>Se connecter</li>
           <li>S'inscrire</li>
+          <NavLink
+            to="/profile"
+            key="profile"
+          >
+            <li>Profil</li>
+          </NavLink>
         </ul>
         <div className="header-burgermenu--icon">
           <div />
