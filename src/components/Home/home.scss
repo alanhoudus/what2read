@@ -16,13 +16,13 @@
   }
 
     h1.home-title {
-      font-size: 3em;
+      font-size: calc(vars.$fontSize * 3);
       text-align: center;
       margin: calc(vars.$gutter / 2);
     }
 
     h2.home-title {
-      font-size: 2em;
+      font-size: calc(vars.$fontSize * 2);
       
     }
  
@@ -41,7 +41,7 @@
     }
 
     &-presentation {
-      margin-top: vars.$gutter;
+      margin-top: calc(vars.$gutter *1);
     }
 
   }
@@ -53,7 +53,7 @@
     }
 
     h2.home-title {
-      font-size: 2em;
+      font-size: calc(vars.$fontSize * 2);
       
     }
 }
