@@ -4,7 +4,6 @@
 
   .header {
     width: 100%;
-    height: 100px;
     margin-top: 1em;
     padding-top: 0.5em;
     background-color: vars.$secondaryColor;
@@ -63,9 +62,6 @@
         flex-direction: column;
         justify-content: center;
       }
-
-
-
       
       &--icon > div {
         width: 35px;
@@ -103,6 +99,7 @@
     
     // Book logo
     &.home {
+      position: inherit;
       width: 70%;
       height: auto;
       margin: calc(vars.$gutter * 1.5);
