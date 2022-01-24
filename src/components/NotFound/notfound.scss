@@ -1,0 +1,32 @@
+@use '../../styles/vars';
+
+@media (max-width: 768px) { 
+  .notfound {
+    margin-left: calc(vars.$gutter * 1);
+
+    &-title {
+      font-size: calc(vars.$fontSize * 2);
+      margin-top: calc(vars.$gutter * 2);
+      color: vars.$fontColor;
+    }
+
+    p {
+      margin-top: calc(vars.$gutter * 1);
+    }
+  }
+}
+
+@media (min-width: 768px) { 
+
+
+  .notfound {
+    position: absolute;
+    left: 20%;
+
+    &-title {
+      font-size: calc(vars.$fontSize * 2);
+      margin-top: calc(vars.$gutter * 2);
+      color: vars.$fontColor;
+    }
+  }
+}
