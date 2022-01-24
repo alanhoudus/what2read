@@ -3,10 +3,11 @@
 @media (max-width: 768px) { 
   .home {
 
-    margin: calc(vars.$gutter / 1);
+    margin: calc(vars.$gutter * 2);
 
     &-title {
       color: vars.$fontColor;
+      margin-top: calc(vars.$gutter * 2);
     }
 
     &-presentation {
@@ -31,8 +32,6 @@
 
 @media (min-width: 768px) { 
   .home {
-    position: absolute;
-    left: 20%;
 
     margin: calc(vars.$gutter / 1);
 
