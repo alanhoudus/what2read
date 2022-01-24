@@ -1,0 +1,117 @@
+@use '../../../styles/vars';
+
+@media (max-width: 768px) { 
+
+  .suggestedbook {
+    margin-top: calc(vars.$gutter * 2);
+
+    &-separator {
+      margin: auto;
+      width: 50%;
+      height: 2px;
+      background-color: black;
+    }
+
+    &-infos {
+      display: grid;
+      grid-template-columns: repeat(1, 100%);
+      grid-template-rows: repeat(2, 80%);
+    }
+
+    &-title {
+      color: vars.$fontColor;
+      text-align: left;
+      font-size: calc(vars.$fontSize * 2);
+      margin: calc(vars.$gutter * 1) 0;
+    }
+
+    &-booktitle {
+      font-size: 2em;
+      margin-top: calc(vars.$gutter * 2);
+      color: vars.$fontColor;
+      text-align: center;
+    }
+
+    &-cover {
+      margin: auto;
+      border: solid 1px black;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    }
+
+    &-summary {
+      display: none;
+    }
+  }
+
+}
+
+@media (min-width: 768px) { 
+
+  .suggestedbook {
+    margin-top: calc(vars.$gutter * 2);
+
+    &-infos {
+      display: grid;
+      grid-template-columns: repeat(2, 40%);
+      grid-template-rows: repeat(1, 100%);
+    }
+
+    &-separator {
+      margin: auto;
+      width: 50%;
+      height: 2px;
+      background-color: black;
+    }
+
+    &-title {
+      color: vars.$fontColor;
+      font-size: calc(vars.$fontSize * 2);
+      margin: calc(vars.$gutter * 1) 0;
+    }
+
+    &-booktitle {
+      display: none;
+    }
+
+    &-cover {
+      border: solid 1px black;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    &-summary {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:center;
+      margin:auto;
+    }
+
+    &-button {
+      background-color: vars.$thirdColor;
+      border-radius: 10px;
+      border: 1px solid black;
+      margin-top: calc(vars.$gutter * 2);
+      padding: calc(vars.$gutter * 1) calc(vars.$gutter * 2);
+    }
+  }
+  
+}
+
+
+@media (min-width: 768px) and (max-width: 1100px) { 
+
+  .suggestedbook-infos {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(1, 100%);
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 860px) { 
+
+  .suggestedbook-summary {
+    display: none;
+  }
+
+}
