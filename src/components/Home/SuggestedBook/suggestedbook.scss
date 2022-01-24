@@ -97,8 +97,22 @@
   
 }
 
+@media (min-width: 768px) and (max-width: 860px) { 
 
-@media (min-width: 768px) and (max-width: 1100px) { 
+  .suggestedbook-infos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .suggestedbook-summary {
+    margin-top: calc(vars.$gutter * 2);
+  }
+
+}
+
+
+
+@media (min-width: 860px) and (max-width: 1100px) { 
 
   .suggestedbook-infos {
     display: grid;
@@ -108,10 +122,3 @@
 
 }
 
-@media (min-width: 768px) and (max-width: 860px) { 
-
-  .suggestedbook-summary {
-    display: none;
-  }
-
-}
