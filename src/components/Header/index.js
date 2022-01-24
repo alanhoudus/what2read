@@ -28,7 +28,12 @@ const Header = () => (
         <img alt="profileicon" src={profileicon} className="header-logo profile" />
         <ul className="header-profilemenu">
           <li>Se connecter</li>
-          <li>S'inscrire</li>
+          <NavLink
+            to="/inscription"
+            key="home"
+          >
+            <li>S'inscrire</li>
+          </NavLink>
         </ul>
         <div className="header-burgermenu--icon">
           <div />
@@ -44,7 +49,7 @@ const Header = () => (
           </NavLink>
           <li>Suggestions</li>
           <li>Recherche</li>
-          <li><Field className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
+          <li><Field type="text" className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
           <NavLink
             to="/contact"
             key="contact"
