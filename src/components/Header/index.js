@@ -1,4 +1,7 @@
 // == Import
+
+import Field from '../Field';
+
 import w2rlogo from '../../assets/images/w2rlogo.png';
 import profileicon from '../../assets/images/profileicon.png';
 import './header.scss';
@@ -26,7 +29,8 @@ const Header = () => (
           <li>Accueil</li>
           <li>Suggestions</li>
           <li>Recherche</li>
-          <li><input className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
+          <li><Field className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
+          <li><Field className="bottom" placeholder="Deuxième recherche" /></li>
           <li>Nous contacter</li>
         </ul>
       </div>
