@@ -48,6 +48,12 @@ const Header = () => (
           >
             <li>Accueil</li>
           </NavLink>
+          <NavLink
+            to="/book"
+            key="book"
+          >
+            <li>Livre</li>
+          </NavLink>
           <li>Suggestions</li>
           <li>Recherche</li>
           <li><Field className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>

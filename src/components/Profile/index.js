@@ -19,8 +19,8 @@ const Profile = () => (
           dolor blanditiis officia. Fuga, porro odit expedita
         </p>
         <p className="profile-content mail">mon.mail@gmail.com</p>
-        <button className="profile-content button-edit">Modifier</button>
-        <button className="profile-content button-delete">Supprimer le compte</button>
+        <button className="profile-content button-edit" type="button">Modifier</button>
+        <button className="profile-content button-delete" type="button">Supprimer le compte</button>
       </div>
     </div>
   </div>
