@@ -1,9 +1,14 @@
 // == Import
+// routes
+import { NavLink } from 'react-router-dom';
 
+// components
 import Field from '../Field';
 
+// assets
 import w2rlogo from '../../assets/images/w2rlogo.png';
 import profileicon from '../../assets/images/profileicon.png';
+// scss
 import './header.scss';
 
 // == Composant
@@ -11,7 +16,12 @@ const Header = () => (
   <header className="header">
     <nav className="header-nav">
       <div className="header-logo">
-        <img alt="placeholder" src={w2rlogo} className="header-logo home" />
+        <NavLink
+          to="/"
+          key="home"
+        >
+          <img alt="placeholder" src={w2rlogo} className="header-logo home" />
+        </NavLink>
         <h1>What2Read</h1>
       </div>
       <div className="header-menus">
@@ -26,12 +36,21 @@ const Header = () => (
           <div />
         </div>
         <ul className="header-burgermenu">
-          <li>Accueil</li>
+          <NavLink
+            to="/"
+            key="home"
+          >
+            <li>Accueil</li>
+          </NavLink>
           <li>Suggestions</li>
           <li>Recherche</li>
           <li><Field className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
-          <li><Field className="bottom" placeholder="Deuxième recherche" /></li>
-          <li>Nous contacter</li>
+          <NavLink
+            to="/contact"
+            key="contact"
+          >
+            <li>Nous contacter</li>
+          </NavLink>
         </ul>
       </div>
     </nav>
