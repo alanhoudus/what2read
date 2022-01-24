@@ -32,6 +32,10 @@
         height: auto;
         margin-left:  calc(vars.$gutter * 1.5);
       }
+      // logo home full name hide en mobile
+      &.homeDesktop {
+        display: none;
+      }
       // Profile logo
       &.profile {
         width: 50px;
@@ -103,6 +107,10 @@
       width: 70%;
       height: auto;
       margin: calc(vars.$gutter * 1.5);
+    }
+     // logo home short name hide en desktop
+    &.homeMobile {
+      display: none;
     }
     // Profile logo
     &.profile {

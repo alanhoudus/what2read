@@ -7,6 +7,7 @@ import Field from '../Field';
 
 // assets
 import w2rlogo from '../../assets/images/w2rlogo.png';
+import w2rlogoDesktop from '../../assets/images/w2rlogodesktop.png';
 import profileicon from '../../assets/images/profileicon.png';
 // scss
 import './header.scss';
@@ -20,7 +21,8 @@ const Header = () => (
           to="/"
           key="home"
         >
-          <img alt="placeholder" src={w2rlogo} className="header-logo home" />
+          <img alt="placeholder" src={w2rlogo} className="header-logo home homeMobile" />
+          <img alt="placeholder" src={w2rlogoDesktop} className="header-logo home homeDesktop" />
         </NavLink>
         <h1>What2Read</h1>
       </div>
