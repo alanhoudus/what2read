@@ -54,7 +54,8 @@
   &-button {
     background-color: vars.$secondaryColor;
     color: vars.$fontColor;
-    width: 40%;
+    font-size: 1em;
+    width: 35%;
     height: 2em;
     border: none;
     border-radius: 5px;
@@ -64,5 +65,19 @@
   &-required {
     font-size: 0.8em;
     color: rgba(255, 2, 2, 0.74);
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .registration {
+    // to have the content not hidden by the nav menu on desktop
+    position: absolute;
+    left: 20%;
+    width: 100%;
+
+    &-field {
+      margin-bottom: calc(vars.$gutter * 2);
+    }
   }
 }
