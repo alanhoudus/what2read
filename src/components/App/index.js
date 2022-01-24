@@ -1,12 +1,15 @@
 // == Import
-import reactLogo from './react-logo.svg';
-import './styles.css';
+import Header from 'src/components/Header';
+import Home from 'src/components/Home';
+import Contact from '../Contact';
+import './app.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
+    <Header />
+    {/* <Home /> */}
+    <Contact />
   </div>
 );
 
