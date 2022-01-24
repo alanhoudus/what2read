@@ -4,21 +4,23 @@ import profileicon from '../../assets/images/profileicon.png';
 const Profile = () => (
   <div>
     <div className="profile">
-      <h2 className="profile-title">Mon profil</h2>
+      <img alt="profileicon" src={profileicon} className="profile-logo" />
       <div className="profile-contentGroup">
-        <h3 className="profile-content name">Pseudo
+        <h2 className="profile-title">Mon profil</h2>
+        <h3 className="profile-content subtitle">Pseudo
         </h3>
-        <img alt="profileicon" src={profileicon} className="header-logo profile" />
+
         <img alt="profileicon" src={profileicon} className="profile-content avatar" />
-        <div className="profile-content">
-          <h3>Présentation</h3>
+        <div className="profile-content subtitle">Présentation
+        </div>
+        <p className="profile-content description">
           Lorem ipsum dolor sit amet, consectetur
           adipisicing elit. Saepe iurequibusdam suscipit unde, ullam ut aliquam accusamus
           dolor blanditiis officia. Fuga, porro odit expedita
-        </div>
-        <p className="profile-info">what2read@gmail.com</p>
-        <button className="button-edit">Modifier</button>
-        <button className="button-delete">Supprimer le compte</button>
+        </p>
+        <p className="profile-content mail">what2read@gmail.com</p>
+        <button className="profile-content button-edit">Modifier</button>
+        <button className="profile-content button-delete">Supprimer le compte</button>
       </div>
     </div>
   </div>
