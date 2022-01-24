@@ -1,0 +1,157 @@
+@use '../../../styles/vars';
+
+@media (max-width: 768px) { 
+  .left {
+    transform: rotate(270deg);
+    position: absolute;
+    bottom: -70%;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+
+  .right {
+    transform: rotate(90deg);
+    position: absolute;
+    top: 190%;
+    margin: auto;
+    left: 0;
+    right: 0;
+  }
+
+  .review {
+    margin-top: calc(vars.$gutter * 2);
+
+    &-separator {
+      margin: auto;
+      width: 50%;
+      height: 2px;
+      background-color: black;
+    }
+
+    &-post {
+      margin: calc(vars.$gutter * 8 ) 0;
+    }
+
+    &-arrow {
+      width: 100px;
+    }
+
+    h2,h3,h4 {
+      color: vars.$fontColor;
+    }
+
+    &-title--section {
+      text-align: left;
+      font-size: calc(vars.$fontSize * 2);
+      margin: calc(vars.$gutter * 1) 0;
+    }
+
+    &-title {
+      display: none;
+    }
+
+    &-booktitle {
+
+    }
+
+    &-content {
+      margin-top: calc(vars.$gutter * 1);
+    }
+
+    &-author {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: calc(vars.$gutter * 1);
+   
+      &--name {
+        padding-right: calc(vars.$gutter * 1);
+        margin-bottom: 5em;
+
+      }
+
+      &--avatar {
+        width: 30px;
+        float: left;
+      }
+  }
+  }
+}
+
+
+@media (min-width: 768px) { 
+  .left {
+    transform: rotate(180deg);
+    position: absolute;
+    top: 85%;
+    right: 90%;
+  }
+
+  .right {
+    position: absolute;
+    top: 85%;
+    left: 90%;
+  }
+
+  .review {
+    margin-top: calc(vars.$gutter * 2);
+
+    &-post {
+      margin : 0 calc(vars.$gutter * 10);
+    }
+
+    &-separator {
+      margin: auto;
+      width: 50%;
+      height: 2px;
+      background-color: black;
+    }
+
+    &-arrow {
+      width: 100px;
+    }
+
+    h2,h3,h4 {
+      color: vars.$fontColor;
+    }
+
+    &-title--section {
+      text-align: left;
+      font-size: calc(vars.$fontSize * 2);
+      margin: calc(vars.$gutter * 1) 0;
+    }
+
+    &-title {
+      font-size: calc(vars.$fontSize * 1.2);
+    }
+
+    &-booktitle {
+      font-size: calc(vars.$fontSize * 1.5);
+
+    }
+
+    &-content {
+      margin-top: calc(vars.$gutter * 1);
+    }
+
+    &-author {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: calc(vars.$gutter * 1);
+   
+      &--name {
+        padding-right: calc(vars.$gutter * 1);
+
+      }
+
+      &--avatar {
+        width: 30px;
+        float: left;
+      }
+  }
+  }
+}
