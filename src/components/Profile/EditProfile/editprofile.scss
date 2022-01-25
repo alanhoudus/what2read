@@ -1,4 +1,4 @@
-@use '../../styles/vars';
+@use '../../../styles/vars';
 
 // responsive mobile first
 @media (max-width: 768px) {
@@ -104,21 +104,9 @@
       font-weight: bold;
       margin-bottom: vars.$gutter;
     }
-    &.button-edit {
-      color: vars.$mainColor;
-      background-color: vars.$thirdColor;
-      margin-bottom: vars.$gutter;
-      border-radius: 30px;
-      font-size: 1em;
-      padding: 10px;
-    }
-    &.button-delete {
-      color: vars.$secondaryColor;
-      background-color: vars.$fourthColor;
-      margin-bottom: vars.$gutter;
-      border-radius: 30px;
-      font-size: 1em;
-      padding: 10px;
+    &.edit {
+      background-color: none;
+      border: none;
     }
   }
 }
