@@ -4,8 +4,8 @@
 
   .header {
     width: 100%;
-    margin-top: 1em;
-    padding-top: 0.5em;
+    margin-top: calc(vars.$gutter * 1);
+    padding-top: calc(vars.$gutter / 2);
     background-color: vars.$secondaryColor;
     
     &-nav {
@@ -22,7 +22,7 @@
         margin-left:  calc(vars.$gutter * 1.5);
         color: vars.$fontColor;
         font-weight: 800;
-        font-size: 1.5em;
+        font-size: calc(vars.$fontSize * 1.5);
         font-family: 'Times New Roman', Times, serif;
       }
       
@@ -31,6 +31,10 @@
         width: 80px;
         height: auto;
         margin-left:  calc(vars.$gutter * 1.5);
+      }
+      // logo home full name hide en mobile
+      &.homeDesktop {
+        display: none;
       }
       // Profile logo
       &.profile {
@@ -78,10 +82,6 @@
   width: 15%;
   height: 100vh;
   position: fixed;
-  // border: solid 5px black;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   background-color: vars.$secondaryColor;
   margin: 0 calc(vars.$gutter * 2);
   border-radius: 10px;
@@ -104,6 +104,10 @@
       height: auto;
       margin: calc(vars.$gutter * 1.5);
     }
+     // logo home short name hide en desktop
+    &.homeMobile {
+      display: none;
+    }
     // Profile logo
     &.profile {
       display: none;
@@ -123,7 +127,6 @@
     }
     & > li:hover {
       color: vars.$thirdColor;
-      font-size: larger;
     }
   }
 
@@ -143,13 +146,12 @@
 
     & > li:hover {
       color: vars.$thirdColor;
-      font-size: larger;
     }
 
     input,&--quicksearch {
       background-color: vars.$mainColor;
       color: vars.$fontColor;
-      font-size: 1em;
+      font-size: calc(vars.$fontSize * 1);
       margin-top: calc(vars.$gutter / 2);
       width: 90%;
       height: 2em;

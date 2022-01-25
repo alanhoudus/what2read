@@ -1,0 +1,37 @@
+@use '../../styles/vars';
+
+@media (max-width: 768px) { 
+
+  .footer {
+    // 50vw to center the border with the parent
+    width: 50vw;
+    height: 10vh;
+    margin-top: calc( vars.$gutter * 10);
+    margin-left: 25%;
+
+    border-top: 1px solid black;
+    &-credits {
+      margin-top: calc( vars.$gutter * 2);
+      text-align: center;
+    }
+  }
+
+}
+
+@media (min-width: 768px) { 
+  .footer {
+    // 50vw to center the border with the parent
+    width: 50vw;
+    height: 10vh;
+    margin-top: calc( vars.$gutter * 5);
+    margin-left: 20%;
+
+    border-top: 1px solid black;
+    &-credits {
+      margin-top: calc( vars.$gutter * 2);
+      text-align: center;
+    }
+  }
+
+
+}

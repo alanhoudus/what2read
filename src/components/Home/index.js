@@ -1,5 +1,7 @@
 // == Import
 import './home.scss';
+import Review from './Review';
+import SuggestedBook from './SuggestedBook';
 
 // == Composant
 const Home = () => (
@@ -11,6 +13,8 @@ const Home = () => (
       Nullam eget magna at risus scelerisque aliquet.
       Praesent sodales nunc nibh, vel accumsan risus tempor eget.
     </p>
+    <SuggestedBook />
+    <Review />
   </div>
 );
 

@@ -6,10 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // margin-top: 1.5em;
+  margin-top: calc(vars.$gutter * 1.5);
 
   &-title {
-    font-size: 1.5em;
+    font-size: calc(vars.$fontSize * 1.5);
     color: vars.$thirdColor;
     font-weight: bold;
     margin-bottom: calc(vars.$gutter * 1.5);
@@ -39,10 +39,7 @@
 // responsive desktop
 @media (min-width: 768px) {
   .contact {
-    // to have the content not hidden by the nav menu on desktop
-    position: absolute;
-    left: 20%;
-    font-size: 1.3em;
+    font-size: calc(vars.$fontSize * 1.3);
 
     &-title {
     display: flex;

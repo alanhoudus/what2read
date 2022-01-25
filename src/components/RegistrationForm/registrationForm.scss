@@ -1,0 +1,80 @@
+@use '../../styles/vars';
+
+// responsive mobile first
+.registration {
+  color: vars.$fontColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: calc(vars.$gutter * 1.5);
+
+  &-input {
+    width: 60%;
+    & > h3 {
+      font-size: 1.2em;
+    }
+
+    &--asterisk {
+      color: rgba(255, 2, 2, 0.74);
+    }
+  }
+  &-title {
+    font-size: 1.5em;
+    color: vars.$thirdColor;
+    font-weight: bold;
+    margin-bottom: calc(vars.$gutter * 1);
+  }
+  &-lign {
+    width: 70%;
+    height: 2px;
+    background-color: vars.$thirdColor;
+    margin-bottom: calc(vars.$gutter * 2);
+  }
+
+  &-field {
+    background-color: vars.$secondaryColor;
+    color: vars.$fontColor;
+    font-size: 1em;
+    margin-top: calc(vars.$gutter / 3);
+    width: 90%;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: calc(vars.$gutter * 1);
+    padding-left: calc(vars.$gutter * 0.5);
+    &--presentation {
+      height: 3.5em;
+    }
+
+    &--name {
+      width: 50%;
+    }
+  }
+
+  &-button {
+    background-color: vars.$secondaryColor;
+    color: vars.$fontColor;
+    font-size: 1em;
+    width: 35%;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: calc(vars.$gutter * 1);
+  }
+
+  &-required {
+    font-size: 0.8em;
+    color: rgba(255, 2, 2, 0.74);
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .registration {
+    width: 100%;
+
+    &-field {
+      margin-bottom: calc(vars.$gutter * 2);
+    }
+  }
+}
