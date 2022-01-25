@@ -1,5 +1,8 @@
 // == Import
+// react-router-dom
 import { Routes, Route } from 'react-router-dom';
+
+// components
 import Header from '../Header';
 import Home from '../Home';
 import Book from '../Book';
@@ -10,6 +13,9 @@ import RegistrationForm from '../RegistrationForm';
 import Search from '../Search';
 import Favorites from '../Favorites';
 import NotFound from '../NotFound';
+import Reviews from '../MyReviews';
+
+// scss
 import './app.scss';
 
 // == Composant
@@ -26,6 +32,8 @@ const App = () => (
         <Route path="*" key="notfound" element={<NotFound />} />
         <Route path="/profile" key="profile" element={<Profile />} />
         <Route path="/book" key="book" element={<Book />} />
+        <Route path="/profil/reviews" key="reviews" element={<Reviews />} />
+
       </Routes>
       <Footer />
     </div>

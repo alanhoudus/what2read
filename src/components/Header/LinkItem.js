@@ -20,7 +20,6 @@ const LinkItem = ({ link }) => {
 
 LinkItem.propTypes = {
   link: PropTypes.shape({
-    nav: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

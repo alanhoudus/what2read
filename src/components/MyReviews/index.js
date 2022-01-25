@@ -1,7 +1,7 @@
 // == Import : local
 import { Trash, Edit } from 'react-feather';
 
-import './reviews.scss';
+import './myreviews.scss';
 
 // == Composant
 const Reviews = () => (

@@ -1,4 +1,4 @@
-@use '../../../styles/vars';
+@use '../../styles/vars';
 
 @media (max-width: 768px) {
   .reviews {
@@ -48,10 +48,12 @@
 
 @media (min-width: 768px) {
   .reviews {
-    margin-top: calc(vars.$gutter * 2);
+    padding-top: calc(vars.$gutter * 2);
+    margin: 0 calc(vars.$gutter * 4) calc(vars.$gutter * 2) calc(vars.$gutter * 2);
 
     & > h1 {
       font-size: calc(vars.$fontSize * 2);
+      color: vars.$fontColor;
     }
 
     &-wrapper {
@@ -74,8 +76,7 @@
 
           &--buttons {
             position: absolute;
-            // Buttons top right -600% for bottom right
-            bottom: 20%;
+            bottom: -600%;
             right: 0;
           }
 
