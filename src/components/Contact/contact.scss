@@ -39,7 +39,6 @@
 // responsive desktop
 @media (min-width: 768px) {
   .contact {
-    // to have the content not hidden by the nav menu on desktop
     font-size: calc(vars.$fontSize * 1.3);
 
     &-title {

@@ -18,17 +18,12 @@ const App = () => (
       <Routes>
         <Route path="/" key="home" element={<Home />} />
         <Route path="/contact" key="contact" element={<Contact />} />
+        <Route path="/inscription" key="inscription" element={<RegistrationForm />} />
+        <Route path="/recherche" key="recherche" element={<Search />} />
         <Route path="*" key="notfound" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
-    <Routes>
-      <Route path="/" key="home" element={<Home />} />
-      <Route path="/contact" key="contact" element={<Contact />} />
-      <Route path="/inscription" key="inscription" element={<RegistrationForm />} />
-      <Route path="/recherche" key="recherche" element={<Search />} />
-      <Route path="*" key="notfound" element={<NotFound />} />
-    </Routes>
   </div>
 );
 
