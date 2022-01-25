@@ -36,6 +36,7 @@ const Header = () => (
             key="profile"
           >
             <li>Profil</li>
+          </NavLink>
           <NavLink
             to="/inscription"
             key="home"
