@@ -35,21 +35,9 @@
         font-weight: bold;
         margin-bottom: vars.$gutter;
       }
-      &.button-edit {
-        color: vars.$mainColor;
-        background-color: vars.$thirdColor;
-        margin-bottom: vars.$gutter;
-        border-radius: 30px;
-        font-size: 1em;
-        padding: 10px;
-      }
-      &.button-delete {
-        color: vars.$secondaryColor;
-        background-color: vars.$fourthColor;
-        margin-bottom: vars.$gutter;
-        border-radius: 30px;
-        font-size: 1em;
-        padding: 10px;
+      &-button {
+        background-color: vars.$mainColor;
+        border: none;
       }
     }
   }
@@ -61,6 +49,7 @@
     // to have the content not hidden by the nav menu on desktop
     left: 20%;
     font-size: 1.3em;
+    color: vars.$fontColor;
 
     &-title {
     display: flex;
@@ -104,8 +93,8 @@
       font-weight: bold;
       margin-bottom: vars.$gutter;
     }
-    &.edit {
-      background-color: none;
+    &-button {
+      background-color: vars.$mainColor;
       border: none;
     }
   }
