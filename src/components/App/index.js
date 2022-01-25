@@ -8,8 +8,10 @@ import Profile from '../Profile';
 import Footer from '../Footer';
 import RegistrationForm from '../RegistrationForm';
 import Search from '../Search';
-
+import Favorites from '../Favorites';
 import NotFound from '../NotFound';
+import EditProfile from '../Profile/EditProfile';
+
 import './app.scss';
 
 // == Composant
@@ -21,10 +23,12 @@ const App = () => (
         <Route path="/" key="home" element={<Home />} />
         <Route path="/contact" key="contact" element={<Contact />} />
         <Route path="/inscription" key="inscription" element={<RegistrationForm />} />
+        <Route path="/profil/favoris" key="mes-favoris" element={<Favorites />} />
         <Route path="/recherche" key="recherche" element={<Search />} />
         <Route path="*" key="notfound" element={<NotFound />} />
         <Route path="/profile" key="profile" element={<Profile />} />
         <Route path="/book" key="book" element={<Book />} />
+        <Route path="/profile/edit" key="profile-edit" element={<EditProfile />} />
       </Routes>
       <Footer />
     </div>
