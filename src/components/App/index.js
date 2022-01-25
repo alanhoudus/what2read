@@ -7,6 +7,7 @@ import Footer from '../Footer';
 import RegistrationForm from '../RegistrationForm';
 import RegistrationReview from '../RegistrationReview';
 import Search from '../Search';
+import Readings from '../Readings';
 
 import NotFound from '../NotFound';
 import './app.scss';
@@ -22,6 +23,7 @@ const App = () => (
         <Route path="/inscription" key="inscription" element={<RegistrationForm />} />
         <Route path="/recherche" key="recherche" element={<Search />} />
         <Route path="/ajout-review" key="add-review" element={<RegistrationReview />} />
+        <Route path="/profil/lectures" key="mes-lectures" element={<Readings />} />
         <Route path="*" key="notfound" element={<NotFound />} />
       </Routes>
       <Footer />

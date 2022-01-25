@@ -1,0 +1,20 @@
+@use '../../styles/vars';
+
+// responsive mobile first
+@media (max-width: 768px) {
+  .readings {
+    color: vars.$fontColor;
+    font-size: vars.$fontSize;
+    &-buttonRead {
+      background-color: vars.$secondaryColor;
+      border: none;
+      border-radius: 4px;
+      width: 9em;
+      height: 2.2em;
+    }
+
+    &-books {
+      width: 40%;
+    }
+  }
+}
