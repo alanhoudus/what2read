@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // import icon
 import { Search as SearchIcon } from 'react-feather';
 // import components
@@ -15,58 +17,85 @@ const Search = () => (
     </div>
     <div className="search-books">
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="1"
+        >
           <h3 className="search-book--title">Lire J. R. R. Tolkien</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/vincent-ferre-lire-j/9782266242912-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="2"
+        >
           <h3 className="search-book--title">Lettres</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/john-ronald-reuel-tolkien-lettres/9782266166041-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="3"
+        >
           <h3 className="search-book--title">Logos et langage dans le monde de Tolkien</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/verlyn-flieger-une-lumiere-eclatee/9782220066325-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="4"
+        >
           <h3 className="search-book--title">Lire J. R. R. Tolkien</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/vincent-ferre-lire-j/9782266242912-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="5"
+        >
           <h3 className="search-book--title">Lettres</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/john-ronald-reuel-tolkien-lettres/9782266166041-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="6"
+        >
           <h3 className="search-book--title">Logos et langage dans le monde de Tolkien</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/verlyn-flieger-une-lumiere-eclatee/9782220066325-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="7"
+        >
           <h3 className="search-book--title">Lire J. R. R. Tolkien</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/vincent-ferre-lire-j/9782266242912-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="8"
+        >
           <h3 className="search-book--title">Lettres</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/john-ronald-reuel-tolkien-lettres/9782266166041-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
       <div className="search-book">
-        <a href="#">
+        <Link
+          to="/book"
+          key="9"
+        >
           <h3 className="search-book--title">Logos et langage dans le monde de Tolkien</h3>
           <img className="search-img" src="https://products-images.di-static.com/image/verlyn-flieger-une-lumiere-eclatee/9782220066325-475x500-1.webp" alt="title" />
-        </a>
+        </Link>
       </div>
     </div>
     <button type="button" className="search-showMore">Voir plus</button>
