@@ -23,7 +23,7 @@
 
     &-title {
       font-size: calc(vars.$fontSize * 2);
-      margin-top: calc(vars.$gutter * 2);
+      padding-top: calc(vars.$gutter * 2);
       color: vars.$fontColor;
     }
   }
