@@ -5,9 +5,11 @@
   .readings {
     color: vars.$fontColor;
     font-size: vars.$fontSize;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &-buttonRead {
       background-color: vars.$secondaryColor;
-      border: none;
       border-radius: 4px;
       width: 9em;
       height: 2.2em;
@@ -15,6 +17,123 @@
 
     &-books {
       width: 40%;
+    }
+    &-book {
+      width:100%;
+      // height: 300px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: calc(vars.$gutter * 1);
+      &--title {
+        text-align: center;
+        padding-top: 1em;
+      }
+    }
+    // hide the last 3 books on mobile, its just for the static integration
+    &-book:nth-last-child(-n+6) {
+      display: none;
+    }
+
+    &-book:hover {
+      cursor: pointer;
+    }
+
+    &-img {
+      width: 100%;
+      padding: 1.5em;
+    }
+
+    &-showMore {
+      background-color: vars.$mainColor;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      color: vars.$fontColor;
+      font-size: 1em;
+      width: 35%;
+      height: 2em;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: calc(vars.$gutter * 1);
+    }
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .readings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: vars.$fontColor;
+    // show the last 6 books on desktop, its just for the static integration
+    &-book:nth-last-child(-n+6) {
+      display: block;
+    }
+    &-input {
+      display: flex;
+      margin-top: calc(vars.$gutter *  2);
+      &--field {
+        background-color: white;
+        color: vars.$fontColor;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: calc(vars.$gutter * 1.5);
+        margin-right: calc(vars.$gutter * 2);
+        padding: 0.3em;
+      }
+      &--submit {
+        background-color: vars.$secondaryColor;
+        border: none;
+        border-radius: 4px;
+        height: 2.2em;
+        display: flex;
+        align-items: center;
+        width: 8em;
+        color: vars.$thirdColor;
+      }
+      &--submit::after {
+        content: "Rechercher";
+      }
+    }
+
+    &-books {
+      display: flex;
+      flex-wrap: wrap;
+      width: 80%;
+    }
+
+    &-book {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: calc(vars.$gutter * 1);
+      display: flex;
+      flex-wrap: wrap;
+      width: 80%;
+      flex-basis: 30%;
+      margin-right: 1em;
+      &--title {
+        text-align: center;
+        padding-top: 1em;
+      }
+    }
+
+    &-book:hover {
+      cursor: pointer;
+    }
+
+    &-img {
+      width: 100%;
+      padding: 1.5em;
+    }
+
+    &-showMore {
+      background-color: vars.$mainColor;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      color: vars.$fontColor;
+      font-size: 1em;
+      width: 35%;
+      height: 2em;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: calc(vars.$gutter * 1);
     }
   }
 }
