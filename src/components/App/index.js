@@ -16,12 +16,6 @@ import './app.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <Routes>
-      <Route path="/" key="home" element={<Home />} />
-      <Route path="/contact" key="contact" element={<Contact />} />
-      <Route path="/profile" key="profile" element={<Profile />} />
-      <Route path="/book" key="book" element={<Book />} />
-    </Routes>
     <div className="app-wrapper">
       <Routes>
         <Route path="/" key="home" element={<Home />} />
@@ -29,6 +23,8 @@ const App = () => (
         <Route path="/inscription" key="inscription" element={<RegistrationForm />} />
         <Route path="/recherche" key="recherche" element={<Search />} />
         <Route path="*" key="notfound" element={<NotFound />} />
+        <Route path="/profile" key="profile" element={<Profile />} />
+        <Route path="/book" key="book" element={<Book />} />
       </Routes>
       <Footer />
     </div>

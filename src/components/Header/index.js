@@ -45,6 +45,7 @@ const Header = () => (
             key="profile"
           >
             <li>Profil</li>
+          </NavLink>
           <NavLink
             to="/inscription"
             key="home"
@@ -65,12 +66,6 @@ const Header = () => (
             <img alt="placeholder" src={w2rlogo} className="header-logo home homeMobile" />
             <img alt="placeholder" src={w2rlogoDesktop} className="header-logo home homeDesktop" />
             <li>Accueil</li>
-          </NavLink>
-          <NavLink
-            to="/book"
-            key="book"
-          >
-            <li>Livre</li>
           </NavLink>
           <li>Suggestions</li>
           <NavLink
