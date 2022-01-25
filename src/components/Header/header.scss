@@ -121,11 +121,11 @@
   // Profile menu
   &-profilemenu {
     margin-bottom:  calc(vars.$gutter * 1.5);
-    & > li {
+    &--nav {
       padding: calc(vars.$gutter / 5);
       color: vars.$fontColor;
     }
-    & > li:hover {
+    &--nav:hover {
       color: vars.$thirdColor;
     }
   }
@@ -133,18 +133,12 @@
   // Nav burger menu
   &-burgermenu {
 
-    & > li {
+    &--nav {
       padding: 0.2em;
       color: vars.$fontColor;
     }
 
-    & > li:last-child {
-      position: absolute;
-      bottom: 0;
-      margin-bottom: calc(vars.$gutter * 4);
-    }
-
-    & > li:hover {
+    &--nav:hover {
       color: vars.$thirdColor;
     }
 
