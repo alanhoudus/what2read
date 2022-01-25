@@ -1,64 +1,58 @@
 @use '../../styles/vars';
 
 // responsive mobile first
-.book {
-  color: vars.$fontColor;
-  display: flex;
+@media (max-width: 768px) {
+  .book {
+    color: vars.$fontColor;
+    display: flex;
 
-  &.profile-logo {
-    width: 70px;
-    height: auto;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 10px;
-  }
-  &-contentGroup {
-      margin: 0 calc(vars.$gutter * 1.5);
-      padding-top: calc(vars.$gutter * 1);
-  }
-  &-content {
-    margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
-
-
-    &.title {
-      font-size: 1.5em;
-      color: vars.$thirdColor;
-      font-weight: bold;
-      margin-bottom: calc(vars.$gutter * 1.5);
+    &-user-profile {
+      display: none;
     }
-    &.tag {
-      display: inline;
-      &-genre-a {
-        color: vars.$mainColor;
-        background-color: vars.$thirdColor;
-        border-radius: 30px;
-        border: #000 1px solid;
-        font-size: 1em;
-        padding: 7px;
+    &-contentGroup {
+        margin: 0 calc(vars.$gutter * 1.5);
+        padding-top: calc(vars.$gutter * 1);
+    }
+    &-content {
+      margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
+
+
+      &.title {
+        font-size: 1.5em;
+        color: vars.$thirdColor;
+        font-weight: bold;
+        margin-bottom: calc(vars.$gutter * 1.5);
       }
-      &-genre-b {
-        color: vars.$secondaryColor;
-        background-color: vars.$fourthColor;
-        margin-bottom: vars.$gutter;
-        border-radius: 30px;
-        border: #000 1px solid;
-        font-size: 1em;
-        padding: 7px;
+      &.tag {
+        display: inline;
+        &-genre-a {
+          color: vars.$mainColor;
+          background-color: vars.$thirdColor;
+          border-radius: 30px;
+          border: #000 1px solid;
+          font-size: 1em;
+          padding: 7px;
+        }
+        &-genre-b {
+          color: vars.$secondaryColor;
+          background-color: vars.$fourthColor;
+          margin-bottom: vars.$gutter;
+          border-radius: 30px;
+          border: #000 1px solid;
+          font-size: 1em;
+          padding: 7px;
+        }
       }
     }
+    &-lign {
+      width: 70%;
+      height: 2px;
+      background-color: vars.$thirdColor;
+      margin-top: calc(vars.$gutter * 1);
+      margin-bottom: calc(vars.$gutter * 2);
+      display: block;
+    }
   }
-  &-lign {
-    width: 70%;
-    height: 2px;
-    background-color: vars.$thirdColor;
-    margin-top: calc(vars.$gutter * 1);
-    margin-bottom: calc(vars.$gutter * 2);
-    display: block;
-  }
-
 }
 
 // responsive desktop
@@ -66,11 +60,11 @@
   .book{
     // to have the content not hidden by the nav menu on desktop
     padding-left: 20%;
+    padding-top: 1em;
     font-size: 1.3em;
+    color: vars.$fontColor;
 
     &-title {
-    // display: flex;
-    // align-self: flex-start;
     margin-left: 8%;
     }
     &-content {
@@ -79,8 +73,57 @@
         flex-wrap: wrap;
       }
     }
-    &-review {
-      display: block;
+    &-user-profile {
+      width: 70px;
+      height: auto;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 10px;
     }
+    &-contentGroup {
+        margin: 0 calc(vars.$gutter * 1.5);
+        padding-top: calc(vars.$gutter * 1);
+    }
+    &-content {
+      margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
+
+      &.title {
+        font-size: 1.5em;
+        color: vars.$thirdColor;
+        font-weight: bold;
+        margin-bottom: calc(vars.$gutter * 1.5);
+      }
+      &.tag {
+        display: inline;
+        &-genre-a {
+          color: vars.$mainColor;
+          background-color: vars.$thirdColor;
+          border-radius: 30px;
+          border: #000 1px solid;
+          font-size: 1em;
+          padding: 7px;
+        }
+        &-genre-b {
+          color: vars.$secondaryColor;
+          background-color: vars.$fourthColor;
+          margin-bottom: vars.$gutter;
+          border-radius: 30px;
+          border: #000 1px solid;
+          font-size: 1em;
+          padding: 7px;
+        }
+      }
+    }
+    &-lign {
+      width: 70%;
+      height: 2px;
+      background-color: vars.$thirdColor;
+      margin-top: calc(vars.$gutter * 1);
+      margin-bottom: calc(vars.$gutter * 2);
+      display: block;
+    }  
   }
 }
