@@ -5,15 +5,14 @@
   .footer {
     // 50vw to center the border with the parent
     width: 50vw;
-    height: 10vh;
-    margin-top: calc( vars.$gutter * 10);
+    height: 15vh;
     margin-left: 25%;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     border-top: 1px solid black;
-    &-credits {
-      margin-top: calc( vars.$gutter * 2);
-      text-align: center;
-    }
+
   }
 
 }
@@ -22,15 +21,14 @@
   .footer {
     // 50vw to center the border with the parent
     width: 50vw;
-    height: 10vh;
-    margin-top: calc( vars.$gutter * 5);
+    height: 15vh;
     margin-left: 20%;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     border-top: 1px solid black;
-    &-credits {
-      margin-top: calc( vars.$gutter * 2);
-      text-align: center;
-    }
+
   }
 
 
