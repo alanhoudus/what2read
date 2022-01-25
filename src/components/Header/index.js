@@ -30,6 +30,12 @@ const Header = () => (
         <img alt="profileicon" src={profileicon} className="header-logo profile" />
         <ul className="header-profilemenu">
           <li>Se connecter</li>
+          <li>S'inscrire</li>
+          <NavLink
+            to="/profile"
+            key="profile"
+          >
+            <li>Profil</li>
           <NavLink
             to="/inscription"
             key="home"
@@ -48,6 +54,12 @@ const Header = () => (
             key="home"
           >
             <li>Accueil</li>
+          </NavLink>
+          <NavLink
+            to="/book"
+            key="book"
+          >
+            <li>Livre</li>
           </NavLink>
           <li>Suggestions</li>
           <NavLink

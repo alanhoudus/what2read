@@ -1,8 +1,10 @@
 // == Import
 import { Routes, Route } from 'react-router-dom';
-import Header from 'src/components/Header';
-import Home from 'src/components/Home';
+import Header from '../Header';
+import Home from '../Home';
+import Book from '../Book';
 import Contact from '../Contact';
+import Profile from '../Profile';
 import Footer from '../Footer';
 import RegistrationForm from '../RegistrationForm';
 import Search from '../Search';
@@ -14,6 +16,12 @@ import './app.scss';
 const App = () => (
   <div className="app">
     <Header />
+    <Routes>
+      <Route path="/" key="home" element={<Home />} />
+      <Route path="/contact" key="contact" element={<Contact />} />
+      <Route path="/profile" key="profile" element={<Profile />} />
+      <Route path="/book" key="book" element={<Book />} />
+    </Routes>
     <div className="app-wrapper">
       <Routes>
         <Route path="/" key="home" element={<Home />} />
