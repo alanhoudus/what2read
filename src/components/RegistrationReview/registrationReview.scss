@@ -1,0 +1,36 @@
+@use '../../styles/vars';
+
+// responsive mobile first
+.addReview {
+
+  &-title {
+
+  }
+  &-field {
+    background-color: vars.$secondaryColor;
+    color: vars.$fontColor;
+    font-size: 1em;
+    margin-top: calc(vars.$gutter / 3);
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+
+    &.title {
+
+    }
+    &.content {
+      height: 10em;
+    }
+  }
+  
+  &-submit {
+    background-color: vars.$secondaryColor;
+    color: vars.$fontColor;
+    font-size: 1em;
+    width: 35%;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: calc(vars.$gutter * 1);
+  }
+}

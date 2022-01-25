@@ -5,6 +5,7 @@ import Home from 'src/components/Home';
 import Contact from '../Contact';
 import Footer from '../Footer';
 import RegistrationForm from '../RegistrationForm';
+import RegistrationReview from '../RegistrationReview';
 import Search from '../Search';
 
 import NotFound from '../NotFound';
@@ -20,6 +21,7 @@ const App = () => (
         <Route path="/contact" key="contact" element={<Contact />} />
         <Route path="/inscription" key="inscription" element={<RegistrationForm />} />
         <Route path="/recherche" key="recherche" element={<Search />} />
+        <Route path="/ajout-review" key="add-review" element={<RegistrationReview />} />
         <Route path="*" key="notfound" element={<NotFound />} />
       </Routes>
       <Footer />

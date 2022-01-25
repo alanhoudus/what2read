@@ -121,13 +121,21 @@
   // Profile menu
   &-profilemenu {
     margin-bottom:  calc(vars.$gutter * 1.5);
-    & > li {
+    &.link {
       padding: calc(vars.$gutter / 5);
       color: vars.$fontColor;
     }
-    & > li:hover {
+    &.link:hover {
       color: vars.$thirdColor;
+      cursor: pointer;
     }
+    // & > li {
+    //   padding: calc(vars.$gutter / 5);
+    //   color: vars.$fontColor;
+    // }
+    // & > li:hover {
+    //   color: vars.$thirdColor;
+    // }
   }
 
   // Nav burger menu

@@ -29,7 +29,7 @@ const Header = () => (
       <div className="header-menus">
         <img alt="profileicon" src={profileicon} className="header-logo profile" />
         <ul className="header-profilemenu">
-          <li>Se connecter</li>
+          <li className="header-profilemenu link">Se connecter</li>
           <NavLink
             to="/inscription"
             key="home"
