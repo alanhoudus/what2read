@@ -2,6 +2,9 @@
 // routes
 import { NavLink } from 'react-router-dom';
 
+// selectors
+import { mapProfileNav, mapRegularNav } from '../../selectors/navigation';
+
 // components
 import Field from '../Field';
 
@@ -13,61 +16,40 @@ import profileicon from '../../assets/images/profileicon.png';
 import './header.scss';
 
 // == Composant
-const Header = () => (
-  <header className="header">
-    <nav className="header-nav">
-      <div className="header-logo">
-        <NavLink
-          to="/"
-          key="home"
-        >
-          <img alt="placeholder" src={w2rlogo} className="header-logo home homeMobile" />
-          <img alt="placeholder" src={w2rlogoDesktop} className="header-logo home homeDesktop" />
-        </NavLink>
-        <h1>What2Read</h1>
-      </div>
-      <div className="header-menus">
-        <img alt="profileicon" src={profileicon} className="header-logo profile" />
-        <ul className="header-profilemenu">
-          <li>Se connecter</li>
-          <NavLink
-            to="/inscription"
-            key="home"
-          >
-            <li>S'inscrire</li>
-          </NavLink>
-        </ul>
-        <div className="header-burgermenu--icon">
-          <div />
-          <div />
-          <div />
-        </div>
-        <ul className="header-burgermenu">
+const Header = () => {
+  console.log('');
+  return (
+    <header className="header">
+      <nav className="header-nav">
+        <div className="header-logo">
           <NavLink
             to="/"
             key="home"
           >
-            <li>Accueil</li>
+            <img alt="placeholder" src={w2rlogo} className="header-logo home homeMobile" />
+            <img alt="placeholder" src={w2rlogoDesktop} className="header-logo home homeDesktop" />
           </NavLink>
-          <li>Suggestions</li>
-          <NavLink
-            to="/recherche"
-            key="recherche"
-          >
-            <li>Recherche</li>
-          </NavLink>
-          <li><Field type="text" className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
-          <NavLink
-            to="/contact"
-            key="contact"
-          >
-            <li>Nous contacter</li>
-          </NavLink>
-        </ul>
-      </div>
-    </nav>
-  </header>
-);
+          <h1>What2Read</h1>
+        </div>
+        <div className="header-menus">
+          <img alt="profileicon" src={profileicon} className="header-logo profile" />
+          <ul className="header-profilemenu">
+            {mapProfileNav()}
+          </ul>
+          <div className="header-burgermenu--icon">
+            <div />
+            <div />
+            <div />
+          </div>
+          <ul className="header-burgermenu">
+            {mapRegularNav()}
+            <li><Field type="text" className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  );
+};
 
 // == Export
 export default Header;
