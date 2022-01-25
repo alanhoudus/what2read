@@ -1,4 +1,4 @@
-export const profileNav = [
+export const PROFILE_NAV = [
   {
     name: 'Se connecter',
     key: 'connection',
@@ -31,7 +31,7 @@ export const profileNav = [
   },
 ];
 
-export const regularNav = [
+export const REGULAR_NAV = [
   {
     name: 'Accueil',
     key: 'home',
