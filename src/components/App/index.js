@@ -10,6 +10,7 @@ import Contact from '../Contact';
 import Profile from '../Profile';
 import Footer from '../Footer';
 import RegistrationForm from '../RegistrationForm';
+import RegistrationReview from '../RegistrationReview';
 import Search from '../Search';
 import Favorites from '../Favorites';
 import NotFound from '../NotFound';
@@ -30,6 +31,7 @@ const App = () => (
         <Route path="/inscription" key="inscription" element={<RegistrationForm />} />
         <Route path="/profil/favoris" key="mes-favoris" element={<Favorites />} />
         <Route path="/recherche" key="recherche" element={<Search />} />
+        <Route path="/ajout-review" key="add-review" element={<RegistrationReview />} />
         <Route path="*" key="notfound" element={<NotFound />} />
         <Route path="/profile" key="profile" element={<Profile />} />
         <Route path="/book" key="book" element={<Book />} />

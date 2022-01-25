@@ -122,7 +122,15 @@
     }
     &--nav:hover {
       color: vars.$thirdColor;
+      cursor: pointer;
     }
+    // & > li {
+    //   padding: calc(vars.$gutter / 5);
+    //   color: vars.$fontColor;
+    // }
+    // & > li:hover {
+    //   color: vars.$thirdColor;
+    // }
   }
 
   // Nav burger menu
