@@ -3,8 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import Header from 'src/components/Header';
 import Home from 'src/components/Home';
 import Contact from '../Contact';
+import Footer from '../Footer';
 import RegistrationForm from '../RegistrationForm';
 import Search from '../Search';
+
 import NotFound from '../NotFound';
 import './app.scss';
 
@@ -12,6 +14,14 @@ import './app.scss';
 const App = () => (
   <div className="app">
     <Header />
+    <div className="app-wrapper">
+      <Routes>
+        <Route path="/" key="home" element={<Home />} />
+        <Route path="/contact" key="contact" element={<Contact />} />
+        <Route path="*" key="notfound" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </div>
     <Routes>
       <Route path="/" key="home" element={<Home />} />
       <Route path="/contact" key="contact" element={<Contact />} />

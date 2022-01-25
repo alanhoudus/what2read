@@ -9,8 +9,9 @@ const Review = () => (
   <div className="review">
     <div className="review-separator" />
     <h2 className="review-title--section">Propositions de reviews</h2>
+    <img src={arrow} alt="Review de gauche" className="review-arrow left" />
+    <img src={arrow} alt="Review de droite" className="review-arrow right" />
     <div className="review-post">
-      <img src={arrow} alt="Review de gauche" className="review-arrow left" />
       <h3 className="review-booktitle">La couleur tombée du ciel</h3>
       <h4 className="review-title">Titre de la review</h4>
       <p className="review-content">
@@ -22,7 +23,6 @@ const Review = () => (
         <img src={profileicon} alt="Avatar de l'auteur" className="review-author--avatar" />
         <p className="review-author--name">xXLoveCraftLoverXx</p>
       </div>
-      <img src={arrow} alt="Review de droite" className="review-arrow right" />
     </div>
   </div>
 );

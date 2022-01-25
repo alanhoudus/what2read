@@ -3,7 +3,7 @@
 @media (max-width: 768px) { 
 
   .suggestedbook {
-    margin-top: calc(vars.$gutter * 2);
+    margin-top: calc(vars.$gutter * 5);
 
     &-separator {
       margin: auto;
@@ -49,7 +49,7 @@
 @media (min-width: 768px) { 
 
   .suggestedbook {
-    margin-top: calc(vars.$gutter * 2);
+    margin-top: calc(vars.$gutter * 10);
 
     &-infos {
       display: grid;
@@ -109,7 +109,6 @@
   }
 
 }
-
 
 
 @media (min-width: 860px) and (max-width: 1100px) { 

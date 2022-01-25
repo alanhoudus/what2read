@@ -2,25 +2,18 @@
 
 @media (max-width: 768px) { 
   .left {
-    transform: rotate(270deg);
-    position: absolute;
-    bottom: -70%;
-    margin: auto;
-    left: 0;
-    right: 0;
+    transform: rotate(180deg);
+    float: left;
+    margin-top: 140px;
   }
 
   .right {
-    transform: rotate(90deg);
-    position: absolute;
-    top: 190%;
-    margin: auto;
-    left: 0;
-    right: 0;
+    float: right;
+    margin-top: 140px;
   }
 
   .review {
-    margin-top: calc(vars.$gutter * 2);
+    margin-top: calc(vars.$gutter * 4);
 
     &-separator {
       margin: auto;
@@ -30,7 +23,9 @@
     }
 
     &-post {
-      margin: calc(vars.$gutter * 8 ) 0;
+      margin: calc(vars.$gutter * 6 );
+      padding: calc(vars.$gutter * 2);
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     }
 
     &-arrow {
@@ -51,10 +46,6 @@
       display: none;
     }
 
-    &-booktitle {
-
-    }
-
     &-content {
       margin-top: calc(vars.$gutter * 1);
     }
@@ -64,11 +55,10 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: flex-end;
-      margin-top: calc(vars.$gutter * 1);
+      margin-top: calc(vars.$gutter * 2);
    
       &--name {
         padding-right: calc(vars.$gutter * 1);
-        margin-bottom: 5em;
 
       }
 
@@ -84,22 +74,20 @@
 @media (min-width: 768px) { 
   .left {
     transform: rotate(180deg);
-    position: absolute;
-    top: 85%;
-    right: 90%;
+    float: left;
   }
 
   .right {
-    position: absolute;
-    top: 85%;
-    left: 90%;
+    float: right;
   }
 
   .review {
-    margin-top: calc(vars.$gutter * 2);
+    margin-top: calc(vars.$gutter * 10);
 
     &-post {
-      margin : 0 calc(vars.$gutter * 10);
+      margin : 0 calc(vars.$gutter * 6);
+      padding: calc(vars.$gutter * 2);
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     }
 
     &-separator {
@@ -111,6 +99,7 @@
 
     &-arrow {
       width: 100px;
+      margin-top: 50px;
     }
 
     h2,h3,h4 {
