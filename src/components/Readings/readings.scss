@@ -10,10 +10,10 @@
     align-items: center;
     &-buttonRead {
       border-radius: 4px;
-      width: 9em;
-      height: 2.2em;
-      color: vars.$mainColor;
-      background-color: vars.$thirdColor;
+      width: 10em;
+      height: 2em;
+      color: vars.$secondaryColor;
+      background-color: vars.$fourthColor;
       margin-bottom: vars.$gutter;
       border-radius: 30px;
       font-size: 1em;
@@ -47,9 +47,9 @@
       }
     }
     // hide the last 3 books on mobile, its just for the static integration
-    // &-book:nth-last-child(-n+6) {
-    //   display: none;
-    // }
+    &-book:nth-last-child(-n+6) {
+      display: none;
+    }
 
     &-book:hover {
       cursor: pointer;
