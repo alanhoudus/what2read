@@ -49,19 +49,12 @@
 @media (min-width: 768px) { 
 
   .suggestedbook {
-    margin-top: calc(vars.$gutter * 10);
+    margin-top: calc(vars.$gutter * 4);
 
     &-infos {
       display: grid;
       grid-template-columns: repeat(2, 40%);
       grid-template-rows: repeat(1, 100%);
-    }
-
-    &-separator {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
     }
 
     &-title {
