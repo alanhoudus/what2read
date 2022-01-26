@@ -1,7 +1,7 @@
 @use '../../styles/vars';
 
 @media (max-width: 768px) { 
-  .home {
+  .suggestions {
 
     margin: calc(vars.$gutter * 2);
 
@@ -14,24 +14,18 @@
       margin-top: vars.$gutter;
     }
 
+    &-separator {
+      margin: auto;
+      width: 50%;
+      height: 2px;
+      background-color: black;
+    }
+
   }
-
-    h1.home-title {
-      font-size: calc(vars.$fontSize * 3);
-      text-align: center;
-      margin: calc(vars.$gutter / 2);
-    }
-
-    h2.home-title {
-      font-size: calc(vars.$fontSize * 2);
-      
-    }
- 
-
 }
 
 @media (min-width: 768px) { 
-  .home {
+  .suggestions {
 
     // margin: calc(vars.$gutter / 1);
 
@@ -43,16 +37,12 @@
       margin-top: calc(vars.$gutter *1);
     }
 
+    &-separator {
+      margin: auto;
+      width: 50%;
+      height: 2px;
+      background-color: black;
+    }
   }
 
-    h1.home-title {
-      font-size: 3em;
-      text-align: center;
-      padding-top: calc(vars.$gutter / 2);
-    }
-
-    h2.home-title {
-      font-size: calc(vars.$fontSize * 2);
-      
-    }
 }

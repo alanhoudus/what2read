@@ -7,6 +7,7 @@ import SuggestedBook from '../Home/SuggestedBook';
 const Suggestions = () => (
   <div className="suggestions">
     <SuggestedBook />
+    <div className="suggestions-separator" />
     <div className="suggestions-history">
       <Link
         to="/livre"
