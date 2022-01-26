@@ -3,10 +3,22 @@
 // responsive mobile first
 @media (max-width: 768px) {
   .addReview {
+    &-jumbotron {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      img {
+        display: none;
+      }
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: calc(vars.$gutter * 2);
+
+    &-logo {
+      display: none;
+    }
     &-title {
       color: vars.$thirdColor;
       font-size: 1.5em;
@@ -17,32 +29,36 @@
         display: none;
       }
     }
-
-    &-logo {
-      display: none;
-    }
-    
-    &-group {
-      width: 60%;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      padding: calc(vars.$gutter * 1);
-      margin-bottom: calc(vars.$gutter * 1.5)
-    }
-    &-cover {
-      width: 100%;
-      margin-bottom: calc(vars.$gutter * 1);
-    }
-
     &-titleBook {
       color: vars.$thirdColor;
       font-size: vars.$fontSize;
       text-align: center;
     }
+    &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      label {
+        display: block;
+        margin: calc(vars.$gutter * 0.5) 0;
+        margin-bottom: calc(vars.$gutter * 2);
+        color: vars.$thirdColor;
+        font-size: vars.$fontSize;
+      }
+      textarea {
+        resize: none;
+      }
+      img {
+        width: auto;
+        max-width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
+    }
     &-field {
       background-color: vars.$secondaryColor;
       color: vars.$fontColor;
       font-size: 1em;
-      width: 60%;
+      width: 100%;
       border: none;
       border-radius: 5px;
       margin-bottom: calc(vars.$gutter * 1);
@@ -50,6 +66,7 @@
       &.title {
         padding: calc(vars.$gutter * 1);
       }
+
       &.content {
         position:relative;
         padding: calc(vars.$gutter * 1);
@@ -59,7 +76,6 @@
         position: absolute;
       }
     }
-    
     &-submit {
       background-color: vars.$secondaryColor;
       color: vars.$fontColor;
@@ -69,87 +85,80 @@
       border: none;
       border-radius: 5px;
     }
-  }
+  } 
 }
 
-// responsive desktop
 @media (min-width: 768px) {
   .addReview {
-    display: flex;
-    flex-direction: column;
-  
+    &-jumbotron {
+      display: flex;
+      margin: calc(vars.$gutter * 2) 0;
+      textarea {
+        width: 100%;
+        resize: none;
+      }
+      img {
+        width: 20%;
+        margin-right: calc(vars.$gutter * 2);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
+    }
+    &-logo {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      width: 5%;
+    }
+    &-form {
+      margin-right: calc(vars.$gutter * 2);
+      > img {
+        display: none;
+      }
+      label {
+        display: block;
+        margin: calc(vars.$gutter * 0.5) 0;
+        color: vars.$thirdColor;
+        font-size: 2em;
+      }
+    }
+
     &-title {
       color: vars.$thirdColor;
-      font-size: 1.5em;
+      font-size: 2em;
       font-weight: bold;
-      margin-top: calc(vars.$gutter * 2);
-      margin-bottom: calc(vars.$gutter * 5);
+      padding-top: calc(vars.$gutter * 1);
+      margin-bottom: calc(vars.$gutter * 3);
 
       &.mobile {
         display: none;
       }
     }
 
-    &-logo {
-      width: 5%;
-      position: absolute;
-      top: 1em;
-      right: 2em;
-    }
-    
-    &-group {
-      width: 60%;
-      // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      // padding: calc(vars.$gutter * 1);
-      margin-bottom: calc(vars.$gutter * 1.5)
-    }
-    &-cover {
-      width: 52%;
-      margin-bottom: calc(vars.$gutter * 1);
-    }
-
-    &-titleBook {
-      position: absolute;
-      top: 6em;
-      color: vars.$thirdColor;
-      font-size: vars.$fontSize;
-      text-align: center;
-    }
     &-field {
       background-color: vars.$secondaryColor;
       color: vars.$fontColor;
       font-size: 1em;
-      width: 60%;
       border: none;
       border-radius: 5px;
-      margin-bottom: calc(vars.$gutter * 1);
 
       &.title {
-        position: absolute;
-        top: 8em;
-        padding: calc(vars.$gutter * 1)
+        padding: calc(vars.$gutter * 1);
+        width: 100%;
       }
       &.content {
-        position: absolute;
-        top: -22em;
-        left: 15em;
-        position:relative;
         padding: calc(vars.$gutter * 1);
-        height: 19em;
       }
-      &.content::placeholder {
-        position: absolute;
-      }
-    }
-    
-    &-submit {
-      background-color: vars.$secondaryColor;
-      color: vars.$fontColor;
-      font-size: 1em;
-      width: 35%;
-      height: 2em;
-      border: none;
-      border-radius: 5px;
-    }
   }
+  &-submit {
+    display: table;
+    margin-left: auto;
+    background-color: vars.$secondaryColor;
+    color: vars.$fontColor;
+    font-size: 1em;
+    width: 15%;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
+  }
+}
 }
