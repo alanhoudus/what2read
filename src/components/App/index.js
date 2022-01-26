@@ -17,6 +17,7 @@ import Favorites from '../Favorites';
 import NotFound from '../NotFound';
 import Reviews from '../MyReviews';
 import EditProfile from '../Profile/EditProfile';
+import Suggestions from '../Suggestions';
 
 import LogIn from '../LogIn';
 // scss
@@ -40,6 +41,7 @@ const App = () => (
         <Route path="/livre" key="livre" element={<Book />} />
         <Route path="/profil/reviews" key="reviews" element={<Reviews />} />
         <Route path="/profil/edition" key="profil-edition" element={<EditProfile />} />
+        <Route path="/suggestions/historique" key="suggestions-historique" element={<Suggestions />} />
         <Route path="/connection" key="connection" element={<LogIn />} />
       </Routes>
       <Footer />

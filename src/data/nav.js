@@ -39,8 +39,8 @@ export const REGULAR_NAV = [
   },
   {
     name: 'Suggestions',
-    key: 'suggestions',
-    to: '/suggestions',
+    key: 'suggestions-historique',
+    to: '/suggestions/historique',
   },
   {
     name: 'Recherche',

@@ -13,6 +13,7 @@ const Home = () => (
       Nullam eget magna at risus scelerisque aliquet.
       Praesent sodales nunc nibh, vel accumsan risus tempor eget.
     </p>
+    <div className="home-separator" />
     <SuggestedBook />
     <Review />
   </div>

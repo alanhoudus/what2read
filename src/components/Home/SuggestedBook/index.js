@@ -4,7 +4,6 @@ import './suggestedbook.scss';
 // == Composant
 const SuggestedBook = () => (
   <div className="suggestedbook">
-    <div className="suggestedbook-separator" />
     <h2 className="suggestedbook-title">Suggestion journalière</h2>
     <div className="suggestedbook-infos">
       <img className="suggestedbook-cover" alt="Chtulhu couverture" src="https://products-images.di-static.com/image/h-p-lovecraft-cthulhu-le-mythe-tome-1/9782352949107-475x500-1.webp" />
