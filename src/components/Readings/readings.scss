@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     &-buttonRead {
       border-radius: 4px;
       color: vars.$secondaryColor;
@@ -25,14 +26,32 @@
       margin-bottom: calc(vars.$gutter * 1.5);
     }
 
-    &-books {
-      width: 40%;
-    }
     &-book {
       width:100%;
-      // height: 300px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       margin-bottom: calc(vars.$gutter * 1);
+
+      &--cover {
+        position: relative;
+
+        &-img {
+          width: 100%;
+          padding: 1.5em;
+        }
+
+        & > .favorited {
+          top: 1.5em;
+          right: 1.5em;
+          position: absolute;
+        }
+
+        & > .review-done {
+          top: 1.5em;
+          right: 3em;
+          position: absolute;
+        }
+      }
+
       &--title {
         text-align: center;
         padding-top: 1em;
@@ -53,11 +72,6 @@
       cursor: pointer;
     }
 
-    &-img {
-      width: 100%;
-      padding: 1.5em;
-    }
-
     &-showMore {
       background-color: vars.$mainColor;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -67,7 +81,7 @@
       height: 2em;
       border: none;
       border-radius: 5px;
-      margin-bottom: calc(vars.$gutter * 1);
+      margin-top: calc(vars.$gutter * 2);
     }
   }
 }
@@ -104,17 +118,34 @@
     &-books {
       display: flex;
       flex-wrap: wrap;
-      width: 80%;
+      justify-content: center;
     }
 
     &-book {
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      margin-bottom: calc(vars.$gutter * 1);
-      display: flex;
-      flex-wrap: wrap;
-      width: 80%;
-      flex-basis: 30%;
-      margin-right: 1em;
+      flex-basis: 25%;
+      margin: calc(vars.$gutter * 1);
+
+      &--cover {
+        position: relative;
+
+        &-img {
+          width: 100%;
+          padding: 1.5em;
+        }
+          
+        & > .favorited {
+          top: 1.5em;
+          right: 1.5em;
+          position: absolute;
+        }
+
+        & > .review-done {
+          top: 1.5em;
+          right: 3em;
+          position: absolute;
+        }
+      }
 
       &--title {
         text-align: center;
@@ -127,15 +158,11 @@
         padding-top: 0.5em;
       }
     }
-
     &-book:hover {
       cursor: pointer;
     }
 
-    &-img {
-      width: 100%;
-      padding: 1.5em;
-    }
+
 
     &-showMore {
       background-color: vars.$mainColor;
@@ -146,7 +173,7 @@
       height: 2em;
       border: none;
       border-radius: 5px;
-      margin-bottom: calc(vars.$gutter * 1);
+      margin-top: calc(vars.$gutter * 3);
     }
   }
 }

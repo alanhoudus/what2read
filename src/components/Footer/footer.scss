@@ -8,6 +8,8 @@
     height: 15vh;
     margin-left: 25%;
     display: flex;
+    margin-top: calc(vars.$gutter * 5);
+
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -23,6 +25,7 @@
     width: 50vw;
     height: 15vh;
     margin-left: 20%;
+    margin-top: calc(vars.$gutter * 5);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
