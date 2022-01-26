@@ -18,6 +18,7 @@ import NotFound from '../NotFound';
 import Reviews from '../MyReviews';
 import EditProfile from '../Profile/EditProfile';
 
+import LogIn from '../LogIn';
 // scss
 import './app.scss';
 
@@ -39,7 +40,7 @@ const App = () => (
         <Route path="/livre" key="livre" element={<Book />} />
         <Route path="/profil/reviews" key="reviews" element={<Reviews />} />
         <Route path="/profil/edition" key="profil-edition" element={<EditProfile />} />
-
+        <Route path="/connection" key="connection" element={<LogIn />} />
       </Routes>
       <Footer />
     </div>
