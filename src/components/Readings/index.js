@@ -1,5 +1,7 @@
 // import scss
 import './readings.scss';
+import { Star } from 'react-feather';
+import FileText from 'react-feather';
 
 const Readings = () => (
   <div className="readings">
@@ -10,7 +12,7 @@ const Readings = () => (
         <a href="#">
           <h3 className="readings-book--title">Hunger Games</h3>
           <h4 className="readings-book--subtitle">Tome 1</h4>
-          <img className="search-img" src="https://products-images.di-static.com/image/suzanne-collins-hunger-games-tome-1/9782266260770-475x500-1.webp" alt="title" />
+          <img className="search-img" src="https://products-images.di-static.com/image/suzanne-collins-hunger-games-tome-1/9782266260770-475x500-1.webp" alt="title" /><Star className="readings favorited" color="#ffff00" />
         </a>
       </div>
       <div className="readings-book">
