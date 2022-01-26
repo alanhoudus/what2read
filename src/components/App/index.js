@@ -33,11 +33,10 @@ const App = () => (
         <Route path="/recherche" key="recherche" element={<Search />} />
         <Route path="/ajout-review" key="add-review" element={<RegistrationReview />} />
         <Route path="*" key="notfound" element={<NotFound />} />
-        <Route path="/profile" key="profile" element={<Profile />} />
-        <Route path="/book" key="book" element={<Book />} />
-
+        <Route path="/profil" key="profil" element={<Profile />} />
+        <Route path="/livre" key="livre" element={<Book />} />
         <Route path="/profil/reviews" key="reviews" element={<Reviews />} />
-        <Route path="/profile/edit" key="profile-edit" element={<EditProfile />} />
+        <Route path="/profil/edition" key="profil-edition" element={<EditProfile />} />
 
       </Routes>
       <Footer />

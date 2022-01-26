@@ -20,7 +20,7 @@ const Favorites = () => (
     <Field placeholder="Rechercher dans mes favoris" className="favorites-search" type="text" />
     <div className="favorites-books">
       <Link
-        to="/book"
+        to="/livre"
         key="1"
       >
         <div className="favorites-book">
@@ -32,7 +32,7 @@ const Favorites = () => (
         </div>
       </Link>
       <Link
-        to="/book"
+        to="/livre"
         key="2"
       >
         <div className="favorites-book">
@@ -44,7 +44,7 @@ const Favorites = () => (
         </div>
       </Link>
       <Link
-        to="/book"
+        to="/livre"
         key="3"
       >
         <div className="favorites-book">

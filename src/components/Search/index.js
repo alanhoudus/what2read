@@ -18,7 +18,7 @@ const Search = () => (
     <div className="search-books">
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="1"
         >
           <h3 className="search-book--title">Lire J. R. R. Tolkien</h3>
@@ -27,7 +27,7 @@ const Search = () => (
       </div>
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="2"
         >
           <h3 className="search-book--title">Lettres</h3>
@@ -36,7 +36,7 @@ const Search = () => (
       </div>
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="3"
         >
           <h3 className="search-book--title">Logos et langage dans le monde de Tolkien</h3>
@@ -45,7 +45,7 @@ const Search = () => (
       </div>
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="4"
         >
           <h3 className="search-book--title">Lire J. R. R. Tolkien</h3>
@@ -54,7 +54,7 @@ const Search = () => (
       </div>
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="5"
         >
           <h3 className="search-book--title">Lettres</h3>
@@ -63,7 +63,7 @@ const Search = () => (
       </div>
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="6"
         >
           <h3 className="search-book--title">Logos et langage dans le monde de Tolkien</h3>
@@ -72,7 +72,7 @@ const Search = () => (
       </div>
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="7"
         >
           <h3 className="search-book--title">Lire J. R. R. Tolkien</h3>
@@ -81,7 +81,7 @@ const Search = () => (
       </div>
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="8"
         >
           <h3 className="search-book--title">Lettres</h3>
@@ -90,7 +90,7 @@ const Search = () => (
       </div>
       <div className="search-book">
         <Link
-          to="/book"
+          to="/livre"
           key="9"
         >
           <h3 className="search-book--title">Logos et langage dans le monde de Tolkien</h3>
