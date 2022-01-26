@@ -1,0 +1,179 @@
+@use '../../styles/vars';
+
+// responsive mobile first
+@media (max-width: 768px) {
+  .readings {
+    color: vars.$fontColor;
+    font-size: vars.$fontSize;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-buttonRead {
+      border-radius: 4px;
+      color: vars.$secondaryColor;
+      background-color: vars.$fourthColor;
+      margin-bottom: vars.$gutter;
+      border-radius: 30px;
+      font-size: 1em;
+      padding: 10px;
+    }
+
+    &-title {
+      font-size: 1.5em;
+      color: vars.$thirdColor;
+      font-weight: bold;
+      margin-bottom: calc(vars.$gutter * 1.5);
+    }
+
+    &-book {
+      width:100%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: calc(vars.$gutter * 1);
+
+      &--cover {
+        position: relative;
+
+        &-img {
+          width: 100%;
+          padding: 1.5em;
+        }
+
+        & > .favorited {
+          top: 1.5em;
+          right: 1.5em;
+          position: absolute;
+        }
+
+        & > .review-done {
+          top: 1.5em;
+          right: 3em;
+          position: absolute;
+        }
+      }
+
+      &--title {
+        text-align: center;
+        padding-top: 1em;
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+      &--subtitle {
+        text-align: center;
+        padding-top: 0.5em;
+      }
+    }
+    // hide the last 3 books on mobile, its just for the static integration
+    &-book:nth-last-child(-n+6) {
+      display: none;
+    }
+
+    &-book:hover {
+      cursor: pointer;
+    }
+
+    &-showMore {
+      background-color: vars.$mainColor;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      color: vars.$fontColor;
+      font-size: 1em;
+      width: 35%;
+      height: 2em;
+      border: none;
+      border-radius: 5px;
+      margin-top: calc(vars.$gutter * 2);
+    }
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .readings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: vars.$fontColor;
+
+    &-title {
+      font-size: 1.5em;
+      color: vars.$thirdColor;
+      font-weight: bold;
+      margin-bottom: calc(vars.$gutter * 1.5);
+    }
+    // show the last 6 books on desktop, its just for the static integration
+    &-book:nth-last-child(-n+6) {
+      display: block;      
+    }
+
+    &-buttonRead {
+      border-radius: 4px;
+      color: vars.$secondaryColor;
+      background-color: vars.$fourthColor;
+      margin-bottom: vars.$gutter;
+      border-radius: 30px;
+      font-size: 1em;
+      padding: 10px;
+    }
+    
+    &-books {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &-book {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      flex-basis: 25%;
+      margin: calc(vars.$gutter * 1);
+
+      &--cover {
+        position: relative;
+
+        &-img {
+          width: 100%;
+          padding: 1.5em;
+        }
+          
+        & > .favorited {
+          top: 1.5em;
+          right: 1.5em;
+          position: absolute;
+        }
+
+        & > .review-done {
+          top: 1.5em;
+          right: 3em;
+          position: absolute;
+        }
+      }
+
+      &--title {
+        text-align: center;
+        padding-top: 1em;
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+      &--subtitle {
+        text-align: center;
+        padding-top: 0.5em;
+      }
+    }
+    &-book:hover {
+      cursor: pointer;
+    }
+
+
+
+    &-showMore {
+      background-color: vars.$mainColor;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      color: vars.$fontColor;
+      font-size: 1em;
+      width: 35%;
+      height: 2em;
+      border: none;
+      border-radius: 5px;
+      margin-top: calc(vars.$gutter * 3);
+    }
+  }
+}
