@@ -9,8 +9,8 @@ const SearchItem = ({ searchedBook }) => (
       to="/livre"
       key={searchedBook.key}
     >
-      <h3 className="search-book--title">{searchedBook.title}</h3>
       <img className="search-img" src={searchedBook.cover} alt="title" />
+      <h3 className="search-book--title">{searchedBook.title}</h3>
     </Link>
   </div>
 );
