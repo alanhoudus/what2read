@@ -3,14 +3,14 @@ import MyReview from './MyReview';
 
 const MyReviewsList = ({ myReviewsList }) => (
   myReviewsList.map((myReview) => (
-    <MyReview key={myReview.title} myReview={myReview} />
+    <MyReview key={myReview.cover} myReview={myReview} />
   ))
 );
 
 MyReviewsList.propTypes = {
   myReviewsList: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
+      cover: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
 };
