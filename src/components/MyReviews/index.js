@@ -1,33 +1,30 @@
 // == Import : local
-import { Trash, Edit } from 'react-feather';
+// hooks
+import { useState } from 'react';
+// mock data
+import { MY_REVIEWS_LIST, MY_REVIEWS_PRESENTATION } from '../../data/myreviews';
+// components
+import MyReviewsList from './MyReviewsList';
 
 import './myreviews.scss';
 
 // == Composant
-const Reviews = () => (
-  <div className="reviews">
-    <h1>Mes reviews</h1>
-    <div className="reviews-wrapper">
-      <div className="reviews-wrapper--singlereview">
-        <img src="https://products-images.di-static.com/image/suzanne-collins-hunger-games-tome-1/9782266260770-475x500-1.webp" alt="Couverture de la review" />
-        <div className="reviews-wrapper--singlereview-infos">
-          <h2>Hunger Games</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Proin accumsan nisi nec leo aliquet dictum. Praesent cursus, nisi in condimentum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Proin accumsan nisi nec leo aliquet dictum. Praesent cursus, nisi in condimentum.
-          </p>
-          <div className="reviews-wrapper--singlereview-infos--buttons">
-            <Trash color="red" />
-            <Edit color="white" />
-          </div>
-        </div>
+const Reviews = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [myReviewsList, setMyReviewsList] = useState(MY_REVIEWS_LIST);
+  // eslint-disable-next-line no-unused-vars
+  const [myReviewsPresentation, setMyReviewsPresentation] = useState(MY_REVIEWS_PRESENTATION);
+
+  return (
+    <div className="reviews">
+      <h1>{myReviewsPresentation.title}</h1>
+      <div className="reviews-wrapper">
+        <MyReviewsList myReviewsList={myReviewsList} />
       </div>
     </div>
-  </div>
 
-);
+  );
+};
 
 // == Export
 export default Reviews;
