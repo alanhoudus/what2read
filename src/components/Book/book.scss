@@ -45,12 +45,10 @@
       }
     }
     &-lign {
-      width: 70%;
+      margin: auto;
+      width: 50%;
       height: 2px;
-      background-color: vars.$thirdColor;
-      margin-top: calc(vars.$gutter * 1);
-      margin-bottom: calc(vars.$gutter * 2);
-      display: block;
+      background-color: black;
     }
   }
 }

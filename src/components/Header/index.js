@@ -1,12 +1,12 @@
 // == Import
 // routes
 import { NavLink } from 'react-router-dom';
-
-// selectors
-import { mapProfileNav, mapRegularNav } from '../../selectors/navigation';
+// hooks
+import { useState } from 'react';
 
 // components
 import Field from '../Field';
+import LinkLists from './LinkLists';
 
 // assets
 import w2rlogo from '../../assets/images/w2rlogo.png';
@@ -14,10 +14,15 @@ import w2rlogoDesktop from '../../assets/images/w2rlogodesktop.png';
 import profileicon from '../../assets/images/profileicon.png';
 // scss
 import './header.scss';
+import { PROFILE_NAV, REGULAR_NAV } from '../../data/nav';
 
 // == Composant
 const Header = () => {
-  console.log('');
+  // eslint-disable-next-line no-unused-vars
+  const [links, setLinks] = useState(PROFILE_NAV);
+  // eslint-disable-next-line no-unused-vars
+  const [navLinks, setNavLinks] = useState(REGULAR_NAV);
+
   return (
     <header className="header">
       <nav className="header-nav">
@@ -34,7 +39,7 @@ const Header = () => {
         <div className="header-menus">
           <img alt="profileicon" src={profileicon} className="header-logo profile" />
           <ul className="header-profilemenu">
-            {mapProfileNav()}
+            <LinkLists list={links} />
           </ul>
           <div className="header-burgermenu--icon">
             <div />
@@ -42,8 +47,14 @@ const Header = () => {
             <div />
           </div>
           <ul className="header-burgermenu">
-            {mapRegularNav()}
-            <li><Field type="text" className="header-bugermenu--quicksearch" placeholder="Recherche rapide" /></li>
+            <LinkLists list={navLinks} />
+            <li>
+              <Field
+                type="text"
+                className="header-burgermenu--quicksearch"
+                placeholder="Recherche rapide"
+              />
+            </li>
           </ul>
         </div>
       </nav>

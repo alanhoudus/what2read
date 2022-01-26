@@ -86,11 +86,6 @@
   margin: 0 calc(vars.$gutter * 2);
   border-radius: 10px;
 
-  
-  &-nav {
-
-  }
-
   &-logo {
 
     &>h1 {
@@ -104,7 +99,7 @@
       height: auto;
       margin: calc(vars.$gutter * 1.5);
     }
-     // logo home short name hide en desktop
+     // logo home short name hide on desktop
     &.homeMobile {
       display: none;
     }
@@ -127,35 +122,50 @@
     }
     &--nav:hover {
       color: vars.$thirdColor;
+      cursor: pointer;
     }
+    // & > li {
+    //   padding: calc(vars.$gutter / 5);
+    //   color: vars.$fontColor;
+    // }
+    // & > li:hover {
+    //   color: vars.$thirdColor;
+    // }
   }
 
   // Nav burger menu
-  &-burgermenu {
+  &-menu {
 
-    &--nav {
+    &--list {
       padding: 0.2em;
       color: vars.$fontColor;
+
+      &-contact {
+        position: absolute;
+        bottom: 5%;
+        color: vars.$fontColor;
+      }
+
+      &-contact:hover {
+        color: vars.$thirdColor;
+      }
     }
 
-    &--nav:hover {
+    &--list:hover {
       color: vars.$thirdColor;
     }
+  
+  }
 
-    input,&--quicksearch {
-      background-color: vars.$mainColor;
-      color: vars.$fontColor;
-      font-size: calc(vars.$fontSize * 1);
-      margin-top: calc(vars.$gutter / 2);
-      width: 90%;
-      height: 2em;
-      border: none;
-      border-radius: 5px;
-    }
-    
-    &--icon > div {
-
-    }
+  &-burgermenu--quicksearch {
+    background-color: vars.$mainColor;
+    color: vars.$fontColor;
+    font-size: calc(vars.$fontSize * 1);
+    margin-top: calc(vars.$gutter / 2);
+    width: 90%;
+    height: 2em;
+    border: none;
+    border-radius: 5px;
   }
 }
  }
