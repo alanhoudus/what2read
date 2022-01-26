@@ -1,0 +1,104 @@
+@use '../../styles/vars';
+
+// responsive mobile first
+@media (max-width: 768px) {
+  .logIn {
+    color: vars.$fontColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &-input {
+      width: 60%;
+      font-size: 1.2em;
+    }
+    &-title {
+      font-size: 1.5em;
+      color: vars.$thirdColor;
+      font-weight: bold;
+      margin-bottom: calc(vars.$gutter * 1);
+      margin-top: calc(vars.$gutter * 1.5);
+    }
+    &-lign {
+      width: 70%;
+      height: 2px;
+      background-color: vars.$thirdColor;
+      margin-bottom: calc(vars.$gutter * 2);
+    }
+  
+    &-field {
+      background-color: vars.$secondaryColor;
+      color: vars.$fontColor;
+      font-size: 1em;
+      margin-top: calc(vars.$gutter / 3);
+      width: 100%;
+      height: 2em;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: calc(vars.$gutter * 2);
+      padding-left: calc(vars.$gutter * 0.5);
+    }
+  
+    &-button {
+      background-color: vars.$secondaryColor;
+      color: vars.$fontColor;
+      font-size: 1em;
+      width: 100%;
+      height: 2em;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: calc(vars.$gutter * 1);
+    }
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .logIn {
+    color: vars.$fontColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-input {
+      width: 60%;
+      font-size: 1.2em;
+    }
+    &-title {
+      font-size: 1.5em;
+      color: vars.$thirdColor;
+      font-weight: bold;
+      margin-bottom: calc(vars.$gutter * 1);
+      margin-top: calc(vars.$gutter * 1.5);
+    }
+    &-lign {
+      width: 70%;
+      height: 2px;
+      background-color: vars.$thirdColor;
+      margin-bottom: calc(vars.$gutter * 2);
+    }
+  
+    &-field {
+      background-color: vars.$secondaryColor;
+      color: vars.$fontColor;
+      font-size: 1em;
+      margin-top: calc(vars.$gutter / 3);
+      width: 90%;
+      height: 2em;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: calc(vars.$gutter * 3);
+      padding-left: calc(vars.$gutter * 0.5);
+    }
+  
+    &-button {
+      background-color: vars.$secondaryColor;
+      color: vars.$fontColor;
+      font-size: 1em;
+      width: 35%;
+      height: 2em;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: calc(vars.$gutter * 1);
+    }
+  }
+}
