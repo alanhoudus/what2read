@@ -10,8 +10,8 @@ const SEARCHED_BOOKS_LIST = [
     key: '2',
   },
   {
-    title: 'Logos et langage dans le monde de Tolkien',
-    cover: 'https://products-images.di-static.com/image/verlyn-flieger-une-lumiere-eclatee/9782220066325-475x500-1.webp',
+    title: 'Le Seigneur des Anneaux',
+    cover: 'https://products-images.di-static.com/image/john-ronald-reuel-tolkien-le-seigneur-des-anneaux-integrale/9782266286268-475x500-1.webp',
     key: '3',
   },
   {
@@ -25,8 +25,8 @@ const SEARCHED_BOOKS_LIST = [
     key: '5',
   },
   {
-    title: 'Logos et langage dans le monde de Tolkien',
-    cover: 'https://products-images.di-static.com/image/verlyn-flieger-une-lumiere-eclatee/9782220066325-475x500-1.webp',
+    title: 'Le Seigneur des Anneaux',
+    cover: 'https://products-images.di-static.com/image/john-ronald-reuel-tolkien-le-seigneur-des-anneaux-integrale/9782266286268-475x500-1.webp',
     key: '6',
   },
   {
@@ -40,8 +40,8 @@ const SEARCHED_BOOKS_LIST = [
     key: '8',
   },
   {
-    title: 'Logos et langage dans le monde de Tolkien',
-    cover: 'https://products-images.di-static.com/image/verlyn-flieger-une-lumiere-eclatee/9782220066325-475x500-1.webp',
+    title: 'Le Seigneur des Anneaux',
+    cover: 'https://products-images.di-static.com/image/john-ronald-reuel-tolkien-le-seigneur-des-anneaux-integrale/9782266286268-475x500-1.webp',
     key: '9',
   },
 ];
