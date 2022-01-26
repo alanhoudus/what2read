@@ -49,7 +49,7 @@
 @media (min-width: 768px) { 
 
   .suggestedbook {
-    margin-top: calc(vars.$gutter * 4);
+    // margin-top: calc(vars.$gutter * 4);
 
     &-infos {
       display: grid;
@@ -60,7 +60,8 @@
     &-title {
       color: vars.$fontColor;
       font-size: calc(vars.$fontSize * 2);
-      margin: calc(vars.$gutter * 1) 0;
+      margin-bottom: calc(vars.$gutter * 1);
+      padding-top: calc(vars.$gutter * 1);
     }
 
     &-booktitle {
