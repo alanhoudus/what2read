@@ -14,7 +14,6 @@ const LogIn = () => {
   const nickname = useSelector((state) => state.user.nickname);
   const password = useSelector((state) => state.user.password);
   const dispatch = useDispatch();
-  const isLogged = useSelector((state) => state.user.logged);
 
   return (
     <div className="logIn">
@@ -28,7 +27,6 @@ const LogIn = () => {
             dispatch(handleLogin());
           }}
         >
-          { isLogged && <h1>Bienvenue</h1>}
           <Field
             type="text"
             className="logIn-field logIn-field--name"

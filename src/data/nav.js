@@ -1,4 +1,4 @@
-export const PROFILE_NAV = [
+export const LOGGED_OUT_USER_NAV = [
   {
     name: 'Se connecter',
     key: 'connection',
@@ -9,6 +9,9 @@ export const PROFILE_NAV = [
     key: 'inscription',
     to: '/inscription',
   },
+];
+
+export const LOGGED_IN_USER_PROFILE_NAV = [
   {
     name: 'Mon profil',
     key: 'profil',
@@ -28,6 +31,11 @@ export const PROFILE_NAV = [
     name: 'Mes favoris',
     key: 'mes-favoris',
     to: '/profil/favoris',
+  },
+  {
+    name: 'Se déconnecter',
+    key: 'deconnexion',
+    to: '/',
   },
 ];
 
