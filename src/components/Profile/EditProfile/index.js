@@ -7,7 +7,7 @@ import profileicon from '../../../assets/images/profileicon.png';
 const EditProfile = () => (
   <div>
     <div className="editprofile">
-      <img alt="editprofileicon" src={profileicon} className="editprofile-logo" />
+      {/* <img alt="editprofileicon" src={profileicon} className="editprofile-logo" /> */}
       <div className="editprofile-contentGroup">
         <h2 className="editprofile-content title">Mon profil</h2>
         <Field

@@ -1,14 +1,14 @@
 // import components
 import Field from '../Field';
 // import asset
-import profilLogo from '../../assets/images/profileicon.png';
+// import profilLogo from '../../assets/images/profileicon.png';
 // import scss
 import './registrationReview.scss';
 
 const RegistrationReview = () => (
 
   <div className="addReview">
-    <img src={profilLogo} alt="profile" className="addReview-logo" />
+    {/* <img src={profilLogo} alt="profile" className="addReview-logo" /> */}
     <h2 className="addReview-title desktop">Formulaire d'ajout d'une review</h2>
     <h2 className="addReview-title mobile">Ecrire une review</h2>
     <form className="addReview-form">
