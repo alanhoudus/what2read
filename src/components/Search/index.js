@@ -17,7 +17,13 @@ const Search = () => {
   return (
     <div className="search">
       <div className="search-input">
-        <Field type="text" className="search-input--field" placeholder="Tolkien" />
+        <Field
+          type="text"
+          className="search-input--field"
+          placeholder="Tolkien"
+          id="search"
+          name="search"
+        />
         <button type="submit" className="search-input--submit">
           <SearchIcon color="white" size="20" />
         </button>
