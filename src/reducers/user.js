@@ -1,4 +1,4 @@
-import { UPDATE_LOGIN_VALUE } from 'src/actions/user';
+import { UPDATE_LOGIN_VALUE, SAVE_USER_DATA, LOGGING_ERROR } from 'src/actions/user';
 
 export const initialState = {
   logged: false,
@@ -8,6 +8,7 @@ export const initialState = {
   password: '',
   confirmationPassword: '',
   token: '',
+  loggingError: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -16,6 +17,22 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.identifier]: action.newValue,
+      };
+    case SAVE_USER_DATA:
+      return {
+        ...state,
+        logged: action.isLogged,
+        token: action.token,
+        // sécurité : on en profite pour effacer les identifiants dans le state
+        email: '',
+        nickname: '',
+        password: '',
+        loggingError: false,
+      };
+    case LOGGING_ERROR:
+      return {
+        ...state,
+        loggingError: true,
       };
     default:
       return state;
