@@ -33,6 +33,7 @@ const LogIn = () => {
             placeholder="User126"
             value={nickname}
             name="nickname"
+            id="nickname"
             onChange={(newValue) => {
               const action = updateLoginValue('nickname', newValue);
               dispatch(action);
@@ -42,6 +43,7 @@ const LogIn = () => {
           <Field
             type="password"
             name="password"
+            id="password"
             className="logIn-field"
             placeholder="*******"
             value={password}

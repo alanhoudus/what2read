@@ -16,11 +16,11 @@ import RegistrationReview from '../RegistrationReview';
 import Search from '../Search';
 import Readings from '../Readings';
 import Favorites from '../Favorites';
-import NotFound from '../NotFound';
+import NotFound from '../Error';
 import Reviews from '../MyReviews';
 import EditProfile from '../Profile/EditProfile';
 import Suggestions from '../Suggestions';
-import LogoProfil from '../LogoProfil';
+import LogoProfil from '../Profile/LogoProfil';
 
 import LogIn from '../LogIn';
 // scss
