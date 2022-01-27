@@ -62,6 +62,7 @@ const Header = () => {
                 type="text"
                 className="header-burgermenu--quicksearch"
                 placeholder="Recherche rapide"
+                name="quicksearch"
               />
             </li>
           </ul>

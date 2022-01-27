@@ -13,6 +13,9 @@ const EditProfile = () => (
         <Field
           className="editprofile-content input nickname"
           value="Pseudo"
+          id="nickname"
+          name="nickname"
+          type="text"
         />
         <Edit2 />
         <img alt="editprofileicon" src={profileicon} className="editprofile-content avatar" />
@@ -34,6 +37,8 @@ const EditProfile = () => (
             className="editprofile-content input mail"
             value="mon.mail@gmail.com"
             type="mail"
+            id="mail"
+            name="mail"
           />
           <Edit2 />
         </div>

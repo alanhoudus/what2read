@@ -23,7 +23,13 @@ const Favorites = () => {
         <p>{favoritesPresentation.presentation}</p>
       </div>
       <div className="favorites-separator" />
-      <Field placeholder="Rechercher dans mes favoris" className="favorites-search" type="text" />
+      <Field
+        placeholder="Rechercher dans mes favoris"
+        className="favorites-search"
+        type="text"
+        name="quicksearch favorite"
+        id="quicksearch favorite"
+      />
       <div className="favorites-books">
         <Favorite favoritesList={favoritesList} />
       </div>

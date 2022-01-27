@@ -43,17 +43,20 @@ const Field = ({
 Field.defaultProps = {
   id: '',
   label: '',
+  onChange: null,
+  value: '',
+  placeholder: '',
 };
 
 Field.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
-  placeholder: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   className: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   name: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
 
 // == Export
