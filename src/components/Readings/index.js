@@ -21,7 +21,7 @@ const Readings = () => {
       <div className="readings-books">
         <ReadingsList readingsList={readingsList} />
       </div>
-      <button type="button" className="readings-showMore">Voir plus</button>
+      <button type="button" className="readings-showmore">Voir plus</button>
     </div>
   );
 };
