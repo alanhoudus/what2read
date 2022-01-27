@@ -1,0 +1,13 @@
+@use "../../styles/vars";
+
+.app {
+  width: 100vw;
+  height: 100vh;
+
+
+@media (min-width: 768px) { 
+  &-wrapper {
+    padding-left: 20%;
+  }
+}
+}
