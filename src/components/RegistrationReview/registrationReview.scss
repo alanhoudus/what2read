@@ -103,12 +103,12 @@
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
     }
-    &-logo {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-      width: 5%;
-    }
+    // &-logo {
+    //   position: absolute;
+    //   top: 1em;
+    //   right: 1em;
+    //   width: 5%;
+    // }
     &-form {
       margin-right: calc(vars.$gutter * 2);
       > img {

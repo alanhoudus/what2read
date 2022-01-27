@@ -6,7 +6,7 @@ import profileicon from '../../assets/images/profileicon.png';
 const Profile = () => (
   <div>
     <div className="profile">
-      <img alt="profileicon" src={profileicon} className="profile-logo" />
+      {/* <img alt="profileicon" src={profileicon} className="profile-logo" /> */}
       <div className="profile-contentGroup">
         <h2 className="profile-content title">Mon profil</h2>
         <h3 className="profile-content subtitle">Pseudo

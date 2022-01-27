@@ -77,16 +77,16 @@
   font-size: calc(vars.$fontSize * 1.3);
   color: vars.$fontColor;
 
-      &-logo {
-        width: 5%;
-        height: auto;
-        position: absolute;
-        top: 2%;
-        right: 2%;
-        background-color: #fff;
-        border-radius: 50%;
-        padding: calc(vars.$gutter / 2);
-      }
+      // &-logo {
+      //   width: 5%;
+      //   height: auto;
+      //   position: absolute;
+      //   top: 2%;
+      //   right: 2%;
+      //   background-color: #fff;
+      //   border-radius: 50%;
+      //   padding: calc(vars.$gutter / 2);
+      // }
 
       &-contentGroup {
         margin-left: calc(vars.$gutter * 1.5);

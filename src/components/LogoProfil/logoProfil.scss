@@ -1,0 +1,32 @@
+// responsive mobile first
+@media (max-width: 768px) {
+  .logoProfil {
+    display: none;
+    &-img {
+      display: none;
+    }
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .logoProfil {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-img {
+      width: 60%;
+    }
+  }
+}
+
+
+
+  
