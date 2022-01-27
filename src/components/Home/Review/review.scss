@@ -3,13 +3,15 @@
 @media (max-width: 768px) { 
   .left {
     transform: rotate(180deg);
-    float: left;
-    margin-top: 140px;
+    position: absolute;
+    left: 0%;
+    top: 240%;
   }
 
   .right {
-    float: right;
-    margin-top: 140px;
+    position: absolute;
+    left: 85%;
+    top: 240%;
   }
 
   .review {
@@ -23,8 +25,9 @@
     }
 
     &-post {
-      margin: calc(vars.$gutter * 6 );
-      padding: calc(vars.$gutter * 2);
+      margin: calc(vars.$gutter * 4 );
+      padding: calc(vars.$gutter * 1);
+      height: 250px;
       box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     }
 
