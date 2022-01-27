@@ -2,6 +2,11 @@ export const UPDATE_LOGIN_VALUE = 'UPDATE_LOGIN_VALUE';
 export const HANDLE_LOGIN = 'HANDLE_LOGIN';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const LOGGING_ERROR = 'LOGGING_ERROR';
+export const LOG_OUT = 'LOG_OUT';
+
+export const logOut = () => ({
+  type: LOG_OUT,
+});
 
 export const updateLoginValue = (identifier, newValue) => ({
   type: UPDATE_LOGIN_VALUE,

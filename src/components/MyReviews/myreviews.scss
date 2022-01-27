@@ -6,12 +6,13 @@
 
     & > h1 {
       font-size: calc(vars.$fontSize * 2);
+      padding-left: calc(vars.$gutter * 1);
     }
 
     &-wrapper {
 
       &--singlereview {
-        color: vars.$fontColor;
+        color: vars.$fontParagraph;
         margin-top: calc(vars.$gutter * 2);
         margin-bottom: calc(vars.$gutter * 5);
         padding: calc(vars.$gutter * 2);
@@ -23,12 +24,12 @@
             font-size: calc(vars.$fontSize * 1.5);
             text-align: left;
             position: relative;
+            color: vars.$fontColor;
           }
   
           & > p {
             margin-top: calc(vars.$gutter *1);
             text-align: left;
-            color: black;
           }
 
           &--buttons {
@@ -62,7 +63,6 @@
         display: grid;
         grid-template-columns: repeat(3, 33%);
         grid-template-rows: repeat(7, 14%);
-        color: vars.$fontColor;
         margin-top: calc(vars.$gutter * 2);
         margin-bottom: calc(vars.$gutter * 5);
         padding: calc(vars.$gutter * 2);
@@ -83,13 +83,13 @@
           & > h2 {
             font-size: calc(vars.$fontSize * 1.5);
             text-align: left;
+            color: vars.$fontColor;
             grid-row: 1 / 2;
           }
   
           & > p {
             margin-top: calc(vars.$gutter *1);
             text-align: left;
-            color: black;
             grid-row: 2 / 3;
           }
         }

@@ -1,14 +1,19 @@
-import { UPDATE_LOGIN_VALUE, SAVE_USER_DATA, LOGGING_ERROR } from 'src/actions/user';
+import {
+  UPDATE_LOGIN_VALUE,
+  SAVE_USER_DATA,
+  LOGGING_ERROR,
+  LOG_OUT,
+} from 'src/actions/user';
 
 export const initialState = {
-  logged: false,
+  logged: true,
   nickname: '',
   email: '',
   description: '',
   password: '',
   confirmationPassword: '',
   token: '',
-  loggingError: '',
+  loggingError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -33,6 +38,17 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         loggingError: true,
+      };
+    case LOG_OUT:
+      return {
+        ...state,
+        logged: false,
+        nickname: '',
+        email: '',
+        description: '',
+        password: '',
+        confirmationPassword: '',
+        token: '',
       };
     default:
       return state;

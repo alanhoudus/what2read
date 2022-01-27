@@ -3,6 +3,7 @@
 import { NavLink } from 'react-router-dom';
 // hooks
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 // components
 import Field from '../Field';
@@ -14,14 +15,17 @@ import w2rlogoDesktop from '../../assets/images/w2rlogodesktop.png';
 import profileicon from '../../assets/images/profileicon.png';
 // scss
 import './header.scss';
-import { PROFILE_NAV, REGULAR_NAV } from '../../data/nav';
+import { LOGGED_OUT_USER_NAV, LOGGED_IN_USER_PROFILE_NAV, REGULAR_NAV } from '../../data/nav';
 
 // == Composant
 const Header = () => {
   // eslint-disable-next-line no-unused-vars
-  const [links, setLinks] = useState(PROFILE_NAV);
+  const [loggedInNav, setloggedInNav] = useState(LOGGED_IN_USER_PROFILE_NAV);
   // eslint-disable-next-line no-unused-vars
-  const [navLinks, setNavLinks] = useState(REGULAR_NAV);
+  const [loggedOutNav, setLoggedOutNav] = useState(LOGGED_OUT_USER_NAV);
+  // eslint-disable-next-line no-unused-vars
+  const [regularNavLinks, setRegularNavLinks] = useState(REGULAR_NAV);
+  const isLogged = useSelector((state) => state.user.logged);
 
   return (
     <header className="header">
@@ -39,7 +43,12 @@ const Header = () => {
         <div className="header-menus">
           <img alt="profileicon" src={profileicon} className="header-logo profile" />
           <ul className="header-profilemenu">
-            <LinkLists list={links} />
+            { !isLogged && (
+              <LinkLists list={loggedOutNav} />
+            )}
+            { isLogged && (
+            <LinkLists list={loggedInNav} />
+            )}
           </ul>
           <div className="header-burgermenu--icon">
             <div />
@@ -47,7 +56,7 @@ const Header = () => {
             <div />
           </div>
           <ul className="header-burgermenu">
-            <LinkLists list={navLinks} />
+            <LinkLists list={regularNavLinks} />
             <li>
               <Field
                 type="text"
