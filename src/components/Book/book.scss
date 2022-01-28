@@ -3,7 +3,6 @@
 // responsive mobile first
 @media (max-width: 768px) {
   .book {
-    color: vars.$fontColor;
     display: flex;
 
     &-user-profile {
@@ -59,7 +58,6 @@
     // to have the content not hidden by the nav menu on desktop
     padding-top: 1em;
     font-size: 1.3em;
-    color: vars.$fontColor;
 
     &-title {
     margin-left: 8%;

@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 import './profile.scss';
 import profileicon from '../../assets/images/profileicon.png';
 
 const Profile = () => (
   <div>
     <div className="profile">
-      <img alt="profileicon" src={profileicon} className="profile-logo" />
+      {/* <img alt="profileicon" src={profileicon} className="profile-logo" /> */}
       <div className="profile-contentGroup">
         <h2 className="profile-content title">Mon profil</h2>
         <h3 className="profile-content subtitle">Pseudo
@@ -19,7 +21,12 @@ const Profile = () => (
           dolor blanditiis officia. Fuga, porro odit expedita
         </p>
         <p className="profile-content mail">mon.mail@gmail.com</p>
-        <button className="profile-content button-edit" type="button">Modifier</button>
+        <Link
+          to="/profil/edition"
+          key="1"
+        >
+          <button className="profile-content button-edit" type="button">Modifier</button>
+        </Link>
         <button className="profile-content button-delete" type="button">Supprimer le compte</button>
       </div>
     </div>

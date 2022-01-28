@@ -15,52 +15,55 @@
       background-color: vars.$fourthColor;
       margin-bottom: vars.$gutter;
       border-radius: 30px;
-      font-size: 1em;
+      border: none;
+      font-size: calc(vars.$fontSize * 1);
       padding: 10px;
     }
 
     &-title {
-      font-size: 1.5em;
+      font-size: calc(vars.$fontSize * 2);
       color: vars.$thirdColor;
       font-weight: bold;
       margin-bottom: calc(vars.$gutter * 1.5);
+      padding-top: calc(vars.$gutter * 2);
     }
 
     &-book {
       width:100%;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       margin-bottom: calc(vars.$gutter * 1);
 
       &--cover {
         position: relative;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
 
         &-img {
           width: 100%;
-          padding: 1.5em;
         }
 
         & > .favorited {
-          top: 1.5em;
-          right: 1.5em;
+          top: 1%;
+          right: 1%;
           position: absolute;
         }
 
         & > .review-done {
-          top: 1.5em;
-          right: 3em;
+          top: 1%;
+          right: 11%;
           position: absolute;
         }
       }
 
       &--title {
         text-align: center;
-        padding-top: 1em;
-        font-size: 1.3em;
+        padding-top: calc(vars.$gutter * 1);
+        font-size: calc(vars.$fontSize * 1);
         font-weight: bold;
       }
       &--subtitle {
         text-align: center;
-        padding-top: 0.5em;
+        padding-top: calc(vars.$gutter / 2);
+        margin-bottom: calc(vars.$gutter * 3);
       }
     }
     // hide the last 3 books on mobile, its just for the static integration
@@ -72,7 +75,7 @@
       cursor: pointer;
     }
 
-    &-showMore {
+    &-showmore {
       background-color: vars.$mainColor;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       color: vars.$fontColor;
@@ -91,13 +94,14 @@
   .readings {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     color: vars.$fontColor;
 
     &-title {
-      font-size: 1.5em;
+      font-size: calc(vars.$fontSize * 2);
       color: vars.$thirdColor;
       font-weight: bold;
+      padding-top: calc(vars.$gutter * 2);
       margin-bottom: calc(vars.$gutter * 1.5);
     }
     // show the last 6 books on desktop, its just for the static integration
@@ -106,12 +110,13 @@
     }
 
     &-buttonRead {
-      border-radius: 4px;
       color: vars.$secondaryColor;
       background-color: vars.$fourthColor;
-      margin-bottom: vars.$gutter;
+      margin: auto;
       border-radius: 30px;
-      font-size: 1em;
+      border: none;
+      width: 30%;
+      font-size: calc(vars.$fontSize * 1);;
       padding: 10px;
     }
     
@@ -122,40 +127,40 @@
     }
 
     &-book {
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       flex-basis: 25%;
       margin: calc(vars.$gutter * 1);
 
       &--cover {
         position: relative;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
         &-img {
           width: 100%;
-          padding: 1.5em;
         }
           
         & > .favorited {
-          top: 1.5em;
-          right: 1.5em;
+          top: 1%;
+          right: 1%;
           position: absolute;
         }
 
         & > .review-done {
-          top: 1.5em;
-          right: 3em;
+          top: 1%;
+          right: 11%;
           position: absolute;
         }
       }
 
       &--title {
         text-align: center;
-        padding-top: 1em;
-        font-size: 1.3em;
+        padding-top: calc(vars.$gutter * 1);;
+        font-size: calc(vars.$fontSize * 1.3);;
         font-weight: bold;
       }
       &--subtitle {
         text-align: center;
-        padding-top: 0.5em;
+        padding-top: calc(vars.$gutter / 2);
+        margin-bottom: calc(vars.$gutter * 2);;
       }
     }
     &-book:hover {
@@ -164,16 +169,16 @@
 
 
 
-    &-showMore {
+    &-showmore {
       background-color: vars.$mainColor;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
       color: vars.$fontColor;
-      font-size: 1em;
+      font-size: calc(vars.$fontSize * 1);
       width: 35%;
       height: 2em;
       border: none;
       border-radius: 5px;
-      margin-top: calc(vars.$gutter * 3);
+      margin: auto;
     }
   }
 }

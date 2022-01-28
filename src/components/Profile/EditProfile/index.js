@@ -1,38 +1,58 @@
 import './editprofile.scss';
+import { Link } from 'react-router-dom';
+import Field from 'src/components/Field';
 import { Upload, Edit2 } from 'react-feather';
 import profileicon from '../../../assets/images/profileicon.png';
 
 const EditProfile = () => (
   <div>
-    <div className="profile">
-      <img alt="profileicon" src={profileicon} className="profile-logo" />
-      <div className="profile-contentGroup">
-        <h2 className="profile-content title">Mon profil</h2>
-        <h3 className="profile-content subtitle">Pseudo
-          <button type="button" className="profile-content-button edit-name">
-            <Edit2 />
-          </button>
-        </h3>
+    <div className="editprofile">
+      {/* <img alt="editprofileicon" src={profileicon} className="editprofile-logo" /> */}
+      <div className="editprofile-contentGroup">
+        <h2 className="editprofile-content title">Mon profil</h2>
+        <Field
+          className="editprofile-content input nickname"
+          value="Pseudo"
+          id="nickname"
+          name="nickname"
+          type="text"
+        />
+        <Edit2 />
+        <img alt="editprofileicon" src={profileicon} className="editprofile-content avatar" />
+        <Upload />
 
-        <img alt="profileicon" src={profileicon} className="profile-content avatar" />
-        <button type="button" className="profile-content-button edit-avatar">
-          <Upload />
-        </button>
-        <div className="profile-content subtitle">Présentation
-          <button type="button" className="profile-content-button edit-description">
-            <Edit2 />
-          </button>
+        <div className="editprofile-content title-description">Présentation
+          <Edit2
+            className="editprofile-content edit-presentation"
+          />
         </div>
-        <p className="profile-content description">
-          Lorem ipsum dolor sit amet, consectetur
+        <textarea
+          className="editprofile-content input description"
+          value="Lorem ipsum dolor sit amet, consectetur
           adipisicing elit. Saepe iurequibusdam suscipit unde, ullam ut aliquam accusamus
-          dolor blanditiis officia. Fuga, porro odit expedita
-        </p>
-        <p className="profile-content mail">mon.mail@gmail.com
-          <button type="button" className="profile-content-button edit-mail">
-            <Edit2 />
+          dolor blanditiis officia. Fuga, porro odit expedita"
+        />
+        <div className="editprofile-content mail">
+          <Field
+            className="editprofile-content input mail"
+            value="mon.mail@gmail.com"
+            type="mail"
+            id="mail"
+            name="mail"
+          />
+          <Edit2 />
+        </div>
+        <Link
+          to="/profil"
+          key="1"
+        >
+          <button
+            className="editprofile-content button"
+            type="button"
+          >
+            Valider les modifications
           </button>
-        </p>
+        </Link>
       </div>
     </div>
   </div>

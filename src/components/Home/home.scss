@@ -3,7 +3,8 @@
 @media (max-width: 768px) { 
   .home {
     margin: calc(vars.$gutter * 2);
-
+    color: vars.$fourthColor;
+    
     &-title {
       color: vars.$fontColor;
       margin-top: calc(vars.$gutter * 2);
