@@ -11,8 +11,8 @@ import { updateLoginValue, handleLogin } from '../../actions/user';
 import './logIn.scss';
 
 const LogIn = () => {
-  const nickname = useSelector((state) => state.user.nickname);
-  const password = useSelector((state) => state.user.password);
+  const email = useSelector((state) => state.userLogin.email);
+  const password = useSelector((state) => state.userLogin.password);
   const dispatch = useDispatch();
 
   return (
@@ -20,7 +20,7 @@ const LogIn = () => {
       <h2 className="logIn-title">Se connecter</h2>
       <div className="logIn-lign" />
       <div className="logIn-input">
-        <h3 className="logIn-input">Pseudo : </h3>
+        <h3 className="logIn-input">Email : </h3>
         <form
           onSubmit={(event) => {
             event.preventDefault();
@@ -30,13 +30,13 @@ const LogIn = () => {
           <Field
             type="text"
             className="logIn-field logIn-field--name"
-            placeholder="User126"
-            value={nickname}
-            name="nickname"
-            id="nickname"
-            onChange={(newValue) => {
-              const action = updateLoginValue('nickname', newValue);
-              dispatch(action);
+            placeholder="dupont@dupont.fr"
+            value={email}
+            name="email"
+            id="email"
+            onChange={(newValue, identifier) => {
+              const actionUpdate = updateLoginValue(identifier, newValue);
+              dispatch(actionUpdate);
             }}
           />
           <h3 className="logIn-input">Mot de passe : </h3>
@@ -47,8 +47,8 @@ const LogIn = () => {
             className="logIn-field"
             placeholder="*******"
             value={password}
-            onChange={(newValue) => {
-              const action = updateLoginValue('password', newValue);
+            onChange={(newValue, identifier) => {
+              const action = updateLoginValue(identifier, newValue);
               dispatch(action);
             }}
           />

@@ -28,7 +28,7 @@ import './app.scss';
 
 // == Composant
 const App = () => {
-  const isLogged = useSelector((state) => state.user.logged);
+  const isLogged = useSelector((state) => state.userLogin.logged);
   return (
     <div className="app">
       <Header />
