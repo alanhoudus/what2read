@@ -1,6 +1,11 @@
 /* eslint-disable no-console */
 import axios from 'axios';
-import { HANDLE_LOGIN, saveUserData, loggingError } from '../actions/user';
+import {
+  HANDLE_LOGIN,
+  saveUserData,
+  loggingError,
+  removeLogInfo,
+} from '../actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
   if (action.type === HANDLE_LOGIN) {
@@ -24,6 +29,11 @@ const authMiddleware = (store) => (next) => (action) => {
       .catch((error) => {
         console.log(error);
         store.dispatch(loggingError());
+      })
+      .finally(() => {
+        window.setTimeout(() => {
+          store.dispatch(removeLogInfo());
+        }, 7000);
       });
   }
 
