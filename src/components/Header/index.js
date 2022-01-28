@@ -60,6 +60,7 @@ const Header = () => {
     };
 
     // -> we attached a click listener to the document
+    // https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
     // https://www.codingdeft.com/posts/react-on-click-outside/
     document.addEventListener('click', checkIfClickedOutside);
 
@@ -104,9 +105,9 @@ const Header = () => {
             className={`header-burgermenu--icon ${isBurgerMenuOpen ? 'active' : ''}`}
             ref={burgerMenu}
           >
-            <div />
-            <div />
-            <div />
+            <div className="header-burgermenu--icon-lign1" />
+            <div className="header-burgermenu-lign2" />
+            <div className="header-burgermenu-lign3" />
           </div>
           <ul className={`header-burgermenu ${isBurgerMenuOpen ? 'active' : ''}`}>
             <LinkLists list={regularNavLinks} />
