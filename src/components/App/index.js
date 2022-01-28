@@ -30,10 +30,11 @@ import './app.scss';
 // == Composant
 const App = () => {
   const isLogged = useSelector((state) => state.userLogin.logged);
+  const logInfo = useSelector((state) => state.userLogin.logInfo);
   return (
     <div className="app">
       <Header />
-      <ConnectionProfile />
+      {logInfo && <ConnectionProfile />}
       {isLogged && <LogoProfil />}
       <div className="app-wrapper">
         <Routes>

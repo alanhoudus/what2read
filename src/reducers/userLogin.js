@@ -3,10 +3,12 @@ import {
   SAVE_USER_DATA,
   LOGGING_ERROR,
   LOG_OUT,
+  REMOVE_LOG_INFO,
 } from 'src/actions/user';
 
 export const initialState = {
   logged: false,
+  logInfo: false,
   email: '',
   password: '',
   token: '',
@@ -24,11 +26,17 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         logged: action.isLogged,
+        logInfo: true,
       };
     case LOGGING_ERROR:
       return {
         ...state,
         loggingError: true,
+      };
+    case REMOVE_LOG_INFO:
+      return {
+        ...state,
+        logInfo: false,
       };
     case LOG_OUT:
       return {
@@ -40,6 +48,7 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         confirmationPassword: '',
         token: '',
+        loginfo: false,
       };
     default:
       return state;
