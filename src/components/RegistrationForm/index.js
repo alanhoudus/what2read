@@ -28,6 +28,7 @@ const RegistrationForm = () => {
             className="registration-field registration-field--name"
             placeholder="User126"
             name="nickname"
+            id="nickname"
             value={nickname}
             onChange={(newValue, identifier) => {
               const action = updateFieldValue(identifier, newValue);
@@ -40,6 +41,7 @@ const RegistrationForm = () => {
             className="registration-field"
             placeholder="user126@gmail.com"
             name="email"
+            id="email"
             value={email}
             onChange={(newValue, identifier) => {
               const action = updateFieldValue(identifier, newValue);
@@ -50,6 +52,7 @@ const RegistrationForm = () => {
           <Field
             type="password"
             name="password"
+            id="password"
             className="registration-field"
             placeholder="*******"
             value={password}
@@ -64,6 +67,7 @@ const RegistrationForm = () => {
             className="registration-field"
             placeholder="********"
             name="confirmationPassword"
+            id="confirmationPassword"
             value={confirmationPassword}
             onChange={(newValue, identifier) => {
               const action = updateFieldValue(identifier, newValue);
@@ -77,6 +81,7 @@ const RegistrationForm = () => {
             registration-field--presentation"
             placeholder=""
             name="description"
+            id="description"
             value={description}
             onChange={(newValue, identifier) => {
               const action = updateFieldValue(identifier, newValue);
