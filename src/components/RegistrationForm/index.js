@@ -4,16 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import Field from '../Field';
 
 // actions
-import { updateFieldValue } from '../../actions/user';
+import { updateRegistrationValue } from '../../actions/user';
 // import scss
 import './registrationForm.scss';
 
 const RegistrationForm = () => {
-  const nickname = useSelector((state) => state.user.nickname);
-  const email = useSelector((state) => state.user.email);
-  const password = useSelector((state) => state.user.password);
-  const confirmationPassword = useSelector((state) => state.user.confirmationPassword);
-  const description = useSelector((state) => state.user.description);
+  const nickname = useSelector((state) => state.userRegistration.nickname);
+  const email = useSelector((state) => state.userRegistration.email);
+  const password = useSelector((state) => state.userRegistration.password);
+  const confirmationPassword = useSelector((state) => state.userRegistration.confirmationPassword);
+  const description = useSelector((state) => state.userRegistration.description);
 
   const dispatch = useDispatch();
   return (
@@ -30,8 +30,9 @@ const RegistrationForm = () => {
             name="nickname"
             id="nickname"
             value={nickname}
+            id="nickname"
             onChange={(newValue, identifier) => {
-              const action = updateFieldValue(identifier, newValue);
+              const action = updateRegistrationValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -44,7 +45,7 @@ const RegistrationForm = () => {
             id="email"
             value={email}
             onChange={(newValue, identifier) => {
-              const action = updateFieldValue(identifier, newValue);
+              const action = updateRegistrationValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -52,12 +53,12 @@ const RegistrationForm = () => {
           <Field
             type="password"
             name="password"
-            id="password"
+            id="*******"
             className="registration-field"
             placeholder="*******"
             value={password}
             onChange={(newValue, identifier) => {
-              const action = updateFieldValue(identifier, newValue);
+              const action = updateRegistrationValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -70,7 +71,7 @@ const RegistrationForm = () => {
             id="confirmationPassword"
             value={confirmationPassword}
             onChange={(newValue, identifier) => {
-              const action = updateFieldValue(identifier, newValue);
+              const action = updateRegistrationValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -84,7 +85,7 @@ const RegistrationForm = () => {
             id="description"
             value={description}
             onChange={(newValue, identifier) => {
-              const action = updateFieldValue(identifier, newValue);
+              const action = updateRegistrationValue(identifier, newValue);
               dispatch(action);
             }}
           />
