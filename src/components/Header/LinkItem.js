@@ -14,33 +14,26 @@ const LinkItem = ({ link }) => {
   const dispatch = useDispatch();
   if (action) {
     return (
-      <NavLink
-        to={link.to}
-        key={link.key}
-        onClick={() => {
-          dispatch(action);
-        }}
-      >
-        <li
-          className={itemClass}
+      <li className={itemClass}>
+        <NavLink
+          to={link.to}
+          key={link.key}
+          onClick={() => {
+            dispatch(action);
+          }}
         >
           {link.name}
-        </li>
-      </NavLink>
+        </NavLink>
+      </li>
     );
   }
 
   return (
-    <NavLink
-      to={link.to}
-      key={link.key}
-    >
-      <li
-        className={itemClass}
-      >
+    <li className={itemClass}>
+      <NavLink to={link.to} key={link.key}>
         {link.name}
-      </li>
-    </NavLink>
+      </NavLink>
+    </li>
   );
 };
 
