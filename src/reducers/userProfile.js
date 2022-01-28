@@ -1,24 +1,18 @@
 import {
-  UPDATE_FIELD_VALUE,
+  UPDATE_PROFILE_VALUE,
   SAVE_USER_DATA,
-  LOGGING_ERROR,
-  LOG_OUT,
 } from 'src/actions/user';
 
 export const initialState = {
-  logged: false,
   nickname: '',
   email: '',
   description: '',
-  password: '',
-  confirmationPassword: '',
   token: '',
-  loggingError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case UPDATE_FIELD_VALUE:
+    case UPDATE_PROFILE_VALUE:
       return {
         ...state,
         [action.identifier]: action.newValue,
@@ -31,23 +25,6 @@ const reducer = (state = initialState, action = {}) => {
         nickname: action.nickname,
         description: 'J\'me présente. Je m\'appelle John. J\'voudrais bien réussir ma vie. Être aimé !',
         password: '',
-        loggingError: false,
-      };
-    case LOGGING_ERROR:
-      return {
-        ...state,
-        loggingError: true,
-      };
-    case LOG_OUT:
-      return {
-        ...state,
-        logged: false,
-        nickname: '',
-        email: '',
-        description: '',
-        password: '',
-        confirmationPassword: '',
-        token: '',
       };
     default:
       return state;

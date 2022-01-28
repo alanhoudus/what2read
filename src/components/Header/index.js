@@ -25,7 +25,7 @@ const Header = () => {
   const [loggedOutNav, setLoggedOutNav] = useState(LOGGED_OUT_USER_NAV);
   // eslint-disable-next-line no-unused-vars
   const [regularNavLinks, setRegularNavLinks] = useState(REGULAR_NAV);
-  const isLogged = useSelector((state) => state.user.logged);
+  const isLogged = useSelector((state) => state.userLogin.logged);
 
   return (
     <header className="header">
