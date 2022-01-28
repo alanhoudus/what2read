@@ -28,6 +28,7 @@ const RegistrationForm = () => {
             className="registration-field registration-field--name"
             placeholder="User126"
             name="nickname"
+            id="nickname"
             value={nickname}
             id="nickname"
             onChange={(newValue, identifier) => {
