@@ -6,7 +6,7 @@ import {
 } from 'src/actions/user';
 
 export const initialState = {
-  logged: false,
+  logged: true,
   email: '',
   password: '',
   token: '',

@@ -9,10 +9,44 @@
     background-color: vars.$secondaryColor;
     
     &-nav {
+      position: relative;
+
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+    }
+
+    &-profilemenu, &-burgermenu {
+      position: absolute;
+      top: 100%; left: 0;
+
+      width: 100%;
+      max-height: 0;
+      z-index: 1;
+
+      // darken is Sass function, like that the secondaryColor is 5% darker
+      //https://sass-lang.com/documentation/modules/color#darken
+      background-color: darken(vars.$secondaryColor, 5%);
+
+      transition: max-height .3s ease-in-out;
+      overflow: hidden;
+
+      &.active {
+        max-height: 250px;
+      }
+
+      > li > a {
+        display: block;
+        padding: calc(vars.$gutter * 1) calc(vars.$gutter * 2);
+        border-bottom: 1px solid vars.$secondaryColor;
+      }
+    }
+
+    &-burgermenu {
+      > li:last-child {
+        display: none;
+      }
     }
 
     &-logo {
@@ -41,6 +75,7 @@
         width: 50px;
         height: auto;
         margin-right:  calc(vars.$gutter * 1.5);
+        cursor: pointer;
       }
 
     }
@@ -52,19 +87,13 @@
       margin-right:  calc(vars.$gutter * 1.5);
     }
 
-    // Profile menu
-    &-profilemenu {
-      display: none;
-    }
-
     // Nav burger menu
     &-burgermenu {
-      display: none;
-
       &--icon {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        cursor: pointer;
       }
       
       &--icon > div {
