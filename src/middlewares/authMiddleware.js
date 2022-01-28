@@ -9,7 +9,7 @@ const authMiddleware = (store) => (next) => (action) => {
       'http://localhost:3001/login',
       // données
       {
-        email: store.getState().user.nickname,
+        email: store.getState().user.email,
         password: store.getState().user.password,
       },
     )

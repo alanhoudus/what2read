@@ -1,4 +1,4 @@
-export const UPDATE_LOGIN_VALUE = 'UPDATE_LOGIN_VALUE';
+export const UPDATE_FIELD_VALUE = 'UPDATE_FIELD_VALUE';
 export const HANDLE_LOGIN = 'HANDLE_LOGIN';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const LOGGING_ERROR = 'LOGGING_ERROR';
@@ -8,8 +8,8 @@ export const logOut = () => ({
   type: LOG_OUT,
 });
 
-export const updateLoginValue = (identifier, newValue) => ({
-  type: UPDATE_LOGIN_VALUE,
+export const updateFieldValue = (identifier, newValue) => ({
+  type: UPDATE_FIELD_VALUE,
   identifier: identifier,
   newValue: newValue,
 });

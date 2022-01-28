@@ -1,12 +1,12 @@
 import {
-  UPDATE_LOGIN_VALUE,
+  UPDATE_FIELD_VALUE,
   SAVE_USER_DATA,
   LOGGING_ERROR,
   LOG_OUT,
 } from 'src/actions/user';
 
 export const initialState = {
-  logged: true,
+  logged: false,
   nickname: '',
   email: '',
   description: '',
@@ -18,7 +18,7 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case UPDATE_LOGIN_VALUE:
+    case UPDATE_FIELD_VALUE:
       return {
         ...state,
         [action.identifier]: action.newValue,
@@ -28,9 +28,8 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         logged: action.isLogged,
         token: action.token,
-        // sécurité : on en profite pour effacer les identifiants dans le state
-        email: '',
-        nickname: '',
+        nickname: action.nickname,
+        description: 'J\'me présente. Je m\'appelle John. J\'voudrais bien réussir ma vie. Être aimé !',
         password: '',
         loggingError: false,
       };
