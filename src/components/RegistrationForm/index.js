@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Field from '../Field';
 
 // actions
-import { updateLoginValue } from '../../actions/user';
+import { updateFieldValue } from '../../actions/user';
 // import scss
 import './registrationForm.scss';
 
@@ -29,8 +29,8 @@ const RegistrationForm = () => {
             placeholder="User126"
             name="nickname"
             value={nickname}
-            onChange={(newValue) => {
-              const action = updateLoginValue('nickname', newValue);
+            onChange={(newValue, identifier) => {
+              const action = updateFieldValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -41,8 +41,8 @@ const RegistrationForm = () => {
             placeholder="user126@gmail.com"
             name="email"
             value={email}
-            onChange={(newValue) => {
-              const action = updateLoginValue('email', newValue);
+            onChange={(newValue, identifier) => {
+              const action = updateFieldValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -53,8 +53,8 @@ const RegistrationForm = () => {
             className="registration-field"
             placeholder="*******"
             value={password}
-            onChange={(newValue) => {
-              const action = updateLoginValue('password', newValue);
+            onChange={(newValue, identifier) => {
+              const action = updateFieldValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -65,8 +65,8 @@ const RegistrationForm = () => {
             placeholder="********"
             name="confirmationPassword"
             value={confirmationPassword}
-            onChange={(newValue) => {
-              const action = updateLoginValue('confirmationPassword', newValue);
+            onChange={(newValue, identifier) => {
+              const action = updateFieldValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -78,8 +78,8 @@ const RegistrationForm = () => {
             placeholder=""
             name="description"
             value={description}
-            onChange={(newValue) => {
-              const action = updateLoginValue('description', newValue);
+            onChange={(newValue, identifier) => {
+              const action = updateFieldValue(identifier, newValue);
               dispatch(action);
             }}
           />

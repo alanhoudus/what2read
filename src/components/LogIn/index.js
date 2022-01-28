@@ -5,13 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import Field from '../Field';
 
 // actions
-import { updateLoginValue, handleLogin } from '../../actions/user';
+import { updateFieldValue, handleLogin } from '../../actions/user';
 
 // import scss
 import './logIn.scss';
 
 const LogIn = () => {
-  const nickname = useSelector((state) => state.user.nickname);
+  const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
   const dispatch = useDispatch();
 
@@ -20,7 +20,7 @@ const LogIn = () => {
       <h2 className="logIn-title">Se connecter</h2>
       <div className="logIn-lign" />
       <div className="logIn-input">
-        <h3 className="logIn-input">Pseudo : </h3>
+        <h3 className="logIn-input">Email : </h3>
         <form
           onSubmit={(event) => {
             event.preventDefault();
@@ -30,12 +30,12 @@ const LogIn = () => {
           <Field
             type="text"
             className="logIn-field logIn-field--name"
-            placeholder="User126"
-            value={nickname}
-            name="nickname"
-            id="nickname"
-            onChange={(newValue) => {
-              const action = updateLoginValue('nickname', newValue);
+            placeholder="dupont@dupont.fr"
+            value={email}
+            name="email"
+            id="email"
+            onChange={(newValue, identifier) => {
+              const action = updateFieldValue(identifier, newValue);
               dispatch(action);
             }}
           />
@@ -47,8 +47,8 @@ const LogIn = () => {
             className="logIn-field"
             placeholder="*******"
             value={password}
-            onChange={(newValue) => {
-              const action = updateLoginValue('password', newValue);
+            onChange={(newValue, identifier) => {
+              const action = updateFieldValue(identifier, newValue);
               dispatch(action);
             }}
           />
