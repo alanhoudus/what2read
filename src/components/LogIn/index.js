@@ -5,14 +5,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import Field from '../Field';
 
 // actions
-import { updateFieldValue, handleLogin } from '../../actions/user';
+import { updateLoginValue, handleLogin } from '../../actions/user';
 
 // import scss
 import './logIn.scss';
 
 const LogIn = () => {
-  const email = useSelector((state) => state.user.email);
-  const password = useSelector((state) => state.user.password);
+  const email = useSelector((state) => state.userLogin.email);
+  const password = useSelector((state) => state.userLogin.password);
   const dispatch = useDispatch();
 
   return (
@@ -35,8 +35,8 @@ const LogIn = () => {
             name="email"
             id="email"
             onChange={(newValue, identifier) => {
-              const action = updateFieldValue(identifier, newValue);
-              dispatch(action);
+              const actionUpdate = updateLoginValue(identifier, newValue);
+              dispatch(actionUpdate);
             }}
           />
           <h3 className="logIn-input">Mot de passe : </h3>
@@ -48,7 +48,7 @@ const LogIn = () => {
             placeholder="*******"
             value={password}
             onChange={(newValue, identifier) => {
-              const action = updateFieldValue(identifier, newValue);
+              const action = updateLoginValue(identifier, newValue);
               dispatch(action);
             }}
           />

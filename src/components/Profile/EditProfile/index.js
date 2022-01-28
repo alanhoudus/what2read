@@ -9,14 +9,14 @@ import Field from 'src/components/Field';
 import { Upload, Edit2 } from 'react-feather';
 import profileicon from '../../../assets/images/profileicon.png';
 // actions
-import { updateFieldValue } from '../../../actions/user';
+import { updateProfileValue } from '../../../actions/user';
 // scss
 import './editprofile.scss';
 
 const EditProfile = () => {
-  const userNickame = useSelector((state) => state.user.nickname);
-  const userDescription = useSelector((state) => state.user.description);
-  const userEmail = useSelector((state) => state.user.email);
+  const userNickame = useSelector((state) => state.userProfile.nickname);
+  const userDescription = useSelector((state) => state.userProfile.description);
+  const userEmail = useSelector((state) => state.userProfile.email);
   const dispatch = useDispatch();
 
   return (
@@ -32,7 +32,7 @@ const EditProfile = () => {
               name="nickname"
               type="text"
               onChange={(newValue, identifier) => {
-                const action = updateFieldValue(identifier, newValue);
+                const action = updateProfileValue(identifier, newValue);
                 dispatch(action);
               }}
             />
@@ -49,7 +49,7 @@ const EditProfile = () => {
               value={userDescription}
               onChange={(evt) => {
                 const newValue = evt.target.value;
-                const action = updateFieldValue('description', newValue);
+                const action = updateProfileValue('description', newValue);
                 dispatch(action);
               }}
             />
@@ -61,7 +61,7 @@ const EditProfile = () => {
                 id="mail"
                 name="mail"
                 onChange={(newValue, identifier) => {
-                  const action = updateFieldValue(identifier, newValue);
+                  const action = updateProfileValue(identifier, newValue);
                   dispatch(action);
                 }}
               />

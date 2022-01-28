@@ -9,7 +9,7 @@ const SuggestionsItem = ({ book }) => (
     >
       <img className="suggestions-history book-cover" src={book.cover} alt="couverture du livre" />
       <h3 className="suggestions-history book-title">{book.title}</h3>
-      <h4 className="suggestions-history book-title">{book.date}</h4>
+      <h4 className="suggestions-history book-date">{book.date}</h4>
     </Link>
   </div>
 );
