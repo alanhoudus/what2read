@@ -21,6 +21,7 @@ import Reviews from '../MyReviews';
 import EditProfile from '../Profile/EditProfile';
 import Suggestions from '../Suggestions';
 import LogoProfil from '../Profile/LogoProfil';
+import ConnectionProfile from '../Profile/ConnectionProfile';
 
 import LogIn from '../LogIn';
 // scss
@@ -32,6 +33,7 @@ const App = () => {
   return (
     <div className="app">
       <Header />
+      <ConnectionProfile />
       {isLogged && <LogoProfil />}
       <div className="app-wrapper">
         <Routes>
