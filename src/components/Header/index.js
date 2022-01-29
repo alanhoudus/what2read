@@ -2,7 +2,7 @@
 // routes
 import { NavLink } from 'react-router-dom';
 // hooks
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 // components
@@ -26,6 +26,50 @@ const Header = () => {
   // eslint-disable-next-line no-unused-vars
   const [regularNavLinks, setRegularNavLinks] = useState(REGULAR_NAV);
   const isLogged = useSelector((state) => state.userLogin.logged);
+  // boolean state made to handle the mobile nav on toggle
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
+  // we use "useRef" to handle the click outside the header, if we click
+  // outside the header the nav menu will close
+  const burgerMenu = useRef();
+  const profileMenu = useRef();
+  const handleBurgerMenuClick = () => {
+    setIsBurgerMenuOpen(!isBurgerMenuOpen);
+  };
+
+  const handleProfileMenuClick = () => {
+    setProfileMenuOpen(!isProfileMenuOpen);
+  };
+
+  // if isBurgerMenuOpen or isProfileMenuOpen changed
+  // we listen to every click on document,
+  // -> at document.click -> we remove our "clic" listener (-> checkIfClickedOutside)
+  useEffect(() => {
+    const checkIfClickedOutside = (event) => {
+      // -> if it's not a click on our "burger button"
+      // we close the burger menu
+      if (isBurgerMenuOpen && burgerMenu.current && !burgerMenu.current.contains(event.target)) {
+        setIsBurgerMenuOpen(false);
+      }
+
+      // -> if it's not a click on our "profile button"
+      // we close the profile menu
+      if (isProfileMenuOpen && profileMenu.current && !profileMenu.current.contains(event.target)) {
+        setProfileMenuOpen(false);
+      }
+    };
+
+    // -> we attached a click listener to the document
+    // https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
+    // https://www.codingdeft.com/posts/react-on-click-outside/
+    document.addEventListener('click', checkIfClickedOutside);
+
+    // -> we remove our click listener after the update of our component
+    // -> our component re update if isBurgerMenuOpen / isProfileMenuOpen changed
+    return () => {
+      document.removeEventListener('click', checkIfClickedOutside);
+    };
+  }, [isBurgerMenuOpen, isProfileMenuOpen]);
 
   return (
     <header className="header">
@@ -41,21 +85,31 @@ const Header = () => {
           <h1>What2Read</h1>
         </div>
         <div className="header-menus">
-          <img alt="profileicon" src={profileicon} className="header-logo profile" />
-          <ul className="header-profilemenu">
-            { !isLogged && (
+          <img
+            alt="profileicon"
+            src={profileicon}
+            className={`header-logo profile ${isProfileMenuOpen ? 'active' : ''}`}
+            onClick={handleProfileMenuClick}
+            ref={profileMenu}
+          />
+          <ul className={`header-profilemenu ${isProfileMenuOpen ? 'active' : ''}`}>
+            {!isLogged && (
               <LinkLists list={loggedOutNav} />
             )}
             { isLogged && (
             <LinkLists list={loggedInNav} />
             )}
           </ul>
-          <div className="header-burgermenu--icon">
+          <div
+            onClick={handleBurgerMenuClick}
+            className={`header-burgermenu--icon ${isBurgerMenuOpen ? 'active' : ''}`}
+            ref={burgerMenu}
+          >
             <div />
             <div />
             <div />
           </div>
-          <ul className="header-burgermenu">
+          <ul className={`header-burgermenu ${isBurgerMenuOpen ? 'active' : ''}`}>
             <LinkLists list={regularNavLinks} />
             <li>
               <Field
