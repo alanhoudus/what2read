@@ -1,8 +1,9 @@
 // == Import
 // react-router-dom
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 // hooks
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 // components
 import Header from '../Header';
@@ -31,6 +32,14 @@ import './app.scss';
 const App = () => {
   const isLogged = useSelector((state) => state.userLogin.logged);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
+
+  const location = useLocation();
+  // pour chaque rendu ou l'url a changé
+  useEffect(() => {
+    // on ramène en haut de page
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div className="app">
       <Header />

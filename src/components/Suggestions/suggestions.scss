@@ -47,17 +47,6 @@
         }
       }
     }
-    &-showMore {
-      background-color: vars.$mainColor;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      color: vars.$fontColor;
-      font-size: calc(vars.$fontSize * 1);
-      width: 35%;
-      height: 2em;
-
-      border-radius: 5px;
-      margin-bottom: calc(vars.$gutter * 1);
-    }
   }
 }
 
@@ -108,17 +97,5 @@
       }
     }
     }
-    &-showMore {
-      background-color: vars.$mainColor;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      color: vars.$fontColor;
-      font-size: 1em;
-      width: 35%;
-      height: 2em;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: calc(vars.$gutter * 1);
-    }
-
   }
 }
