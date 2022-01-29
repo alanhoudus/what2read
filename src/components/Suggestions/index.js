@@ -6,6 +6,7 @@ import { SUGGESTIONS_LIST, SUGGESTIONS_PRESENTATION } from '../../data/suggestio
 import Suggestion from './SuggestionsList';
 import './suggestions.scss';
 import SuggestedBook from '../Home/SuggestedBook';
+import ShowMore from '../ShowMore';
 
 // == Composant
 const Suggestions = () => {
@@ -23,7 +24,7 @@ const Suggestions = () => {
           <Suggestion suggestionsList={suggestionsList} />
         </div>
       </div>
-      <button type="button" className="suggestions-showMore">Voir plus</button>
+      <ShowMore />
     </div>
   );
 };
