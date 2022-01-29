@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Search as SearchIcon } from 'react-feather';
 // import components
 import Field from '../Field';
+import ShowMore from '../ShowMore';
 import SearchList from './SearchList';
 // import scss
 import './search.scss';
@@ -31,7 +32,7 @@ const Search = () => {
       <div className="search-books">
         <SearchList searchedBooksList={searchedBooksList} />
       </div>
-      <button type="button" className="search-showMore">Voir plus</button>
+      <ShowMore />
     </div>
   );
 };
