@@ -5,7 +5,8 @@ export const FAVORITES_BOOK_LIST = [
     key: '1',
   },
   {
-    title: 'Le Seigneur des Anneaux - L\'intégral',
+    title: 'Le Seigneur des Anneaux',
+    subtitle: 'L\'intégrale',
     cover: 'https://products-images.di-static.com/image/john-ronald-reuel-tolkien-le-seigneur-des-anneaux-integrale/9782266286268-475x500-1.webp',
     key: '2',
   },

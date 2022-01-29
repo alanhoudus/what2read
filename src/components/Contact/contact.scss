@@ -26,8 +26,8 @@
     padding-top: calc(vars.$gutter * 1);
 
     &-contentGroup {
-        padding: calc(vars.$gutter * 1);
-        transition: box-shadow .3s ease-in-out;
+      padding: calc(vars.$gutter * 1);
+      transition: box-shadow .3s ease-in-out;
     }
     &-contentGroup:hover {
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);

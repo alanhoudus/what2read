@@ -6,22 +6,9 @@
     padding: calc(vars.$gutter * 2);
 
     &-presentation {
-
-      & > h1 {
-        color: vars.$fontColor;
-        font-size: calc(vars.$fontSize * 2);
-      }
-
       & > p {
-        padding: calc(vars.$gutter * 2) 0;
+        padding: calc(vars.$gutter * 1);
       }
-    }
-
-    &-separator {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
     }
 
     &-search {
@@ -36,31 +23,24 @@
 
     &-books {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column ;
+      align-items: center;
     }
 
     &-book {
+      width: 300px;
+      margin: calc(vars.$gutter *1);
 
-      & > h2 {
-        color: vars.$fontColor;
-        margin-top: calc(vars.$gutter * 2);
-        margin-bottom: calc(vars.$gutter * 5);
+      h3, h4 {
         text-align: center;
       }
-
-        &--cover {
-        position: relative;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-
-          & > img {
-            width: 300px;
-            height: auto;
-          }
-      }
-
-      &:last-child {
-        margin-bottom: calc(vars.$gutter * 0);
+      &--cover {
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        & > img {
+          width: 300px;
+          height: auto;
+        }
       }
     }
 
@@ -73,27 +53,11 @@
 }
 
 @media (min-width: 768px) {
-
   .favorites {
-    padding: calc(vars.$gutter * 2);
-
     &-presentation {
-
-      & > h1 {
-        color: vars.$fontColor;
-        font-size: calc(vars.$fontSize * 2);
-      }
-
       & > p {
-        padding: calc(vars.$gutter * 2) 0;
+        padding: calc(vars.$gutter * 1);
       }
-    }
-
-    &-separator {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
     }
 
     &-search {
@@ -113,28 +77,21 @@
     }
 
     &-book {
-
+      width: 300px;
       margin: calc(vars.$gutter *1);
-      margin-bottom: calc(vars.$gutter * 5);
 
-      & > h2 {
-        color: vars.$fontColor;
-        margin-top: calc(vars.$gutter * 2);
+      h3, h4 {
         text-align: center;
       }
 
-        &--cover {
-        position: relative;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      &--cover {
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
-          & > img {
-            width: 300px;
-            height: 450px;
-          }
-      }
-
-      &:last-child {
-        margin-bottom: calc(vars.$gutter * 0);
+        & > img {
+          width: 300px;
+          height: 450px;
+        }
       }
     }
 
