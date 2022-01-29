@@ -105,9 +105,9 @@ const Header = () => {
             className={`header-burgermenu--icon ${isBurgerMenuOpen ? 'active' : ''}`}
             ref={burgerMenu}
           >
-            <div className="header-burgermenu--icon-lign1" />
-            <div className="header-burgermenu-lign2" />
-            <div className="header-burgermenu-lign3" />
+            <div />
+            <div />
+            <div />
           </div>
           <ul className={`header-burgermenu ${isBurgerMenuOpen ? 'active' : ''}`}>
             <LinkLists list={regularNavLinks} />

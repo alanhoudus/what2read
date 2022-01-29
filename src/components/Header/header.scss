@@ -35,11 +35,18 @@
       &.active {
         max-height: 250px;
       }
+    
 
       > li > a {
         display: block;
         padding: calc(vars.$gutter * 1) calc(vars.$gutter * 2);
         border-bottom: 1px solid vars.$secondaryColor;
+        cursor: pointer;
+            transition: background-color 1s;
+          &:hover {
+            background-color: vars.$secondaryColor;
+            transition: background-color 0.2s;
+          }
       }
     }
 
@@ -50,6 +57,7 @@
     }
 
     &-burgermenu--icon {
+      
       &.active {
         > div:nth-child(1) {
           transform: translateY(16px) rotate(45deg);
