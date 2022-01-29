@@ -13,13 +13,6 @@
   .review {
     margin-top: calc(vars.$gutter * 4);
 
-    &-separator {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
-    }
-
     &-arrow {
       width: 100px;
     }
@@ -122,14 +115,6 @@
   }
 
   .review {
-
-    &-separator {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
-    }
-
     &-arrow {
       width: 100px;
       margin-top: 50px;
@@ -174,9 +159,8 @@
         float: left;
       }
     }
-    
-    margin-right: calc(vars.$gutter * 4);
-    margin: calc(vars.$gutter * 10) calc(vars.$gutter * 4) calc(vars.$gutter * 2) calc(vars.$gutter * 2);
+
+    margin: calc(vars.$gutter * 3);
 
     &-container {
       display: flex;

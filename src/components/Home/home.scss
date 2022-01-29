@@ -13,14 +13,6 @@
       margin-top: calc(vars.$gutter *1);
       margin-bottom: calc(vars.$gutter * 6);
     }
-
-    &-separator {
-      margin-top: calc(vars.$gutter * 5);
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
-    }
   }
 
     h1.home-title {
@@ -46,15 +38,6 @@
       margin-top: calc(vars.$gutter *1);
       margin-bottom: calc(vars.$gutter * 4);
     }
-    
-    &-separator {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;  
-      margin-bottom: calc(vars.$gutter * 3);    
-    }
-
   }
 
   h1.home-title {

@@ -1,0 +1,21 @@
+@use '../../styles/vars';
+
+// responsive mobile first
+@media (max-width: 768px) {
+  .separator {
+    margin: calc(vars.$gutter * 2) auto;
+    width: 50%;
+    height: 2px;
+    background-color: black;
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .separator {
+    margin: calc(vars.$gutter * 3) auto;
+    width: 50%;
+    height: 2px;
+    background-color: black;
+  }
+}

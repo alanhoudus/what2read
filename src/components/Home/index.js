@@ -1,4 +1,5 @@
 // == Import
+import Separator from '../Separator';
 import './home.scss';
 import Review from './Review';
 import SuggestedBook from './SuggestedBook';
@@ -13,8 +14,9 @@ const Home = () => (
       Nullam eget magna at risus scelerisque aliquet.
       Praesent sodales nunc nibh, vel accumsan risus tempor eget.
     </p>
-    <div className="home-separator" />
+    <Separator />
     <SuggestedBook />
+    <Separator />
     <Review />
   </div>
 );
