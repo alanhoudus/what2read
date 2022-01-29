@@ -27,8 +27,8 @@ const Contact = () => (
     </div>
     <Separator />
     <div className="contact-mailGroup">
-      <h2 className="contact-title titleMail">Contactez-nous : </h2>
-      <p className="contact-info">what2read@gmail.com</p>
+      <h2 className="contact-title-mail">Contactez-nous :</h2>
+      <div className="contact-contentGroup">what2read@gmail.com</div>
     </div>
   </div>
 );
