@@ -28,13 +28,6 @@
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
       text-align: center;
     }
-    &-lign {
-      width: 70%;
-      height: 2px;
-      background-color: vars.$thirdColor;
-      margin-top: calc(vars.$gutter * 1);
-      margin-bottom: calc(vars.$gutter * 2);
-    }
   }
 }
 // responsive desktop
@@ -73,13 +66,6 @@
     &-content {
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
       text-align: center;
-    }
-    &-lign {
-      width: 70%;
-      height: 2px;
-      background-color: vars.$thirdColor;
-      margin-top: calc(vars.$gutter * 1);
-      margin-bottom: calc(vars.$gutter * 2);
     }
     &-mailGroup {
       display: flex;

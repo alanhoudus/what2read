@@ -16,28 +16,29 @@ h1,h2,h3,h4 {
 
 // responsive mobile first
 @media (max-width: 768px) {
-  .h1 {
-    font-size: 1.5em;
+  h1 {
+    font-size: 1.7em;
     margin-bottom: calc(vars.$gutter * 1.5);
-    padding-top: 1em;
+    padding-top: calc(vars.$gutter * 1);
     margin-left: 8%;
   }
 
-  .h2 {
+  h2 {
     font-size: 1.5em;
     margin-bottom: calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
   }
 
-  .h3 {
+  h3 {
 
   }
 
-  .h4 {
+  h4 {
 
   }
 }
 @media (min-width: 768px) {
-  .h1 {
+  h1 {
     margin-bottom: calc(vars.$gutter * 1.5);
     padding-top: 1em;
     margin-left: 8%;
@@ -49,16 +50,17 @@ h1,h2,h3,h4 {
     color: vars.$fontColor; //error
   }
 
-  .h2 {
+  h2 {
     font-size: 1.5em;
     margin-bottom: calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
   }
 
-  .h3 {
+  h3 {
 
   }
 
-  .h4 {
+  h4 {
 
   }
 }

@@ -15,13 +15,6 @@
     &-content {
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
 
-
-      &.title {
-        font-size: 1.5em;
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
-      }
       &.tag {
         display: inline;
         &-genre-a {
@@ -49,13 +42,7 @@
 // responsive desktop
 @media (min-width: 768px) {
   .book{
-    // to have the content not hidden by the nav menu on desktop
-    padding-top: 1em;
-    font-size: 1.3em;
 
-    &-title {
-    margin-left: 8%;
-    }
     &-content {
       &.description {
         display: flex;
@@ -79,12 +66,6 @@
     &-content {
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
 
-      &.title {
-        font-size: 1.5em;
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
-      }
       &.tag {
         display: inline;
         &-genre-a {

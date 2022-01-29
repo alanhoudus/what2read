@@ -1,3 +1,4 @@
+import Separator from '../Separator';
 import './contact.scss';
 
 const Contact = () => (
@@ -24,7 +25,7 @@ const Contact = () => (
         dolor blanditiis officia. Fuga, porro odit expedita
       </p>
     </div>
-    <div className="contact-lign" />
+    <Separator />
     <div className="contact-mailGroup">
       <h2 className="contact-title titleMail">Contactez-nous : </h2>
       <p className="contact-info">what2read@gmail.com</p>
