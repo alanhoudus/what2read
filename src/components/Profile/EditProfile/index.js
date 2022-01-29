@@ -3,10 +3,12 @@
 import { Link } from 'react-router-dom';
 // hooks
 import { useDispatch, useSelector } from 'react-redux';
-// components
-import Field from 'src/components/Field';
 // assets
 import { Upload, Edit2 } from 'react-feather';
+// components
+import Field from 'src/components/Field';
+import TextArea from '../../TextArea';
+
 import profileicon from '../../../assets/images/profileicon.png';
 // actions
 import { updateProfileValue } from '../../../actions/user';
@@ -44,7 +46,7 @@ const EditProfile = () => {
                 className="editprofile-content edit-presentation"
               />
             </div>
-            <textarea
+            <TextArea
               className="editprofile-content input description"
               value={userDescription}
               onChange={(evt) => {
