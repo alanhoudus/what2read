@@ -7,6 +7,7 @@ import { READINGS_LIST, READINGS_PRESENTATION } from '../../data/readings';
 import ReadingsList from './ReadingsList';
 // scss
 import './readings.scss';
+import ShowMore from '../ShowMore';
 
 const Readings = () => {
   // eslint-disable-next-line no-unused-vars
@@ -21,7 +22,7 @@ const Readings = () => {
       <div className="readings-books">
         <ReadingsList readingsList={readingsList} />
       </div>
-      <button type="button" className="readings-showmore">Voir plus</button>
+      <ShowMore />
     </div>
   );
 };
