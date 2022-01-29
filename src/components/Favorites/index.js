@@ -1,11 +1,14 @@
 // == Import : local
 // hooks
 import { useState } from 'react';
+// import icon
+import { Search as SearchIcon } from 'react-feather';
 // components
 import Field from '../Field';
 import Favorite from './FavoritesList';
 import Separator from '../Separator';
 import ShowMore from '../ShowMore';
+
 // mock data
 import { FAVORITES_BOOK_LIST, FAVORITE_PRESENTATION } from '../../data/favorites';
 
@@ -32,6 +35,9 @@ const Favorites = () => {
         name="quicksearch favorite"
         id="quicksearch favorite"
       />
+      <button type="submit" className="search-input--submit">
+        <SearchIcon color="white" size="20" />
+      </button>
       <div className="favorites-books">
         <Favorite favoritesList={favoritesList} />
         <ShowMore />
