@@ -1,11 +1,9 @@
 import './book.scss';
-import profileicon from '../../assets/images/profileicon.png';
 import Separator from '../Separator';
 
 const Book = () => (
   <div>
     <div className="book">
-      <img alt="profileicon" src={profileicon} className="book-user-profile" />
       <div className="book-contentGroup">
         <h2 className="book-content title">Titre du livre</h2>
         <div className="book-content description">
