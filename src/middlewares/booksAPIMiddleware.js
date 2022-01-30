@@ -3,6 +3,7 @@ import axios from 'axios';
 import {
   GET_BOOKS_DATA,
   saveBooksList,
+  dataLoaded,
 } from '../actions/books';
 
 const recipesAPIMiddleware = (store) => (next) => (action) => {
@@ -19,7 +20,7 @@ const recipesAPIMiddleware = (store) => (next) => (action) => {
         console.log(error);
       })
       .finally(() => {
-        console.log(store.getState().books);
+        store.dispatch(dataLoaded());
       });
   }
 

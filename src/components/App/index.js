@@ -26,8 +26,9 @@ import EditProfile from '../Profile/EditProfile';
 import Suggestions from '../Suggestions';
 import LogoProfil from '../Profile/LogoProfil';
 import ConnectionProfile from '../Profile/ConnectionProfile';
-
+import Loader from './Loader';
 import LogIn from '../LogIn';
+
 // scss
 import './app.scss';
 
@@ -35,6 +36,7 @@ import './app.scss';
 const App = () => {
   const isLogged = useSelector((state) => state.userLogin.logged);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
+  const dataIsLoading = useSelector((state) => state.books.dataLoading);
   const dispatch = useDispatch();
 
   const location = useLocation();
@@ -48,6 +50,9 @@ const App = () => {
     dispatch(getBooksData());
   }, []);
 
+  if (dataIsLoading) {
+    return <Loader />;
+  }
   return (
     <div className="app">
       <Header />
