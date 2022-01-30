@@ -57,16 +57,19 @@
     }
 
     &-burgermenu--icon {
-      
+      width: 40px;
+      height: 40px;
       &.active {
         > div:nth-child(1) {
-          transform: translateY(16px) rotate(45deg);
+          transform: translateY(17px) rotate(45deg);
+          width: 100%;
         }
         > div:nth-child(2) {
           opacity: 0;
         }
         > div:nth-child(3) {
-          transform: translateY(-8px) rotate(-45deg);
+          transform: translateY(-7px) rotate(-45deg);
+          width: 100%;
         }
       }
     }
