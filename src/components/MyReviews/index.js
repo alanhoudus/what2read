@@ -17,7 +17,7 @@ const Reviews = () => {
 
   return (
     <div className="reviews">
-      <h1>{myReviewsPresentation.title}</h1>
+      <h2>{myReviewsPresentation.title}</h2>
       <div className="reviews-wrapper">
         <MyReviewsList myReviewsList={myReviewsList} />
       </div>
