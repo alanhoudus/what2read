@@ -3,11 +3,14 @@
 import { NavLink } from 'react-router-dom';
 // hooks
 import { useState, useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // components
 import Field from '../Field';
 import LinkLists from './LinkLists';
+
+// actions
+import { updateFastSearchBookValue } from '../../actions/search';
 
 // assets
 import w2rlogo from '../../assets/images/w2rlogo.png';
@@ -29,6 +32,9 @@ const Header = () => {
   // boolean state made to handle the mobile nav on toggle
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
+  // controlled input search
+  const inputFastSearch = useSelector((state) => state.bookSearch.inputFastSearch);
+  const dispatch = useDispatch();
   // we use "useRef" to handle the click outside the header, if we click
   // outside the header the nav menu will close
   const burgerMenu = useRef();
@@ -117,6 +123,11 @@ const Header = () => {
                 className="header-burgermenu--quicksearch"
                 placeholder="Recherche rapide"
                 name="quicksearch"
+                value={inputFastSearch}
+                onChange={(newValue) => {
+                  const actionUpdate = updateFastSearchBookValue(newValue);
+                  dispatch(actionUpdate);
+                }}
               />
             </li>
           </ul>
