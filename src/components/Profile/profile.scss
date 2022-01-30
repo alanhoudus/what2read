@@ -3,16 +3,21 @@
 // responsive mobile first
 @media (max-width: 768px) {
   .profile {
-    color: vars.$fontColor;
-
     &-logo {
       display: none;
     }
     &-contentGroup {
-        padding: calc(vars.$gutter * 2);
+      padding: calc(vars.$gutter * 2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: calc(vars.$gutter * 2);
+      margin-right: calc(vars.$gutter * 3);
+      padding: calc(vars.$gutter * 1);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     }
-    &-content {
 
+    &-content {
       &.avatar {
         width: 200px;
         height: auto;
@@ -21,22 +26,7 @@
         border-radius: 50%;
         padding: 10px;
       }
-      &.title {
-        font-size: calc(vars.$fontSize * 2);
-        color: vars.$thirdColor;
-        font-weight: bold;
-
-        margin-bottom: calc(vars.$gutter * 1.5);
-
-        &-second {
-          font-size: calc(vars.$fontSize * 1.2);
-          color: vars.$thirdColor;
-          font-weight: bold;
-          margin: calc(vars.$gutter * 1) 0;
-
-      }
-    }
-
+      
       &.description.text {
         margin-bottom: calc(vars.$gutter * 1);
       }
@@ -68,68 +58,53 @@
 // responsive desktop
 @media (min-width: 768px) {
   .profile {
-    font-size: 1.3em;
-
-    &-contentGroup {
-      margin-left: calc(vars.$gutter * 1.5);
-      padding-top: calc(vars.$gutter * 2);
-  }
-  &-content {
-
-    &.avatar {
-      width: 200px;
-      height: auto;
-
-      background-color: #fff;
-      border-radius: 50%;
-
-      padding: 10px;
-    }
-
-    &.title {
-      font-size: calc(vars.$fontSize * 2);
-      color: vars.$thirdColor;
-      font-weight: bold;
-
-      margin-bottom: calc(vars.$gutter * 1.5);
-
-      &-second {
-        font-size: calc(vars.$fontSize * 1.2);
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin: calc(vars.$gutter * 1) 0;
+    &-contentGroup{
+      margin: calc(vars.$gutter * 2);
+      margin-right: calc(vars.$gutter * 5);
+      padding: calc(vars.$gutter * 1);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
     }
-  }
+    &-content {
 
-    &.description {
-      margin-bottom: calc(vars.$gutter * 1);
+      &.avatar {
+        width: 200px;
+        height: auto;
 
-      &.text {
-        width: 60%;
-      }
-    }
+        background-color: #fff;
+        border-radius: 50%;
 
-    &.mail {
-      margin-bottom: calc(vars.$gutter * 1);
-    }
-
-      &.button {
-        color: vars.$mainColor;
-        border-radius: 30px;
-        border: none;
-        font-size: calc(vars.$fontSize * 1);
         padding: 10px;
+      }
 
-        &.edit {
-          background-color: vars.$thirdColor;
-          margin-right: calc(vars.$gutter * 2);
-        }
+      &.description {
+        margin-bottom: calc(vars.$gutter * 1);
 
-        &.delete {
-          background-color: vars.$fourthColor;
+        &.text {
+          width: 60%;
         }
-   }
-  }
+      }
+
+      &.mail {
+        margin-bottom: calc(vars.$gutter * 1);
+      }
+
+        &.button {
+          color: vars.$mainColor;
+          border-radius: 30px;
+          border: none;
+          font-size: calc(vars.$fontSize * 1);
+          padding: 10px;
+
+          &.edit {
+            background-color: vars.$thirdColor;
+            margin-right: calc(vars.$gutter * 2);
+          }
+
+          &.delete {
+            background-color: vars.$fourthColor;
+          }
+    }
+    }
   }
 }
