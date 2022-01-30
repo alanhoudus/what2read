@@ -42,7 +42,9 @@
 // responsive desktop
 @media (min-width: 768px) {
   .book{
-
+    margin: 0 calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
+    
     &-content {
       &.description {
         display: flex;

@@ -1,7 +1,7 @@
 // import icon
 import { Search as SearchIcon } from 'react-feather';
 // == Import : local
-import Field from '../../Field';
+import Field from '../Field';
 import './searchField.scss';
 
 // == Composant

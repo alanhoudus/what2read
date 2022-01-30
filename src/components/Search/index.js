@@ -7,7 +7,7 @@ import SearchList from './SearchList';
 import './search.scss';
 // mock data
 import SEARCHED_BOOKS_LIST from '../../data/search';
-import SearchField from './SearchField';
+import SearchField from '../SearchField';
 
 const Search = () => {
   // eslint-disable-next-line no-unused-vars

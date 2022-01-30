@@ -11,28 +11,12 @@
   }
 
   .review {
-    margin-top: calc(vars.$gutter * 4);
-
-    &-arrow {
-      width: 100px;
-    }
-
-    h2,h3,h4 {
-      color: vars.$fontColor;
-    }
-
-    &-title--section {
-      text-align: left;
-      font-size: calc(vars.$fontSize * 2);
-      margin: calc(vars.$gutter * 1) 0;
-    }
-
     &-title {
-      display: none;
+      padding-left: calc(vars.$gutter * 1);
     }
 
     &-content {
-      margin-top: calc(vars.$gutter * 1);
+      padding-top: calc(vars.$gutter * 1);
     }
 
     &-author {
@@ -115,29 +99,6 @@
   }
 
   .review {
-    &-arrow {
-      width: 100px;
-      margin-top: 50px;
-    }
-
-    h2,h3,h4 {
-      color: vars.$fontColor;
-    }
-
-    &-title--section {
-      text-align: left;
-      font-size: calc(vars.$fontSize * 2);
-      margin: calc(vars.$gutter * 1) 0;
-    }
-
-    &-title {
-      font-size: calc(vars.$fontSize * 1.2);
-    }
-
-    &-booktitle {
-      font-size: calc(vars.$fontSize * 1.5);
-    }
-
     &-content {
       margin-top: calc(vars.$gutter * 1);
     }
@@ -151,16 +112,17 @@
    
       &--name {
         padding-right: calc(vars.$gutter * 1);
-
       }
 
       &--avatar {
         width: 30px;
         float: left;
-      }
+      }      
     }
 
-    margin: calc(vars.$gutter * 3);
+    h4 {
+      padding-left: calc(vars.$gutter * 1);
+    }
 
     &-container {
       display: flex;
@@ -170,6 +132,7 @@
       &-outer {
         box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
         overflow: hidden;
+        margin-right: calc(vars.$gutter * 3);
       }
     }
 
