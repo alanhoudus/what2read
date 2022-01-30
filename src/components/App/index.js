@@ -2,8 +2,11 @@
 // react-router-dom
 import { Routes, Route, useLocation } from 'react-router-dom';
 // hooks
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+
+// actions
+import { getBooksData } from '../../actions/books';
 
 // components
 import Header from '../Header';
@@ -32,6 +35,7 @@ import './app.scss';
 const App = () => {
   const isLogged = useSelector((state) => state.userLogin.logged);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
+  const dispatch = useDispatch();
 
   const location = useLocation();
   // pour chaque rendu ou l'url a changé
@@ -39,6 +43,10 @@ const App = () => {
     // on ramène en haut de page
     window.scrollTo(0, 0);
   }, [location]);
+
+  useEffect(() => {
+    dispatch(getBooksData());
+  }, []);
 
   return (
     <div className="app">
