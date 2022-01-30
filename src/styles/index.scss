@@ -13,6 +13,9 @@ h1,h2,h3,h4 {
   color: vars.$fontColor;
   font-weight: bold;
 }
+p {
+  padding: calc(vars.$gutter * 0.5);
+}
 
 // responsive mobile first
 @media (max-width: 768px) {
@@ -45,12 +48,9 @@ h1,h2,h3,h4 {
     margin-bottom: calc(vars.$gutter * 1.5);
     padding-top: 1em;
     margin-left: 8%;
-    font-size: calc(vars.$fontSize * 2);
+    font-size: calc(vars.$fontSize * 2.5);
     display: flex;
     align-self: flex-start;
-    font-size: calc(vars.$fontSize * 2); //error
-    margin-top: calc(vars.$gutter * 2); // error
-    color: vars.$fontColor; //error
   }
 
   h2 {

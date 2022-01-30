@@ -2,52 +2,14 @@
 
 @media (max-width: 768px) { 
   .home {
-    margin: calc(vars.$gutter * 2);
-    
-    &-title {
-      color: vars.$fontColor;
-      margin-top: calc(vars.$gutter * 2);
-    }
-
-    &-presentation {
-      margin-top: calc(vars.$gutter *1);
-      margin-bottom: calc(vars.$gutter * 6);
-    }
+    h1{
+    text-align: center;
   }
-
-    h1.home-title {
-      font-size: calc(vars.$fontSize * 3);
-      text-align: center;
-      margin: calc(vars.$gutter / 2);
-    }
-
-    h2.home-title {
-      font-size: calc(vars.$fontSize * 2);      
-    }
+  }
 }
 
 @media (min-width: 768px) { 
   .home {
-    // margin: calc(vars.$gutter / 1);
 
-    &-title {
-      color: vars.$fontColor;
-    }
-
-    &-presentation {
-      margin-top: calc(vars.$gutter *1);
-      margin-bottom: calc(vars.$gutter * 4);
-    }
-  }
-
-  h1.home-title {
-    font-size: 3em;
-    text-align: center;
-    padding-top: calc(vars.$gutter / 2);
-  }
-
-  h2.home-title {
-    font-size: calc(vars.$fontSize * 2);
-    padding-top: calc(vars.$gutter / 2);      
   }
 }
