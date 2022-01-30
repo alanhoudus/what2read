@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // import components
 import Field from '../Field';
+import Separator from '../Separator';
 
 // actions
 import { updateLoginValue, handleLogin } from '../../actions/user';
@@ -18,7 +19,7 @@ const LogIn = () => {
   return (
     <div className="logIn">
       <h2 className="logIn-title">Se connecter</h2>
-      <div className="logIn-lign" />
+      <Separator />
       <div className="logIn-input">
         <h3 className="logIn-input">Email : </h3>
         <form
