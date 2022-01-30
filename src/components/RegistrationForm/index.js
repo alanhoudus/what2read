@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // import components
 import Field from '../Field';
+import Separator from '../Separator';
 
 // actions
 import { updateRegistrationValue } from '../../actions/user';
@@ -19,18 +20,17 @@ const RegistrationForm = () => {
   return (
     <div className="registration">
       <h2 className="registration-title">Inscription</h2>
-      <div className="registration-lign" />
+      <Separator />
       <div className="registration-input">
         <h3>Pseudo<span className="registration-input--asterisk">*</span> : </h3>
         <form>
           <Field
             type="text"
-            className="registration-field registration-field--name"
+            className="registration-field registration-field"
             placeholder="User126"
             name="nickname"
             id="nickname"
             value={nickname}
-            id="nickname"
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);
               dispatch(action);
