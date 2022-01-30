@@ -47,15 +47,6 @@
 
 @media (min-width: 768px) {
   .favorites {
-    margin: 0 calc(vars.$gutter * 1.5);
-    padding-top: calc(vars.$gutter * 1);
-    
-    &-presentation {
-      & > p {
-        padding: calc(vars.$gutter * 1);
-      }
-    }
-
     &-books {
       display: flex;
       flex-wrap: wrap;

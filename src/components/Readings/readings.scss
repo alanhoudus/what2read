@@ -3,11 +3,13 @@
 // responsive mobile first
 @media (max-width: 768px) {
   .readings {
-    color: vars.$fontColor;
-    font-size: vars.$fontSize;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    h3, h4 {
+      text-align: center;
+    }
 
     &-buttonRead {
       border-radius: 4px;
@@ -20,14 +22,6 @@
       padding: 10px;
     }
 
-    &-title {
-      font-size: calc(vars.$fontSize * 2);
-      color: vars.$thirdColor;
-      font-weight: bold;
-      margin-bottom: calc(vars.$gutter * 1.5);
-      padding-top: calc(vars.$gutter * 2);
-    }
-
     &-book {
       width:100%;
       margin-bottom: calc(vars.$gutter * 1);
@@ -38,7 +32,8 @@
 
 
         &-img {
-          width: 100%;
+          width: 300px;
+          height: auto;
         }
 
         & > .favorited {
@@ -52,18 +47,6 @@
           right: 11%;
           position: absolute;
         }
-      }
-
-      &--title {
-        text-align: center;
-        padding-top: calc(vars.$gutter * 1);
-        font-size: calc(vars.$fontSize * 1);
-        font-weight: bold;
-      }
-      &--subtitle {
-        text-align: center;
-        padding-top: calc(vars.$gutter / 2);
-        margin-bottom: calc(vars.$gutter * 3);
       }
     }
     // hide the last 3 books on mobile, its just for the static integration
@@ -82,77 +65,61 @@
   .readings {
     display: flex;
     flex-direction: column;
-    // align-items: center;
-    color: vars.$fontColor;
-
-    &-title {
-      font-size: calc(vars.$fontSize * 2);
-      color: vars.$thirdColor;
-      font-weight: bold;
-      padding-top: calc(vars.$gutter * 2);
-      margin-bottom: calc(vars.$gutter * 1.5);
-    }
-    // show the last 6 books on desktop, its just for the static integration
-    &-book:nth-last-child(-n+6) {
-      display: block;      
-    }
 
     &-buttonRead {
       color: vars.$secondaryColor;
       background-color: vars.$fourthColor;
-      margin: auto;
+      margin: calc(vars.$gutter * 1);
       border-radius: 30px;
-      border: none;
       width: 30%;
       font-size: calc(vars.$fontSize * 1);;
-      padding: 10px;
+      padding: calc(vars.$gutter * 0.5);
     }
-    
+       
     &-books {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
-
-    &-book {
-      flex-basis: 25%;
-      margin: calc(vars.$gutter * 1);
-
-      &--cover {
-        position: relative;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-
-        &-img {
-          width: 100%;
-        }
-          
-        & > .favorited {
-          top: 1%;
-          right: 1%;
-          position: absolute;
-        }
-
-        & > .review-done {
-          top: 1%;
-          right: 11%;
-          position: absolute;
-        }
-      }
-
-      &--title {
-        text-align: center;
-        padding-top: calc(vars.$gutter * 1);;
-        font-size: calc(vars.$fontSize * 1.3);;
-        font-weight: bold;
-      }
-      &--subtitle {
-        text-align: center;
-        padding-top: calc(vars.$gutter / 2);
-        margin-bottom: calc(vars.$gutter * 2);;
-      }
+    &-showmore {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     &-book:hover {
       cursor: pointer;
     }
+
+    &-book {
+      width: 300px;
+      margin: calc(vars.$gutter *1);
+
+      h3, h4 {
+        text-align: center;
+      }
+
+      &--cover {
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+        & > img {
+          width: 300px;
+          height: 450px;
+        }
+
+        & > .favorited {
+          top: 10px;
+          right: 10px;
+          position: absolute;
+        }
+
+        & > .review-done {
+          top: 10px;
+          right: 40px;
+          position: absolute;
+        }
+      }
+    }
   }
 }
+

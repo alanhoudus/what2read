@@ -6,12 +6,11 @@
     background-color: vars.$mainColor;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     color: vars.$fontColor;
-    font-size: 1em;
-    width: 35%;
-    height: 2em;
+    font-size: calc(vars.$gutter * 1);
+    height: calc(vars.$gutter * 2);
     border: none;
     border-radius: 5px;
-    margin-bottom: calc(vars.$gutter * 1);
+    padding: 0 calc(vars.$gutter * 4);
   }
 }
 

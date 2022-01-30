@@ -39,10 +39,8 @@ const EditProfile = () => {
               }}
             />
             <Edit2 />
-            {/* <div className="editprofile-content avatar"> */}
-              <img alt="editprofileicon" src={profileicon} className="editprofile-content avatar" />
-              <Upload />
-            {/* </div> */}
+            <img alt="editprofileicon" src={profileicon} className="editprofile-content avatar" />
+            <Upload />
             <h3 className="editprofile-content title-description">Présentation
               <Edit2
                 className="editprofile-content edit-presentation"
