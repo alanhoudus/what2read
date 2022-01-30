@@ -1,5 +1,9 @@
 // hooks
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
+// react-router-dom
+import { useNavigate } from 'react-router-dom';
 
 // import components
 import Field from '../Field';
@@ -14,6 +18,14 @@ const LogIn = () => {
   const email = useSelector((state) => state.userLogin.email);
   const password = useSelector((state) => state.userLogin.password);
   const dispatch = useDispatch();
+  const isLogged = useSelector((state) => state.userLogin.logged);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogged) {
+      return navigate('/');
+    }
+  }, [isLogged]);
 
   return (
     <div className="logIn">
