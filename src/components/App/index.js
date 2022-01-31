@@ -69,7 +69,7 @@ const App = () => {
           <Route path="/profil/lectures" key="mes-lectures" element={<Readings />} />
           <Route path="*" key="notfound" element={<NotFound />} />
           <Route path="/profil" key="profil" element={<Profile />} />
-          <Route path="/livre" key="livre" element={<Book />} />
+          <Route path="/livre/:isbn" key="livre" element={<Book />} />
           <Route path="/profil/reviews" key="reviews" element={<Reviews />} />
           <Route path="/profil/edition" key="profil-edition" element={<EditProfile />} />
           <Route path="/suggestions/historique" key="suggestions-historique" element={<Suggestions />} />

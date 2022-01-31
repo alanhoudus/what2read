@@ -7,7 +7,7 @@ import { READINGS_LIST, READINGS_PRESENTATION } from '../../data/readings';
 import ReadingsList from './ReadingsList';
 // scss
 import './readings.scss';
-import ShowMore from '../ShowMore';
+import ShowMore from '../Reusables/ShowMore';
 
 const Readings = () => {
   // eslint-disable-next-line no-unused-vars

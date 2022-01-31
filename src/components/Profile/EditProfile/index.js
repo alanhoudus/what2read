@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // assets
 import { Upload, Edit2 } from 'react-feather';
 // components
-import Field from '../../Field';
-import TextArea from '../../TextArea';
+import Field from '../../Reusables/Field';
+import TextArea from '../../Reusables/TextArea';
 
 import profileicon from '../../../assets/images/profileicon.png';
 // actions

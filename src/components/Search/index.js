@@ -1,25 +1,27 @@
 // hooks
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 // import components
-import ShowMore from '../ShowMore';
+import ShowMore from '../Reusables/ShowMore';
 import SearchList from './SearchList';
+import SearchField from '../Reusables/SearchField';
 
 // import scss
 import './search.scss';
-// mock data
-import SEARCHED_BOOKS_LIST from '../../data/search';
-import SearchField from '../SearchField';
 
 const Search = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [searchedBooksList, setSearchedBooksList] = useState(SEARCHED_BOOKS_LIST);
+  const searchedBooks = useSelector((state) => state.books.booksList);
+
+  useEffect(() => {
+    console.log(searchedBooks);
+  }, [searchedBooks]);
   return (
     <div className="search">
       <div className="search-input">
         <SearchField />
       </div>
       <div className="search-books">
-        <SearchList searchedBooksList={searchedBooksList} />
+        <SearchList searchedBooksList={searchedBooks} />
       </div>
       <ShowMore />
     </div>
