@@ -6,7 +6,7 @@ import {
 export const initialState = {
   booksList: [],
   searchedBook: {},
-  booksListDataLoading: false,
+  booksListDataLoading: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
