@@ -18,7 +18,7 @@ const reducer = (state = initialState, action = {}) => {
     case DATA_LOADED:
       return {
         ...state,
-        dataLoading: false,
+        dataLoading: true,
       };
     default:
       return state;
