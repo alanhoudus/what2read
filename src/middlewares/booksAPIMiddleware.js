@@ -4,8 +4,6 @@ import {
   GET_BOOKS_DATA,
   saveBooksList,
   booksListLoaded,
-  GET_BOOK_DATA,
-  saveBook,
 } from '../actions/books';
 
 const recipesAPIMiddleware = (store) => (next) => (action) => {
@@ -24,19 +22,6 @@ const recipesAPIMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           store.dispatch(booksListLoaded());
-        });
-      break;
-    case GET_BOOK_DATA:
-      axios.get(
-        // URL
-        `http://localhost:8000/api/book/${action.data}`,
-      )
-        .then((book) => {
-          store.dispatch(saveBook(book.data));
-          console.log(book);
-        })
-        .catch((error) => {
-          console.log(error);
         });
       break;
     default:
