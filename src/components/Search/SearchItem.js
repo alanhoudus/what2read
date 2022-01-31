@@ -9,8 +9,9 @@ const SearchItem = ({ searchedBook }) => (
       to="/livre"
       key={searchedBook.key}
     >
-      <img className="search-img" src={searchedBook.cover} alt="title" />
+      <img className="search-book cover" src={searchedBook.cover} alt="title" />
       <h3 className="search-book--title">{searchedBook.title}</h3>
+      <h3 className="search-book--subtitle">{searchedBook.subtitle}</h3>
     </Link>
   </div>
 );
@@ -20,6 +21,7 @@ SearchItem.propTypes = {
     cover: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     key: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
   }).isRequired,
 };
 

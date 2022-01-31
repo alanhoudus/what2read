@@ -1,17 +1,7 @@
 @use '../../../styles/vars';
 
 @media (max-width: 768px) { 
-
   .suggestedbook {
-    margin-top: calc(vars.$gutter * 5);
-
-    &-separator {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
-    }
-
     &-infos {
       display: grid;
       grid-template-columns: repeat(1, 100%);

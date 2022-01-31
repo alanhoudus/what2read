@@ -11,7 +11,7 @@ const SEARCHED_BOOKS_LIST = [
   },
   {
     title: 'Le Seigneur des Anneaux',
-    cover: 'https://products-images.di-static.com/image/john-ronald-reuel-tolkien-le-seigneur-des-anneaux-integrale/9782266286268-475x500-1.webp',
+    cover: 'https://products-images.di-static.com/image/https-ronald-reuel-tolkien-le-seigneur-des-anneaux-integrale/9782266286268-475x500-1.webp',
     key: '3',
   },
   {

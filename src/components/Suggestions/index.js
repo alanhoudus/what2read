@@ -25,7 +25,9 @@ const Suggestions = () => {
           <Suggestion suggestionsList={suggestionsList} />
         </div>
       </div>
-      <ShowMore />
+      <div className="suggestions-showmore">
+        <ShowMore />
+      </div>
     </div>
   );
 };

@@ -20,10 +20,6 @@
         padding: calc(vars.$gutter * 1) 0;
       }
     }
-  // hide the last 3 books on mobile, its just for the static integration
-    &-book:nth-last-child(-n+6) {
-      display: none;
-    }
 
     &-book:hover {
       cursor: pointer;
@@ -39,41 +35,38 @@
 // responsive desktop
 @media (min-width: 768px) {
   .search {
-    display: inline-block;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    color: vars.$fontColor;
     // show the last 6 books on desktop, its just for the static integration
-    &-book:nth-last-child(-n+6) {
-      display: block;
-    }
-
+    // &-book:nth-last-child(-n+6) {
+    //   display: block;
+    // }
     &-books {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      width: 100%;
+    }
+    &-showmore {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     &-book {
-      flex-basis: 25%;
-      margin: calc(vars.$gutter * 1);
-      text-align: center;
+      width: 300px;
+      margin: calc(vars.$gutter *1);
 
-      &--title {
+      h3, h4 {
         text-align: center;
-        padding: calc(vars.$gutter * 1) 0;
       }
-    }
 
-    &-book:hover {
-      cursor: pointer;
-    }
-
-    &-img {
-      height: 500px;
-      width: 305px;
+      &.cover {
+      position: relative;
       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      width: 300px;
+      height: 450px;
+      }
     }
   }
 }
