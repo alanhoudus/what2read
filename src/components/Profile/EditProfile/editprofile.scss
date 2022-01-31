@@ -3,51 +3,39 @@
 // responsive mobile first
 @media (max-width: 768px) {
   .editprofile {
-    color: vars.$fontColor;
+    &-contentGroup {
+      padding: calc(vars.$gutter * 2);
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      margin: calc(vars.$gutter * 2);
+      margin-right: calc(vars.$gutter * 3);
+      padding: calc(vars.$gutter * 1);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
 
     &-logo {
       display: none;
     }
-    &-contentGroup {
-        margin-left: calc(vars.$gutter * 3);
-        padding-top: calc(vars.$gutter * 2);
-    }
+
     &-content {
-
-      &.title-description {
-        margin: calc(vars.$gutter * 1) calc(vars.$gutter * 1) calc(vars.$gutter * 1) calc(vars.$gutter * 0);
-        font-size: calc(vars.$fontSize * 1.5);
-      }
-
-      &.edit-presentation {
-        margin-left: calc(vars.$gutter * 0.8);
-      }
-
       &.avatar {
-        width: 30%;
-        background-color: #fff;
+        width: 200px;
         border-radius: 50%;
-        padding: calc(vars.$gutter * 1);
+        background-color: #fff;
         display: block;
+        padding: calc(vars.$gutter * 0.5);
       }
-      &.title {
-        font-size: calc(vars.$fontSize * 2);
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
+      &.edit-presentation {
+        margin-left: calc(vars.$gutter * 0.8)
       }
-      &.subtitle {
-        font-size: 1.2em;
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: vars.$gutter;
-      }
+
       &.button {
         color: vars.$mainColor;
         background-color: vars.$thirdColor;
         margin-bottom: vars.$gutter;
         border-radius: 30px;
-        font-size: 1em;
+        font-size: calc(vars.$gutter * 1);
         padding: 10px;
         border: none;
       }
@@ -73,47 +61,25 @@
 
 // responsive desktop
 @media (min-width: 768px) {
-.editprofile {
-  color: vars.$fontColor;
+  .editprofile {
+    &-contentGroup {
+      margin: calc(vars.$gutter * 2);
+      margin-right: calc(vars.$gutter * 5);
+      padding: calc(vars.$gutter * 1);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
 
-      &-contentGroup {
-        margin-left: calc(vars.$gutter * 1.5);
-        padding-top: calc(vars.$gutter * 2);
-      }
     &-content {
-
-      &.title-description {
-        margin: calc(vars.$gutter * 1) calc(vars.$gutter * 1) calc(vars.$gutter * 1) calc(vars.$gutter * 0);
-      }
-
       &.edit-presentation {
         margin-left: calc(vars.$gutter * 0.8)
       }
 
       &.avatar {
-        width: 20%;
+        width: 200px;
         border-radius: 50%;
         background-color: #fff;
         display: block;
         padding: calc(vars.$gutter * 0.5);
-      }
-
-      &.title {
-        font-size: calc(vars.$fontSize * 2);
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
-
-        &-description { 
-          font-size: calc(vars.$fontSize * 1.5);
-        }
-      }
-
-      &.subtitle {
-        font-size: calc(vars.$fontSize * 1.2);
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: vars.$gutter;
       }
 
       &.button {
@@ -122,7 +88,7 @@
         margin-bottom: vars.$gutter;
         border-radius: 30px;
         border: none;
-        font-size: calc(vars.$gutter * 0.8);
+        font-size: calc(vars.$gutter * 1);
         padding: 10px;
       }
 

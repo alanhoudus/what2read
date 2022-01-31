@@ -22,7 +22,9 @@ const Readings = () => {
       <div className="readings-books">
         <ReadingsList readingsList={readingsList} />
       </div>
-      <ShowMore />
+      <div className="readings-showmore">
+        <ShowMore />
+      </div>
     </div>
   );
 };

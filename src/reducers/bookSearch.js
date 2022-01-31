@@ -1,7 +1,7 @@
 import {
   UPDATE_FAST_SEARCH_BOOK_VALUE,
   UPDATE_SEARCH_BOOK_VALUE,
-} from 'src/actions/search';
+} from '../actions/search';
 
 export const initialState = {
   inputFastSearch: '',

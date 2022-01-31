@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // assets
 import { Upload, Edit2 } from 'react-feather';
 // components
-import Field from 'src/components/Field';
+import Field from '../../Field';
 import TextArea from '../../TextArea';
 
 import profileicon from '../../../assets/images/profileicon.png';
@@ -24,8 +24,8 @@ const EditProfile = () => {
   return (
     <div>
       <div className="editprofile">
+        <h2 className="editprofile title">Mon profil</h2>
         <div className="editprofile-contentGroup">
-          <h2 className="editprofile-content title">Mon profil</h2>
           <form>
             <Field
               className="editprofile-content input nickname"
@@ -41,11 +41,11 @@ const EditProfile = () => {
             <Edit2 />
             <img alt="editprofileicon" src={profileicon} className="editprofile-content avatar" />
             <Upload />
-            <div className="editprofile-content title-description">Présentation
+            <h3 className="editprofile-content title-description">Présentation
               <Edit2
                 className="editprofile-content edit-presentation"
               />
-            </div>
+            </h3>
             <TextArea
               className="editprofile-content input description"
               value={userDescription}

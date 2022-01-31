@@ -5,11 +5,11 @@ const LinkItem = ({ myReview }) => (
   <div className="reviews-wrapper--singlereview">
     <img src={myReview.cover} alt="Couverture du livre" />
     <div className="reviews-wrapper--singlereview-infos">
-      <h2>{myReview.title}</h2>
+      <h3>{myReview.title}</h3>
       <p>{myReview.description}</p>
       <div className="reviews-wrapper--singlereview-infos--buttons">
-        <Trash color="red" />
         <Edit color="white" />
+        <Trash color="red" />
       </div>
     </div>
   </div>

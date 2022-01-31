@@ -35,7 +35,6 @@ const Review = () => {
 
   return (
     <div className="review">
-      <div className="review-separator" />
       <h2 className="review-title--section">Propositions de reviews</h2>
       {/* <img
         src={arrow}

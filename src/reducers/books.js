@@ -1,7 +1,7 @@
 import {
   SAVE_BOOKS_LIST,
   DATA_LOADED,
-} from 'src/actions/books';
+} from '../actions/books';
 
 export const initialState = {
   booksList: [],

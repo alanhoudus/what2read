@@ -7,26 +7,6 @@
     flex-direction: column;
     align-items: center;
     color: vars.$fontColor;
-    &-input {
-      display: flex;
-      margin-top: calc(vars.$gutter *  1);
-      &--field {
-        background-color: white;
-        color: vars.$fontColor;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: calc(vars.$gutter * 1.5);
-        padding: 0.3em;
-      }
-      &--submit {
-        background-color: vars.$secondaryColor;
-        border: none;
-        border-radius: 4px;
-        width: 3em;
-        height: 2.2em;
-      }
-    }
 
     &-books {
       width: 40%;
@@ -39,10 +19,6 @@
         text-align: center;
         padding: calc(vars.$gutter * 1) 0;
       }
-    }
-  // hide the last 3 books on mobile, its just for the static integration
-    &-book:nth-last-child(-n+6) {
-      display: none;
     }
 
     &-book:hover {
@@ -62,64 +38,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: vars.$fontColor;
     // show the last 6 books on desktop, its just for the static integration
-    &-book:nth-last-child(-n+6) {
-      display: block;
-    }
-    &-input {
-      display: flex;
-      margin-top: calc(vars.$gutter *  2);
-      &--field {
-        background-color: white;
-        color: vars.$fontColor;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: calc(vars.$gutter * 1.5);
-        margin-right: calc(vars.$gutter * 2);
-        padding: 0.3em;
-      }
-      &--submit {
-        background-color: vars.$secondaryColor;
-        border: none;
-        border-radius: 4px;
-        height: 2.2em;
-        display: flex;
-        align-items: center;
-        width: 8em;
-        color: vars.$thirdColor;
-      }
-      &--submit::after {
-        content: "Rechercher";
-      }
-    }
-
+    // &-book:nth-last-child(-n+6) {
+    //   display: block;
+    // }
     &-books {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      width: 100%;
+    }
+    &-showmore {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     &-book {
-      flex-basis: 25%;
-      margin: calc(vars.$gutter * 1);
+      width: 300px;
+      margin: calc(vars.$gutter *1);
 
-      &--title {
+      h3, h4 {
         text-align: center;
-        padding: calc(vars.$gutter * 1) 0;
       }
-    }
 
-    &-book:hover {
-      cursor: pointer;
-    }
-
-    &-img {
-      height: 500px;
-      width: 305px;
+      &.cover {
+      position: relative;
       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      width: 300px;
+      height: 450px;
+      }
     }
   }
 }

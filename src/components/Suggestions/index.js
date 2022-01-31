@@ -7,6 +7,7 @@ import Suggestion from './SuggestionsList';
 import './suggestions.scss';
 import SuggestedBook from '../Home/SuggestedBook';
 import ShowMore from '../ShowMore';
+import Separator from '../Separator';
 
 // == Composant
 const Suggestions = () => {
@@ -18,13 +19,15 @@ const Suggestions = () => {
   return (
     <div className="suggestions">
       <SuggestedBook />
-      <div className="suggestions-separator" />
+      <Separator />
       <div className="suggestions-history">
         <div className="suggestions-history book">
           <Suggestion suggestionsList={suggestionsList} />
         </div>
       </div>
-      <ShowMore />
+      <div className="suggestions-showmore">
+        <ShowMore />
+      </div>
     </div>
   );
 };
