@@ -5,7 +5,7 @@ import {
 
 export const initialState = {
   booksList: [],
-  dataLoading: true,
+  dataLoading: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
