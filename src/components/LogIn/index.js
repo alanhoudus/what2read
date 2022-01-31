@@ -13,6 +13,7 @@ import './logIn.scss';
 const LogIn = () => {
   const email = useSelector((state) => state.userLogin.email);
   const password = useSelector((state) => state.userLogin.password);
+  const loggingError = useSelector((state) => state.userLogin.loggingError);
   const dispatch = useDispatch();
 
   return (
@@ -52,6 +53,9 @@ const LogIn = () => {
               dispatch(action);
             }}
           />
+          {loggingError && (
+            <p className="logIn-error">Le mail ou le mot de passe est incorrect</p>
+          )}
           <button type="submit" className="logIn-button">Se connecter</button>
         </form>
       </div>
