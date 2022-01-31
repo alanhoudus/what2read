@@ -8,7 +8,7 @@ const ConnectionProfile = () => {
 
   return (
     <div className="connectionprofile">
-      Bienvenu.e {userName}
+      Bienvenue {userName}
     </div>
   );
 };

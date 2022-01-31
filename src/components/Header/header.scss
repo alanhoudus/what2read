@@ -52,6 +52,7 @@
 
     &-burgermenu {
       > li:last-child {
+        // we hide fast search on mobile nav
         display: none;
       }
     }
