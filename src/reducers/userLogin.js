@@ -26,6 +26,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         logged: action.isLogged,
+        loggingError: false,
         logInfo: true,
       };
     case LOGGING_ERROR:

@@ -2,8 +2,11 @@
 // react-router-dom
 import { Routes, Route, useLocation } from 'react-router-dom';
 // hooks
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+
+// actions
+import { getBooksData } from '../../actions/books';
 
 // components
 import Header from '../Header';
@@ -23,8 +26,9 @@ import EditProfile from '../Profile/EditProfile';
 import Suggestions from '../Suggestions';
 import LogoProfil from '../Profile/LogoProfil';
 import ConnectionProfile from '../Profile/ConnectionProfile';
-
+import Loader from './Loader';
 import LogIn from '../LogIn';
+
 // scss
 import './app.scss';
 
@@ -32,6 +36,8 @@ import './app.scss';
 const App = () => {
   const isLogged = useSelector((state) => state.userLogin.logged);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
+  const dataIsLoading = useSelector((state) => state.books.dataLoading);
+  const dispatch = useDispatch();
 
   const location = useLocation();
   // pour chaque rendu ou l'url a changé
@@ -40,6 +46,13 @@ const App = () => {
     window.scrollTo(0, 0);
   }, [location]);
 
+  useEffect(() => {
+    dispatch(getBooksData());
+  }, []);
+
+  if (dataIsLoading) {
+    return <Loader />;
+  }
   return (
     <div className="app">
       <Header />
