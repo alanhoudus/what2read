@@ -28,7 +28,7 @@
   .search {
     display: flex;
     align-self: center;
-    margin-top: calc(vars.$gutter *  2);
+    padding-top: calc(vars.$gutter *  2);
     
     &--field {
       background-color: vars.$fontColor;
