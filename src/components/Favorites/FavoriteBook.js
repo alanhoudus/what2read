@@ -6,7 +6,7 @@ const FavoriteBook = ({ book }) => (
   <div className="favorites-book">
     <Link
       to="/livre"
-      key={book.key}
+      key={book.isbn}
     >
       <div className="favorites-book--cover">
         <img src={book.cover} alt="Couverture du livre favori" />
@@ -20,7 +20,7 @@ const FavoriteBook = ({ book }) => (
 
 FavoriteBook.propTypes = {
   book: PropTypes.shape({
-    key: PropTypes.string.isRequired,
+    isbn: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     cover: PropTypes.string.isRequired,
     subtitle: PropTypes.string,

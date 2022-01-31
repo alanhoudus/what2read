@@ -1,6 +1,8 @@
 import {
   UPDATE_PROFILE_VALUE,
   SAVE_USER_DATA,
+  SAVE_FAVORITES,
+  FAVORITES_LOADED,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -8,6 +10,8 @@ export const initialState = {
   email: '',
   description: '',
   token: '',
+  favorites: [],
+  favoritesLoading: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -25,6 +29,16 @@ const reducer = (state = initialState, action = {}) => {
         nickname: action.nickname,
         description: 'J\'me présente. Je m\'appelle John. J\'voudrais bien réussir ma vie. Être aimé !',
         password: '',
+      };
+    case SAVE_FAVORITES:
+      return {
+        ...state,
+        favorites: action.data,
+      };
+    case FAVORITES_LOADED:
+      return {
+        ...state,
+        favoritesLoading: false,
       };
     default:
       return state;

@@ -1,7 +1,6 @@
 import {
   SAVE_BOOKS_LIST,
   BOOKS_LIST_LOADED,
-  SAVE_BOOK,
 } from '../actions/books';
 
 export const initialState = {
@@ -16,11 +15,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         booksList: action.data,
-      };
-    case SAVE_BOOK:
-      return {
-        ...state,
-        searchedBook: action.data,
       };
     case BOOKS_LIST_LOADED:
       return {
