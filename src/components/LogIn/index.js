@@ -6,8 +6,8 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // import components
-import Field from '../Field';
-import Separator from '../Separator';
+import Field from '../Reusables/Field';
+import Separator from '../Reusables/Separator';
 
 // actions
 import { updateLoginValue, handleLogin } from '../../actions/user';

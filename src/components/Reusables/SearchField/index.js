@@ -6,7 +6,7 @@ import { Search as SearchIcon } from 'react-feather';
 import Field from '../Field';
 import './searchField.scss';
 // actions
-import { updateSearchBookValue } from '../../actions/search';
+import { updateSearchBookValue } from '../../../actions/search';
 
 // == Composant
 const SearchField = () => {

@@ -1,11 +1,13 @@
 import {
   SAVE_BOOKS_LIST,
-  DATA_LOADED,
+  BOOKS_LIST_LOADED,
+  SAVE_BOOK,
 } from '../actions/books';
 
 export const initialState = {
   booksList: [],
-  dataLoading: false,
+  searchedBook: {},
+  booksListDataLoading: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -15,10 +17,15 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         booksList: action.data,
       };
-    case DATA_LOADED:
+    case SAVE_BOOK:
       return {
         ...state,
-        dataLoading: true,
+        searchedBook: action.data,
+      };
+    case BOOKS_LIST_LOADED:
+      return {
+        ...state,
+        booksListDataLoading: false,
       };
     default:
       return state;

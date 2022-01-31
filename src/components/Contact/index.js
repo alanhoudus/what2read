@@ -1,4 +1,4 @@
-import Separator from '../Separator';
+import Separator from '../Reusables/Separator';
 import './contact.scss';
 
 const Contact = () => (

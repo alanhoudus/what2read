@@ -1,6 +1,6 @@
 // import components
-import Field from '../Field';
-import TextArea from '../TextArea';
+import Field from '../Reusables/Field';
+import TextArea from '../Reusables/TextArea';
 // import asset
 // import profilLogo from '../../assets/images/profileicon.png';
 // import scss
