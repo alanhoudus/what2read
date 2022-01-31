@@ -3,25 +3,43 @@ import axios from 'axios';
 import {
   GET_BOOKS_DATA,
   saveBooksList,
-  dataLoaded,
+  booksListLoaded,
+  GET_BOOK_DATA,
+  saveBook,
 } from '../actions/books';
 
 const recipesAPIMiddleware = (store) => (next) => (action) => {
-  if (action.type === GET_BOOKS_DATA) {
-    axios.get(
-      // URL
-      'https://www.googleapis.com/books/v1/volumes?q=tolkiens',
+  switch (action.type) {
+    case GET_BOOKS_DATA:
+      axios.get(
+        // URL
+        'http://localhost:8000/api/books',
 
-    )
-      .then((booksList) => {
-        store.dispatch(saveBooksList(booksList.data.items));
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        store.dispatch(dataLoaded());
-      });
+      )
+        .then((booksList) => {
+          store.dispatch(saveBooksList(booksList.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          store.dispatch(booksListLoaded());
+        });
+      break;
+    case GET_BOOK_DATA:
+      axios.get(
+        // URL
+        `http://localhost:8000/api/book/${action.data}`,
+      )
+        .then((book) => {
+          store.dispatch(saveBook(book.data));
+          console.log(book);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    default:
   }
 
   next(action);

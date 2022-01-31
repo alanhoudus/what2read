@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 
 // import components
-import Field from '../Field';
-import Separator from '../Separator';
+import Field from '../Reusables/Field';
+import Separator from '../Reusables/Separator';
 
 // actions
 import { updateRegistrationValue } from '../../actions/user';

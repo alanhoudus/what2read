@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // components
-import Field from '../Field';
+import Field from '../Reusables/Field';
 import LinkLists from './LinkLists';
 
 // actions

@@ -3,9 +3,9 @@
 import { useState } from 'react';
 // components
 import Favorite from './FavoritesList';
-import Separator from '../Separator';
-import ShowMore from '../ShowMore';
-import SearchField from '../SearchField';
+import Separator from '../Reusables/Separator';
+import ShowMore from '../Reusables/ShowMore';
+import SearchField from '../Reusables/SearchField';
 
 // mock data
 import { FAVORITES_BOOK_LIST, FAVORITE_PRESENTATION } from '../../data/favorites';

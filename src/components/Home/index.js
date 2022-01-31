@@ -1,5 +1,5 @@
 // == Import
-import Separator from '../Separator';
+import Separator from '../Reusables/Separator';
 import './home.scss';
 import Review from './Review';
 import SuggestedBook from './SuggestedBook';
