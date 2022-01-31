@@ -15,13 +15,6 @@
     &-content {
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
 
-
-      &.title {
-        font-size: 1.5em;
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
-      }
       &.tag {
         display: inline;
         &-genre-a {
@@ -42,12 +35,6 @@
           padding: 7px;
         }
       }
-    }
-    &-lign {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
     }
   }
 }
@@ -55,29 +42,16 @@
 // responsive desktop
 @media (min-width: 768px) {
   .book{
-    // to have the content not hidden by the nav menu on desktop
-    padding-top: 1em;
-    font-size: 1.3em;
-
-    &-title {
-    margin-left: 8%;
-    }
+    margin: 0 calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
+    
     &-content {
       &.description {
         display: flex;
         flex-wrap: wrap;
       }
     }
-    &-user-profile {
-      width: 70px;
-      height: auto;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #fff;
-      border-radius: 50%;
-      padding: 10px;
-    }
+
     &-contentGroup {
         margin: 0 calc(vars.$gutter * 1.5);
         padding-top: calc(vars.$gutter * 1);
@@ -85,12 +59,6 @@
     &-content {
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
 
-      &.title {
-        font-size: 1.5em;
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
-      }
       &.tag {
         display: inline;
         &-genre-a {
@@ -112,11 +80,5 @@
         }
       }
     }
-    &-lign {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
-    }  
   }
 }

@@ -9,14 +9,64 @@ body {
   color: vars.$fontParagraph;
 }
 
-/* 
-  // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
+h1,h2,h3,h4 {
+  color: vars.$fontColor;
+  font-weight: bold;
+}
+p {
+  padding: calc(vars.$gutter * 0.5);
+}
+
+// responsive mobile first
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(vars.$gutter * 2);
+    margin-bottom: calc(vars.$gutter * 1.6);
+    padding-top: calc(vars.$gutter * 1);
+    margin-left: 8%;
+    text-align: center;
   }
 
-  body {
-    font-family: 'Roboto', sans-serif;
+  h2 {
+    font-size: calc(vars.$gutter * 1.7);
+    margin-bottom: calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
+    text-align: center;
   }
-*/
+
+  h3 {
+    font-size: calc(vars.$fontSize * 1.4);
+    padding: calc(vars.$gutter * 0.5);
+  }
+
+  h4 {
+    font-size: calc(vars.$fontSize * 1.2);
+    font-style: italic;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    margin-bottom: calc(vars.$gutter * 1.5);
+    padding-top: 1em;
+    margin-left: 8%;
+    font-size: calc(vars.$fontSize * 2.5);
+    display: flex;
+    align-self: flex-start;
+  }
+
+  h2 {
+    font-size: calc(vars.$fontSize * 1.7);
+    margin-bottom: calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
+  }
+
+  h3 {
+    font-size: calc(vars.$fontSize * 1.4);
+    padding: calc(vars.$gutter * 0.5);
+  }
+
+  h4 {
+    font-size: calc(vars.$fontSize * 1.2);
+    font-style: italic;
+  }
+}

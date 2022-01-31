@@ -2,8 +2,11 @@
 // hooks
 import { useState } from 'react';
 // components
-import Field from '../Field';
 import Favorite from './FavoritesList';
+import Separator from '../Separator';
+import ShowMore from '../ShowMore';
+import SearchField from '../SearchField';
+
 // mock data
 import { FAVORITES_BOOK_LIST, FAVORITE_PRESENTATION } from '../../data/favorites';
 
@@ -19,19 +22,16 @@ const Favorites = () => {
   return (
     <div className="favorites">
       <div className="favorites-presentation">
-        <h1>{favoritesPresentation.title}</h1>
+        <h2>{favoritesPresentation.title}</h2>
         <p>{favoritesPresentation.presentation}</p>
       </div>
-      <div className="favorites-separator" />
-      <Field
-        placeholder="Rechercher dans mes favoris"
-        className="favorites-search"
-        type="text"
-        name="quicksearch favorite"
-        id="quicksearch favorite"
-      />
+      <Separator />
+      <SearchField />
       <div className="favorites-books">
         <Favorite favoritesList={favoritesList} />
+      </div>
+      <div className="favorites-showmore">
+        <ShowMore />
       </div>
     </div>
   );

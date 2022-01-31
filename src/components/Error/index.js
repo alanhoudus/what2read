@@ -4,7 +4,7 @@ import './notfound.scss';
 // == Composant
 const NotFound = () => (
   <div className="notfound">
-    <h1 className="notfound-title">Erreur 404</h1>
+    <h2 className="notfound-title">Erreur 404</h2>
     <p>La page que vous avez demandé n'existe pas</p>
   </div>
 );

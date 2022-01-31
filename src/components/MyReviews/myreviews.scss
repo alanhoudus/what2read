@@ -2,29 +2,20 @@
 
 @media (max-width: 768px) {
   .reviews {
-    margin-top: calc(vars.$gutter * 2);
-
-    & > h1 {
-      font-size: calc(vars.$fontSize * 2);
-      padding-left: calc(vars.$gutter * 1);
-    }
-
     &-wrapper {
 
       &--singlereview {
         color: vars.$fontParagraph;
-        margin-top: calc(vars.$gutter * 2);
+        margin: calc(vars.$gutter * 2);
         margin-bottom: calc(vars.$gutter * 5);
         padding: calc(vars.$gutter * 2);
         text-align: center;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
         &-infos {
-          & > h2 {
-            font-size: calc(vars.$fontSize * 1.5);
+          & > h3 {  
             text-align: left;
             position: relative;
-            color: vars.$fontColor;
           }
   
           & > p {
@@ -38,8 +29,7 @@
         }
 
         & > img {
-          display: none;
-    
+          display: none;    
         }
       }
     }
@@ -51,11 +41,6 @@
   .reviews {
     padding-top: calc(vars.$gutter * 2);
     margin: 0 calc(vars.$gutter * 4) calc(vars.$gutter * 2) calc(vars.$gutter * 2);
-
-    & > h1 {
-      font-size: calc(vars.$fontSize * 2);
-      color: vars.$fontColor;
-    }
 
     &-wrapper {
 
@@ -80,10 +65,8 @@
             right: 0;
           }
 
-          & > h2 {
-            font-size: calc(vars.$fontSize * 1.5);
+          & > h3 {
             text-align: left;
-            color: vars.$fontColor;
             grid-row: 1 / 2;
           }
   
