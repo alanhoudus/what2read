@@ -4,9 +4,13 @@ import {
   GET_BOOKS_DATA,
   saveBooksList,
   booksListLoaded,
-  GET_BOOK_DATA,
-  saveBook,
 } from '../actions/books';
+
+import {
+  GET_FAVORITES_DATA,
+  saveFavorites,
+  favoritesLoaded,
+} from '../actions/user';
 
 const recipesAPIMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -26,17 +30,19 @@ const recipesAPIMiddleware = (store) => (next) => (action) => {
           store.dispatch(booksListLoaded());
         });
       break;
-    case GET_BOOK_DATA:
+    case GET_FAVORITES_DATA:
       axios.get(
         // URL
-        `http://localhost:8000/api/book/${action.data}`,
+        'http://localhost:8000/api/books',
       )
-        .then((book) => {
-          store.dispatch(saveBook(book.data));
-          console.log(book);
+        .then((favorites) => {
+          store.dispatch(saveFavorites(favorites.data));
         })
         .catch((error) => {
           console.log(error);
+        })
+        .finally(() => {
+          favoritesLoaded();
         });
       break;
     default:

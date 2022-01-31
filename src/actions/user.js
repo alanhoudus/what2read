@@ -6,6 +6,22 @@ export const LOG_OUT = 'LOG_OUT';
 export const UPDATE_PROFILE_VALUE = 'UPDATE_PROFILE_VALUE';
 export const UPDATE_REGISTRATION_VALUE = 'UPDATE_REGISTRATION_VALUE';
 export const REMOVE_LOG_INFO = 'REMOVE_LOG_INFO';
+export const GET_FAVORITES_DATA = 'GET_FAVORITES_DATA';
+export const SAVE_FAVORITES = 'SAVE_FAVORITES';
+export const FAVORITES_LOADED = 'FAVORITES_LOADED';
+
+export const favoritesLoaded = () => ({
+  type: FAVORITES_LOADED,
+});
+
+export const saveFavorites = (favorites) => ({
+  type: SAVE_FAVORITES,
+  data: favorites,
+});
+
+export const getFavoritesData = () => ({
+  type: GET_FAVORITES_DATA,
+});
 
 export const removeLogInfo = () => ({
   type: REMOVE_LOG_INFO,
