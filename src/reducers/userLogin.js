@@ -9,9 +9,8 @@ import {
 export const initialState = {
   logged: true,
   logInfo: false,
-  email: '',
+  username: '',
   password: '',
-  token: '',
   loggingError: false,
 };
 
@@ -25,7 +24,7 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_USER_DATA:
       return {
         ...state,
-        logged: action.isLogged,
+        logged: true,
         loggingError: false,
         logInfo: true,
       };
@@ -44,11 +43,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         logged: false,
         nickname: '',
-        email: '',
-        description: '',
         password: '',
-        confirmationPassword: '',
-        token: '',
         loginfo: false,
       };
     default:

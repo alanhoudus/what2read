@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux';
 import './connectionprofile.scss';
 
 const ConnectionProfile = () => {
-  const userName = useSelector((state) => state.userProfile.nickname);
+  const username = useSelector((state) => state.userProfile.username);
 
   return (
     <div className="connectionprofile">
-      Bienvenue {userName}
+      Bienvenue {username}
     </div>
   );
 };
