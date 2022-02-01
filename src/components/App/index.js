@@ -31,6 +31,7 @@ import LogIn from '../LogIn';
 
 // scss
 import './app.scss';
+import { getSuggestionsData } from '../../actions/suggestions';
 import { getFavoritesData, getReadingsData, getReviewsData } from '../../actions/user';
 
 // == Composant
@@ -52,6 +53,7 @@ const App = () => {
     dispatch(getFavoritesData());
     dispatch(getReadingsData());
     dispatch(getReviewsData());
+    dispatch(getSuggestionsData());
   }, []);
 
   if (dataIsLoading) {

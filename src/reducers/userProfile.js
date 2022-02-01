@@ -7,7 +7,7 @@ import {
   READINGS_LOADED,
   SAVE_REVIEWS,
   REVIEWS_LOADED,
-} from 'src/actions/user';
+} from '../actions/user';
 
 export const initialState = {
   nickname: '',
