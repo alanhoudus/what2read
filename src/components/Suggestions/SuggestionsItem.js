@@ -5,7 +5,7 @@ const SuggestionsItem = ({ book }) => (
   <div className="suggestions-history book">
     <Link
       to="/livre"
-      key={book.key}
+      key={book.isbn}
     >
       <img className="suggestions-history book-cover" src={book.cover} alt="couverture du livre" />
       <h3 className="suggestions-history book-title">{book.title}</h3>
@@ -18,8 +18,8 @@ SuggestionsItem.propTypes = {
   book: PropTypes.shape({
     cover: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    key: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
+    isbn: PropTypes.string.isRequired,
+    date: PropTypes.string,
   }).isRequired,
 };
 
