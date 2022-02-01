@@ -3,8 +3,8 @@ import ReadingItem from './ReadingItem';
 
 const ReadingsList = ({ readingsList }) => (
   // For each reading in the list, create an item
-  readingsList.map((reading) => (
-    <ReadingItem key={reading.cover} reading={reading} />
+  readingsList.map((book) => (
+    <ReadingItem key={book.cover} book={book} />
   ))
 );
 
