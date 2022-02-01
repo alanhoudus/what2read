@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ReadingItem = ({ book }) => (
   <div className="readings-book">
     <Link
-      to="/livre"
+      to={`/livre/${book.isbn}`}
       key={book.isbn}
     >
       <div className="readings-book--cover">
