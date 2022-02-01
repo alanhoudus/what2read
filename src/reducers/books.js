@@ -3,6 +3,11 @@ import {
   BOOKS_LIST_LOADED,
 } from '../actions/books';
 
+import {
+  SAVE_SUGGESTIONS,
+  SUGGESTIONS_LOADED,
+} from '../actions/suggestions';
+
 export const initialState = {
   booksList: [],
   searchedBook: {},
@@ -17,6 +22,16 @@ const reducer = (state = initialState, action = {}) => {
         booksList: action.data,
       };
     case BOOKS_LIST_LOADED:
+      return {
+        ...state,
+        booksListDataLoading: false,
+      };
+    case SAVE_SUGGESTIONS:
+      return {
+        ...state,
+        booksList: action.data,
+      };
+    case SUGGESTIONS_LOADED:
       return {
         ...state,
         booksListDataLoading: false,
