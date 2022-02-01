@@ -15,6 +15,7 @@ import {
 const recipesAPIMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_BOOKS_DATA:
+      // Get all the books data
       axios.get(
         // URL
         'http://localhost:8000/api/books',

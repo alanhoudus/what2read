@@ -1,7 +1,7 @@
 // hooks
 import { useState } from 'react';
 // mock data
-import { SUGGESTIONS_LIST, SUGGESTIONS_PRESENTATION } from '../../data/suggestions';
+import { SUGGESTIONS_LIST } from '../../data/suggestions';
 
 import Suggestion from './SuggestionsList';
 import './suggestions.scss';
@@ -13,8 +13,6 @@ import Separator from '../Reusables/Separator';
 const Suggestions = () => {
   // eslint-disable-next-line no-unused-vars
   const [suggestionsList, setSuggestionsList] = useState(SUGGESTIONS_LIST);
-  // eslint-disable-next-line no-unused-vars
-  const [suggestionsPresentation, setSuggestionsPresentation] = useState(SUGGESTIONS_PRESENTATION);
 
   return (
     <div className="suggestions">

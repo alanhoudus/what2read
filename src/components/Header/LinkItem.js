@@ -9,7 +9,10 @@ import PropTypes from 'prop-types';
 import { logOut } from '../../actions/user';
 
 const LinkItem = ({ link }) => {
+  // If the key of the item is contact, give a special className
+  // to put contact at the end of the header
   const itemClass = link.key === 'contact' ? 'header-menu--list-contact' : 'header-menu--list';
+  // If the key is deconnexion, add an action onClick
   const action = link.key === 'deconnexion' ? logOut() : false;
   const dispatch = useDispatch();
   if (action) {

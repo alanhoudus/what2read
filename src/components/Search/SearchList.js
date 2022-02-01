@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import SearchItem from './SearchItem';
 
 const SearchList = ({ searchedBooksList }) => (
+  // For each searchedBook in the list, create an item
   searchedBooksList.map((book) => (
     <SearchItem key={book.isbn} searchedBook={book} />
   ))

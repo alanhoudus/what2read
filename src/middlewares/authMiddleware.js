@@ -9,9 +9,10 @@ import {
 
 const authMiddleware = (store) => (next) => (action) => {
   if (action.type === HANDLE_LOGIN) {
+    // Send the email and password stored in the state to the API
     axios.post(
       // URL
-      'http://localhost:3001/login',
+      'http://localhost:8000/api/login_check',
       // données
       {
         email: store.getState().userLogin.email,
@@ -19,6 +20,7 @@ const authMiddleware = (store) => (next) => (action) => {
       },
     )
       .then((response) => {
+        // If the inputs are correct, store the nickname, token etc into the state
         console.log(response);
         store.dispatch(saveUserData(
           response.data.pseudo,
@@ -28,9 +30,12 @@ const authMiddleware = (store) => (next) => (action) => {
       })
       .catch((error) => {
         console.log(error);
+        // If there's an error, dispatch the loggingError action to display the error
         store.dispatch(loggingError());
       })
       .finally(() => {
+        // Remove the ProfileConnexion component
+        // Should be moved in the response
         window.setTimeout(() => {
           store.dispatch(removeLogInfo());
         }, 7000);

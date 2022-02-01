@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import SuggestionsItem from './SuggestionsItem';
 
 const SuggestionsList = ({ suggestionsList }) => (
+  // For each suggestion in the list, create an item
   suggestionsList.map((book) => (
     <SuggestionsItem key={book.key} book={book} />
   ))
