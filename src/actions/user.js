@@ -12,6 +12,9 @@ export const FAVORITES_LOADED = 'FAVORITES_LOADED';
 export const GET_READINGS_DATA = 'GET_READINGS_DATA';
 export const SAVE_READINGS = 'SAVE_READINGS';
 export const READINGS_LOADED = ' READINGS_LOADED';
+export const GET_REVIEWS_DATA = 'GET_REVIEWS_DATA';
+export const SAVE_REVIEWS = 'SAVE_REVIEWS';
+export const REVIEWS_LOADED = 'REVIEWS_LOADED';
 
 export const favoritesLoaded = () => ({
   type: FAVORITES_LOADED,
@@ -37,6 +40,19 @@ export const saveReadings = (readings) => ({
 
 export const readingsLoaded = () => ({
   type: READINGS_LOADED,
+});
+
+export const getReviewsData = () => ({
+  type: GET_REVIEWS_DATA,
+});
+
+export const saveReviews = (reviews) => ({
+  type: SAVE_REVIEWS,
+  data: reviews,
+});
+
+export const reviewsLoaded = () => ({
+  type: REVIEWS_LOADED,
 });
 
 export const removeLogInfo = () => ({
