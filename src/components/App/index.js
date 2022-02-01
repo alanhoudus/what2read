@@ -31,7 +31,7 @@ import LogIn from '../LogIn';
 
 // scss
 import './app.scss';
-import { getFavoritesData } from '../../actions/user';
+import { getFavoritesData, getReadingsData } from '../../actions/user';
 
 // == Composant
 const App = () => {
@@ -50,6 +50,7 @@ const App = () => {
   useEffect(() => {
     dispatch(getBooksData());
     dispatch(getFavoritesData());
+    dispatch(getReadingsData());
   }, []);
 
   if (dataIsLoading) {

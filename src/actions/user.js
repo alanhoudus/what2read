@@ -9,6 +9,8 @@ export const REMOVE_LOG_INFO = 'REMOVE_LOG_INFO';
 export const GET_FAVORITES_DATA = 'GET_FAVORITES_DATA';
 export const SAVE_FAVORITES = 'SAVE_FAVORITES';
 export const FAVORITES_LOADED = 'FAVORITES_LOADED';
+export const GET_READINGS_DATA = 'GET_READINGS_DATA';
+export const SAVE_READINGS = 'SAVE_READINGS';
 
 export const favoritesLoaded = () => ({
   type: FAVORITES_LOADED,
@@ -21,6 +23,15 @@ export const saveFavorites = (favorites) => ({
 
 export const getFavoritesData = () => ({
   type: GET_FAVORITES_DATA,
+});
+
+export const getReadingsData = () => ({
+  type: GET_READINGS_DATA,
+});
+
+export const saveReadings = (readings) => ({
+  type: SAVE_READINGS,
+  data: readings,
 });
 
 export const removeLogInfo = () => ({

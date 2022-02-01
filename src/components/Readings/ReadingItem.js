@@ -18,7 +18,7 @@ const ReadingItem = ({ reading }) => (
 ReadingItem.propTypes = {
   reading: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
     cover: PropTypes.string.isRequired,
   }).isRequired,
 };
