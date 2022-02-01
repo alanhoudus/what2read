@@ -5,7 +5,9 @@ import {
   FAVORITES_LOADED,
   SAVE_READINGS,
   READINGS_LOADED,
-} from 'src/actions/user';
+  SAVE_REVIEWS,
+  REVIEWS_LOADED,
+} from '../actions/user';
 
 export const initialState = {
   username: '',
@@ -16,6 +18,8 @@ export const initialState = {
   favoritesLoading: true,
   readings: [],
   readingsLoading: true,
+  reviews: [],
+  reviewsLoading: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -53,6 +57,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         favoritesLoading: false,
+      };
+    case SAVE_REVIEWS:
+      return {
+        ...state,
+        reviews: action.data,
+      };
+    case REVIEWS_LOADED:
+      return {
+        ...state,
+        reviewsLoading: false,
       };
     default:
       return state;
