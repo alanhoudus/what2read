@@ -11,8 +11,11 @@ import GenresList from './GenresList';
 import './book.scss';
 
 const Book = () => {
+  // Get the isbn in the URL
   const { isbn } = useParams();
+  // Find the book in the list of books corresponding to the isbn in the URL
   const book = useSelector((state) => findBook(state.books.booksList, isbn));
+  // Map on the array of objects of the authors
   const authors = book.authors.map((author) => author.name);
 
   return (

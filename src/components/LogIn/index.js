@@ -19,10 +19,11 @@ const LogIn = () => {
   const email = useSelector((state) => state.userLogin.email);
   const password = useSelector((state) => state.userLogin.password);
   const loggingError = useSelector((state) => state.userLogin.loggingError);
-  const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.userLogin.logged);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // If user is logged in, redirect to the home page
   useEffect(() => {
     if (isLogged) {
       return navigate('/');
@@ -49,8 +50,8 @@ const LogIn = () => {
             name="email"
             id="email"
             onChange={(newValue, identifier) => {
-              const actionUpdate = updateLoginValue(identifier, newValue);
-              dispatch(actionUpdate);
+              const action = updateLoginValue(identifier, newValue);
+              dispatch(action);
             }}
           />
           <h3 className="logIn-input">Mot de passe : </h3>
