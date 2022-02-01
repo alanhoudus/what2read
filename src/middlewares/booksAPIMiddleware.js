@@ -12,6 +12,7 @@ import {
   saveFavorites,
   favoritesLoaded,
   saveReadings,
+  readingsLoaded,
 } from '../actions/user';
 
 const recipesAPIMiddleware = (store) => (next) => (action) => {
@@ -60,7 +61,7 @@ const recipesAPIMiddleware = (store) => (next) => (action) => {
           console.log(error);
         })
         .finally(() => {
-          // favoritesLoaded();
+          readingsLoaded();
         });
       break;
     default:
