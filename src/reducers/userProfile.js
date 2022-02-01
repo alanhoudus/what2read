@@ -3,7 +3,11 @@ import {
   SAVE_USER_DATA,
   SAVE_FAVORITES,
   FAVORITES_LOADED,
-} from 'src/actions/user';
+  SAVE_READINGS,
+  READINGS_LOADED,
+  SAVE_REVIEWS,
+  REVIEWS_LOADED,
+} from '../actions/user';
 
 export const initialState = {
   nickname: '',
@@ -12,6 +16,10 @@ export const initialState = {
   token: '',
   favorites: [],
   favoritesLoading: true,
+  readings: [],
+  readingsLoading: true,
+  reviews: [],
+  reviewsLoading: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -39,6 +47,26 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         favoritesLoading: false,
+      };
+    case SAVE_READINGS:
+      return {
+        ...state,
+        readings: action.data,
+      };
+    case READINGS_LOADED:
+      return {
+        ...state,
+        favoritesLoading: false,
+      };
+    case SAVE_REVIEWS:
+      return {
+        ...state,
+        reviews: action.data,
+      };
+    case REVIEWS_LOADED:
+      return {
+        ...state,
+        reviewsLoading: false,
       };
     default:
       return state;
