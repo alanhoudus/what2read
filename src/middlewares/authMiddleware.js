@@ -9,13 +9,13 @@ import {
 
 const authMiddleware = (store) => (next) => (action) => {
   if (action.type === HANDLE_LOGIN) {
-    // Send the email and password stored in the state to the API
+    // Send the username and password stored in the state to the API
     axios.post(
       // URL
       'http://localhost:8000/api/login_check',
       // données
       {
-        email: store.getState().userLogin.email,
+        username: store.getState().userLogin.username,
         password: store.getState().userLogin.password,
       },
     )
@@ -23,13 +23,12 @@ const authMiddleware = (store) => (next) => (action) => {
         // If the inputs are correct, store the nickname, token etc into the state
         console.log(response);
         store.dispatch(saveUserData(
-          response.data.pseudo,
           response.data.token,
-          response.data.logged,
+          store.getState().userLogin.username,
         ));
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.toJSON());
         // If there's an error, dispatch the loggingError action to display the error
         store.dispatch(loggingError());
       })

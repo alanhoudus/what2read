@@ -85,11 +85,10 @@ export const handleLogin = () => ({
   type: HANDLE_LOGIN,
 });
 
-export const saveUserData = (nickname, token, isLogged) => ({
+export const saveUserData = (token, username) => ({
   type: SAVE_USER_DATA,
-  isLogged: isLogged,
-  nickname: nickname,
   token: token,
+  username: username,
 });
 
 export const loggingError = () => ({

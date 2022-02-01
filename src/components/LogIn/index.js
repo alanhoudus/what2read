@@ -16,7 +16,7 @@ import { updateLoginValue, handleLogin } from '../../actions/user';
 import './logIn.scss';
 
 const LogIn = () => {
-  const email = useSelector((state) => state.userLogin.email);
+  const username = useSelector((state) => state.userLogin.username);
   const password = useSelector((state) => state.userLogin.password);
   const loggingError = useSelector((state) => state.userLogin.loggingError);
   const isLogged = useSelector((state) => state.userLogin.logged);
@@ -35,7 +35,7 @@ const LogIn = () => {
       <h2 className="logIn-title">Se connecter</h2>
       <Separator />
       <div className="logIn-input">
-        <h3 className="logIn-input">Email : </h3>
+        <h3 className="logIn-input">Pseudo : </h3>
         <form
           onSubmit={(event) => {
             event.preventDefault();
@@ -45,10 +45,10 @@ const LogIn = () => {
           <Field
             type="text"
             className="logIn-field logIn-field--name"
-            placeholder="dupont@dupont.fr"
-            value={email}
-            name="email"
-            id="email"
+            placeholder="jeanmichdu90"
+            value={username}
+            name="username"
+            id="username"
             onChange={(newValue, identifier) => {
               const action = updateLoginValue(identifier, newValue);
               dispatch(action);

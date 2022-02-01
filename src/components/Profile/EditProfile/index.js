@@ -16,7 +16,7 @@ import { updateProfileValue } from '../../../actions/user';
 import './editprofile.scss';
 
 const EditProfile = () => {
-  const userNickame = useSelector((state) => state.userProfile.nickname);
+  const userUsername = useSelector((state) => state.userProfile.username);
   const userDescription = useSelector((state) => state.userProfile.description);
   const userEmail = useSelector((state) => state.userProfile.email);
   const dispatch = useDispatch();
@@ -28,10 +28,10 @@ const EditProfile = () => {
         <div className="editprofile-contentGroup">
           <form>
             <Field
-              className="editprofile-content input nickname"
-              value={userNickame}
-              id="nickname"
-              name="nickname"
+              className="editprofile-content input username"
+              value={userUsername}
+              id="username"
+              name="username"
               type="text"
               onChange={(newValue, identifier) => {
                 const action = updateProfileValue(identifier, newValue);

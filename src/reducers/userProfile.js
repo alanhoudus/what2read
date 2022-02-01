@@ -10,7 +10,7 @@ import {
 } from '../actions/user';
 
 export const initialState = {
-  nickname: '',
+  username: '',
   email: '',
   description: '',
   token: '',
@@ -32,9 +32,9 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_USER_DATA:
       return {
         ...state,
-        logged: action.isLogged,
+        logged: true,
         token: action.token,
-        nickname: action.nickname,
+        username: action.username,
         description: 'J\'me présente. Je m\'appelle John. J\'voudrais bien réussir ma vie. Être aimé !',
         password: '',
       };
