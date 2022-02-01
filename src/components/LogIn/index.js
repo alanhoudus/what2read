@@ -45,7 +45,7 @@ const LogIn = () => {
           <Field
             type="text"
             className="logIn-field logIn-field--name"
-            placeholder="dupont@dupont.fr"
+            placeholder="jeanmichdu90"
             value={username}
             name="username"
             id="username"
