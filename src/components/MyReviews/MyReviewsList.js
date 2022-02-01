@@ -3,8 +3,8 @@ import MyReview from './MyReview';
 
 const MyReviewsList = ({ myReviewsList }) => (
   // For each review in the list, create an item
-  myReviewsList.map((myReview) => (
-    <MyReview key={myReview.cover} myReview={myReview} />
+  myReviewsList.map((book) => (
+    <MyReview key={book.cover} book={book} />
   ))
 );
 

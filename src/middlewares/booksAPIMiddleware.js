@@ -9,10 +9,13 @@ import {
 import {
   GET_FAVORITES_DATA,
   GET_READINGS_DATA,
+  GET_REVIEWS_DATA,
   saveFavorites,
   favoritesLoaded,
   saveReadings,
   readingsLoaded,
+  saveReviews,
+  reviewsLoaded,
 } from '../actions/user';
 
 const recipesAPIMiddleware = (store) => (next) => (action) => {
@@ -62,6 +65,21 @@ const recipesAPIMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           readingsLoaded();
+        });
+      break;
+    case GET_REVIEWS_DATA:
+      axios.get(
+        // URL
+        'http://localhost:8000/api/books',
+      )
+        .then((reviews) => {
+          store.dispatch(saveReviews(reviews.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          reviewsLoaded();
         });
       break;
     default:
