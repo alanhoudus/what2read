@@ -20,8 +20,8 @@ import './suggestions.scss';
 const Suggestions = () => {
   // eslint-disable-next-line no-unused-vars
   // const [suggestionsList, setSuggestionsList] = useState(SUGGESTIONS_LIST);
-  const suggestionsList = useSelector((state) => state.userProfile.suggestions);
-  const suggestionsLoading = useSelector((state) => state.userProfile.suggestionsLoading);
+  const suggestionsList = useSelector((state) => state.books.suggestionsList);
+  const suggestionsLoading = useSelector((state) => state.books.suggestionsDataLoading);
 
   return (
     <div className="suggestions">

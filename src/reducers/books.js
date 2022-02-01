@@ -12,6 +12,8 @@ export const initialState = {
   booksList: [],
   searchedBook: {},
   booksListDataLoading: true,
+  suggestionsList: [],
+  suggestionsDataLoading: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -29,12 +31,12 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_SUGGESTIONS:
       return {
         ...state,
-        booksList: action.data,
+        suggestionsList: action.data,
       };
     case SUGGESTIONS_LOADED:
       return {
         ...state,
-        booksListDataLoading: false,
+        suggestionsDataLoading: false,
       };
     default:
       return state;

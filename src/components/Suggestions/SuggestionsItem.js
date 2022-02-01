@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const SuggestionsItem = ({ book }) => (
   <div className="suggestions-history book">
     <Link
-      to="/livre"
+      to={`/livre/${book.isbn}`}
       key={book.isbn}
     >
       <img className="suggestions-history book-cover" src={book.cover} alt="couverture du livre" />
