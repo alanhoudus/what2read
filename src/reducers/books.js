@@ -1,6 +1,8 @@
 import {
   SAVE_BOOKS_LIST,
   BOOKS_LIST_LOADED,
+  SAVE_AUTHORS,
+  SAVE_GENRES,
 } from '../actions/books';
 
 import {
@@ -10,10 +12,12 @@ import {
 
 export const initialState = {
   booksList: [],
-  searchedBook: {},
+  // searchedBook: {},
   booksListDataLoading: true,
   suggestionsList: [],
   suggestionsDataLoading: true,
+  authorsList: [],
+  genresList: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -32,6 +36,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         suggestionsList: action.data,
+      };
+    case SAVE_AUTHORS:
+      return {
+        ...state,
+        authorsList: action.data,
+      };
+    case SAVE_GENRES:
+      return {
+        ...state,
+        genresList: action.data,
       };
     case SUGGESTIONS_LOADED:
       return {

@@ -4,11 +4,22 @@
  * @param {*} booksList
  * The ISBN of the book we clicked on
  * @param {*} searchedISBN
- * @returns
+ * @returns object
  */
-function findBook(booksList, searchedISBN) {
+export function findBook(booksList, searchedISBN) {
   const book = booksList.find((testedBook) => testedBook.isbn === searchedISBN);
   return book;
 }
 
-export default findBook;
+/**
+ * Filters in the list of books, using the users input to check for corresponding title
+ * @param {array of objects} booksList
+ * @param {string} userInput
+ * @returns array of objects
+ */
+export const findSearchedBooks = (booksList, userInput) => {
+  const searchTerm = userInput.toLowerCase();
+  return booksList.filter((book) => book.title.toLowerCase().match(searchTerm)
+    || book.publisher.toLowerCase().match(searchTerm)
+    || book.isbn.match(searchTerm));
+};

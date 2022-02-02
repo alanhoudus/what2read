@@ -4,6 +4,10 @@ import {
   GET_BOOKS_DATA,
   saveBooksList,
   booksListLoaded,
+  GET_GENRES_DATA,
+  saveGenres,
+  saveAuthors,
+  GET_AUTHORS_DATA,
 } from '../actions/books';
 
 import {
@@ -23,6 +27,7 @@ import {
   saveSuggestions,
   suggestionsLoaded,
 } from '../actions/suggestions';
+import { SEARCH_BOOK_BY_INPUT } from '../actions/search';
 
 const booksAPIMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -34,6 +39,7 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
 
       )
         .then((booksList) => {
+          console.log(booksList);
           store.dispatch(saveBooksList(booksList.data));
         })
         .catch((error) => {
@@ -101,6 +107,44 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           suggestionsLoaded();
+        });
+      break;
+    case GET_AUTHORS_DATA:
+      axios.get(
+        // URL
+        'http://localhost:8000/api/authors',
+      )
+        .then((authors) => {
+          console.log(authors);
+          store.dispatch(saveAuthors(authors.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case GET_GENRES_DATA:
+      axios.get(
+        // URL
+        'http://localhost:8000/api/genres',
+      )
+        .then((genres) => {
+          console.log(genres);
+          store.dispatch(saveGenres(genres.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case SEARCH_BOOK_BY_INPUT:
+      axios.get(
+        // URL
+        `http://localhost:8000/api/books/${store.getState().bookSearch.inputSearch}/authors`,
+      )
+        .then((searchResults) => {
+          console.log(searchResults);
+        })
+        .catch((error) => {
+          console.log(error);
         });
       break;
     default:
