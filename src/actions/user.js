@@ -16,6 +16,19 @@ export const GET_REVIEWS_DATA = 'GET_REVIEWS_DATA';
 export const SAVE_REVIEWS = 'SAVE_REVIEWS';
 export const REVIEWS_LOADED = 'REVIEWS_LOADED';
 export const TOGGLE_POP_UP = 'TOGGLE_POP_UP';
+export const UPDATE_FAVORITE_SEARCH_VALUE = 'UPDATE_FAVORITE_SEARCH_VALUE';
+export const SEARCHED_FAVORITES_BOOKS_LIST = 'SEARCHED_FAVORITES_BOOKS_LIST';
+
+export const searchedFavoritesBooksList = (booksList) => ({
+  type: SEARCHED_FAVORITES_BOOKS_LIST,
+  data: booksList,
+});
+
+export const updateFavoriteSearchValue = (identifier, newValue) => ({
+  type: UPDATE_FAVORITE_SEARCH_VALUE,
+  identifier: identifier,
+  newValue: newValue,
+});
 
 export const togglePopUp = (bool) => ({
   type: TOGGLE_POP_UP,

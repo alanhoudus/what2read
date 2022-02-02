@@ -8,6 +8,8 @@ import {
   SAVE_REVIEWS,
   REVIEWS_LOADED,
   TOGGLE_POP_UP,
+  UPDATE_FAVORITE_SEARCH_VALUE,
+  SEARCHED_FAVORITES_BOOKS_LIST,
 } from '../actions/user';
 
 export const initialState = {
@@ -22,6 +24,8 @@ export const initialState = {
   reviews: [],
   reviewsLoading: true,
   addBookPopUp: false,
+  searchFavoriteInput: '',
+  searchedFavoritesBooksList: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -74,6 +78,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         addBookPopUp: action.display,
+      };
+    case UPDATE_FAVORITE_SEARCH_VALUE:
+      return {
+        ...state,
+        [action.identifier]: action.newValue,
+      };
+    case SEARCHED_FAVORITES_BOOKS_LIST:
+      return {
+        ...state,
+        favorites: action.data,
       };
     default:
       return state;

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 // actions
-import { getAuthorsData, getBooksData, getGenresData } from '../../actions/books';
+import { getBooksData } from '../../actions/books';
 
 // components
 import Header from '../Header';
@@ -54,8 +54,6 @@ const App = () => {
     dispatch(getReadingsData());
     dispatch(getReviewsData());
     dispatch(getSuggestionsData());
-    dispatch(getAuthorsData());
-    dispatch(getGenresData());
   }, []);
 
   if (dataIsLoading) {
