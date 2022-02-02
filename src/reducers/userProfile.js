@@ -7,6 +7,7 @@ import {
   READINGS_LOADED,
   SAVE_REVIEWS,
   REVIEWS_LOADED,
+  TOGGLE_POP_UP,
 } from '../actions/user';
 
 export const initialState = {
@@ -68,6 +69,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         reviewsLoading: false,
+      };
+    case TOGGLE_POP_UP:
+      return {
+        ...state,
+        addBookPopUp: action.display,
       };
     default:
       return state;
