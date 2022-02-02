@@ -12,14 +12,16 @@ export function findBook(booksList, searchedISBN) {
 }
 
 /**
- * Filters in the list of books, using the users input to check for corresponding title
+ * Filters in the list of books, using the users input to check for corresponding book
  * @param {array of objects} booksList
  * @param {string} userInput
  * @returns array of objects
  */
 export const findSearchedBooks = (booksList, userInput) => {
-  const searchTerm = userInput.toLowerCase();
+  const searchTerm = userInput;
   return booksList.filter((book) => book.title.toLowerCase().match(searchTerm)
     || book.publisher.toLowerCase().match(searchTerm)
-    || book.isbn.match(searchTerm));
+    || book.isbn.match(searchTerm)
+    || book.authors.some((author) => author.name.toLowerCase().match(searchTerm))
+    || book.genres.some((genre) => genre.name.toLowerCase().match(searchTerm)));
 };

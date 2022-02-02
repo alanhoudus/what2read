@@ -8,7 +8,7 @@ const LinkItem = ({ book }) => (
       to={`/livre/${book.isbn}`}
       key={book.isbn}
     >
-      <img src={book.cover} alt="Couverture du livre" />
+      <img src={book.cover} className="reviews-wrapper--singlereview-img" alt="Couverture du livre" />
     </Link>
     <div className="reviews-wrapper--singlereview-infos">
       <h3>{book.title}</h3>
