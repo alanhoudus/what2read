@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 // react-router-dom
 import { useParams } from 'react-router-dom';
 // actions
-import findBook from '../../selectors/books';
+import { findBook } from '../../selectors/books';
 // components
 import Separator from '../Reusables/Separator';
 import GenresList from './GenresList';
