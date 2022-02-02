@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
-import './addBook.scss';
+// import './addBook.scss';
 
 const AddBook = ({
   isShowing,
@@ -18,7 +18,7 @@ console.log ('');
           <div className="modal-wrapper">
             <div className="modal">
               <div className="modal-header">
-                <h4>{title}</h4>
+                <h3>{title}</h3>
                 <button
                   type="button"
                   className="modal-close-button"

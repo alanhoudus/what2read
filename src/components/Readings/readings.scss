@@ -67,13 +67,15 @@
     flex-direction: column;
 
     &-buttonRead {
-      color: vars.$secondaryColor;
-      background-color: vars.$fourthColor;
-      margin: calc(vars.$gutter * 1);
-      border-radius: 30px;
-      width: 30%;
-      font-size: calc(vars.$fontSize * 1);;
-      padding: calc(vars.$gutter * 0.5);
+      &-toggle{
+        color: vars.$secondaryColor;
+        background-color: vars.$fourthColor;
+        margin: calc(vars.$gutter * 1);
+        border-radius: 30px;
+        width: 30%;
+        font-size: calc(vars.$fontSize * 1);;
+        padding: calc(vars.$gutter * 0.5);
+      }
     }
        
     &-books {

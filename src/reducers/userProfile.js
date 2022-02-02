@@ -20,6 +20,7 @@ export const initialState = {
   readingsLoading: true,
   reviews: [],
   reviewsLoading: true,
+  addBookPopUp: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
