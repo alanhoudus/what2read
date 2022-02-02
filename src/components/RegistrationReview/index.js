@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 // hooks
 import { useSelector } from 'react-redux';
 // actions
-import findBook from '../../selectors/books';
+import { findBook } from '../../selectors/books';
 // import components
 import Field from '../Reusables/Field';
 import TextArea from '../Reusables/TextArea';
