@@ -73,7 +73,7 @@ const App = () => {
           <Route path="/inscription" key="inscription" element={<RegistrationForm />} />
           <Route path="/profil/favoris" key="mes-favoris" element={<Favorites />} />
           <Route path="/recherche" key="recherche" element={<Search />} />
-          <Route path="/ajout-review" key="add-review" element={<RegistrationReview />} />
+          <Route path="/ajout-review/:isbn" key="add-review" element={<RegistrationReview />} />
           <Route path="/profil/lectures" key="mes-lectures" element={<Readings />} />
           <Route path="*" key="notfound" element={<NotFound />} />
           <Route path="/profil" key="profil" element={<Profile />} />

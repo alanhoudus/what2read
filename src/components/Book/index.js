@@ -1,7 +1,7 @@
 // hooks
 import { useSelector } from 'react-redux';
 // react-router-dom
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 // actions
 import { findBook } from '../../selectors/books';
 // components
@@ -35,6 +35,11 @@ const Book = () => {
               <div className="book-content infos">
                 <GenresList genresList={book.genres} />
               </div>
+              <Link
+                to={`/ajout-review/${isbn}`}
+              >
+                <button type="button" className="book-buttonReview">Ajouter une review</button>
+              </Link>
             </div>
             <div className="book-content summary">{book.description}
             </div>
