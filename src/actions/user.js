@@ -15,6 +15,12 @@ export const READINGS_LOADED = ' READINGS_LOADED';
 export const GET_REVIEWS_DATA = 'GET_REVIEWS_DATA';
 export const SAVE_REVIEWS = 'SAVE_REVIEWS';
 export const REVIEWS_LOADED = 'REVIEWS_LOADED';
+export const TOGGLE_POP_UP = 'TOGGLE_POP_UP';
+
+export const togglePopUp = (bool) => ({
+  type: TOGGLE_POP_UP,
+  display: bool,
+});
 
 export const favoritesLoaded = () => ({
   type: FAVORITES_LOADED,
