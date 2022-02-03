@@ -9,6 +9,7 @@ import Separator from '../Reusables/Separator';
 import GenresList from './GenresList';
 // scss
 import './book.scss';
+import ReviewsList from './Reviews/ReviewsList';
 
 const Book = () => {
   // Get the isbn in the URL
@@ -17,6 +18,7 @@ const Book = () => {
   const book = useSelector((state) => findBook(state.books.booksList, isbn));
   // Map on the array of objects of the authors
   const authors = book.authors.map((author) => author.name);
+  const reviewList = useSelector((state) => state.userProfile.reviews);
 
   return (
     <div>
@@ -44,6 +46,9 @@ const Book = () => {
             <div className="book-content summary">{book.description}
             </div>
             <Separator />
+            <div className="reviews-wrapper">
+              <ReviewsList reviewsList={reviewList} />
+            </div>
           </div>
         </div>
       </div>

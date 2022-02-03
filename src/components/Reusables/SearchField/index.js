@@ -16,7 +16,7 @@ const SearchField = ({
   name,
   onChange,
 }) => (
-  <div className="search">
+  <div className="search-field">
     <Field
       id={id}
       className={className}
