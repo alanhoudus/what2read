@@ -68,8 +68,8 @@
 
     &-buttonRead {
       &-toggle{
-        color: vars.$secondaryColor;
-        background-color: vars.$fourthColor;
+        color: vars.$mainColor;;
+        background-color: vars.$thirdColor;
         margin: calc(vars.$gutter * 1);
         border-radius: 30px;
         width: 30%;
