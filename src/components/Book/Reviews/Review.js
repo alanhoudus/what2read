@@ -1,30 +1,20 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import './reviews.scss';
 
 const Review = ({ book }) => (
-  <div className="reviews-wrapper--singlereview">
-    <Link
-      to={`/livre/${book.isbn}`}
-      key={book.isbn}
-    >
-      <img src={book.cover} className="reviews-wrapper--singlereview-img" alt="Couverture du livre" />
-    </Link>
-    <div className="reviews-wrapper--singlereview-infos">
-      <h3>{book.title}</h3>
-      <p>{book.description}</p>
-      {/* <div className="review-author">
-        <img src={profileicon} alt="Avatar de l'auteur" className="review-author--avatar" />
-        <p className="review-author--name">{user.auhorName}</p>
-      </div> */}
+  <div className="book-reviews singlereview">
+    <h3>{book.title}</h3>
+    <p>{book.description}</p>
+    <div className="book-reviews author">
+      <img src="url" alt="Avatar de l'auteur" className="book-reviews author--avatar" />
+      <p className="book-reviews author--name">nom de l'auteur</p>
     </div>
   </div>
 );
 
 Review.propTypes = {
   book: PropTypes.shape({
-    isbn: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    cover: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
 };

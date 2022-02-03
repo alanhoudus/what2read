@@ -9,7 +9,7 @@ const ReviewsList = ({ reviewsList }) => (
 );
 
 ReviewsList.propTypes = {
-  myReviewsList: PropTypes.arrayOf(
+  reviewsList: PropTypes.arrayOf(
     PropTypes.shape({
       ibsn: PropTypes.string.isRequired,
     }).isRequired,
