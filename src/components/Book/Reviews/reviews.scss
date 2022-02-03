@@ -1,0 +1,113 @@
+@use '../../../styles/vars';
+
+@media (max-width: 768px) {
+  .reviews {
+    &-wrapper {
+
+      &--singlereview {
+        color: vars.$fontParagraph;
+        margin: calc(vars.$gutter * 2);
+        margin-bottom: calc(vars.$gutter * 5);
+        padding: calc(vars.$gutter * 2);
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+        &-infos {
+          & > h3 {  
+            text-align: left;
+            position: relative;
+          }
+  
+          & > p {
+            margin-top: calc(vars.$gutter *1);
+            text-align: left;
+          }
+
+          &--buttons {
+            text-align: right;
+          }
+        }
+
+        &-img {
+          display: none;    
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .reviews {
+    padding-top: calc(vars.$gutter * 2);
+    margin: 0 calc(vars.$gutter * 4) calc(vars.$gutter * 2) calc(vars.$gutter * 2);
+
+    &-wrapper {
+
+      &--singlereview {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: repeat(7, 14%);
+        margin-top: calc(vars.$gutter * 2);
+        margin-bottom: calc(vars.$gutter * 5);
+        padding: calc(vars.$gutter * 2);
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+        &-infos {
+          padding-left: calc(vars.$gutter * 0.5);
+          grid-column: 2 / 4;
+          position: relative;
+
+          &--buttons {
+            position: absolute;
+            bottom: -600%;
+            right: 0;
+          }
+
+          & > h3 {
+            text-align: left;
+            grid-row: 1 / 2;
+          }
+  
+          & > p {
+            margin-top: calc(vars.$gutter *1);
+            text-align: left;
+            grid-row: 2 / 3;
+          }
+        }
+
+        &-img {
+          width: 50%;
+          grid-column: 1 / 2;
+          grid-row: 1 / 4;
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1600px) {
+  .reviews-wrapper--singlereview > img {
+    width: 60%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+  .reviews-wrapper--singlereview > img {
+    width: 70%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .reviews-wrapper--singlereview > img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+  .reviews-wrapper--singlereview > img {
+    width: 100%;
+  }
+}

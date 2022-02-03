@@ -2,7 +2,7 @@ import { Trash, Edit } from 'react-feather';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const MyReview = ({ book }) => (
+const Review = ({ book }) => (
   <div className="reviews-wrapper--singlereview">
     <Link
       to={`/livre/${book.isbn}`}
@@ -21,7 +21,7 @@ const MyReview = ({ book }) => (
   </div>
 );
 
-MyReview.propTypes = {
+Review.propTypes = {
   book: PropTypes.shape({
     isbn: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
@@ -30,4 +30,4 @@ MyReview.propTypes = {
   }).isRequired,
 };
 
-export default MyReview;
+export default Review;
