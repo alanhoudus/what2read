@@ -1,17 +1,13 @@
 // hooks
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-
 // react-router-dom
-import { useNavigate } from 'react-router-dom';
-
+import { Navigate } from 'react-router-dom';
 // import components
 import Field from '../Reusables/Field';
 import Separator from '../Reusables/Separator';
-
+import PopUpInfo from '../Reusables/PopUpInfo';
 // actions
 import { updateLoginValue, handleLogin } from '../../actions/user';
-
 // import scss
 import './logIn.scss';
 
@@ -20,18 +16,17 @@ const LogIn = () => {
   const password = useSelector((state) => state.userLogin.password);
   const loggingError = useSelector((state) => state.userLogin.loggingError);
   const isLogged = useSelector((state) => state.userLogin.logged);
+  const registrationSuccess = useSelector((state) => state.userRegistration.registrationSuccess);
+  const message = useSelector((state) => state.userRegistration.registrationMessage);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
-  // If user is logged in, redirect to the home page
-  useEffect(() => {
-    if (isLogged) {
-      return navigate('/');
-    }
-  }, [isLogged]);
-
+  // If user is logged in, redirect to profile page
+  if (isLogged) {
+    return <Navigate to="/profil" />;
+  }
   return (
     <div className="logIn">
+      { registrationSuccess && <PopUpInfo message={message} />}
       <h2 className="logIn-title">Se connecter</h2>
       <Separator />
       <div className="logIn-input">

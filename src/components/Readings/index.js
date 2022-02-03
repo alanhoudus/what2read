@@ -2,7 +2,9 @@
 // hooks
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import useModal from '../Book/AddBook/useModal';
+// react-router-dom
+import { Navigate } from 'react-router-dom';
+// components
 import AddReading from './AddReading';
 // mock data
 import { READINGS_PRESENTATION } from '../../data/readings';
@@ -22,7 +24,12 @@ const Readings = () => {
   const readingsLoading = useSelector((state) => state.userProfile.readingsLoading);
   const displayPopUp = useSelector((state) => state.userProfile.addBookPopUp);
   const dispatch = useDispatch();
+  const isLogged = useSelector((state) => state.userLogin.logged);
 
+  // If user isn't logged in, redirect to the login
+  if (!isLogged) {
+    return <Navigate to="/connection" />;
+  }
   return (
     <>
       <div className="readings">

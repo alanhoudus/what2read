@@ -7,6 +7,7 @@ import {
   removeLogInfo,
   HANDLE_REGISTRATION,
   saveUserRegistration,
+  removeRegistrationInfo,
 } from '../actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -66,6 +67,11 @@ const authMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error.toJSON());
+        })
+        .finally(() => {
+          window.setTimeout(() => {
+            store.dispatch(removeRegistrationInfo());
+          }, 7000);
         });
       break;
     default:
