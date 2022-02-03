@@ -38,11 +38,9 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_USER_DATA:
       return {
         ...state,
-        logged: true,
         token: action.token,
         username: action.username,
         description: 'J\'me présente. Je m\'appelle John. J\'voudrais bien réussir ma vie. Être aimé !',
-        password: '',
       };
     case SAVE_FAVORITES:
       return {

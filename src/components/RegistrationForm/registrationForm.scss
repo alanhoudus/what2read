@@ -88,6 +88,14 @@
       border-radius: 5px;
       margin-bottom: calc(vars.$gutter * 1);
     }
+
+    &-error {
+      color: red;
+
+      &.password {
+        
+      }
+    }
   
     &-required {
       font-size: 0.8em;
