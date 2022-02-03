@@ -7,8 +7,9 @@ import {
 } from 'src/actions/user';
 
 export const initialState = {
-  logged: true,
+  logged: false,
   logInfo: false,
+  message: 'Bienvenue',
   username: '',
   password: '',
   loggingError: false,
