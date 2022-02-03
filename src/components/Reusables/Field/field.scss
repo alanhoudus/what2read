@@ -3,3 +3,11 @@
 input, textarea {
     font-family: inherit;
 }
+.search {
+  &-field {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
