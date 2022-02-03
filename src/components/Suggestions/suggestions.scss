@@ -44,6 +44,7 @@
 
       &.book {
         margin: calc(vars.$gutter *1);
+        width: 300px;
 
         h3, h4 {
           text-align: center;
