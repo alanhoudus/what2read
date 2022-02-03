@@ -55,9 +55,4 @@ export const REGULAR_NAV = [
     key: 'recherche',
     to: '/recherche',
   },
-  {
-    name: 'Nous contacter',
-    key: 'contact',
-    to: '/contact',
-  },
 ];
