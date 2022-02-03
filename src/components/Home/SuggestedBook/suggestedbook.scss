@@ -53,11 +53,13 @@
     }
 
     &-button {
+      color: vars.$mainColor;
+      border-radius: 30px;
+      border: none;
+      font-size: calc(vars.$fontSize * 1);
+      padding: 10px;
       background-color: vars.$thirdColor;
-      border-radius: 10px;
-      border: 1px solid black;
-      margin-top: calc(vars.$gutter * 2);
-      padding: calc(vars.$gutter * 1) calc(vars.$gutter * 2);
+      margin: calc(vars.$gutter * 2);
     }
   }
   

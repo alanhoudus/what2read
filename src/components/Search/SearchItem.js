@@ -13,7 +13,7 @@ const SearchItem = ({ searchedBook }) => (
     >
       <img className="search-book cover" src={searchedBook.cover} alt="title" />
       <h3 className="search-book--title">{searchedBook.title}</h3>
-      <h3 className="search-book--subtitle">{searchedBook.subtitle}</h3>
+      <h4 className="search-book--subtitle">{searchedBook.subtitle}</h4>
     </Link>
   </div>
 );
