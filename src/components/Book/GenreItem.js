@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const GenreItem = ({ genre }) => (
-  <span className={`book-content tag-${genre.name}`}>
+  <span className={`book-content tag ${genre.name}`}>
     {genre.name}
   </span>
 );
