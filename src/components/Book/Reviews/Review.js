@@ -1,4 +1,3 @@
-import { Trash, Edit } from 'react-feather';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -13,10 +12,10 @@ const Review = ({ book }) => (
     <div className="reviews-wrapper--singlereview-infos">
       <h3>{book.title}</h3>
       <p>{book.description}</p>
-      <div className="reviews-wrapper--singlereview-infos--buttons">
-        <Edit color="white" />
-        <Trash color="red" />
-      </div>
+      {/* <div className="review-author">
+        <img src={profileicon} alt="Avatar de l'auteur" className="review-author--avatar" />
+        <p className="review-author--name">{user.auhorName}</p>
+      </div> */}
     </div>
   </div>
 );

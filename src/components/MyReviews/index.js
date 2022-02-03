@@ -24,7 +24,6 @@ const Reviews = () => {
         <MyReviewsList myReviewsList={myReviewList} />
       </div>
     </div>
-
   );
 };
 
