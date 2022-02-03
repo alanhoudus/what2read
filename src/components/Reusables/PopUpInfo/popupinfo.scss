@@ -2,7 +2,7 @@
 
 // responsive mobile first
 @media (max-width: 768px) {
-  .connectionprofile {
+  .popupinfo {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -40,7 +40,7 @@
 
 
 @media (min-width: 768px) {
- .connectionprofile {
+ .popupinfo {
    
    display: flex;
    flex-wrap: wrap;

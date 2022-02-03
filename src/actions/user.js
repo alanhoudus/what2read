@@ -21,6 +21,11 @@ export const SEARCHED_FAVORITES_BOOKS_LIST = 'SEARCHED_FAVORITES_BOOKS_LIST';
 export const HANDLE_REGISTRATION = 'HANDLE_REGISTRATION';
 export const SAVE_USER_REGISTRATION = 'SAVE_USER_REGISTRATION';
 export const REGISTRATION_ERROR = 'REGISTRATION_ERROR';
+export const REMOVE_REGISTRATION_INFO = 'REMOVE_REGISTRATION_INFO';
+
+export const removeRegistrationInfo = () => ({
+  type: REMOVE_REGISTRATION_INFO,
+});
 
 export const registrationError = () => ({
   type: REGISTRATION_ERROR,

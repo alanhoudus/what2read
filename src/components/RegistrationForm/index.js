@@ -1,13 +1,19 @@
+// hooks
 import { useSelector, useDispatch } from 'react-redux';
-
+// react-router-dom
+import { Navigate } from 'react-router-dom';
 // import components
 import Field from '../Reusables/Field';
 import Separator from '../Reusables/Separator';
-
 // actions
-import { handleRegistration, registrationError, updateRegistrationValue } from '../../actions/user';
+import {
+  handleRegistration,
+  registrationError,
+  updateRegistrationValue,
+} from '../../actions/user';
 // import scss
 import './registrationForm.scss';
+// selectors
 import comparePasswords from '../../selectors/registration';
 
 const RegistrationForm = () => {
@@ -18,8 +24,15 @@ const RegistrationForm = () => {
   const description = useSelector((state) => state.userRegistration.description);
   // eslint-disable-next-line max-len
   const passwordRegistrationError = useSelector((state) => state.userRegistration.registrationError);
+  const registrationSuccess = useSelector((state) => state.userRegistration.registrationSuccess);
+  // console.log(registrationSuccess);
 
   const dispatch = useDispatch();
+
+  // If user isn't logged in, redirect to the login
+  if (registrationSuccess) {
+    return <Navigate to="/connection" />;
+  }
   return (
     <div className="registration">
       <h2 className="registration-title">Inscription</h2>
