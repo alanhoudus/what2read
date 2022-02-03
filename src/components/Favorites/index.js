@@ -1,14 +1,18 @@
 // == Import : local
 // hooks
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 // components
-import Favorite from './FavoritesList';
+import FavoritesList from './FavoritesList';
 import Separator from '../Reusables/Separator';
 import ShowMore from '../Reusables/ShowMore';
 import SearchField from '../Reusables/SearchField';
 import Loader from '../App/Loader';
 
+// actions
+import { updateFavoriteSearchValue, searchedFavoritesBooksList } from '../../actions/user';
+// selectors
+import { findSearchedBooks } from '../../selectors/books';
 // mock data
 import { FAVORITE_PRESENTATION } from '../../data/favorites';
 
@@ -21,7 +25,10 @@ const Favorites = () => {
   const [favoritesPresentation, setFavoritePresentation] = useState(FAVORITE_PRESENTATION);
   const favoritesList = useSelector((state) => state.userProfile.favorites);
   const favoritesLoading = useSelector((state) => state.userProfile.favoritesLoading);
+  const userInput = useSelector((state) => state.userProfile.searchFavoriteInput);
+  const booksList = useSelector((state) => state.books.booksList);
 
+  const dispatch = useDispatch();
   return (
     <div className="favorites">
       <div className="favorites-presentation">
@@ -29,10 +36,29 @@ const Favorites = () => {
         <p>{favoritesPresentation.presentation}</p>
       </div>
       <Separator />
-      <SearchField />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const userSearchedFavoritesBooksList = findSearchedBooks(booksList, userInput);
+          dispatch(searchedFavoritesBooksList(userSearchedFavoritesBooksList));
+        }}
+      >
+        <SearchField
+          type="text"
+          className="search--field"
+          name="searchFavoriteInput"
+          id="searchFavoriteInput"
+          placeholder="Mes favoris..."
+          value={userInput}
+          onChange={(newValue, identifier) => {
+            const action = updateFavoriteSearchValue(identifier, newValue);
+            dispatch(action);
+          }}
+        />
+      </form>
       <div className="favorites-books">
         {favoritesLoading
-          ? <Favorite favoritesList={favoritesList} />
+          ? <FavoritesList favoritesList={favoritesList} />
           : <Loader />}
       </div>
       <div className="favorites-showmore">

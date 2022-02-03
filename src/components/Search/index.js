@@ -7,7 +7,7 @@ import SearchList from './SearchList';
 import SearchField from '../Reusables/SearchField';
 
 // actions
-import { searchedBooksList } from '../../actions/search';
+import { searchedBooksList, updateSearchBookValue } from '../../actions/search';
 
 // selectors
 import { findSearchedBooks } from '../../selectors/books';
@@ -35,7 +35,18 @@ const Search = () => {
           dispatch(searchedBooksList(userSearchedBooksList));
         }}
       >
-        <SearchField />
+        <SearchField
+          type="text"
+          className="search--field"
+          name="inputSearch"
+          id="inputSearch"
+          placeholder="Ma recherche..."
+          value={userInput}
+          onChange={(identifier, newValue) => {
+            const action = updateSearchBookValue(identifier, newValue);
+            dispatch(action);
+          }}
+        />
       </form>
       <div className="search-books">
         <SearchList searchedBooksList={searchedBooks} />
