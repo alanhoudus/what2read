@@ -1,8 +1,8 @@
 import { UPDATE_TITLE_WRITE_REVIEW, UPDATE_WRITE_REVIEW } from '../actions/addReview';
 
 export const initialState = {
-  inputTitleReview: '',
-  inputContentReview: '',
+  title: '',
+  content: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,12 +10,12 @@ const reducer = (state = initialState, action = {}) => {
     case UPDATE_TITLE_WRITE_REVIEW:
       return {
         ...state,
-        inputTitleReview: action.newValue,
+        title: action.newValue,
       };
     case UPDATE_WRITE_REVIEW:
       return {
         ...state,
-        inputContentReview: action.newValue,
+        content: action.newValue,
       };
     default:
       return state;
