@@ -47,6 +47,13 @@
 
 @media (min-width: 768px) {
   .favorites {
+    &-search {
+      &--field {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
     &-books {
       display: flex;
       flex-wrap: wrap;

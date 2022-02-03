@@ -45,7 +45,7 @@ const Favorites = () => {
       >
         <SearchField
           type="text"
-          className="search--field"
+          className="favorites-search--field"
           name="searchFavoriteInput"
           id="searchFavoriteInput"
           placeholder="Mes favoris..."
