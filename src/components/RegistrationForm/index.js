@@ -5,16 +5,19 @@ import Field from '../Reusables/Field';
 import Separator from '../Reusables/Separator';
 
 // actions
-import { updateRegistrationValue } from '../../actions/user';
+import { handleRegistration, registrationError, updateRegistrationValue } from '../../actions/user';
 // import scss
 import './registrationForm.scss';
+import comparePasswords from '../../selectors/registration';
 
 const RegistrationForm = () => {
-  const nickname = useSelector((state) => state.userRegistration.nickname);
+  const username = useSelector((state) => state.userRegistration.username);
   const email = useSelector((state) => state.userRegistration.email);
   const password = useSelector((state) => state.userRegistration.password);
   const confirmationPassword = useSelector((state) => state.userRegistration.confirmationPassword);
   const description = useSelector((state) => state.userRegistration.description);
+  // eslint-disable-next-line max-len
+  const passwordRegistrationError = useSelector((state) => state.userRegistration.registrationError);
 
   const dispatch = useDispatch();
   return (
@@ -23,14 +26,26 @@ const RegistrationForm = () => {
       <Separator />
       <div className="registration-input">
         <h3>Pseudo<span className="registration-input--asterisk">*</span> : </h3>
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (comparePasswords(password, confirmationPassword)) {
+              dispatch(handleRegistration());
+            }
+            else {
+              dispatch(registrationError());
+            }
+          }}
+        >
           <Field
             type="text"
             className="registration-field registration-field"
             placeholder="User126"
-            name="nickname"
-            id="nickname"
-            value={nickname}
+            name="username"
+            id="username"
+            minLength="4"
+            required="required"
+            value={username}
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);
               dispatch(action);
@@ -38,11 +53,12 @@ const RegistrationForm = () => {
           />
           <h3>Email<span className="registration-input--asterisk">*</span> : </h3>
           <Field
-            type="text"
+            type="email"
             className="registration-field"
             placeholder="user126@gmail.com"
             name="email"
             id="email"
+            required="required"
             value={email}
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);
@@ -56,6 +72,8 @@ const RegistrationForm = () => {
             id="*******"
             className="registration-field"
             placeholder="*******"
+            minLength="5"
+            required="required"
             value={password}
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);
@@ -69,6 +87,8 @@ const RegistrationForm = () => {
             placeholder="********"
             name="confirmationPassword"
             id="confirmationPassword"
+            minLength="5"
+            required="required"
             value={confirmationPassword}
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);
@@ -89,6 +109,8 @@ const RegistrationForm = () => {
               dispatch(action);
             }}
           />
+          { passwordRegistrationError
+          && <p className="registration-error password">Les deux mots de passe ne correspondent pas</p>}
           <button type="submit" className="registration-button">Rejoindre</button>
         </form>
         <p className="registration-required">* champs obligatoires</p>

@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 // scss
 import './profile.scss';
-// assets
-import profileicon from '../../assets/images/profileicon.png';
 
 const Profile = () => {
   const username = useSelector((state) => state.userProfile.username);
   const description = useSelector((state) => state.userProfile.description);
   const email = useSelector((state) => state.userProfile.email);
+  const avatar = useSelector((state) => state.userRegistration.picture);
 
   return (
     <div>
@@ -20,7 +19,7 @@ const Profile = () => {
           <h3 className="profile-content title">{username}
           </h3>
 
-          <img alt="profileicon" src={profileicon} className="profile-content avatar" />
+          <img alt="profileicon" src={avatar} className="profile-content avatar" />
           <h3 className="profile-content  title">Présentation
           </h3>
           <p className="profile-content description text">

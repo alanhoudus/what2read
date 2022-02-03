@@ -1,20 +1,23 @@
 // react-router-dom
 import { Link } from 'react-router-dom';
-// import asset
-import profilLogo from '../../../assets/images/profileicon.png';
+// hooks
+import { useSelector } from 'react-redux';
 // import scss
 import './logoProfil.scss';
 
-const LogoProfil = () => (
-  <Link
-    to="/profil"
-  >
-    <div
-      className="logoProfil"
+const LogoProfil = () => {
+  const avatar = useSelector((state) => state.userRegistration.picture);
+  return (
+    <Link
+      to="/profil"
     >
-      <img src={profilLogo} alt="profile" className="logoProfil-img" />
-    </div>
-  </Link>
-);
+      <div
+        className="logoProfil"
+      >
+        <img src={avatar} alt="profile" className="logoProfil-img" />
+      </div>
+    </Link>
+  );
+};
 
 export default LogoProfil;

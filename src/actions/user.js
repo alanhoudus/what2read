@@ -18,6 +18,24 @@ export const REVIEWS_LOADED = 'REVIEWS_LOADED';
 export const TOGGLE_POP_UP = 'TOGGLE_POP_UP';
 export const UPDATE_FAVORITE_SEARCH_VALUE = 'UPDATE_FAVORITE_SEARCH_VALUE';
 export const SEARCHED_FAVORITES_BOOKS_LIST = 'SEARCHED_FAVORITES_BOOKS_LIST';
+export const HANDLE_REGISTRATION = 'HANDLE_REGISTRATION';
+export const SAVE_USER_REGISTRATION = 'SAVE_USER_REGISTRATION';
+export const REGISTRATION_ERROR = 'REGISTRATION_ERROR';
+
+export const registrationError = () => ({
+  type: REGISTRATION_ERROR,
+});
+
+export const saveUserRegistration = (username, email, description) => ({
+  type: SAVE_USER_REGISTRATION,
+  username: username,
+  email: email,
+  description: description,
+});
+
+export const handleRegistration = () => ({
+  type: HANDLE_REGISTRATION,
+});
 
 export const searchedFavoritesBooksList = (booksList) => ({
   type: SEARCHED_FAVORITES_BOOKS_LIST,
