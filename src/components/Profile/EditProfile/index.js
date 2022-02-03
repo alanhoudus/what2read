@@ -9,7 +9,6 @@ import { Upload, Edit2 } from 'react-feather';
 import Field from '../../Reusables/Field';
 import TextArea from '../../Reusables/TextArea';
 
-import profileicon from '../../../assets/images/profileicon.png';
 // actions
 import { updateProfileValue } from '../../../actions/user';
 // scss
@@ -19,6 +18,7 @@ const EditProfile = () => {
   const userUsername = useSelector((state) => state.userProfile.username);
   const userDescription = useSelector((state) => state.userProfile.description);
   const userEmail = useSelector((state) => state.userProfile.email);
+  const userPicture = useSelector((state) => state.userRegistration.picture);
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.userLogin.logged);
 
@@ -44,7 +44,7 @@ const EditProfile = () => {
               }}
             />
             <Edit2 />
-            <img alt="editprofileicon" src={profileicon} className="editprofile-content avatar" />
+            <img alt="editprofileicon" src={userPicture} className="editprofile-content avatar" />
             <Upload />
             <h3 className="editprofile-content title-description">Présentation
               <Edit2
