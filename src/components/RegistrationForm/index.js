@@ -43,6 +43,8 @@ const RegistrationForm = () => {
             placeholder="User126"
             name="username"
             id="username"
+            minLength="4"
+            required="required"
             value={username}
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);
@@ -56,6 +58,7 @@ const RegistrationForm = () => {
             placeholder="user126@gmail.com"
             name="email"
             id="email"
+            required="required"
             value={email}
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);
@@ -69,6 +72,8 @@ const RegistrationForm = () => {
             id="*******"
             className="registration-field"
             placeholder="*******"
+            minLength="5"
+            required="required"
             value={password}
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);
@@ -82,6 +87,8 @@ const RegistrationForm = () => {
             placeholder="********"
             name="confirmationPassword"
             id="confirmationPassword"
+            minLength="5"
+            required="required"
             value={confirmationPassword}
             onChange={(newValue, identifier) => {
               const action = updateRegistrationValue(identifier, newValue);

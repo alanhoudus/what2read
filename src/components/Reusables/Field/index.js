@@ -19,6 +19,8 @@ const Field = ({
   value,
   name,
   onChange,
+  minLength,
+  required,
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
@@ -34,7 +36,9 @@ const Field = ({
         type={type}
         value={value}
         name={name}
+        minLength={minLength}
         onChange={handleChange}
+        required={required}
       />
     </>
   );
@@ -46,6 +50,8 @@ Field.defaultProps = {
   onChange: null,
   value: '',
   placeholder: '',
+  minLength: '0',
+  required: '',
 };
 
 Field.propTypes = {
@@ -57,6 +63,8 @@ Field.propTypes = {
   value: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func,
+  minLength: PropTypes.string,
+  required: PropTypes.string,
 };
 
 // == Export
