@@ -35,7 +35,8 @@
       font-size: calc(vars.$gutter * 1);
       border: none;
       border-radius: 5px;
-      padding: 0.3em;
+      padding: calc(vars.$gutter * 0.3);
+      margin: calc(vars.$gutter *0.1);
     }
     &--submit {
       background-color: vars.$secondaryColor;
@@ -46,11 +47,12 @@
       align-items: center;
       width: calc(vars.$gutter * 8);
       color: vars.$thirdColor;
-      padding: 0.3em;
+      padding: calc(vars.$gutter * 0.3);
+      margin: calc(vars.$gutter *0.1);
     }
     &--submit::after {
       content: "Rechercher";
-      padding: 0.3em;
+      padding: calc(vars.$gutter * 0.3);
     }
   }
 }

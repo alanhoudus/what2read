@@ -40,7 +40,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         token: action.token,
         username: action.username,
-        description: 'J\'me présente. Je m\'appelle John. J\'voudrais bien réussir ma vie. Être aimé !',
+        description: 'J\'me présente. Je m\'appelle alan. J\'voudrais bien réussir ma vie. Être aimé !',
       };
     case SAVE_FAVORITES:
       return {

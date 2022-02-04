@@ -9,6 +9,7 @@ import {
 export const initialState = {
   logged: true,
   logInfo: false,
+  message: 'Bienvenue',
   username: '',
   password: '',
   loggingError: false,

@@ -1,0 +1,62 @@
+@use '../../../styles/vars';
+
+@media (max-width: 768px) {
+  .book {
+    &-reviews {
+      &.singlereview {
+        color: vars.$fontParagraph;
+        margin: calc(vars.$gutter * 2);
+        margin-bottom: calc(vars.$gutter * 5);
+        padding: calc(vars.$gutter * 2);
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
+      &.author {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: calc(vars.$gutter * 2);
+      
+        &--name {
+          padding-right: calc(vars.$gutter * 1);
+        }
+
+        &--avatar {
+          width: 30px;
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .book {
+    &-reviews {
+      &.singlereview {
+        padding: calc(vars.$gutter * 2);
+        margin: calc(vars.$gutter * 2);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
+      &.author {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: calc(vars.$gutter * 1);
+     
+        &--name {
+          padding-right: calc(vars.$gutter * 1);
+          font-weight: bold;
+        }
+  
+        &--avatar {
+          width: 30px;
+          float: left;
+        }      
+      }
+    }
+  }
+}
+

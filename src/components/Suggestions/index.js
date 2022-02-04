@@ -28,7 +28,7 @@ const Suggestions = () => {
       <SuggestedBook />
       <Separator />
       <div className="suggestions-history">
-        <div className="suggestions-history book">
+        <div className="suggestions-history books">
           {suggestionsLoading
             ? <Suggestion suggestionsList={suggestionsList} />
             : <Loader />}

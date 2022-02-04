@@ -25,7 +25,7 @@ import Reviews from '../MyReviews';
 import EditProfile from '../Profile/EditProfile';
 import Suggestions from '../Suggestions';
 import LogoProfil from '../Profile/LogoProfil';
-import ConnectionProfile from '../Profile/ConnectionProfile';
+import PopUpInfo from '../Reusables/PopUpInfo';
 import Loader from './Loader';
 import LogIn from '../LogIn';
 
@@ -39,6 +39,8 @@ const App = () => {
   const isLogged = useSelector((state) => state.userLogin.logged);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
   const dataIsLoading = useSelector((state) => state.books.dataLoading);
+  const username = useSelector((state) => state.userProfile.username);
+  const message = useSelector((state) => state.userLogin.message);
   const dispatch = useDispatch();
 
   const location = useLocation();
@@ -62,7 +64,7 @@ const App = () => {
   return (
     <div className="app">
       <Header />
-      {logInfo && <ConnectionProfile />}
+      {logInfo && <PopUpInfo username={username} message={message} />}
       {isLogged && <LogoProfil />}
       <div className="app-wrapper">
         <Routes>

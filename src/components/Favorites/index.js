@@ -2,6 +2,8 @@
 // hooks
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+// react-router-dom
+import { Navigate } from 'react-router-dom';
 // components
 import FavoritesList from './FavoritesList';
 import Separator from '../Reusables/Separator';
@@ -27,8 +29,12 @@ const Favorites = () => {
   const favoritesLoading = useSelector((state) => state.userProfile.favoritesLoading);
   const userInput = useSelector((state) => state.userProfile.searchFavoriteInput);
   const booksList = useSelector((state) => state.books.booksList);
-
+  const isLogged = useSelector((state) => state.userLogin.logged);
   const dispatch = useDispatch();
+  // If user isn't logged in, redirect to the login
+  if (!isLogged) {
+    return <Navigate to="/connection" />;
+  }
   return (
     <div className="favorites">
       <div className="favorites-presentation">

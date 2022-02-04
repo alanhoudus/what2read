@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 // hooks
 import { useSelector, useDispatch } from 'react-redux';
 // actions
@@ -27,6 +27,12 @@ const RegistrationReview = () => {
   const inputTitleReview = useSelector((state) => state.addReview.title);
   const inputContentReview = useSelector((state) => state.addReview.content);
   const dispatch = useDispatch();
+  const isLogged = useSelector((state) => state.userLogin.logged);
+
+  // If user isn't logged in, redirect to the login
+  if (!isLogged) {
+    return <Navigate to="/connection" />;
+  }
   return (
 
     <div className="addReview">

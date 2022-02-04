@@ -1,5 +1,5 @@
 // react-router-dom
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 // hooks
 import { useSelector } from 'react-redux';
 // scss
@@ -10,7 +10,12 @@ const Profile = () => {
   const description = useSelector((state) => state.userProfile.description);
   const email = useSelector((state) => state.userProfile.email);
   const avatar = useSelector((state) => state.userRegistration.picture);
+  const isLogged = useSelector((state) => state.userLogin.logged);
 
+  // If user isn't logged in, redirect to the login
+  if (!isLogged) {
+    return <Navigate to="/connection" />;
+  }
   return (
     <div>
       <div className="profile">

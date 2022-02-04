@@ -2,7 +2,8 @@
 
 @media (max-width: 768px) { 
   .home {
-    h1{
+    
+    h1 {
     text-align: center;
   }
   }
@@ -10,6 +11,11 @@
 
 @media (min-width: 768px) { 
   .home {
-
+    &-title {
+      
+      &--main {
+        
+      }
+    }
   }
 }
