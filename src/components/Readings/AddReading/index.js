@@ -13,18 +13,25 @@ const AddReading = () => {
 
   return (
     <div className="modal-overlay">
-      <div className="modal-wrapper">
-        <h3>Ajouter un livre</h3>
-        <Field />
-        <button
-          type="button"
-          className="modal-close-button"
-          onClick={() => {
-            dispatch(togglePopUp(false));
-          }}
-        >
-          <span>&times;</span>
-        </button>
+      <div className="modal-background">
+        <div className="modal-wrapper">
+          <h3>Ajouter un livre</h3>
+          <Field
+            className="modal-input"
+            name="addreading"
+            id="addreading"
+            type="text"
+          />
+          <button
+            type="button"
+            className="modal-close-button"
+            onClick={() => {
+              dispatch(togglePopUp(false));
+            }}
+          >
+            <span>&times;</span>
+          </button>
+        </div>
       </div>
     </div>
   );
