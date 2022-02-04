@@ -1,49 +1,62 @@
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1040;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+@use '../../../styles/vars';
 
-  .modal-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1050;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    outline: 0;
-    display: flex;
-    align-items: center;
-  }
+// responsive mobile first
+@media (min-width: 768px) {
 
   .modal {
-    z-index: 100;
-    background: #fff;
-    position: relative;
-    margin: auto;
-    border-radius: 5px;
-    max-width: 500px;
-    width: 80%;
-    padding: 1rem;
-  }
+  
+    &-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1040;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    &-background {
+      background-color: vars.$secondaryColor;
+      border-radius: 20px;
+      width: 30%;
+      height: 20%;
+      
+    }
 
-  .modal-close-button {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #000;
-    cursor: pointer;
-    border: none;
-    background: transparent;
+    &-input {
+      background-color: vars.$mainColor;
+      border: none;
+      width: 15%;
+      height: calc(vars.$gutter * 2);
+      color: vars.$fontColor;
+    }
+
+    &-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1050;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      outline: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-close-button {
+      font-size: calc(vars.$fontSize * 3);
+      font-weight: 700;
+      color: #000;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+
   }
+}
