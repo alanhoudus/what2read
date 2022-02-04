@@ -1,8 +1,13 @@
-import { UPDATE_TITLE_WRITE_REVIEW, UPDATE_WRITE_REVIEW } from '../actions/addReview';
+import {
+  UPDATE_TITLE_WRITE_REVIEW,
+  UPDATE_WRITE_REVIEW,
+  HANDLE_EMPTY_INPUT,
+} from '../actions/addReview';
 
 export const initialState = {
   title: '',
   content: '',
+  isbn: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,12 +15,21 @@ const reducer = (state = initialState, action = {}) => {
     case UPDATE_TITLE_WRITE_REVIEW:
       return {
         ...state,
-        title: action.newValue,
+        isbn: action.isbn,
+        title: action.title,
       };
     case UPDATE_WRITE_REVIEW:
       return {
         ...state,
-        content: action.newValue,
+        isbn: action.isbn,
+        content: action.content,
+      };
+    case HANDLE_EMPTY_INPUT:
+      return {
+        ...state,
+        title: '',
+        content: '',
+        isbn: '',
       };
     default:
       return state;

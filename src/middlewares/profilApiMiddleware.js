@@ -1,22 +1,20 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
-import { HANDLE_POST_REVIEW } from '../actions/addReview';
-import { findBook } from '../selectors/books';
+import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
-  // // Get the isbn in the URL
-  // const { isbn } = useParams();
-  // const book = findBook(store.getState().books.booksList, isbn);
   switch (action.type) {
-    case HANDLE_POST_REVIEW:
+    case HANDLE_POST_REVIEW: {
+      const { isbn } = store.getState().addReview;
       axios.post(
         // URL
-        'http://localhost:8000/api/9780123683540/addreview',
+        `http://localhost:8000/api/${isbn}/addreview`,
         // données
         {
           title: store.getState().addReview.title,
           content: store.getState().addReview.content,
+          book_isbn: isbn,
         },
         {
           headers: {
@@ -25,6 +23,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
+          store.dispatch(handleEmptyInput());
           console.log(response);
         })
         .catch((error) => {
@@ -41,6 +40,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
           // }, 7000);
         });
       break;
+    }
     default:
   }
   next(action);
