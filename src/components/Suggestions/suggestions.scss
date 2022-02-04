@@ -3,7 +3,7 @@
 @media (max-width: 768px) { 
   .suggestions {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
 
     &-history {
@@ -13,6 +13,7 @@
 
       &.book {
         margin: calc(vars.$gutter *1);
+        width: 300px;
 
         &-cover {
         position: relative;
