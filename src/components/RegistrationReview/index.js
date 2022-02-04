@@ -7,7 +7,11 @@ import { findBook } from '../../selectors/books';
 import Field from '../Reusables/Field';
 import TextArea from '../Reusables/TextArea';
 // actions
-import { updateTitleWriteReview, updateWriteReview } from '../../actions/addReview';
+import {
+  updateTitleWriteReview,
+  updateWriteReview,
+  handlePostReview,
+} from '../../actions/addReview';
 // import asset
 // import profilLogo from '../../assets/images/profileicon.png';
 // import scss
@@ -16,11 +20,12 @@ import './registrationReview.scss';
 const RegistrationReview = () => {
   // Get the isbn in the URL
   const { isbn } = useParams();
+  console.log(isbn);
   // Find the book in the list of books corresponding to the isbn in the URL
   const book = useSelector((state) => findBook(state.books.booksList, isbn));
   // controlled input search
-  const inputTitleReview = useSelector((state) => state.addReview.inputTitleReview);
-  const inputContentReview = useSelector((state) => state.addReview.inputContentReview);
+  const inputTitleReview = useSelector((state) => state.addReview.title);
+  const inputContentReview = useSelector((state) => state.addReview.content);
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.userLogin.logged);
 
@@ -32,7 +37,13 @@ const RegistrationReview = () => {
 
     <div className="addReview">
       <h2 className="addReview-title">Ecrit une review</h2>
-      <form className="addReview-form">
+      <form
+        className="addReview-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch(handlePostReview(isbn));
+        }}
+      >
         <div className="addReview-form book">
           <Link
             to={`/livre/${book.isbn}`}
@@ -47,8 +58,8 @@ const RegistrationReview = () => {
           placeholder="Mets un titre à ta review"
           className="addReview-field title"
           value={inputTitleReview}
-          onChange={(newValue) => {
-            const actionUpdate = updateTitleWriteReview(newValue);
+          onChange={(newTitle) => {
+            const actionUpdate = updateTitleWriteReview(book.isbn, newTitle);
             dispatch(actionUpdate);
           }}
         />
@@ -63,8 +74,8 @@ const RegistrationReview = () => {
             placeholder="Texte de la review"
             className="addReview-field content"
             value={inputContentReview}
-            onChange={(newValue) => {
-              const actionUpdate = updateWriteReview(newValue);
+            onChange={(newContent) => {
+              const actionUpdate = updateWriteReview(book.isbn, newContent);
               dispatch(actionUpdate);
             }}
           />
