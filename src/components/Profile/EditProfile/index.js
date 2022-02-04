@@ -20,7 +20,7 @@ const EditProfile = () => {
   const userEmail = useSelector((state) => state.userProfile.email);
   const userPicture = useSelector((state) => state.userRegistration.picture);
   const dispatch = useDispatch();
-  const isLogged = useSelector((state) => state.userLogin.logged);
+  const isLogged = useSelector((state) => state.userProfile.logged);
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {

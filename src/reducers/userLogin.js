@@ -7,7 +7,6 @@ import {
 } from 'src/actions/user';
 
 export const initialState = {
-  logged: true,
   logInfo: false,
   message: 'Bienvenue',
   username: '',
@@ -25,7 +24,6 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_USER_DATA:
       return {
         ...state,
-        logged: true,
         loggingError: false,
         logInfo: true,
       };
@@ -42,7 +40,6 @@ const reducer = (state = initialState, action = {}) => {
     case LOG_OUT:
       return {
         ...state,
-        logged: false,
         username: '',
         password: '',
         loginfo: false,

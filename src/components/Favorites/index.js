@@ -29,7 +29,7 @@ const Favorites = () => {
   const favoritesLoading = useSelector((state) => state.userProfile.favoritesLoading);
   const userInput = useSelector((state) => state.userProfile.searchFavoriteInput);
   const booksList = useSelector((state) => state.books.booksList);
-  const isLogged = useSelector((state) => state.userLogin.logged);
+  const isLogged = useSelector((state) => state.userProfile.logged);
   const dispatch = useDispatch();
   // If user isn't logged in, redirect to the login
   if (!isLogged) {

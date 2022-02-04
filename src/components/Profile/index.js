@@ -10,7 +10,7 @@ const Profile = () => {
   const description = useSelector((state) => state.userProfile.description);
   const email = useSelector((state) => state.userProfile.email);
   const avatar = useSelector((state) => state.userRegistration.picture);
-  const isLogged = useSelector((state) => state.userLogin.logged);
+  const isLogged = useSelector((state) => state.userProfile.logged);
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {

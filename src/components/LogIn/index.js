@@ -15,7 +15,7 @@ const LogIn = () => {
   const username = useSelector((state) => state.userLogin.username);
   const password = useSelector((state) => state.userLogin.password);
   const loggingError = useSelector((state) => state.userLogin.loggingError);
-  const isLogged = useSelector((state) => state.userLogin.logged);
+  const isLogged = useSelector((state) => state.userProfile.logged);
   const registrationSuccess = useSelector((state) => state.userRegistration.registrationSuccess);
   const message = useSelector((state) => state.userRegistration.registrationMessage);
   const dispatch = useDispatch();
