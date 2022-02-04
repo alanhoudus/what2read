@@ -36,7 +36,7 @@ import { getFavoritesData, getReadingsData, getReviewsData } from '../../actions
 
 // == Composant
 const App = () => {
-  const isLogged = useSelector((state) => state.userLogin.logged);
+  const isLogged = useSelector((state) => state.userProfile.logged);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
   const dataIsLoading = useSelector((state) => state.books.dataLoading);
   const username = useSelector((state) => state.userProfile.username);

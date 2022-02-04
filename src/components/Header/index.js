@@ -28,7 +28,7 @@ const Header = () => {
   const [loggedOutNav, setLoggedOutNav] = useState(LOGGED_OUT_USER_NAV);
   // eslint-disable-next-line no-unused-vars
   const [regularNavLinks, setRegularNavLinks] = useState(REGULAR_NAV);
-  const isLogged = useSelector((state) => state.userLogin.logged);
+  const isLogged = useSelector((state) => state.userProfile.logged);
   // boolean state made to handle the mobile nav on toggle
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);

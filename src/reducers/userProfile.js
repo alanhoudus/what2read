@@ -10,6 +10,7 @@ import {
   TOGGLE_POP_UP,
   UPDATE_FAVORITE_SEARCH_VALUE,
   SEARCHED_FAVORITES_BOOKS_LIST,
+  LOG_OUT,
 } from '../actions/user';
 
 export const initialState = {
@@ -26,6 +27,7 @@ export const initialState = {
   addBookPopUp: false,
   searchFavoriteInput: '',
   searchedFavoritesBooksList: [],
+  logged: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -38,6 +40,7 @@ const reducer = (state = initialState, action = {}) => {
     case SAVE_USER_DATA:
       return {
         ...state,
+        logged: true,
         token: action.token,
         username: action.username,
         description: 'J\'me présente. Je m\'appelle alan. J\'voudrais bien réussir ma vie. Être aimé !',
@@ -86,6 +89,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         favorites: action.data,
+      };
+    case LOG_OUT:
+      return {
+        ...state,
+        logged: false,
       };
     default:
       return state;

@@ -18,7 +18,7 @@ const Reviews = () => {
   // eslint-disable-next-line no-unused-vars
   const [myReviewsPresentation, setMyReviewsPresentation] = useState(MY_REVIEWS_PRESENTATION);
   const myReviewList = useSelector((state) => state.userProfile.reviews);
-  const isLogged = useSelector((state) => state.userLogin.logged);
+  const isLogged = useSelector((state) => state.userProfile.logged);
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
