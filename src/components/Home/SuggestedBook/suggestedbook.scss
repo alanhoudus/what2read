@@ -2,10 +2,13 @@
 
 @media (max-width: 768px) { 
   .suggestedbook {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     &-infos {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
-      grid-template-rows: repeat(2, 80%);
+      display: flex;
+      flex-direction: column;
+      align-content: center;
     }
 
     &-booktitle {
