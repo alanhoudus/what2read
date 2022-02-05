@@ -10,7 +10,7 @@ import Field from '../../Reusables/Field';
 import TextArea from '../../Reusables/TextArea';
 
 // actions
-import { updateProfileValue } from '../../../actions/user';
+import { editUserProfile, updateProfileValue } from '../../../actions/user';
 // scss
 import './editprofile.scss';
 
@@ -31,7 +31,12 @@ const EditProfile = () => {
       <div className="editprofile">
         <h2 className="editprofile title">Mon profil</h2>
         <div className="editprofile-contentGroup">
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              dispatch(editUserProfile());
+            }}
+          >
             <Field
               className="editprofile-content input username"
               value={userUsername}
@@ -54,8 +59,7 @@ const EditProfile = () => {
             <TextArea
               className="editprofile-content input description"
               value={userDescription}
-              onChange={(evt) => {
-                const newValue = evt.target.value;
+              onChange={(newValue) => {
                 const action = updateProfileValue('description', newValue);
                 dispatch(action);
               }}
@@ -74,17 +78,17 @@ const EditProfile = () => {
               />
               <Edit2 />
             </div>
-            <Link
+            {/* <Link
               to="/profil"
               key="1"
+            > */}
+            <button
+              className="editprofile-content button"
+              type="submit"
             >
-              <button
-                className="editprofile-content button"
-                type="button"
-              >
-                Valider les modifications
-              </button>
-            </Link>
+              Valider les modifications
+            </button>
+            {/* </Link> */}
           </form>
         </div>
       </div>

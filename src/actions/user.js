@@ -25,6 +25,11 @@ export const REMOVE_REGISTRATION_INFO = 'REMOVE_REGISTRATION_INFO';
 export const GET_USER_DATA = 'GET_USER_DATA';
 export const SAVE_USER_PROFILE_DATA = 'SAVE_USER_PROFILE_DATA';
 export const PROFILE_IS_LOADED = 'PROFILE_IS_LOADED';
+export const EDIT_USER_PROFILE = 'EDIT_USER_PROFILE';
+
+export const editUserProfile = () => ({
+  type: EDIT_USER_PROFILE,
+});
 
 export const profileIsLoaded = () => ({
   type: PROFILE_IS_LOADED,

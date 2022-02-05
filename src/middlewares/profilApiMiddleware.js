@@ -2,7 +2,12 @@
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
 import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
-import { GET_USER_DATA, profileIsLoaded, saveUserProfileData } from '../actions/user';
+import {
+  EDIT_USER_PROFILE,
+  GET_USER_DATA,
+  profileIsLoaded,
+  saveUserProfileData,
+} from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -58,6 +63,30 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           store.dispatch(profileIsLoaded());
+        });
+      break;
+    }
+    case EDIT_USER_PROFILE: {
+      axios.put(
+        // URL
+        'http://localhost:8000/api/profile',
+        {
+          email: store.getState().userProfile.email,
+          username: store.getState().userProfile.username,
+          picture: store.getState().userProfile.picture,
+          presentation: store.getState().userProfile.description,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
         });
       break;
     }

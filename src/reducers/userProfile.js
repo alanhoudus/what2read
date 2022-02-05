@@ -30,7 +30,7 @@ export const initialState = {
   addBookPopUp: false,
   searchFavoriteInput: '',
   searchedFavoritesBooksList: [],
-  profileIsLoading: true,
+  profileIsLoading: false,
   logged: true,
 };
 
