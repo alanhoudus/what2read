@@ -11,7 +11,6 @@ export const initialState = {
   password: '',
   confirmationPassword: '',
   description: '',
-  picture: 'https://i.chzbgr.com/full/9074466816/h1BF3CA5E',
   registrationError: false,
   registrationSuccess: false,
   registrationMessage: 'Inscription validée',

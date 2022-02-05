@@ -32,7 +32,12 @@ import LogIn from '../LogIn';
 // scss
 import './app.scss';
 import { getSuggestionsData } from '../../actions/suggestions';
-import { getFavoritesData, getReadingsData, getReviewsData } from '../../actions/user';
+import {
+  getFavoritesData,
+  getReadingsData,
+  getReviewsData,
+  getUserData,
+} from '../../actions/user';
 
 // == Composant
 const App = () => {
@@ -41,6 +46,7 @@ const App = () => {
   const dataIsLoading = useSelector((state) => state.books.dataLoading);
   const username = useSelector((state) => state.userProfile.username);
   const message = useSelector((state) => state.userLogin.message);
+  const token = useSelector((state) => state.userProfile.token);
   const dispatch = useDispatch();
 
   const location = useLocation();
@@ -57,6 +63,12 @@ const App = () => {
     dispatch(getReviewsData());
     dispatch(getSuggestionsData());
   }, []);
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getUserData());
+    }
+  }, [token]);
 
   if (dataIsLoading) {
     return <Loader />;

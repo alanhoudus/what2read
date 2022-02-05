@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import './logoProfil.scss';
 
 const LogoProfil = () => {
-  const avatar = useSelector((state) => state.userRegistration.picture);
+  const avatar = useSelector((state) => state.userProfile.picture);
   return (
     <Link
       to="/profil"

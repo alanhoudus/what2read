@@ -2,6 +2,8 @@
 import { Link, Navigate } from 'react-router-dom';
 // hooks
 import { useSelector } from 'react-redux';
+// components
+import Loader from '../App/Loader';
 // scss
 import './profile.scss';
 
@@ -9,12 +11,16 @@ const Profile = () => {
   const username = useSelector((state) => state.userProfile.username);
   const description = useSelector((state) => state.userProfile.description);
   const email = useSelector((state) => state.userProfile.email);
-  const avatar = useSelector((state) => state.userRegistration.picture);
+  const avatar = useSelector((state) => state.userProfile.picture);
   const isLogged = useSelector((state) => state.userProfile.logged);
+  const profileIsLoading = useSelector((state) => state.userProfile.profileIsLoading);
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
     return <Navigate to="/connection" />;
+  }
+  if (profileIsLoading) {
+    return <Loader />;
   }
   return (
     <div>

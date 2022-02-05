@@ -11,13 +11,16 @@ import {
   UPDATE_FAVORITE_SEARCH_VALUE,
   SEARCHED_FAVORITES_BOOKS_LIST,
   LOG_OUT,
+  SAVE_USER_PROFILE_DATA,
+  PROFILE_IS_LOADED,
 } from '../actions/user';
 
 export const initialState = {
   username: '',
   email: '',
   description: '',
-  token: '',
+  token: false,
+  picture: 'https://media.giphy.com/media/QSwf0L2iUbfJlA0L5n/giphy.gif',
   favorites: [],
   favoritesLoading: true,
   readings: [],
@@ -27,11 +30,26 @@ export const initialState = {
   addBookPopUp: false,
   searchFavoriteInput: '',
   searchedFavoritesBooksList: [],
+  profileIsLoading: false,
   logged: true,
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SAVE_USER_PROFILE_DATA:
+      return {
+        ...state,
+        email: action.email,
+        picture: action.picture,
+        description: action.description,
+        username: action.username,
+        reviews: action.reviews,
+      };
+    case PROFILE_IS_LOADED:
+      return {
+        ...state,
+        profileIsLoading: false,
+      };
     case UPDATE_PROFILE_VALUE:
       return {
         ...state,

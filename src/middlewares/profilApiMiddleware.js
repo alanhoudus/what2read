@@ -2,6 +2,12 @@
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
 import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
+import {
+  EDIT_USER_PROFILE,
+  GET_USER_DATA,
+  profileIsLoaded,
+  saveUserProfileData,
+} from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -29,15 +35,58 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.log(error.toJSON());
           console.log(store.getState().userProfile.token);
-          // If there's an error, dispatch the loggingError action to display the error
-          // store.dispatch(loggingError());
+        });
+      break;
+    }
+    case GET_USER_DATA: {
+      axios.get(
+        // URL
+        'http://localhost:8000/api/profile',
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+          store.dispatch(saveUserProfileData(
+            response.data.email,
+            response.data.picture,
+            response.data.presentation,
+            response.data.username,
+            response.data.reviews,
+          ));
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
         })
         .finally(() => {
-          // Remove the ProfileConnexion component
-          // Should be moved in the response
-          // window.setTimeout(() => {
-          //   store.dispatch(removeLogInfo());
-          // }, 7000);
+          store.dispatch(profileIsLoaded());
+        });
+      break;
+    }
+    case EDIT_USER_PROFILE: {
+      axios.put(
+        // URL
+        'http://localhost:8000/api/profile',
+        {
+          email: store.getState().userProfile.email,
+          username: store.getState().userProfile.username,
+          picture: store.getState().userProfile.picture,
+          presentation: store.getState().userProfile.description,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
         });
       break;
     }
