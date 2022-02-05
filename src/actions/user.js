@@ -23,6 +23,21 @@ export const SAVE_USER_REGISTRATION = 'SAVE_USER_REGISTRATION';
 export const REGISTRATION_ERROR = 'REGISTRATION_ERROR';
 export const REMOVE_REGISTRATION_INFO = 'REMOVE_REGISTRATION_INFO';
 export const GET_USER_DATA = 'GET_USER_DATA';
+export const SAVE_USER_PROFILE_DATA = 'SAVE_USER_PROFILE_DATA';
+export const PROFILE_IS_LOADED = 'PROFILE_IS_LOADED';
+
+export const profileIsLoaded = () => ({
+  type: PROFILE_IS_LOADED,
+});
+
+export const saveUserProfileData = (email, picture, description, username, reviews) => ({
+  type: SAVE_USER_PROFILE_DATA,
+  email,
+  picture,
+  description,
+  username,
+  reviews,
+});
 
 export const getUserData = () => ({
   type: GET_USER_DATA,

@@ -2,7 +2,7 @@
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
 import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
-import { GET_USER_DATA } from '../actions/user';
+import { GET_USER_DATA, profileIsLoaded, saveUserProfileData } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -45,9 +45,19 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
+          store.dispatch(saveUserProfileData(
+            response.data.email,
+            response.data.picture,
+            response.data.presentation,
+            response.data.username,
+            response.data.reviews,
+          ));
         })
         .catch((error) => {
           console.log(error.toJSON());
+        })
+        .finally(() => {
+          store.dispatch(profileIsLoaded());
         });
       break;
     }

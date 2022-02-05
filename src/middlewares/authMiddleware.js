@@ -54,7 +54,7 @@ const authMiddleware = (store) => (next) => (action) => {
           email: store.getState().userRegistration.email,
           password: store.getState().userRegistration.password,
           presentation: store.getState().userRegistration.description,
-          picture: store.getState().userRegistration.picture,
+          picture: store.getState().userProfile.picture,
         },
       )
         .then((response) => {

@@ -18,7 +18,7 @@ const EditProfile = () => {
   const userUsername = useSelector((state) => state.userProfile.username);
   const userDescription = useSelector((state) => state.userProfile.description);
   const userEmail = useSelector((state) => state.userProfile.email);
-  const userPicture = useSelector((state) => state.userRegistration.picture);
+  const userPicture = useSelector((state) => state.userProfile.picture);
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.userProfile.logged);
 
