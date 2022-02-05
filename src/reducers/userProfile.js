@@ -13,6 +13,9 @@ import {
   LOG_OUT,
   SAVE_USER_PROFILE_DATA,
   PROFILE_IS_LOADED,
+  SAVE_USER_FAVORITES_DATA,
+  SAVE_USER_REVIEWS_DATA,
+  SAVE_USER_READINGS_DATA,
 } from '../actions/user';
 
 export const initialState = {
@@ -30,8 +33,8 @@ export const initialState = {
   addBookPopUp: false,
   searchFavoriteInput: '',
   searchedFavoritesBooksList: [],
-  profileIsLoading: false,
-  logged: true,
+  profileIsLoading: true,
+  logged: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -49,6 +52,21 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         profileIsLoading: false,
+      };
+    case SAVE_USER_FAVORITES_DATA:
+      return {
+        ...state,
+        favorites: action.favorites,
+      };
+    case SAVE_USER_REVIEWS_DATA:
+      return {
+        ...state,
+        reviews: action.reviews,
+      };
+    case SAVE_USER_READINGS_DATA:
+      return {
+        ...state,
+        readings: action.readings,
       };
     case UPDATE_PROFILE_VALUE:
       return {
@@ -81,7 +99,7 @@ const reducer = (state = initialState, action = {}) => {
     case READINGS_LOADED:
       return {
         ...state,
-        favoritesLoading: false,
+        readingsLoading: false,
       };
     case SAVE_REVIEWS:
       return {

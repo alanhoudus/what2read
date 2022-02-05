@@ -2,7 +2,7 @@ import { Trash, Edit } from 'react-feather';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const MyReview = ({ book }) => (
+const MyReview = ({ content, title, book }) => (
   <div className="reviews-wrapper--singlereview">
     <Link
       to={`/livre/${book.isbn}`}
@@ -11,8 +11,8 @@ const MyReview = ({ book }) => (
       <img src={book.cover} className="reviews-wrapper--singlereview-img" alt="Couverture du livre" />
     </Link>
     <div className="reviews-wrapper--singlereview-infos">
-      <h3>{book.title}</h3>
-      <p>{book.description}</p>
+      <h3>{title}</h3>
+      <p>{content}</p>
       <div className="reviews-wrapper--singlereview-infos--buttons">
         <Edit color="white" />
         <Trash color="red" />
@@ -28,6 +28,8 @@ MyReview.propTypes = {
     cover: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default MyReview;

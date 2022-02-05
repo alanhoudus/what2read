@@ -4,23 +4,32 @@ import axios from 'axios';
 import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
 import {
   EDIT_USER_PROFILE,
+  favoritesLoaded,
   GET_USER_DATA,
+  GET_USER_FAVORITES_DATA,
+  GET_USER_READINGS_DATA,
+  GET_USER_REVIEWS_DATA,
   profileIsLoaded,
+  readingsLoaded,
+  reviewsLoaded,
+  saveUserFavoritesData,
   saveUserProfileData,
+  saveUserReadingsData,
+  saveUserReviewsData,
 } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case HANDLE_POST_REVIEW: {
-      const { isbn } = store.getState().addReview;
+      console.log(action.isbn);
       axios.post(
         // URL
-        `http://localhost:8000/api/${isbn}/addreview`,
+        `http://localhost:8000/api/profile/${action.isbn}/addreview`,
         // données
         {
           title: store.getState().addReview.title,
           content: store.getState().addReview.content,
-          book_isbn: isbn,
+          book_isbn: action.isbn,
         },
         {
           headers: {
@@ -34,7 +43,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error.toJSON());
-          console.log(store.getState().userProfile.token);
         });
       break;
     }
@@ -63,6 +71,82 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           store.dispatch(profileIsLoaded());
+        });
+      break;
+    }
+    case GET_USER_FAVORITES_DATA: {
+      axios.get(
+        // URL
+        'http://localhost:8000/api/profile/favorites',
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+          console.log('favorites');
+          store.dispatch(saveUserFavoritesData(
+            response.data,
+          ));
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        })
+        .finally(() => {
+          store.dispatch(favoritesLoaded());
+        });
+      break;
+    }
+    case GET_USER_READINGS_DATA: {
+      axios.get(
+        // URL
+        'http://localhost:8000/api/profile/readings',
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+          console.log('readings');
+          store.dispatch(saveUserReadingsData(
+            response.data,
+          ));
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        })
+        .finally(() => {
+          store.dispatch(readingsLoaded());
+        });
+      break;
+    }
+    case GET_USER_REVIEWS_DATA: {
+      axios.get(
+        // URL
+        'http://localhost:8000/api/profile/reviews',
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+          console.log('reviews');
+          store.dispatch(saveUserReviewsData(
+            response.data,
+          ));
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        })
+        .finally(() => {
+          console.log('a');
+          store.dispatch(reviewsLoaded());
         });
       break;
     }

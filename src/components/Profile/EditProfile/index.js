@@ -1,6 +1,6 @@
 // import
 // react-router-dom
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 // hooks
 import { useDispatch, useSelector } from 'react-redux';
 // assets

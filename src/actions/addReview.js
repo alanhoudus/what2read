@@ -15,8 +15,9 @@ export const updateWriteReview = (newIsbn, newContent) => ({
   content: newContent,
 });
 
-export const handlePostReview = () => ({
+export const handlePostReview = (isbn) => ({
   type: HANDLE_POST_REVIEW,
+  isbn,
 });
 
 export const handleEmptyInput = () => ({

@@ -1,6 +1,6 @@
 // import scss
 // hooks
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // react-router-dom
 import { Navigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ import AddReading from './AddReading';
 // mock data
 import { READINGS_PRESENTATION } from '../../data/readings';
 // action
-import { togglePopUp } from '../../actions/user';
+import { getUserReadingsData, togglePopUp } from '../../actions/user';
 // components
 import ReadingsList from './ReadingsList';
 // scss
@@ -23,12 +23,22 @@ const Readings = () => {
   const readingsList = useSelector((state) => state.userProfile.readings);
   const readingsLoading = useSelector((state) => state.userProfile.readingsLoading);
   const displayPopUp = useSelector((state) => state.userProfile.addBookPopUp);
-  const dispatch = useDispatch();
+  const token = useSelector((state) => state.userProfile.token);
   const isLogged = useSelector((state) => state.userProfile.logged);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getUserReadingsData());
+    }
+  }, [token]);
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
     return <Navigate to="/connection" />;
+  }
+  if (readingsLoading) {
+    return <Loader />;
   }
   return (
     <>
@@ -44,7 +54,9 @@ const Readings = () => {
           {readingsPresentation.addReading}
         </button>
         <div className="readings-books">
-          {readingsLoading ? <ReadingsList readingsList={readingsList} /> : <Loader />}
+          {readingsList.length === 0
+            ? <p>Vous n'avez pas encore ajouté de lectures</p>
+            : <ReadingsList readingsList={readingsList} />}
         </div>
         <div className="readings-showmore">
           <ShowMore />
