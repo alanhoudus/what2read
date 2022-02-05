@@ -2,6 +2,7 @@
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
 import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
+import { GET_USER_DATA } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -29,15 +30,24 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.log(error.toJSON());
           console.log(store.getState().userProfile.token);
-          // If there's an error, dispatch the loggingError action to display the error
-          // store.dispatch(loggingError());
+        });
+      break;
+    }
+    case GET_USER_DATA: {
+      axios.get(
+        // URL
+        'http://localhost:8000/api/profile',
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
         })
-        .finally(() => {
-          // Remove the ProfileConnexion component
-          // Should be moved in the response
-          // window.setTimeout(() => {
-          //   store.dispatch(removeLogInfo());
-          // }, 7000);
+        .catch((error) => {
+          console.log(error.toJSON());
         });
       break;
     }

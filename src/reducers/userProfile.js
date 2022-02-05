@@ -17,7 +17,7 @@ export const initialState = {
   username: '',
   email: '',
   description: '',
-  token: '',
+  token: false,
   favorites: [],
   favoritesLoading: true,
   readings: [],
