@@ -7,18 +7,6 @@ import {
 } from '../actions/books';
 
 import {
-  GET_FAVORITES_DATA,
-  GET_READINGS_DATA,
-  GET_REVIEWS_DATA,
-  saveFavorites,
-  favoritesLoaded,
-  saveReadings,
-  readingsLoaded,
-  saveReviews,
-  reviewsLoaded,
-} from '../actions/user';
-
-import {
   GET_SUGGESTIONS_DATA,
   saveSuggestions,
   suggestionsLoaded,
@@ -41,51 +29,6 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           store.dispatch(booksListLoaded());
-        });
-      break;
-    case GET_FAVORITES_DATA:
-      axios.get(
-        // URL
-        'http://localhost:8000/api/books',
-      )
-        .then((favorites) => {
-          store.dispatch(saveFavorites(favorites.data));
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          favoritesLoaded();
-        });
-      break;
-    case GET_READINGS_DATA:
-      axios.get(
-        // URL
-        'http://localhost:8000/api/books',
-      )
-        .then((readings) => {
-          store.dispatch(saveReadings(readings.data));
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          readingsLoaded();
-        });
-      break;
-    case GET_REVIEWS_DATA:
-      axios.get(
-        // URL
-        'http://localhost:8000/api/books',
-      )
-        .then((reviews) => {
-          store.dispatch(saveReviews(reviews.data));
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          reviewsLoaded();
         });
       break;
     case GET_SUGGESTIONS_DATA:

@@ -1,6 +1,6 @@
 // == Import : local
 // hooks
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // react-router-dom
 import { Navigate } from 'react-router-dom';
@@ -12,7 +12,7 @@ import SearchField from '../Reusables/SearchField';
 import Loader from '../App/Loader';
 
 // actions
-import { updateFavoriteSearchValue, searchedFavoritesBooksList } from '../../actions/user';
+import { updateFavoriteSearchValue, searchedFavoritesBooksList, getUserFavoritesData } from '../../actions/user';
 // selectors
 import { findSearchedBooks } from '../../selectors/books';
 // mock data
@@ -30,10 +30,20 @@ const Favorites = () => {
   const userInput = useSelector((state) => state.userProfile.searchFavoriteInput);
   const booksList = useSelector((state) => state.books.booksList);
   const isLogged = useSelector((state) => state.userProfile.logged);
+  const token = useSelector((state) => state.userProfile.token);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getUserFavoritesData());
+    }
+  }, [token]);
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
     return <Navigate to="/connection" />;
+  }
+  if (favoritesLoading) {
+    return <Loader />;
   }
   return (
     <div className="favorites">
@@ -63,9 +73,9 @@ const Favorites = () => {
         />
       </form>
       <div className="favorites-books">
-        {favoritesLoading
-          ? <FavoritesList favoritesList={favoritesList} />
-          : <Loader />}
+        {favoritesList.length === 0
+          ? <p>Vous n'avez pas encore ajouté de favoris</p>
+          : <FavoritesList favoritesList={favoritesList} />}
       </div>
       <div className="favorites-showmore">
         <ShowMore />

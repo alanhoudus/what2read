@@ -6,13 +6,10 @@ export const LOG_OUT = 'LOG_OUT';
 export const UPDATE_PROFILE_VALUE = 'UPDATE_PROFILE_VALUE';
 export const UPDATE_REGISTRATION_VALUE = 'UPDATE_REGISTRATION_VALUE';
 export const REMOVE_LOG_INFO = 'REMOVE_LOG_INFO';
-export const GET_FAVORITES_DATA = 'GET_FAVORITES_DATA';
 export const SAVE_FAVORITES = 'SAVE_FAVORITES';
 export const FAVORITES_LOADED = 'FAVORITES_LOADED';
-export const GET_READINGS_DATA = 'GET_READINGS_DATA';
 export const SAVE_READINGS = 'SAVE_READINGS';
 export const READINGS_LOADED = ' READINGS_LOADED';
-export const GET_REVIEWS_DATA = 'GET_REVIEWS_DATA';
 export const SAVE_REVIEWS = 'SAVE_REVIEWS';
 export const REVIEWS_LOADED = 'REVIEWS_LOADED';
 export const TOGGLE_POP_UP = 'TOGGLE_POP_UP';
@@ -26,6 +23,39 @@ export const GET_USER_DATA = 'GET_USER_DATA';
 export const SAVE_USER_PROFILE_DATA = 'SAVE_USER_PROFILE_DATA';
 export const PROFILE_IS_LOADED = 'PROFILE_IS_LOADED';
 export const EDIT_USER_PROFILE = 'EDIT_USER_PROFILE';
+export const SAVE_USER_READINGS_DATA = 'SAVE_USER_READINGS_DATA';
+export const SAVE_USER_FAVORITES_DATA = 'SAVE_USER_FAVORITES_DATA';
+export const SAVE_USER_REVIEWS_DATA = 'SAVE_USER_REVIEWS_DATA';
+export const GET_USER_READINGS_DATA = 'GET_USER_READINGS_DATA';
+export const GET_USER_FAVORITES_DATA = 'GET_USER_FAVORITES_DATA';
+export const GET_USER_REVIEWS_DATA = 'GET_USER_REVIEWS_DATA';
+
+export const getUserReviewsData = () => ({
+  type: GET_USER_REVIEWS_DATA,
+});
+
+export const getUserFavoritesData = () => ({
+  type: GET_USER_FAVORITES_DATA,
+});
+
+export const getUserReadingsData = () => ({
+  type: GET_USER_READINGS_DATA,
+});
+
+export const saveUserReviewsData = (reviews) => ({
+  type: SAVE_USER_REVIEWS_DATA,
+  reviews,
+});
+
+export const saveUserFavoritesData = (favorites) => ({
+  type: SAVE_USER_FAVORITES_DATA,
+  favorites,
+});
+
+export const saveUserReadingsData = (readings) => ({
+  type: SAVE_USER_READINGS_DATA,
+  readings,
+});
 
 export const editUserProfile = () => ({
   type: EDIT_USER_PROFILE,
@@ -92,14 +122,6 @@ export const saveFavorites = (favorites) => ({
   data: favorites,
 });
 
-export const getFavoritesData = () => ({
-  type: GET_FAVORITES_DATA,
-});
-
-export const getReadingsData = () => ({
-  type: GET_READINGS_DATA,
-});
-
 export const saveReadings = (readings) => ({
   type: SAVE_READINGS,
   data: readings,
@@ -107,10 +129,6 @@ export const saveReadings = (readings) => ({
 
 export const readingsLoaded = () => ({
   type: READINGS_LOADED,
-});
-
-export const getReviewsData = () => ({
-  type: GET_REVIEWS_DATA,
 });
 
 export const saveReviews = (reviews) => ({

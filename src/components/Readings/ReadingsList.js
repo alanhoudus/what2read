@@ -4,14 +4,16 @@ import ReadingItem from './ReadingItem';
 const ReadingsList = ({ readingsList }) => (
   // For each reading in the list, create an item
   readingsList.map((book) => (
-    <ReadingItem key={book.cover} book={book} />
+    <ReadingItem key={book.book.isbn} book={book.book} />
   ))
 );
 
 ReadingsList.propTypes = {
   readingsList: PropTypes.arrayOf(
     PropTypes.shape({
-      cover: PropTypes.string.isRequired,
+      book: PropTypes.shape({
+        isbn: PropTypes.string.isRequired,
+      }).isRequired,
     }).isRequired,
   ).isRequired,
 };

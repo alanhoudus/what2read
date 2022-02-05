@@ -33,15 +33,12 @@ import LogIn from '../LogIn';
 import './app.scss';
 import { getSuggestionsData } from '../../actions/suggestions';
 import {
-  getFavoritesData,
-  getReadingsData,
-  getReviewsData,
   getUserData,
 } from '../../actions/user';
 
 // == Composant
 const App = () => {
-  const isLogged = useSelector((state) => state.userProfile.logged);
+  const profileIsLoaded = useSelector((state) => state.userProfile.profileIsLoading);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
   const dataIsLoading = useSelector((state) => state.books.dataLoading);
   const username = useSelector((state) => state.userProfile.username);
@@ -58,9 +55,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getBooksData());
-    dispatch(getFavoritesData());
-    dispatch(getReadingsData());
-    dispatch(getReviewsData());
     dispatch(getSuggestionsData());
   }, []);
 
@@ -77,7 +71,7 @@ const App = () => {
     <div className="app">
       <Header />
       {logInfo && <PopUpInfo username={username} message={message} />}
-      {isLogged && <LogoProfil />}
+      {!profileIsLoaded && <LogoProfil />}
       <div className="app-wrapper">
         <Routes>
           <Route path="/" key="home" element={<Home />} />
@@ -95,8 +89,8 @@ const App = () => {
           <Route path="/suggestions/historique" key="suggestions-historique" element={<Suggestions />} />
           <Route path="/connection" key="connection" element={<LogIn />} />
         </Routes>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
