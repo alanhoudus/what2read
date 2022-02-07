@@ -7,7 +7,6 @@ import { Navigate } from 'react-router-dom';
 // components
 import FavoritesList from './FavoritesList';
 import Separator from '../Reusables/Separator';
-import ShowMore from '../Reusables/ShowMore';
 import SearchField from '../Reusables/SearchField';
 import Loader from '../App/Loader';
 
@@ -76,9 +75,6 @@ const Favorites = () => {
         {favoritesList.length === 0
           ? <p>Vous n'avez pas encore ajouté de favoris</p>
           : <FavoritesList favoritesList={favoritesList} />}
-      </div>
-      <div className="favorites-showmore">
-        <ShowMore />
       </div>
     </div>
   );

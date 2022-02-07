@@ -51,7 +51,6 @@ const Search = () => {
       <div className="search-books">
         <SearchList searchedBooksList={searchedBooks} />
       </div>
-      <ShowMore />
     </div>
   );
 };
