@@ -1,7 +1,6 @@
 // hooks
 import { useDispatch, useSelector } from 'react-redux';
 // import components
-import ShowMore from '../Reusables/ShowMore';
 import Loader from '../App/Loader';
 import SearchList from './SearchList';
 import SearchField from '../Reusables/SearchField';
