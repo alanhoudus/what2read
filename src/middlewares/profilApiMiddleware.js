@@ -16,12 +16,13 @@ import {
   saveUserProfileData,
   saveUserReadingsData,
   saveUserReviewsData,
+  ADD_FAVORIS_USER,
 } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case HANDLE_POST_REVIEW: {
-      console.log(action.isbn);
+      // console.log(action.isbn);
       axios.post(
         // URL
         `http://localhost:8000/api/profile/${action.isbn}/addreview`,
@@ -171,6 +172,28 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error.toJSON());
+        });
+      break;
+    }
+    case ADD_FAVORIS_USER: {
+      axios.post(
+        // URL
+        `http://localhost:8000/api/profile/${action.isbn}/addfavorite`,
+        {
+          book_isbn: action.isbn,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+          console.log(action.isbn);
         });
       break;
     }
