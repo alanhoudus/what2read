@@ -49,7 +49,7 @@ ReadingItem.propTypes = {
     subtitle: PropTypes.string,
     cover: PropTypes.string.isRequired,
   }).isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default ReadingItem;

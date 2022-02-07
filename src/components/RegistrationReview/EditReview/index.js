@@ -1,4 +1,9 @@
-import { useParams, Link, Navigate } from 'react-router-dom';
+import {
+  useParams,
+  Link,
+  useNavigate,
+  Navigate,
+} from 'react-router-dom';
 // hooks
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -20,6 +25,7 @@ const EditReview = () => {
   const content = useSelector((state) => state.addReview.editContent);
   const review = useSelector((state) => findReview(state.userProfile.reviews, Number(id)));
   const isLogged = useSelector((state) => state.userProfile.logged);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,6 +44,7 @@ const EditReview = () => {
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(sendEditedReview(review.id));
+          navigate('/profil/reviews');
         }}
       >
         <div className="addReview-form book">
@@ -54,6 +61,7 @@ const EditReview = () => {
           placeholder="Mets un titre à ta review"
           className="addReview-field title"
           name="editTitle"
+          minLength="5"
           value={title}
           onChange={(newValue, identifier) => {
             const actionUpdate = editFieldReview(identifier, newValue);
@@ -70,6 +78,7 @@ const EditReview = () => {
           <TextArea
             placeholder="Texte de la review"
             className="addReview-field content"
+            minLength="20"
             name="editContent"
             value={content}
             onChange={(newValue, identifier) => {
