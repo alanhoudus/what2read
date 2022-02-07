@@ -3,11 +3,16 @@ import { Star } from 'react-feather';
 import { Link } from 'react-router-dom';
 // hooks
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 // action
 import { deleteFavorisUser } from '../../actions/user';
 
 const FavoriteBook = ({ book, id }) => {
+  const [isDiplayedFavoris, setIsDisplayedFavoris] = useState(true);
   const dispatch = useDispatch();
+  if (isDiplayedFavoris === false) {
+    return <div />;
+  }
   return (
     <div className="favorites-book">
       <Link
@@ -26,6 +31,7 @@ const FavoriteBook = ({ book, id }) => {
         size="40"
         onClick={() => {
           dispatch(deleteFavorisUser(id));
+          setIsDisplayedFavoris(false);
         }}
       />
     </div>
