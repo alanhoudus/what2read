@@ -43,6 +43,7 @@ const App = () => {
   const dataIsLoading = useSelector((state) => state.books.dataLoading);
   const username = useSelector((state) => state.userProfile.username);
   const message = useSelector((state) => state.userLogin.message);
+  const isLogged = useSelector((state) => state.userProfile.logged);
   const token = useSelector((state) => state.userProfile.token);
   const dispatch = useDispatch();
 
@@ -71,7 +72,7 @@ const App = () => {
     <div className="app">
       <Header />
       {logInfo && <PopUpInfo username={username} message={message} />}
-      {!profileIsLoaded && <LogoProfil />}
+      {(!profileIsLoaded && isLogged) && <LogoProfil />}
       <div className="app-wrapper">
         <Routes>
           <Route path="/" key="home" element={<Home />} />
