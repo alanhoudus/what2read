@@ -23,7 +23,7 @@ const ReadingItem = ({ book, id }) => {
           to={`/livre/${book.isbn}`}
           key={book.isbn}
         >
-          <img className="readings-book--cover-img" src={book.cover} alt="title" />
+          <img className="readings-book--cover" src={book.cover} alt="title" />
         </Link>
         <Star className="readings favorited true" color="gold" />
         <FileText
