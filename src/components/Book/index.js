@@ -9,6 +9,7 @@ import Separator from '../Reusables/Separator';
 import GenresList from './GenresList';
 // scss
 import './book.scss';
+import './genres.scss';
 import ReviewsList from './Reviews/ReviewsList';
 
 const Book = () => {

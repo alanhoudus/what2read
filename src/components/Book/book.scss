@@ -14,61 +14,17 @@
     }
     &-content {
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
-
-      &.tag {
-        display: inline;
-        border-radius: 30px;
-        border: #000 1px solid;
-        padding: 4px;
-
-        &.Shonen {
-          color: #3b4d61;
-          background-color: #6b7b8c;
-        }
-        &.Science {
-          color: #a2d5c6;
-          background-color: #077b8a;
-        }
-        &.Erotique {
-          color: #e52165;
-          background-color: #0d1137;
-        }
-        &.Dystopie {
-          color: #ff6e40;
-          background-color: #ffc13b;
-        }
-        &.Thriller {
-          color: #a8c66c;
-          background-color: #1b6535;
-        }
-        &.Fantastique {
-          color: #8a307f;
-          background-color: #6883bc;
-        }
-        &.Developpement {
-          color: #cf1578;
-          background-color: #039fbe;
-        }
-        &.Policier {
-          color: #f3ca20;
-          background-color: #000;
-        }
-        &.Horreur {
-          color: #000;
-          background-color: #b85042;
-        }
-      }
     }
 
     &-buttonReview {
       color: vars.$secondaryColor;
       background-color: vars.$fourthColor;
-      // margin: calc(vars.$gutter * 1);
       border-radius: 30px;
       max-width: 80%;
       font-size: calc(vars.$fontSize * 1);;
       padding: calc(vars.$gutter * 0.5);
       margin-top: calc(vars.$gutter * 4);
+      border: none;
     }
   }
 }
@@ -95,63 +51,20 @@
 
       &.cover {
         width: 300px;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-      }
-
-      &.tag {
-        display: inline;
-        border-radius: 30px;
         border: #000 1px solid;
-        padding: 4px;
-
-        &.Shonen {
-          color: #3b4d61;
-          background-color: #6b7b8c;
-        }
-        &.Science {
-          color: #a2d5c6;
-          background-color: #077b8a;
-        }
-        &.Erotique {
-          color: #e52165;
-          background-color: #0d1137;
-        }
-        &.Dystopie {
-          color: #ff6e40;
-          background-color: #ffc13b;
-        }
-        &.Thriller {
-          color: #a8c66c;
-          background-color: #1b6535;
-        }
-        &.Fantastique {
-          color: #8a307f;
-          background-color: #6883bc;
-        }
-        &.Developpement {
-          color: #cf1578;
-          background-color: #039fbe;
-        }
-        &.Policier {
-          color: #f3ca20;
-          background-color: #000;
-        }
-        &.Horreur {
-          color: #000;
-          background-color: #b85042;
-        }
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
     }
 
     &-buttonReview {
       color: vars.$secondaryColor;
       background-color: vars.$fourthColor;
-      // margin: calc(vars.$gutter * 1);
       border-radius: 30px;
       width: 80%;
       font-size: calc(vars.$fontSize * 1);;
       padding: calc(vars.$gutter * 0.5);
       margin-top: calc(vars.$gutter * 8);
+      border: none;
     }
   }
 }
