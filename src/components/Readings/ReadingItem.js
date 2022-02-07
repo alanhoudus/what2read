@@ -14,7 +14,7 @@ const ReadingItem = ({ book, id }) => {
   const [isDiplayed, setIsDisplayed] = useState(true);
   const dispatch = useDispatch();
   if (isDiplayed === false) {
-    return <div></div>;
+    return <div />;
   }
   return (
     <div className="readings-book">
