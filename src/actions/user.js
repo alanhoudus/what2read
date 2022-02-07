@@ -30,6 +30,12 @@ export const GET_USER_READINGS_DATA = 'GET_USER_READINGS_DATA';
 export const GET_USER_FAVORITES_DATA = 'GET_USER_FAVORITES_DATA';
 export const GET_USER_REVIEWS_DATA = 'GET_USER_REVIEWS_DATA';
 export const ADD_FAVORIS_USER = 'ADD_FAVORIS_USER';
+export const DELETE_FAVORIS_USER = 'ADD_FAVORIS_USER';
+
+export const deleteFavorisUser = (id) => ({
+  type: DELETE_FAVORIS_USER,
+  id,
+});
 
 export const addFavorisUser = (isbn) => ({
   type: ADD_FAVORIS_USER,

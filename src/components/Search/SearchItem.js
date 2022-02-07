@@ -1,6 +1,6 @@
 import { Star } from 'react-feather';
 // hooks
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // react-router-dom
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { addFavorisUser } from '../../actions/user';
 
 const SearchItem = ({ searchedBook }) => {
-  // const favorites = useSelector((state) => state.userProfile.favorites);
+  const isLogged = useSelector((state) => state.userProfile.logged);
   const dispatch = useDispatch();
   return (
     <div
@@ -22,15 +22,17 @@ const SearchItem = ({ searchedBook }) => {
         <h3 className="search-book--title">{searchedBook.title}</h3>
         <h4 className="search-book--subtitle">{searchedBook.subtitle}</h4>
       </Link>
-      <Star
-        className="search-book-starAdd"
-        color="gold"
-        size="40"
-        onClick={() => {
-          dispatch(addFavorisUser(searchedBook.isbn));
-          // console.log(searchedBook.isbn);
-        }}
-      />
+      {isLogged && (
+        <Star
+          className="search-book-starAdd"
+          color="gold"
+          size="40"
+          onClick={() => {
+            dispatch(addFavorisUser(searchedBook.isbn));
+            // console.log(searchedBook.isbn);
+          }}
+        />
+      )}
     </div>
   );
 };

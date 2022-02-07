@@ -17,6 +17,7 @@ import {
   saveUserReadingsData,
   saveUserReviewsData,
   ADD_FAVORIS_USER,
+  DELETE_FAVORIS_USER,
 } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
@@ -194,6 +195,28 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.log(error.toJSON());
           console.log(action.isbn);
+        });
+      break;
+    }
+    case DELETE_FAVORIS_USER: {
+      axios.delete(
+        // URL
+        `http://localhost:8000//api/profile/favorite/${action.favorites.id}`,
+        // {
+        //   book_isbn: action.isbn,
+        // },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+          console.log(action.favorites.id);
         });
       break;
     }
