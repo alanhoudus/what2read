@@ -33,6 +33,11 @@ export const ADD_FAVORIS_USER = 'ADD_FAVORIS_USER';
 export const DELETE_FAVORIS_USER = 'DELETE_FAVORIS_USER';
 export const ADD_BOOK_TO_READINGS = 'ADD_BOOK_TO_READINGS';
 export const REMOVE_BOOK_FROM_READINGS = 'REMOVE_BOOK_FROM_READINGS';
+export const DELETE_USER_ACCOUNT = 'DELETE_USER_ACCOUNT';
+
+export const deleteUserAccount = () => ({
+  type: DELETE_USER_ACCOUNT,
+});
 
 export const deleteFavorisUser = (id) => ({
   type: DELETE_FAVORIS_USER,

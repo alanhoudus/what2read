@@ -2,8 +2,11 @@
 import { Link, Navigate } from 'react-router-dom';
 // hooks
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 // components
 import Loader from '../App/Loader';
+import ModaleDeleteAccount from './modalDeleteAccount';
+
 // scss
 import './profile.scss';
 
@@ -14,6 +17,7 @@ const Profile = () => {
   const avatar = useSelector((state) => state.userProfile.picture);
   const isLogged = useSelector((state) => state.userProfile.logged);
   const profileIsLoading = useSelector((state) => state.userProfile.profileIsLoading);
+  const [isModal, setIsModal] = useState(false);
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
@@ -46,8 +50,18 @@ const Profile = () => {
             >
               <button className="profile-content button edit" type="button">Modifier</button>
             </Link>
-            <button className="profile-content button delete" type="button">Supprimer le compte</button>
+            <button
+              className="profile-content button delete"
+              type="button"
+              onClick={() => {
+                setIsModal(true);
+              }}
+            >Supprimer le compte
+            </button>
           </div>
+        </div>
+        <div>
+          {isModal && (<ModaleDeleteAccount setIsModal={setIsModal} />)}
         </div>
       </div>
     </div>
