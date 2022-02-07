@@ -75,15 +75,11 @@
         width: 30%;
         font-size: calc(vars.$fontSize * 1);;
         padding: calc(vars.$gutter * 0.5);
+        border: none;
       }
     }
        
     &-books {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    &-showmore {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
