@@ -16,7 +16,7 @@ import {
   SAVE_USER_FAVORITES_DATA,
   SAVE_USER_REVIEWS_DATA,
   SAVE_USER_READINGS_DATA,
-} from '../actions/user';
+} from 'src/actions/user';
 
 export const initialState = {
   username: '',
@@ -79,7 +79,6 @@ const reducer = (state = initialState, action = {}) => {
         logged: true,
         token: action.token,
         username: action.username,
-        description: 'J\'me présente. Je m\'appelle alan. J\'voudrais bien réussir ma vie. Être aimé !',
       };
     case SAVE_FAVORITES:
       return {

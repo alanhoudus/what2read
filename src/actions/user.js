@@ -30,7 +30,9 @@ export const GET_USER_READINGS_DATA = 'GET_USER_READINGS_DATA';
 export const GET_USER_FAVORITES_DATA = 'GET_USER_FAVORITES_DATA';
 export const GET_USER_REVIEWS_DATA = 'GET_USER_REVIEWS_DATA';
 export const ADD_FAVORIS_USER = 'ADD_FAVORIS_USER';
-export const DELETE_FAVORIS_USER = 'ADD_FAVORIS_USER';
+export const DELETE_FAVORIS_USER = 'DELETE_FAVORIS_USER';
+export const ADD_BOOK_TO_READINGS = 'ADD_BOOK_TO_READINGS';
+export const REMOVE_BOOK_FROM_READINGS = 'REMOVE_BOOK_FROM_READINGS';
 
 export const deleteFavorisUser = (id) => ({
   type: DELETE_FAVORIS_USER,
@@ -39,6 +41,16 @@ export const deleteFavorisUser = (id) => ({
 
 export const addFavorisUser = (isbn) => ({
   type: ADD_FAVORIS_USER,
+  isbn,
+});
+
+export const removeBookFromReadings = (id) => ({
+  type: REMOVE_BOOK_FROM_READINGS,
+  id,
+});
+
+export const addBookToReadings = (isbn) => ({
+  type: ADD_BOOK_TO_READINGS,
   isbn,
 });
 

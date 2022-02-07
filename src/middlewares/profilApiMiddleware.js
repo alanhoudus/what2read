@@ -3,6 +3,7 @@ import axios from 'axios';
 // import { useParams } from 'react-router-dom';
 import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
 import {
+  ADD_BOOK_TO_READINGS,
   EDIT_USER_PROFILE,
   favoritesLoaded,
   GET_USER_DATA,
@@ -11,6 +12,7 @@ import {
   GET_USER_REVIEWS_DATA,
   profileIsLoaded,
   readingsLoaded,
+  REMOVE_BOOK_FROM_READINGS,
   reviewsLoaded,
   saveUserFavoritesData,
   saveUserProfileData,
@@ -152,6 +154,45 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         });
       break;
     }
+    case ADD_BOOK_TO_READINGS: {
+      axios.post(
+        // URL
+        `http://localhost:8000/api/profile/${action.isbn}/addreading`,
+        {
+          book_isbn: action.isbn,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case REMOVE_BOOK_FROM_READINGS: {
+      axios.delete(
+        // URL
+        `http://localhost:8000/api/profile/reading/${action.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
     case EDIT_USER_PROFILE: {
       axios.put(
         // URL
@@ -201,10 +242,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
     case DELETE_FAVORIS_USER: {
       axios.delete(
         // URL
-        `http://localhost:8000//api/profile/favorite/${action.favorites.id}`,
-        // {
-        //   book_isbn: action.isbn,
-        // },
+        `http://localhost:8000/api/profile/favorite/${action.id}`,
         {
           headers: {
             Authorization: `Bearer ${store.getState().userProfile.token}`,
@@ -216,7 +254,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error.toJSON());
-          console.log(action.favorites.id);
         });
       break;
     }

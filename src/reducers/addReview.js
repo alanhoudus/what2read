@@ -29,7 +29,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         title: '',
         content: '',
-        // isbn: '',
+        isbn: '',
       };
     default:
       return state;

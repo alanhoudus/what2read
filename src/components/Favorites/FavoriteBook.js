@@ -2,12 +2,11 @@ import PropTypes from 'prop-types';
 import { Star } from 'react-feather';
 import { Link } from 'react-router-dom';
 // hooks
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 // action
 import { deleteFavorisUser } from '../../actions/user';
 
-const FavoriteBook = ({ book }) => {
-  const favorites = useSelector((state) => state.userProfile.favorites);
+const FavoriteBook = ({ book, id }) => {
   const dispatch = useDispatch();
   return (
     <div className="favorites-book">
@@ -26,9 +25,7 @@ const FavoriteBook = ({ book }) => {
         color="gold"
         size="40"
         onClick={() => {
-          dispatch(deleteFavorisUser(favorites.id));
-          console.log(favorites.id[0]);
-          console.log('je delete');
+          dispatch(deleteFavorisUser(id));
         }}
       />
     </div>
@@ -42,6 +39,7 @@ FavoriteBook.propTypes = {
     cover: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
   }).isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default FavoriteBook;
