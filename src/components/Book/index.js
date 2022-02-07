@@ -44,7 +44,8 @@ const Book = () => {
                 <button type="button" className="book-buttonReview">Ajouter une review</button>
               </Link>
             </div>
-            <div className="book-content summary">{book.description}
+            <div className="book-content summary">
+              <p>{book.description}</p>
             </div>
             <Separator />
             <div className="reviews-wrapper">
