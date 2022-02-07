@@ -28,7 +28,18 @@ const AddReading = () => {
           }}
         >
           <div className="modal-wrapper">
-            <h3>Ajouter un livre</h3>
+            <div className="modal-search">
+              <h3>Ajouter un livre</h3>
+              <button
+                type="button"
+                className="modal-close-button"
+                onClick={() => {
+                  dispatch(togglePopUp(false));
+                }}
+              >
+                <span>&times;</span>
+              </button>
+            </div>
             <Field
               className="modal-input"
               name="addReadingInputSearch"
@@ -41,15 +52,6 @@ const AddReading = () => {
                 dispatch(action);
               }}
             />
-            <button
-              type="button"
-              className="modal-close-button"
-              onClick={() => {
-                dispatch(togglePopUp(false));
-              }}
-            >
-              <span>&times;</span>
-            </button>
             <div className="modal-results">
               <AddReadingList addReadingBooksList={addReadingBooksList} />
             </div>
