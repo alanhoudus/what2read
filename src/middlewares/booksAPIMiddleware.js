@@ -21,7 +21,7 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
         'http://localhost:8000/api/books',
       )
         .then((booksList) => {
-          console.log(booksList);
+          // console.log(booksList);
           store.dispatch(saveBooksList(booksList.data));
         })
         .catch((error) => {
@@ -34,9 +34,10 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
     case GET_SUGGESTIONS_DATA:
       axios.get(
         // URL
-        'http://localhost:8000/api/books',
+        'http://localhost:8000/api/suggestions',
       )
         .then((suggestions) => {
+          console.log(suggestions);
           store.dispatch(saveSuggestions(suggestions.data));
         })
         .catch((error) => {

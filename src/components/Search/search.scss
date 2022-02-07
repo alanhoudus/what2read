@@ -15,9 +15,16 @@
     &-book {
       width:100%;
       margin-bottom: calc(vars.$gutter * 1);
+      position: relative;
       &--title {
         text-align: center;
         padding: calc(vars.$gutter * 1) 0;
+      }
+
+      &-starAdd {
+        position: absolute;
+        right: 2px;
+        top:8px;
       }
     }
 
@@ -38,24 +45,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // show the last 6 books on desktop, its just for the static integration
-    // &-book:nth-last-child(-n+6) {
-    //   display: block;
-    // }
+
     &-books {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
-    &-showmore {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
     &-book {
       width: 300px;
       margin: calc(vars.$gutter *1);
+      position: relative;
 
       h3, h4 {
         text-align: center;
@@ -66,6 +65,17 @@
       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       width: 300px;
       height: 450px;
+      }
+
+      &-starAdd {
+        position: absolute;
+        right: -8px;
+        top:20px;
+      }
+      &-starAdd:hover {
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5);
       }
     }
   }
