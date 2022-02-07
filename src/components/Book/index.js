@@ -20,6 +20,7 @@ const Book = () => {
   // Map on the array of objects of the authors
   const authors = book.authors.map((author) => author.name);
   const reviewList = useSelector((state) => state.userProfile.reviews);
+  console.log(book);
 
   return (
     <div>
