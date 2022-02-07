@@ -7,9 +7,10 @@ const TextArea = ({
   className,
   onChange,
   value,
+  name,
 }) => {
   const handleChange = (evt) => {
-    onChange(evt.target.value);
+    onChange(evt.target.value, name);
   };
   return (
     <textarea
@@ -18,6 +19,7 @@ const TextArea = ({
       placeholder={placeholder}
       className={className}
       value={value}
+      name={name}
       onChange={handleChange}
     />
   );
@@ -34,5 +36,6 @@ TextArea.propTypes = {
   className: PropTypes.string.isRequired,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  name: PropTypes.string.isRequired,
 };
 export default TextArea;

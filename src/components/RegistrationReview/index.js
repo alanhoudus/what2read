@@ -1,8 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 // hooks
 import { useSelector, useDispatch } from 'react-redux';
-// actions
-import { findBook } from '../../selectors/books';
+
 // import components
 import Field from '../Reusables/Field';
 import TextArea from '../Reusables/TextArea';
@@ -12,6 +11,7 @@ import {
   updateWriteReview,
   handlePostReview,
 } from '../../actions/addReview';
+import { findBook } from '../../selectors/books';
 // import asset
 // import profilLogo from '../../assets/images/profileicon.png';
 // import scss
@@ -20,7 +20,6 @@ import './registrationReview.scss';
 const RegistrationReview = () => {
   // Get the isbn in the URL
   const { isbn } = useParams();
-  console.log(isbn);
   // Find the book in the list of books corresponding to the isbn in the URL
   const book = useSelector((state) => findBook(state.books.booksList, isbn));
   // controlled input search
@@ -80,7 +79,12 @@ const RegistrationReview = () => {
             }}
           />
         </div>
-        <button type="submit" className="addReview-submit">Envoyer</button>
+        <button
+          type="submit"
+          className="addReview-submit"
+        >
+          Envoyer
+        </button>
       </form>
     </div>
   );

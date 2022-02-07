@@ -86,6 +86,14 @@
       }
     }
   }
+
+  .button-delete:hover {
+    cursor: pointer;
+  }
+
+  .button-edit:hover {
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1600px) {
