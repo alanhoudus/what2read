@@ -16,7 +16,7 @@ import {
   SAVE_USER_FAVORITES_DATA,
   SAVE_USER_REVIEWS_DATA,
   SAVE_USER_READINGS_DATA,
-} from '../actions/user';
+} from 'src/actions/user';
 
 export const initialState = {
   username: '',

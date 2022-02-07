@@ -4,7 +4,7 @@ import FavoriteBook from './FavoriteBook';
 const FavoriteList = ({ favoritesList }) => (
   // For each favorite in the list, create an item
   favoritesList.map((book) => (
-    <FavoriteBook key={book.book.isbn} book={book.book} />
+    <FavoriteBook key={book.book.isbn} book={book.book} id={book.id} />
   ))
 );
 
