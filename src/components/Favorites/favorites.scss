@@ -52,10 +52,8 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    &-showmore {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    &-presentation {
+      max-width: 75vw;
     }
 
     &-book {

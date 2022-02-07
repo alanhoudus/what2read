@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 // components
 import Suggestion from './SuggestionsList';
 import SuggestedBook from '../Home/SuggestedBook';
-import ShowMore from '../Reusables/ShowMore';
 import Separator from '../Reusables/Separator';
 import Loader from '../App/Loader';
 
@@ -33,9 +32,6 @@ const Suggestions = () => {
             ? <Suggestion suggestionsList={suggestionsList} />
             : <Loader />}
         </div>
-      </div>
-      <div className="suggestions-showmore">
-        <ShowMore />
       </div>
     </div>
   );

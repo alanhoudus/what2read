@@ -1,0 +1,59 @@
+@use '../../styles/vars';
+.book {
+  &-content {
+    &.tag {
+      display: inline;
+      border-radius: 10px;
+      border: #000 1px solid;
+      padding: 5px;
+
+      &.genre{
+        // Analyse de texte
+        &-1 {
+          color: #3b4d61;
+          background-color: #6b7b8c;
+        }
+        // Biographie
+        &-2 {
+          color: #a2d5c6;
+          background-color: #077b8a;
+        }
+        // Policier
+        &-3 {
+          color: #f3ca20;
+          background-color: #000;
+        }
+        // Fantastique
+        &-4 {
+          color: #8a307f;
+          background-color: #6883bc;
+        }
+        // Science-fiction
+        &-5 {
+          color: #a8c66c;
+          background-color: #1b6535;
+        }
+        // Horreur
+        &-6 {
+          color: red;
+          background-color: black;
+        }
+        // Développement personnel
+        &-7 {
+          color: #cf1578;
+          background-color: #039fbe;
+        }
+        //Dystopie
+        &-8 {
+          color: #e52165;
+          background-color: #0d1137;
+        }
+        // Roman
+        &-9 {
+          color: #ff6e40;
+          background-color: #ffc13b;
+        }
+      }
+    }
+  }
+}

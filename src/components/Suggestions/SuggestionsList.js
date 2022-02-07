@@ -3,8 +3,8 @@ import SuggestionsItem from './SuggestionsItem';
 
 const SuggestionsList = ({ suggestionsList }) => (
   // For each suggestion in the list, create an item
-  suggestionsList.map((book) => (
-    <SuggestionsItem key={book.isbn} book={book} />
+  suggestionsList.map((suggestions) => (
+    <SuggestionsItem key={suggestions.book.isbn} book={suggestions.book} />
   ))
 );
 
