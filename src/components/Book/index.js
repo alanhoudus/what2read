@@ -32,7 +32,7 @@ const Book = () => {
             <div className="book-content infos">
               <div className="book-content infos-subtitle">Sous-titre : {book.subtitle}</div>
               <div className="book-content infos-author">Auteur : {authors}</div>
-              <div className="book-content infos-date">Date de parution : {book.publishedDate}</div>
+              <div className="book-content infos-date">Date de parution : {book.publicationDate}</div>
               <div className="book-content infos-editor">Edition : {book.publisher}</div>
               <div className="book-content infos-isbn">IBSN : {book.isbn}</div>
               <div className="book-content infos-nbpages">Nombre de pages :</div>

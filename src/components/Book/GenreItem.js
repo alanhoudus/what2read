@@ -9,7 +9,7 @@ const GenreItem = ({ genre }) => (
 GenreItem.propTypes = {
   genre: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
   }).isRequired,
 };
 
