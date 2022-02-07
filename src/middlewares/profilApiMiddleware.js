@@ -12,6 +12,7 @@ import {
   GET_USER_REVIEWS_DATA,
   profileIsLoaded,
   readingsLoaded,
+  REMOVE_BOOK_FROM_READINGS,
   reviewsLoaded,
   saveUserFavoritesData,
   saveUserProfileData,
@@ -169,8 +170,24 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error.toJSON());
-          console.log(action.isbn);
-          console.log(store.getState().userProfile.token);
+        });
+      break;
+    }
+    case REMOVE_BOOK_FROM_READINGS: {
+      axios.delete(
+        // URL
+        `http://localhost:8000/api/profile/reading/${action.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
         });
       break;
     }

@@ -4,7 +4,7 @@ import ReadingItem from './ReadingItem';
 const ReadingsList = ({ readingsList }) => (
   // For each reading in the list, create an item
   readingsList.map((book) => (
-    <ReadingItem key={book.book.isbn} book={book.book} />
+    <ReadingItem key={book.book.isbn} book={book.book} id={book.id} />
   ))
 );
 
