@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 
 // actions
 import { getBooksData } from '../../actions/books';
+import { getSuggestionsData } from '../../actions/suggestions';
+import { getUserData } from '../../actions/user';
 
 // components
 import Header from '../Header';
@@ -28,13 +30,9 @@ import LogoProfil from '../Profile/LogoProfil';
 import PopUpInfo from '../Reusables/PopUpInfo';
 import Loader from './Loader';
 import LogIn from '../LogIn';
-
+import EditReview from '../RegistrationReview/EditReview';
 // scss
 import './app.scss';
-import { getSuggestionsData } from '../../actions/suggestions';
-import {
-  getUserData,
-} from '../../actions/user';
 
 // == Composant
 const App = () => {
@@ -86,6 +84,7 @@ const App = () => {
           <Route path="/profil" key="profil" element={<Profile />} />
           <Route path="/livre/:isbn" key="livre" element={<Book />} />
           <Route path="/profil/reviews" key="reviews" element={<Reviews />} />
+          <Route path="/profil/review/edition/:id" key="reviews-edition" element={<EditReview />} />
           <Route path="/profil/edition" key="profil-edition" element={<EditProfile />} />
           <Route path="/suggestions/historique" key="suggestions-historique" element={<Suggestions />} />
           <Route path="/connection" key="connection" element={<LogIn />} />

@@ -1,7 +1,12 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
-import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
+import {
+  HANDLE_POST_REVIEW,
+  handleEmptyInput,
+  REMOVE_REVIEW,
+  SEND_EDITED_REVIEW,
+} from '../actions/addReview';
 import {
   ADD_BOOK_TO_READINGS,
   EDIT_USER_PROFILE,
@@ -41,6 +46,24 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(handleEmptyInput());
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case REMOVE_REVIEW: {
+      axios.delete(
+        // URL
+        `http://localhost:8000/api/profile/review/${action.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
           console.log(response);
         })
         .catch((error) => {
@@ -147,7 +170,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
           console.log(error.toJSON());
         })
         .finally(() => {
-          console.log('a');
           store.dispatch(reviewsLoaded());
         });
       break;
@@ -200,6 +222,28 @@ const profilApiMiddleware = (store) => (next) => (action) => {
           username: store.getState().userProfile.username,
           picture: store.getState().userProfile.picture,
           presentation: store.getState().userProfile.description,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case SEND_EDITED_REVIEW: {
+      axios.put(
+        // URL
+        `http://localhost:8000/api/profile/review/${action.id}`,
+        {
+          title: store.getState().addReview.editTitle,
+          content: store.getState().addReview.editContent,
         },
         {
           headers: {
