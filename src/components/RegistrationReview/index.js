@@ -1,4 +1,9 @@
-import { useParams, Link, Navigate } from 'react-router-dom';
+import {
+  useParams,
+  Link,
+  Navigate,
+  useNavigate,
+} from 'react-router-dom';
 // hooks
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -22,11 +27,11 @@ const RegistrationReview = () => {
   const { isbn } = useParams();
   // Find the book in the list of books corresponding to the isbn in the URL
   const book = useSelector((state) => findBook(state.books.booksList, isbn));
-  // controlled input search
   const inputTitleReview = useSelector((state) => state.addReview.title);
   const inputContentReview = useSelector((state) => state.addReview.content);
-  const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.userProfile.logged);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
@@ -41,6 +46,7 @@ const RegistrationReview = () => {
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(handlePostReview(isbn));
+          navigate('/profil/reviews');
         }}
       >
         <div className="addReview-form book">

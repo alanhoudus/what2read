@@ -114,7 +114,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
-          console.log('favorites');
           store.dispatch(saveUserFavoritesData(
             response.data,
           ));
@@ -139,7 +138,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
-          console.log('readings');
           store.dispatch(saveUserReadingsData(
             response.data,
           ));
@@ -164,7 +162,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
-          console.log('reviews');
           store.dispatch(saveUserReviewsData(
             response.data,
           ));

@@ -1,6 +1,6 @@
 // import
 // react-router-dom
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 // hooks
 import { useDispatch, useSelector } from 'react-redux';
 // assets
@@ -19,8 +19,9 @@ const EditProfile = () => {
   const userDescription = useSelector((state) => state.userProfile.description);
   const userEmail = useSelector((state) => state.userProfile.email);
   const userPicture = useSelector((state) => state.userProfile.picture);
-  const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.userProfile.logged);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
@@ -35,6 +36,7 @@ const EditProfile = () => {
             onSubmit={(e) => {
               e.preventDefault();
               dispatch(editUserProfile());
+              navigate('/profil');
             }}
           >
             <Field
@@ -59,6 +61,7 @@ const EditProfile = () => {
             <TextArea
               className="editprofile-content input description"
               value={userDescription}
+              name="description"
               onChange={(newValue) => {
                 const action = updateProfileValue('description', newValue);
                 dispatch(action);

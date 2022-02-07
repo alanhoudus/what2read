@@ -25,7 +25,6 @@ const RegistrationForm = () => {
   // eslint-disable-next-line max-len
   const passwordRegistrationError = useSelector((state) => state.userRegistration.registrationError);
   const registrationSuccess = useSelector((state) => state.userRegistration.registrationSuccess);
-  // console.log(registrationSuccess);
 
   const dispatch = useDispatch();
 
