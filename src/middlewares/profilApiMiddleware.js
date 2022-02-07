@@ -20,6 +20,7 @@ import {
   saveUserReviewsData,
   ADD_FAVORIS_USER,
   DELETE_FAVORIS_USER,
+  DELETE_USER_ACCOUNT,
 } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
@@ -243,6 +244,24 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       axios.delete(
         // URL
         `http://localhost:8000/api/profile/favorite/${action.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case DELETE_USER_ACCOUNT: {
+      axios.delete(
+        // URL
+        'http://localhost:8000/api/profile',
         {
           headers: {
             Authorization: `Bearer ${store.getState().userProfile.token}`,

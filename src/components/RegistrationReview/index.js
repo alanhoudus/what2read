@@ -20,7 +20,6 @@ import './registrationReview.scss';
 const RegistrationReview = () => {
   // Get the isbn in the URL
   const { isbn } = useParams();
-  console.log(isbn);
   // Find the book in the list of books corresponding to the isbn in the URL
   const book = useSelector((state) => findBook(state.books.booksList, isbn));
   // controlled input search
