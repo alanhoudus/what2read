@@ -11,7 +11,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: 1040;
+      z-index: 3;
       background-color: rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
@@ -32,17 +32,16 @@
       width: 15%;
       height: calc(vars.$gutter * 2);
       color: vars.$fontColor;
+      position: relative;
     }
 
     &-wrapper {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 1050;
+      z-index: 2;
       width: 100%;
       height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
       outline: 0;
       display: flex;
       align-items: center;
@@ -56,7 +55,17 @@
       cursor: pointer;
       border: none;
       background: transparent;
+      position: relative;
     }
+
+  }
+
+  .addreading-result {
+    background-color: vars.$mainColor;
+    border: 1px solid black;
+    padding: 0.3em;
+    position: relative;
+    z-index: 3;
 
   }
 }

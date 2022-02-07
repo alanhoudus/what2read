@@ -29,6 +29,12 @@ export const SAVE_USER_REVIEWS_DATA = 'SAVE_USER_REVIEWS_DATA';
 export const GET_USER_READINGS_DATA = 'GET_USER_READINGS_DATA';
 export const GET_USER_FAVORITES_DATA = 'GET_USER_FAVORITES_DATA';
 export const GET_USER_REVIEWS_DATA = 'GET_USER_REVIEWS_DATA';
+export const ADD_BOOK_TO_READINGS = 'ADD_BOOK_TO_READINGS';
+
+export const addBookToReadings = (isbn) => ({
+  type: ADD_BOOK_TO_READINGS,
+  isbn,
+});
 
 export const getUserReviewsData = () => ({
   type: GET_USER_REVIEWS_DATA,

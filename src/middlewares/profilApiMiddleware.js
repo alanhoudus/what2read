@@ -3,6 +3,7 @@ import axios from 'axios';
 // import { useParams } from 'react-router-dom';
 import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
 import {
+  ADD_BOOK_TO_READINGS,
   EDIT_USER_PROFILE,
   favoritesLoaded,
   GET_USER_DATA,
@@ -147,6 +148,29 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         .finally(() => {
           console.log('a');
           store.dispatch(reviewsLoaded());
+        });
+      break;
+    }
+    case ADD_BOOK_TO_READINGS: {
+      axios.post(
+        // URL
+        `http://localhost:8000/api/profile/${action.isbn}/addreading`,
+        {
+          book_isbn: action.isbn,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+          console.log(action.isbn);
+          console.log(store.getState().userProfile.token);
         });
       break;
     }
