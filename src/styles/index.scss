@@ -1,5 +1,6 @@
 @use 'reset';
 @use 'vars';
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Quintessential&display=swap');
 
 body {
   font-family: sans-serif;
@@ -12,6 +13,7 @@ body {
 h1,h2,h3,h4 {
   color: vars.$fontColor;
   font-weight: bold;
+  font-family: 'Quintessential', cursive;
 }
 p {
   padding: calc(vars.$gutter * 0.5);
