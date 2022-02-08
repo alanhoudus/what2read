@@ -85,7 +85,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          console.log("user", response);
           store.dispatch(saveUserProfileData(
             response.data.email,
             response.data.picture,
