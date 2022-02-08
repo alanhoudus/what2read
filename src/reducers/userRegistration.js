@@ -3,6 +3,7 @@ import {
   SAVE_USER_REGISTRATION,
   REGISTRATION_ERROR,
   REMOVE_REGISTRATION_INFO,
+  HANDLE_USER_ALREADY_EXIST,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -14,6 +15,7 @@ export const initialState = {
   registrationError: false,
   registrationSuccess: false,
   registrationMessage: 'Inscription validée',
+  userExistError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -43,6 +45,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         registrationSuccess: false,
+      };
+    case HANDLE_USER_ALREADY_EXIST:
+      return {
+        ...state,
+        userExistError: true,
       };
     default:
       return state;

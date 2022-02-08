@@ -8,6 +8,7 @@ import {
   HANDLE_REGISTRATION,
   saveUserRegistration,
   removeRegistrationInfo,
+  handleUserAlreadyExist,
 } from '../actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -67,6 +68,7 @@ const authMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error.toJSON());
+          store.dispatch(handleUserAlreadyExist());
         })
         .finally(() => {
           window.setTimeout(() => {
