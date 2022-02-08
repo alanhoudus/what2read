@@ -1,6 +1,7 @@
 import {
   SAVE_BOOKS_LIST,
   BOOKS_LIST_LOADED,
+  SAVE_REVIEW_BY_BOOK,
 } from '../actions/books';
 
 import {
@@ -13,10 +14,16 @@ export const initialState = {
   booksListDataLoading: true,
   suggestionsList: [],
   suggestionsDataLoading: true,
+  reviewsListByBook: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SAVE_REVIEW_BY_BOOK:
+      return {
+        ...state,
+        reviewsListByBook: action.review,
+      };
     case SAVE_BOOKS_LIST:
       return {
         ...state,

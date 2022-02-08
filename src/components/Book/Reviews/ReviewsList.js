@@ -3,15 +3,15 @@ import Review from './Review';
 
 const ReviewsList = ({ reviewsList }) => (
   // For each review in the list, create an item
-  reviewsList.map((book) => (
-    <Review key={book.isbn} book={book} />
+  reviewsList.map((review) => (
+    <Review key={review.id} book={review} />
   ))
 );
 
 ReviewsList.propTypes = {
   reviewsList: PropTypes.arrayOf(
     PropTypes.shape({
-      ibsn: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     }).isRequired,
   ).isRequired,
 };
