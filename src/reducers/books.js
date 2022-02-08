@@ -2,6 +2,7 @@ import {
   SAVE_BOOKS_LIST,
   BOOKS_LIST_LOADED,
   SAVE_REVIEW_BY_BOOK,
+  SUGGEST_TODAYS_BOOK,
 } from '../actions/books';
 
 import {
@@ -15,6 +16,7 @@ export const initialState = {
   suggestionsList: [],
   suggestionsDataLoading: true,
   reviewsListByBook: [],
+  suggestedBookOfTheDay: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -23,6 +25,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         reviewsListByBook: action.review,
+      };
+
+    case SUGGEST_TODAYS_BOOK:
+      return {
+        ...state,
+        suggestedBookOfTheDay: action.book,
       };
     case SAVE_BOOKS_LIST:
       return {
