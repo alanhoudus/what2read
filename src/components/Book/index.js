@@ -1,9 +1,11 @@
 // hooks
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 // react-router-dom
 import { useParams, Link } from 'react-router-dom';
 // actions
 import { findBook } from '../../selectors/books';
+import { getReviewByBook } from '../../actions/books';
 // components
 import Separator from '../Reusables/Separator';
 import GenresList from './GenresList';
@@ -19,8 +21,11 @@ const Book = () => {
   const book = useSelector((state) => findBook(state.books.booksList, isbn));
   // Map on the array of objects of the authors
   const authors = book.authors.map((author) => author.name);
-  const reviewList = useSelector((state) => state.userProfile.reviews);
-
+  const reviewsListByBook = useSelector((state) => state.books.reviewsListByBook);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getReviewByBook(isbn));
+  }, []);
   return (
     <div>
       <div className="book">
@@ -49,7 +54,7 @@ const Book = () => {
             </div>
             <Separator />
             <div className="reviews-wrapper">
-              <ReviewsList reviewsList={reviewList} />
+              <ReviewsList reviewsList={reviewsListByBook} />
             </div>
           </div>
         </div>
