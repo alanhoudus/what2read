@@ -19,5 +19,5 @@ export const FAVORITES_BOOK_LIST = [
 
 export const FAVORITE_PRESENTATION = {
   title: 'Mes favoris',
-  presentation: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan nisi nec leo aliquet dictum. Praesent cursus, nisi in condimentum.',
+  presentation: 'Marquez en favoris les livres que vous avez préférés afin de les retrouver plus facilement !',
 };

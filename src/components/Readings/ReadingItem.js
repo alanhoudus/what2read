@@ -4,7 +4,7 @@ import { useState } from 'react';
 // react-router-dom
 import { Link } from 'react-router-dom';
 // react-feather
-import { Star, FileText } from 'react-feather';
+import { Star, Trash } from 'react-feather';
 // prop-types
 import PropTypes from 'prop-types';
 // actions
@@ -26,9 +26,9 @@ const ReadingItem = ({ book, id }) => {
           <img className="readings-book--cover" src={book.cover} alt="title" />
         </Link>
         <Star className="readings favorited true" color="gold" />
-        <FileText
+        <Trash
           className="readings review-done"
-          color="green"
+          color="gray"
           onClick={() => {
             dispatch(removeBookFromReadings(id));
             setIsDisplayed(false);

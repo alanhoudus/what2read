@@ -29,9 +29,10 @@ const MyReview = ({
         key={book.isbn}
       >
         <img src={book.cover} className="reviews-wrapper--singlereview-img" alt="Couverture du livre" />
+        <div className="reviews-wrapper--singlereview-title"><h3>{book.title}</h3> </div>
       </Link>
       <div className="reviews-wrapper--singlereview-infos">
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         <p>{content}</p>
         <div className="reviews-wrapper--singlereview-infos--buttons">
           <Link

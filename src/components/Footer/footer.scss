@@ -24,8 +24,6 @@
 
 @media (min-width: 768px) { 
   .footer {
-    // 50vw to center the border with the parent
-    width: 50vw;
     height: 15vh;
     margin-left: 25%;
     margin-top: calc(vars.$gutter * 5);
@@ -33,7 +31,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-left: 20%;
+
+    border-top: 1px solid black;
 
     &-contact {
       margin-bottom: calc(vars.$gutter * 1);
