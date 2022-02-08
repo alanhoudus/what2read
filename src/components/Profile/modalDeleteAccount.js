@@ -16,31 +16,33 @@ const ModaleDeleteAccount = ({ setIsModal }) => {
     <div className="modalAccount-overlayAccount">
       <div className="modalAccount-background">
         <div className="modalAccount-wrapper">
-          <p className="modalAccount-question">Êtes vous sûre de vouloir supprimer votre compte ?</p>
-          <Link
-            to="/"
-          >
+          <div className="modalAccount-content">
+            <p className="modalAccount-question">Êtes vous sûre de vouloir supprimer votre compte ?</p>
+            <Link
+              to="/"
+            >
+              <button
+                type="button"
+                className="modalAccount-yes"
+                onClick={() => {
+                  dispatch(deleteUserAccount());
+                  dispatch(logOut());
+                }}
+
+              >
+                oui
+              </button>
+            </Link>
             <button
               type="button"
-              className="modalAccount-yes"
+              className="modalAccount-no"
               onClick={() => {
-                dispatch(deleteUserAccount());
-                dispatch(logOut());
+                setIsModal(false);
               }}
-
             >
-              oui
+              non
             </button>
-          </Link>
-          <button
-            type="button"
-            className="modalAccount-no"
-            onClick={() => {
-              setIsModal(false);
-            }}
-          >
-            non
-          </button>
+          </div>
         </div>
       </div>
     </div>
