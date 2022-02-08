@@ -4,10 +4,11 @@ import { Navigate, useNavigate } from 'react-router-dom';
 // hooks
 import { useDispatch, useSelector } from 'react-redux';
 // assets
-import { Upload, Edit2 } from 'react-feather';
+import { Edit2 } from 'react-feather';
 // components
 import Field from '../../Reusables/Field';
 import TextArea from '../../Reusables/TextArea';
+import UploadAvatar from '../UploadAvatar';
 
 // actions
 import { editUserProfile, updateProfileValue } from '../../../actions/user';
@@ -52,7 +53,7 @@ const EditProfile = () => {
             />
             <Edit2 />
             <img alt="editprofileicon" src={userPicture} className="editprofile-content avatar" />
-            <Upload />
+            <UploadAvatar />
             <h3 className="editprofile-content title-description">Présentation
               <Edit2
                 className="editprofile-content edit-presentation"
