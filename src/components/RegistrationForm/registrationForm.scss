@@ -41,6 +41,10 @@
       border-radius: 5px;
       margin-bottom: calc(vars.$gutter * 1);
     }
+
+    &-errorExist {
+      color: red;
+    }
   
     &-required {
       font-size: calc(vars.$gutter * 0.8);
@@ -95,6 +99,10 @@
       &.password {
         
       }
+    }
+
+    &-errorExist {
+      color: red;
     }
   
     &-required {
