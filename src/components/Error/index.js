@@ -1,12 +1,24 @@
-// == Import : local
+// react-router-dom
+import { Link } from 'react-router-dom';
+
+// == Import scss
 import './notfound.scss';
+// assets
+import w2rlogo from '../../assets/images/w2rlogo.png';
 
 // == Composant
 const NotFound = () => (
   <div className="bookAnimation">
-    <h1 className="book-title">Page not found</h1>
+    <img src={w2rlogo} alt="logo" className="bookAnimation-logo" />
+    <h1 className="bookAnimation-title">Book not found</h1>
     <div className="back" />
-    <div className="page6" />
+    <div className="page6">
+      <Link
+        to="/"
+      >
+        <p className="bookAnimation-link">Retour à l'accueil</p>
+      </Link>
+    </div>
     <div className="page5" />
     <div className="page4" />
     <div className="page3" />
