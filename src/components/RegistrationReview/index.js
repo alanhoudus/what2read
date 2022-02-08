@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 // hooks
 import { useSelector, useDispatch } from 'react-redux';
-
+import { useState } from 'react';
 // import components
 import Field from '../Reusables/Field';
 import TextArea from '../Reusables/TextArea';
@@ -30,6 +30,7 @@ const RegistrationReview = () => {
   const inputTitleReview = useSelector((state) => state.addReview.title);
   const inputContentReview = useSelector((state) => state.addReview.content);
   const isLogged = useSelector((state) => state.userProfile.logged);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -38,15 +39,19 @@ const RegistrationReview = () => {
     return <Navigate to="/connection" />;
   }
   return (
-
     <div className="addReview">
       <h2 className="addReview-title">Ecrit une review</h2>
       <form
         className="addReview-form"
         onSubmit={(e) => {
           e.preventDefault();
-          dispatch(handlePostReview(isbn));
-          navigate('/profil/reviews');
+          if (inputTitleReview && inputContentReview) {
+            dispatch(handlePostReview(isbn));
+            navigate('/profil/reviews');
+          }
+          else {
+            setError(true);
+          }
         }}
       >
         <div className="addReview-form book">
@@ -92,6 +97,9 @@ const RegistrationReview = () => {
           Envoyer
         </button>
       </form>
+      {error && (
+        <p className="addReview-error">Veuillez saisir un titre et un contenu à votre review</p>
+      )}
     </div>
   );
 };
