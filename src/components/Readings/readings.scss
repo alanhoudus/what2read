@@ -12,14 +12,16 @@
     }
 
     &-buttonRead {
-      border-radius: 4px;
-      color: vars.$secondaryColor;
-      background-color: vars.$fourthColor;
-      margin-bottom: vars.$gutter;
-      border-radius: 30px;
-      border: none;
-      font-size: calc(vars.$fontSize * 1);
-      padding: 10px;
+      &-toggle{
+        color: vars.$mainColor;;
+        background-color: vars.$thirdColor;
+        margin: calc(vars.$gutter * 1);
+        border-radius: 30px;
+        width: 30%;
+        font-size: calc(vars.$fontSize * 1);;
+        padding: calc(vars.$gutter * 0.5);
+        border: none;
+      }
     }
 
     &-book {
