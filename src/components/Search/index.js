@@ -28,11 +28,11 @@ const Search = () => {
     <div className="search">
       <form
         className="search-input"
-        // onSubmit={(e) => {
-        //   e.preventDefault();
-          // const userSearchedBooksList = findSearchedBooks(booksList, userInput);
-          // dispatch(searchedBooksList(userSearchedBooksList));
-        // }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          const userSearchedBooksList = findSearchedBooks(booksList, userInput);
+          dispatch(searchedBooksList(userSearchedBooksList));
+        }}
       >
         <SearchField
           type="text"

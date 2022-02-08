@@ -6,6 +6,8 @@ import {
   booksListLoaded,
   GET_REVIEWS_DATA,
   suggestTodaysBook,
+  saveReviewsList,
+  allReviewsLoaded,
 } from '../actions/books';
 
 import {
@@ -40,7 +42,6 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
         'http://localhost:8000/api/suggestions',
       )
         .then((suggestions) => {
-          console.log(suggestions);
           store.dispatch(saveSuggestions(suggestions.data));
         })
         .catch((error) => {
@@ -62,9 +63,13 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
       )
         .then((reviews) => {
           console.log(reviews);
+          store.dispatch(saveReviewsList(reviews.data));
         })
         .catch((error) => {
           console.log(error);
+        })
+        .finally(() => {
+          store.dispatch(allReviewsLoaded());
         });
       break;
     default:
