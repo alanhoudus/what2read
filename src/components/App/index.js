@@ -39,6 +39,7 @@ const App = () => {
   const profileIsLoaded = useSelector((state) => state.userProfile.profileIsLoading);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
   const dataIsLoading = useSelector((state) => state.books.dataLoading);
+  // const getReviewByBook = useSelector((state) => state.books.getReviewNyBook);
   const username = useSelector((state) => state.userProfile.username);
   const message = useSelector((state) => state.userLogin.message);
   const isLogged = useSelector((state) => state.userProfile.logged);

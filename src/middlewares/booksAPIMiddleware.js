@@ -4,6 +4,8 @@ import {
   GET_BOOKS_DATA,
   saveBooksList,
   booksListLoaded,
+  GET_REVIEW_BY_BOOK,
+  saveReviewByBook,
   GET_REVIEWS_DATA,
   suggestTodaysBook,
   saveReviewsList,
@@ -70,6 +72,22 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
         })
         .finally(() => {
           store.dispatch(allReviewsLoaded());
+        });
+      break;
+    case GET_REVIEW_BY_BOOK:
+      axios.get(
+        // URL
+        `http://localhost:8000/api/book/${action.isbn}/reviews`,
+      )
+        .then((reviews) => {
+          console.log('reviews', reviews);
+          console.log(action.isbn);
+          store.dispatch(saveReviewByBook(reviews.data.reviews));
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
         });
       break;
     default:
