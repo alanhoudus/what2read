@@ -21,16 +21,20 @@ const Suggestions = () => {
   // const [suggestionsList, setSuggestionsList] = useState(SUGGESTIONS_LIST);
   const suggestionsList = useSelector((state) => state.books.suggestionsList);
   const suggestionsLoading = useSelector((state) => state.books.suggestionsDataLoading);
+  const booksListLoading = useSelector((state) => state.books.booksListDataLoading);
+  console.log(booksListLoading);
 
   return (
     <div className="suggestions">
-      <SuggestedBook />
+      {booksListLoading
+        ? <Loader />
+        : <SuggestedBook />}
       <Separator />
       <div className="suggestions-history">
         <div className="suggestions-history books">
           {suggestionsLoading
-            ? <Suggestion suggestionsList={suggestionsList} />
-            : <Loader />}
+            ? <Loader />
+            : <Suggestion suggestionsList={suggestionsList} />}
         </div>
       </div>
     </div>

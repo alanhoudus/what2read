@@ -9,7 +9,10 @@ import AddReading from './AddReading';
 // mock data
 import { READINGS_PRESENTATION } from '../../data/readings';
 // action
-import { getUserReadingsData, togglePopUp } from '../../actions/user';
+import {
+  getUserReadingsData,
+  togglePopUp,
+} from '../../actions/user';
 // components
 import ReadingsList from './ReadingsList';
 // scss
@@ -31,6 +34,10 @@ const Readings = () => {
       dispatch(getUserReadingsData());
     }
   }, [token]);
+
+  useEffect(() => {
+    dispatch(getUserReadingsData());
+  }, [displayPopUp]);
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {

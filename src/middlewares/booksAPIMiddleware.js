@@ -4,6 +4,8 @@ import {
   GET_BOOKS_DATA,
   saveBooksList,
   booksListLoaded,
+  GET_REVIEWS_DATA,
+  suggestTodaysBook,
 } from '../actions/books';
 
 import {
@@ -11,6 +13,7 @@ import {
   saveSuggestions,
   suggestionsLoaded,
 } from '../actions/suggestions';
+import pickRandomBookNotSuggested from '../selectors/suggestions';
 
 const booksAPIMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -44,7 +47,24 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
           console.log(error);
         })
         .finally(() => {
-          suggestionsLoaded();
+          store.dispatch(suggestionsLoaded());
+          const suggestedBook = pickRandomBookNotSuggested(
+            store.getState().books.booksList,
+            store.getState().books.suggestionsList,
+          );
+          store.dispatch(suggestTodaysBook(suggestedBook));
+        });
+      break;
+    case GET_REVIEWS_DATA:
+      axios.get(
+        // URL
+        'http://localhost:8000/api/reviews',
+      )
+        .then((reviews) => {
+          console.log(reviews);
+        })
+        .catch((error) => {
+          console.log(error);
         });
       break;
     default:
