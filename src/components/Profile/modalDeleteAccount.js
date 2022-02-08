@@ -51,6 +51,6 @@ const ModaleDeleteAccount = ({ setIsModal }) => {
 };
 
 ModaleDeleteAccount.propTypes = {
-  setIsModal: PropTypes.bool.isRequired,
+  setIsModal: PropTypes.func.isRequired,
 };
 export default ModaleDeleteAccount;

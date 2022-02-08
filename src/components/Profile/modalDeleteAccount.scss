@@ -61,6 +61,7 @@
       border: none;
       background: transparent;
       position: relative;
+      padding-bottom: calc(vars.$gutter * 1);
     }
 
     &-no {
@@ -135,6 +136,12 @@
       border: none;
       background: transparent;
       position: relative;
+      margin-right: calc(vars.$gutter * 1);
+    }
+    &-yes:hover, &-no:hover {
+      -ms-transform: scale(1.5); /* IE 9 */
+      -webkit-transform: scale(1.5); /* Safari 3-8 */
+      transform: scale(1.5);
     }
 
     &-no {
