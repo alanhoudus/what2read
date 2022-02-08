@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 // actions
-import { getBooksData } from '../../actions/books';
+import { getBooksData, getReviewsData } from '../../actions/books';
 import { getSuggestionsData } from '../../actions/suggestions';
 import { getUserData } from '../../actions/user';
 
@@ -55,6 +55,7 @@ const App = () => {
   useEffect(() => {
     dispatch(getBooksData());
     dispatch(getSuggestionsData());
+    dispatch(getReviewsData());
   }, []);
 
   useEffect(() => {
