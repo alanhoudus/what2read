@@ -12,6 +12,7 @@ import './home.scss';
 // == Composant
 const Home = () => {
   const booksListLoading = useSelector((state) => state.books.booksListDataLoading);
+  const reviewsListLoading = useSelector((state) => state.books.allReviewsDataLoading);
 
   return (
     <div className="home">
@@ -27,7 +28,9 @@ const Home = () => {
         ? <Loader />
         : <SuggestedBook />}
       <Separator />
-      <Review />
+      {reviewsListLoading
+        ? <Loader />
+        : <Review />}
     </div>
   );
 };

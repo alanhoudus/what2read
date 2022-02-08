@@ -5,6 +5,23 @@ export const GET_REVIEW_BY_BOOK = 'GET_REVIEW_BY_BOOK';
 export const SAVE_REVIEW_BY_BOOK = 'SAVE_REVIEW_BY_BOOK';
 export const GET_REVIEWS_DATA = 'GET_REVIEWS_DATA';
 export const SUGGEST_TODAYS_BOOK = 'SUGGEST_TODAYS_BOOK';
+export const SAVE_REVIEWS_LIST = 'SAVE_REVIEWS_LIST';
+export const ALL_REVIEWS_LOADED = 'ALL_REVIEWS_LOADED';
+export const SAVE_CARROUSEL_REVIEWS = 'SAVE_CARROUSEL_REVIEWS';
+
+export const saveCarrouselReviews = (data) => ({
+  type: SAVE_CARROUSEL_REVIEWS,
+  data,
+});
+
+export const allReviewsLoaded = () => ({
+  type: ALL_REVIEWS_LOADED,
+});
+
+export const saveReviewsList = (data) => ({
+  type: SAVE_REVIEWS_LIST,
+  data,
+});
 
 export const saveReviewByBook = (review) => ({
   type: SAVE_REVIEW_BY_BOOK,
