@@ -80,8 +80,7 @@ const booksAPIMiddleware = (store) => (next) => (action) => {
         `http://localhost:8000/api/book/${action.isbn}/reviews`,
       )
         .then((reviews) => {
-          console.log('reviews', reviews);
-          console.log(action.isbn);
+          // console.log('reviews', reviews);
           store.dispatch(saveReviewByBook(reviews.data.reviews));
         })
         .catch((error) => {

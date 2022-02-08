@@ -31,7 +31,6 @@ import {
 const profilApiMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case HANDLE_POST_REVIEW: {
-      // console.log(action.isbn);
       axios.post(
         // URL
         `http://localhost:8000/api/profile/${action.isbn}/addreview`,

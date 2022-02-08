@@ -29,7 +29,6 @@ const SearchItem = ({ searchedBook }) => {
           size="40"
           onClick={() => {
             dispatch(addFavorisUser(searchedBook.isbn));
-            // console.log(searchedBook.isbn);
           }}
         />
       )}
