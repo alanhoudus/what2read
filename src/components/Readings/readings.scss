@@ -105,16 +105,19 @@
       width: 300px;
       height: 450px;
 
-        & > .favorited {
+        & > .review-done {
           top: 10px;
           right: 10px;
           position: absolute;
+          border-radius: 50%;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
         }
 
-        & > .review-done {
-          top: 10px;
-          right: 40px;
-          position: absolute;
+        & > .review-done:hover {
+          -ms-transform: scale(1.5); /* IE 9 */
+          -webkit-transform: scale(1.5); /* Safari 3-8 */
+          transform: scale(1.5);
         }
       }
     }
