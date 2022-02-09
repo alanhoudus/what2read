@@ -10,7 +10,7 @@ const AddReadingItem = ({ book }) => {
 
   return (
     <div
-      className="modal-results addreading"
+      className="modal-results-addreading"
       onClick={() => {
         dispatch(addBookToReadings(book.isbn));
       }}

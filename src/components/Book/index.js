@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 // react-router-dom
 import { useParams, Link } from 'react-router-dom';
 // actions
-import { findBook } from '../../selectors/books';
+import { findBook, frenchizeDate } from '../../selectors/books';
 import { getReviewByBook } from '../../actions/books';
 // components
 import Separator from '../Reusables/Separator';
@@ -36,7 +36,7 @@ const Book = () => {
             <div className="book-content infos">
               <div className="book-content infos-subtitle">Sous-titre : {book.subtitle}</div>
               <div className="book-content infos-author">Auteur : {authors}</div>
-              <div className="book-content infos-date">Date de parution : {book.publicationDate}</div>
+              <div className="book-content infos-date">Date de parution : {frenchizeDate(book.publicationDate)}</div>
               <div className="book-content infos-editor">Edition : {book.publisher}</div>
               <div className="book-content infos-isbn">IBSN : {book.isbn}</div>
               <div className="book-content infos-nbpages">Nombre de pages :</div>

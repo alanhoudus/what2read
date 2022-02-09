@@ -39,3 +39,14 @@ export function findReview(reviewsList, searchedId) {
   const review = reviewsList.find((testedReview) => testedReview.id === searchedId);
   return review;
 }
+
+export function frenchizeDate(date) {
+  const day = date.slice(8, 10);
+  const month = date.slice(5, 7);
+  const year = date.slice(0, 4);
+  const newDate = new Date(Date.UTC(year, month, day));
+  const options = {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+  };
+  return newDate.toLocaleDateString('fr-FR', options);
+}

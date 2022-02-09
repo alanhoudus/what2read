@@ -58,7 +58,7 @@ const Favorites = () => {
           dispatch(searchedFavoritesBooksList(userSearchedFavoritesBooksList));
         }}
       >
-        <SearchField
+        {/* <SearchField
           type="text"
           className="search--field"
           name="searchFavoriteInput"
@@ -69,7 +69,7 @@ const Favorites = () => {
             const action = updateFavoriteSearchValue(identifier, newValue);
             dispatch(action);
           }}
-        />
+        /> */}
       </form>
       <div className="favorites-books">
         {favoritesList.length === 0
