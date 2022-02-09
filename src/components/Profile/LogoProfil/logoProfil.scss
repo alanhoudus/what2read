@@ -11,9 +11,10 @@
 // responsive desktop
 @media (min-width: 768px) {
   .logoProfil {
+    z-index: 1000;
     position: absolute;
     top: 0.5em;
-    right: 0.5em;;
+    right: 2em;;
     width: 4em;
     height: 4em;
     border-radius: 50%;

@@ -6,6 +6,7 @@ import userRegistrationReducer from './userRegistration';
 import bookSearchReducer from './bookSearch';
 import booksReducer from './books';
 import addReviewReducer from './addReview';
+import otherUserProfileReducer from './otherUserProfile';
 
 const rootReducer = combineReducers({
   userLogin: userLoginReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   bookSearch: bookSearchReducer,
   books: booksReducer,
   addReview: addReviewReducer,
+  otherUserProfile: otherUserProfileReducer,
 });
 
 export default rootReducer;

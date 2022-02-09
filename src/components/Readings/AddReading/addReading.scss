@@ -33,6 +33,7 @@
     border-radius: 20px;
     width: 60vw;
     height: auto;
+    padding-bottom: calc(vars.$gutter * 1);
   }
 
   &-search {
@@ -52,17 +53,22 @@
   &-results {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     padding: 0 calc(vars.$gutter * 1) calc(vars.$gutter * .5) calc(vars.$gutter * 1);
+    flex-direction: row;
+    overflow-y: scroll;
+    height: 200px;
+    width: 350px;
 
-    &.addreading {
+    &-addreading {
       background-color: vars.$mainColor;
       border: 1px solid black;
       margin: 0 calc(vars.$gutter * .5) 0 calc(vars.$gutter * .5);
       padding: calc(vars.$gutter * .3);
       position: relative;
-      z-index: 3;
+      z-index: 5;
       display: block;
+      width: 100%;
+      height: calc(vars.$gutter * 4);
     }
   }
 }

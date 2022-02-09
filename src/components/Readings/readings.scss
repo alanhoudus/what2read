@@ -35,26 +35,15 @@
         width: 300px;
         height: 450px;
 
-        & > .favorited {
-          top: 1%;
-          right: 1%;
-          position: absolute;
-        }
-
         & > .review-done {
           top: 1%;
-          right: 11%;
+          right: 1%;
           position: absolute;
         }
       }
       &--subtitle {
         margin-bottom: calc(vars.$gutter * 2);
       }
-    }
-
-    // hide the last 3 books on mobile, its just for the static integration
-    &-book:nth-last-child(-n+6) {
-      display: none;
     }
 
     &-book:hover {

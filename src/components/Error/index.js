@@ -10,7 +10,7 @@ import w2rlogo from '../../assets/images/w2rlogo.png';
 const NotFound = () => (
   <div className="bookAnimation">
     <img src={w2rlogo} alt="logo" className="bookAnimation-logo" />
-    <h1 className="bookAnimation-title">Book not found</h1>
+    <h1 className="bookAnimation-title">404 Book not found</h1>
     <div className="back" />
     <div className="page6">
       <Link

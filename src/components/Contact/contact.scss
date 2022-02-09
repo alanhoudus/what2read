@@ -62,7 +62,9 @@
     }
 
     &-contentGroup {
+      justify-content: center;
       display: flex;
+      flex-wrap: wrap;
       padding: calc(vars.$gutter * 1);
       transition: box-shadow .3s ease-in-out;
       width: 100%;

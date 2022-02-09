@@ -2,6 +2,8 @@
 // hooks
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// react-router-dom
+import { Link } from 'react-router-dom';
 // mock data
 import CARROUSEL_REVIEWS_LIST from '../../../data/carrousel';
 // actions
@@ -40,8 +42,13 @@ const Review = () => {
                 {slide.content}
               </p>
               <div className="review-author">
-                <img src={slide.user.picture} alt="Avatar de l'auteur" className="review-author--avatar" />
-                <p className="review-author--name">{slide.user.username}</p>
+                <Link
+                  to={`profil/${slide.user.id}`}
+                  key={slide.user.username}
+                >
+                  <img src={slide.user.picture} alt="Avatar de l'auteur" className="review-author--avatar" />
+                  <p className="review-author--name">{slide.user.username}</p>
+                </Link>
               </div>
             </div>
           ))}

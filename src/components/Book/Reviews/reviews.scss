@@ -41,12 +41,7 @@
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
       &.author {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: flex-end;
-        margin-top: calc(vars.$gutter * 1);
-     
+        margin-top: calc(vars.$gutter * 2);
         &--name {
           padding-right: calc(vars.$gutter * 1);
           font-weight: bold;

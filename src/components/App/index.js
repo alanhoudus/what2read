@@ -31,6 +31,7 @@ import PopUpInfo from '../Reusables/PopUpInfo';
 import Loader from './Loader';
 import LogIn from '../LogIn';
 import EditReview from '../RegistrationReview/EditReview';
+import OtherUserProfile from '../OtherUserProfile';
 // scss
 import './app.scss';
 
@@ -89,7 +90,8 @@ const App = () => {
           <Route path="/profil/review/edition/:id" key="reviews-edition" element={<EditReview />} />
           <Route path="/profil/edition" key="profil-edition" element={<EditProfile />} />
           <Route path="/suggestions/historique" key="suggestions-historique" element={<Suggestions />} />
-          <Route path="/connection" key="connection" element={<LogIn />} />
+          <Route path="/connexion" key="connexion" element={<LogIn />} />
+          <Route path="/profil/:userId" key="utilisateur" element={<OtherUserProfile />} />
         </Routes>
       </div>
       <Footer />

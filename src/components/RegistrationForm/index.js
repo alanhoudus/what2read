@@ -31,7 +31,7 @@ const RegistrationForm = () => {
 
   // If user isn't logged in, redirect to the login
   if (registrationSuccess) {
-    return <Navigate to="/connection" />;
+    return <Navigate to="/connexion" />;
   }
   return (
     <div className="registration">
