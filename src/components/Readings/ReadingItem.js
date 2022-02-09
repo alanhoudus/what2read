@@ -4,7 +4,7 @@ import { useState } from 'react';
 // react-router-dom
 import { Link } from 'react-router-dom';
 // react-feather
-import { Star, Trash } from 'react-feather';
+import { Trash } from 'react-feather';
 // prop-types
 import PropTypes from 'prop-types';
 // actions
@@ -25,7 +25,6 @@ const ReadingItem = ({ book, id }) => {
         >
           <img className="readings-book--cover" src={book.cover} alt="title" />
         </Link>
-        <Star className="readings favorited true" color="gold" />
         <Trash
           className="readings review-done"
           color="gray"
