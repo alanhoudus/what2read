@@ -4,7 +4,11 @@ import SuggestionsItem from './SuggestionsItem';
 const SuggestionsList = ({ suggestionsList }) => (
   // For each suggestion in the list, create an item
   suggestionsList.map((suggestions) => (
-    <SuggestionsItem key={suggestions.book.isbn} book={suggestions.book} />
+    <SuggestionsItem
+      key={suggestions.book.isbn}
+      book={suggestions.book}
+      createdAt={suggestions.createdAt}
+    />
   ))
 );
 

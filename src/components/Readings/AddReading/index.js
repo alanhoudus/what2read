@@ -48,13 +48,15 @@ const AddReading = () => {
               placeholder="Rechercher un livre.."
               value={addReadingUserInput}
               onChange={(identifier, newValue) => {
+                const userSearchedBooksList = findSearchedBooks(booksList, addReadingUserInput);
+                dispatch(addReadingSearchedBooksList(userSearchedBooksList));
                 const action = updateAddReadingValue(identifier, newValue);
                 dispatch(action);
               }}
             />
-            <div className="modal-results">
-              <AddReadingList addReadingBooksList={addReadingBooksList} />
-            </div>
+          </div>
+          <div className="modal-results">
+            <AddReadingList addReadingBooksList={addReadingBooksList} />
           </div>
         </form>
       </div>

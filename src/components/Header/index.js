@@ -3,14 +3,17 @@
 import { NavLink } from 'react-router-dom';
 // hooks
 import { useState, useEffect, useRef } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import {
+  useSelector,
+  // useDispatch,
+} from 'react-redux';
 
 // components
-import Field from '../Reusables/Field';
+// import Field from '../Reusables/Field';
 import LinkLists from './LinkLists';
 
 // actions
-import { updateFastSearchBookValue } from '../../actions/search';
+// import { updateFastSearchBookValue } from '../../actions/search';
 
 // assets
 import w2rlogo from '../../assets/images/w2rlogo.png';
@@ -33,8 +36,8 @@ const Header = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
   // controlled input search
-  const inputFastSearch = useSelector((state) => state.bookSearch.inputFastSearch);
-  const dispatch = useDispatch();
+  // const inputFastSearch = useSelector((state) => state.bookSearch.inputFastSearch);
+  // const dispatch = useDispatch();
   // we use "useRef" to handle the click outside the header, if we click
   // outside the header the nav menu will close
   const burgerMenu = useRef();
@@ -117,7 +120,7 @@ const Header = () => {
           </div>
           <ul className={`header-burgermenu ${isBurgerMenuOpen ? 'active' : ''}`}>
             <LinkLists list={regularNavLinks} />
-            <li>
+            {/* <li>
               <Field
                 type="text"
                 className="header-burgermenu--quicksearch"
@@ -129,7 +132,7 @@ const Header = () => {
                   dispatch(actionUpdate);
                 }}
               />
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>
