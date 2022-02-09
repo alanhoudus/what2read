@@ -24,7 +24,7 @@ const Review = () => {
     dispatch(saveCarrouselReviews(randomizedReviews));
   }, []);
 
-  if (reviewsList.length < 3) {
+  if (reviewsList.length < 2) {
     return <div />;
   }
   return (
