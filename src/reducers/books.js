@@ -1,6 +1,11 @@
 import {
   SAVE_BOOKS_LIST,
   BOOKS_LIST_LOADED,
+  SAVE_REVIEW_BY_BOOK,
+  SUGGEST_TODAYS_BOOK,
+  SAVE_REVIEWS_LIST,
+  ALL_REVIEWS_LOADED,
+  SAVE_CARROUSEL_REVIEWS,
 } from '../actions/books';
 
 import {
@@ -13,14 +18,44 @@ export const initialState = {
   booksListDataLoading: true,
   suggestionsList: [],
   suggestionsDataLoading: true,
+  reviewsListByBook: [],
+  suggestedBookOfTheDay: {},
+  allReviews: [],
+  allReviewsDataLoading: true,
+  carrouselReviews: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SAVE_CARROUSEL_REVIEWS:
+      return {
+        ...state,
+        carrouselReviews: action.data,
+      };
+    case SAVE_REVIEW_BY_BOOK:
+      return {
+        ...state,
+        reviewsListByBook: action.review,
+      };
+    case SUGGEST_TODAYS_BOOK:
+      return {
+        ...state,
+        suggestedBookOfTheDay: action.book,
+      };
+    case SAVE_REVIEWS_LIST:
+      return {
+        ...state,
+        allReviews: action.data,
+      };
     case SAVE_BOOKS_LIST:
       return {
         ...state,
         booksList: action.data,
+      };
+    case ALL_REVIEWS_LOADED:
+      return {
+        ...state,
+        allReviewsDataLoading: false,
       };
     case BOOKS_LIST_LOADED:
       return {

@@ -1,52 +1,111 @@
 @use '../../../styles/vars';
 
 // responsive mobile first
+@media (max-width: 768px) {
+  .modal {
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-input {
+    background-color: vars.$mainColor;
+    border: none;
+    width: 93%;
+    display: block;
+    padding: calc(vars.$gutter * 1);
+    margin: calc(vars.$gutter * 1) calc(vars.$gutter * 1) calc(vars.$gutter * .3) calc(vars.$gutter * 1);
+    height: calc(vars.$gutter * 2);
+    color: vars.$fontColor;
+    font-size: calc(vars.$fontSize * 1);
+  }
+
+  &-wrapper {
+    background-color: vars.$secondaryColor;
+    border-radius: 20px;
+    width: 60vw;
+    height: auto;
+  }
+
+  &-search {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-close-button {
+    font-size: calc(vars.$fontSize * 3);
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    position: relative;
+  }
+  &-results {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0 calc(vars.$gutter * 1) calc(vars.$gutter * .5) calc(vars.$gutter * 1);
+
+    &.addreading {
+      background-color: vars.$mainColor;
+      border: 1px solid black;
+      margin: 0 calc(vars.$gutter * .5) 0 calc(vars.$gutter * .5);
+      padding: calc(vars.$gutter * .3);
+      position: relative;
+      z-index: 3;
+      display: block;
+    }
+  }
+}
+}
+
 @media (min-width: 768px) {
 
   .modal {
-  
     &-overlay {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1040;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
       background-color: rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    &-background {
-      background-color: vars.$secondaryColor;
-      border-radius: 20px;
-      width: 30%;
-      height: 20%;
-      
-    }
-
     &-input {
       background-color: vars.$mainColor;
       border: none;
-      width: 15%;
+      width: 93%;
+      display: block;
+      padding: calc(vars.$gutter * 1);
+      margin: calc(vars.$gutter * 1) calc(vars.$gutter * 1) calc(vars.$gutter * .3) calc(vars.$gutter * 1);
       height: calc(vars.$gutter * 2);
       color: vars.$fontColor;
+      font-size: calc(vars.$fontSize * 1);
     }
 
     &-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1050;
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden;
-      overflow-y: auto;
-      outline: 0;
+      background-color: vars.$secondaryColor;
+      border-radius: 20px;
+      width: 30vw;
+      height: auto;
+    }
+
+    &-search {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      justify-content: space-between;
     }
 
     &-close-button {
@@ -56,7 +115,23 @@
       cursor: pointer;
       border: none;
       background: transparent;
+      position: relative;
     }
+    &-results {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 0 calc(vars.$gutter * 1) calc(vars.$gutter * .5) calc(vars.$gutter * 1);
 
+      &.addreading {
+        background-color: vars.$mainColor;
+        border: 1px solid black;
+        margin: 0 calc(vars.$gutter * .5) 0 calc(vars.$gutter * .5);
+        padding: calc(vars.$gutter * .3);
+        position: relative;
+        z-index: 3;
+        display: block;
+      }
+    }
   }
 }

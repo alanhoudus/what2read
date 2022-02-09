@@ -9,12 +9,14 @@ import AddReading from './AddReading';
 // mock data
 import { READINGS_PRESENTATION } from '../../data/readings';
 // action
-import { getUserReadingsData, togglePopUp } from '../../actions/user';
+import {
+  getUserReadingsData,
+  togglePopUp,
+} from '../../actions/user';
 // components
 import ReadingsList from './ReadingsList';
 // scss
 import './readings.scss';
-import ShowMore from '../Reusables/ShowMore';
 import Loader from '../App/Loader';
 
 const Readings = () => {
@@ -32,6 +34,10 @@ const Readings = () => {
       dispatch(getUserReadingsData());
     }
   }, [token]);
+
+  useEffect(() => {
+    dispatch(getUserReadingsData());
+  }, [displayPopUp]);
 
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
@@ -57,9 +63,6 @@ const Readings = () => {
           {readingsList.length === 0
             ? <p>Vous n'avez pas encore ajouté de lectures</p>
             : <ReadingsList readingsList={readingsList} />}
-        </div>
-        <div className="readings-showmore">
-          <ShowMore />
         </div>
       </div>
 

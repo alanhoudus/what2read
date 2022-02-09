@@ -10,31 +10,30 @@
     h3, h4 {
       text-align: center;
     }
-
+    
     &-buttonRead {
-      border-radius: 4px;
-      color: vars.$secondaryColor;
-      background-color: vars.$fourthColor;
-      margin-bottom: vars.$gutter;
-      border-radius: 30px;
-      border: none;
-      font-size: calc(vars.$fontSize * 1);
-      padding: 10px;
+      &-toggle{
+        color: vars.$mainColor;;
+        background-color: vars.$thirdColor;
+        margin: calc(vars.$gutter * 1);
+        border-radius: 30px;
+        width: 30%;
+        font-size: calc(vars.$fontSize * 1);;
+        padding: calc(vars.$gutter * 0.5);
+        border: none;
+      }
     }
 
     &-book {
-      width:100%;
+      width:300px;
+
       margin-bottom: calc(vars.$gutter * 1);
 
       &--cover {
         position: relative;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-
-
-        &-img {
-          width: 300px;
-          height: auto;
-        }
+        width: 300px;
+        height: 450px;
 
         & > .favorited {
           top: 1%;
@@ -48,7 +47,11 @@
           position: absolute;
         }
       }
+      &--subtitle {
+        margin-bottom: calc(vars.$gutter * 2);
+      }
     }
+
     // hide the last 3 books on mobile, its just for the static integration
     &-book:nth-last-child(-n+6) {
       display: none;
@@ -75,15 +78,11 @@
         width: 30%;
         font-size: calc(vars.$fontSize * 1);;
         padding: calc(vars.$gutter * 0.5);
+        border: none;
       }
     }
        
     &-books {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    &-showmore {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -103,11 +102,8 @@
       &--cover {
       position: relative;
       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-
-        & > img {
-          width: 300px;
-          height: 450px;
-        }
+      width: 300px;
+      height: 450px;
 
         & > .favorited {
           top: 10px;

@@ -2,20 +2,16 @@
 
 @media (max-width: 768px) { 
   .home {
-    
-    h1 {
-    text-align: center;
-  }
+    &-presentation {
+      margin: calc(vars.$gutter * 1);
+    }
   }
 }
 
 @media (min-width: 768px) { 
   .home {
-    &-title {
-      
-      &--main {
-        
-      }
+    &-presentation {
+      max-width: 75vw;
     }
   }
 }

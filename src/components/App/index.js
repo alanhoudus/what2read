@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 // actions
-import { getBooksData } from '../../actions/books';
+import { getBooksData, getReviewsData } from '../../actions/books';
+import { getSuggestionsData } from '../../actions/suggestions';
+import { getUserData } from '../../actions/user';
 
 // components
 import Header from '../Header';
@@ -28,21 +30,19 @@ import LogoProfil from '../Profile/LogoProfil';
 import PopUpInfo from '../Reusables/PopUpInfo';
 import Loader from './Loader';
 import LogIn from '../LogIn';
-
+import EditReview from '../RegistrationReview/EditReview';
 // scss
 import './app.scss';
-import { getSuggestionsData } from '../../actions/suggestions';
-import {
-  getUserData,
-} from '../../actions/user';
 
 // == Composant
 const App = () => {
   const profileIsLoaded = useSelector((state) => state.userProfile.profileIsLoading);
   const logInfo = useSelector((state) => state.userLogin.logInfo);
   const dataIsLoading = useSelector((state) => state.books.dataLoading);
+  // const getReviewByBook = useSelector((state) => state.books.getReviewNyBook);
   const username = useSelector((state) => state.userProfile.username);
   const message = useSelector((state) => state.userLogin.message);
+  const isLogged = useSelector((state) => state.userProfile.logged);
   const token = useSelector((state) => state.userProfile.token);
   const dispatch = useDispatch();
 
@@ -56,6 +56,7 @@ const App = () => {
   useEffect(() => {
     dispatch(getBooksData());
     dispatch(getSuggestionsData());
+    dispatch(getReviewsData());
   }, []);
 
   useEffect(() => {
@@ -71,7 +72,7 @@ const App = () => {
     <div className="app">
       <Header />
       {logInfo && <PopUpInfo username={username} message={message} />}
-      {!profileIsLoaded && <LogoProfil />}
+      {(!profileIsLoaded && isLogged) && <LogoProfil />}
       <div className="app-wrapper">
         <Routes>
           <Route path="/" key="home" element={<Home />} />
@@ -85,6 +86,7 @@ const App = () => {
           <Route path="/profil" key="profil" element={<Profile />} />
           <Route path="/livre/:isbn" key="livre" element={<Book />} />
           <Route path="/profil/reviews" key="reviews" element={<Reviews />} />
+          <Route path="/profil/review/edition/:id" key="reviews-edition" element={<EditReview />} />
           <Route path="/profil/edition" key="profil-edition" element={<EditProfile />} />
           <Route path="/suggestions/historique" key="suggestions-historique" element={<Suggestions />} />
           <Route path="/connection" key="connection" element={<LogIn />} />

@@ -9,6 +9,7 @@ const MyReviewsList = ({ myReviewsList }) => (
       book={review.book}
       content={review.content}
       title={review.title}
+      id={review.id}
     />
   ))
 );

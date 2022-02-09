@@ -1,7 +1,6 @@
 // hooks
 import { useDispatch, useSelector } from 'react-redux';
 // import components
-import ShowMore from '../Reusables/ShowMore';
 import Loader from '../App/Loader';
 import SearchList from './SearchList';
 import SearchField from '../Reusables/SearchField';
@@ -45,13 +44,14 @@ const Search = () => {
           onChange={(identifier, newValue) => {
             const action = updateSearchBookValue(identifier, newValue);
             dispatch(action);
+            const userSearchedBooksList = findSearchedBooks(booksList, userInput);
+            dispatch(searchedBooksList(userSearchedBooksList));
           }}
         />
       </form>
       <div className="search-books">
         <SearchList searchedBooksList={searchedBooks} />
       </div>
-      <ShowMore />
     </div>
   );
 };

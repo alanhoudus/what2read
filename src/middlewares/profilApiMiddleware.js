@@ -1,8 +1,14 @@
 /* eslint-disable no-console */
 import axios from 'axios';
 // import { useParams } from 'react-router-dom';
-import { HANDLE_POST_REVIEW, handleEmptyInput } from '../actions/addReview';
 import {
+  HANDLE_POST_REVIEW,
+  handleEmptyInput,
+  REMOVE_REVIEW,
+  SEND_EDITED_REVIEW,
+} from '../actions/addReview';
+import {
+  ADD_BOOK_TO_READINGS,
   EDIT_USER_PROFILE,
   favoritesLoaded,
   GET_USER_DATA,
@@ -11,17 +17,20 @@ import {
   GET_USER_REVIEWS_DATA,
   profileIsLoaded,
   readingsLoaded,
+  REMOVE_BOOK_FROM_READINGS,
   reviewsLoaded,
   saveUserFavoritesData,
   saveUserProfileData,
   saveUserReadingsData,
   saveUserReviewsData,
+  ADD_FAVORIS_USER,
+  DELETE_FAVORIS_USER,
+  DELETE_USER_ACCOUNT,
 } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case HANDLE_POST_REVIEW: {
-      console.log(action.isbn);
       axios.post(
         // URL
         `http://localhost:8000/api/profile/${action.isbn}/addreview`,
@@ -39,6 +48,24 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(handleEmptyInput());
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case REMOVE_REVIEW: {
+      axios.delete(
+        // URL
+        `http://localhost:8000/api/profile/review/${action.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
           console.log(response);
         })
         .catch((error) => {
@@ -86,7 +113,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
-          console.log('favorites');
           store.dispatch(saveUserFavoritesData(
             response.data,
           ));
@@ -111,7 +137,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
-          console.log('readings');
           store.dispatch(saveUserReadingsData(
             response.data,
           ));
@@ -136,7 +161,6 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           console.log(response);
-          console.log('reviews');
           store.dispatch(saveUserReviewsData(
             response.data,
           ));
@@ -145,8 +169,46 @@ const profilApiMiddleware = (store) => (next) => (action) => {
           console.log(error.toJSON());
         })
         .finally(() => {
-          console.log('a');
           store.dispatch(reviewsLoaded());
+        });
+      break;
+    }
+    case ADD_BOOK_TO_READINGS: {
+      axios.post(
+        // URL
+        `http://localhost:8000/api/profile/${action.isbn}/addreading`,
+        {
+          book_isbn: action.isbn,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case REMOVE_BOOK_FROM_READINGS: {
+      axios.delete(
+        // URL
+        `http://localhost:8000/api/profile/reading/${action.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
         });
       break;
     }
@@ -160,6 +222,86 @@ const profilApiMiddleware = (store) => (next) => (action) => {
           picture: store.getState().userProfile.picture,
           presentation: store.getState().userProfile.description,
         },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case SEND_EDITED_REVIEW: {
+      axios.put(
+        // URL
+        `http://localhost:8000/api/profile/review/${action.id}`,
+        {
+          title: store.getState().addReview.editTitle,
+          content: store.getState().addReview.editContent,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case ADD_FAVORIS_USER: {
+      axios.post(
+        // URL
+        `http://localhost:8000/api/profile/${action.isbn}/addfavorite`,
+        {
+          book_isbn: action.isbn,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+          console.log(action.isbn);
+        });
+      break;
+    }
+    case DELETE_FAVORIS_USER: {
+      axios.delete(
+        // URL
+        `http://localhost:8000/api/profile/favorite/${action.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${store.getState().userProfile.token}`,
+          },
+        },
+      )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        });
+      break;
+    }
+    case DELETE_USER_ACCOUNT: {
+      axios.delete(
+        // URL
+        'http://localhost:8000/api/profile',
         {
           headers: {
             Authorization: `Bearer ${store.getState().userProfile.token}`,

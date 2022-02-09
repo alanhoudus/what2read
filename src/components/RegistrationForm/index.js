@@ -25,7 +25,7 @@ const RegistrationForm = () => {
   // eslint-disable-next-line max-len
   const passwordRegistrationError = useSelector((state) => state.userRegistration.registrationError);
   const registrationSuccess = useSelector((state) => state.userRegistration.registrationSuccess);
-  // console.log(registrationSuccess);
+  const userExistError = useSelector((state) => state.userRegistration.userExistError);
 
   const dispatch = useDispatch();
 
@@ -127,6 +127,7 @@ const RegistrationForm = () => {
           <button type="submit" className="registration-button">Rejoindre</button>
         </form>
         <p className="registration-required">* champs obligatoires</p>
+        {userExistError && (<p className="registration-errorExist">Le mail ou le pseudo existe déjà</p>)}
       </div>
     </div>
   );
