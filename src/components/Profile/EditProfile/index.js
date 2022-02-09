@@ -53,7 +53,7 @@ const EditProfile = () => {
             />
             <Edit2 />
             <img alt="editprofileicon" src={userPicture} className="editprofile-content avatar" />
-            <UploadAvatar />
+            {/* <UploadAvatar /> */}
             <h3 className="editprofile-content title-description">Présentation
               <Edit2
                 className="editprofile-content edit-presentation"
