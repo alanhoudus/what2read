@@ -8,9 +8,6 @@ import CARROUSEL_REVIEWS_LIST from '../../../data/carrousel';
 import { randomReviewsCarrousel } from '../../../selectors/reviews';
 import { saveCarrouselReviews } from '../../../actions/books';
 
-// imgs
-import profileicon from '../../../assets/images/profileicon.png';
-
 import './review.scss';
 
 // == Composant
@@ -43,8 +40,8 @@ const Review = () => {
                 {slide.content}
               </p>
               <div className="review-author">
-                <img src={profileicon} alt="Avatar de l'auteur" className="review-author--avatar" />
-                <p className="review-author--name">{slide.auhorName}</p>
+                <img src={slide.user.picture} alt="Avatar de l'auteur" className="review-author--avatar" />
+                <p className="review-author--name">{slide.user.username}</p>
               </div>
             </div>
           ))}

@@ -6,36 +6,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: vars.$fontColor;
 
     &-books {
-      width: 40%;
+      width: 50%;
     }
 
     &-book {
       width:100%;
-      margin-bottom: calc(vars.$gutter * 1);
       position: relative;
-      &--title {
-        text-align: center;
-        padding: calc(vars.$gutter * 1) 0;
+      
+      &>img {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
 
       &-starAdd {
         position: absolute;
-        right: 2px;
-        top:8px;
+        right: 10px;
+        top:10px;
+      }
+      &--subtitle {
+        margin-bottom: calc(vars.$gutter *1.5);
       }
     }
 
     &-book:hover {
       cursor: pointer;
-    }
-
-    &-img {
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    }
+    } 
   }
 }
 
@@ -49,18 +45,21 @@
     &-books {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-evenly;
+      margin: calc(vars.$gutter *1);
+      width: 95%;
     }
     &-book {
       width: 300px;
-      margin: calc(vars.$gutter *1);
       position: relative;
 
       h3, h4 {
         text-align: center;
       }
-
-      &.cover {
+      &--subtitle {
+        margin-bottom: calc(vars.$gutter *1.5);
+      }
+      &.cover-img {
       position: relative;
       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       width: 300px;
@@ -69,8 +68,8 @@
 
       &-starAdd {
         position: absolute;
-        right: -8px;
-        top:20px;
+        right: 10px;
+        top: 10px;
         border-radius: 50%;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }

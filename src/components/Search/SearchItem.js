@@ -18,7 +18,9 @@ const SearchItem = ({ searchedBook }) => {
         to={`/livre/${searchedBook.isbn}`}
         key={searchedBook.isbn}
       >
-        <img className="search-book cover" src={searchedBook.cover} alt="title" />
+        <div className="search-book cover">
+          <img className="search-book cover-img" src={searchedBook.cover} alt="title" />
+        </div>
         <h3 className="search-book--title">{searchedBook.title}</h3>
         <h4 className="search-book--subtitle">{searchedBook.subtitle}</h4>
       </Link>
@@ -29,7 +31,6 @@ const SearchItem = ({ searchedBook }) => {
           size="40"
           onClick={() => {
             dispatch(addFavorisUser(searchedBook.isbn));
-            // console.log(searchedBook.isbn);
           }}
         />
       )}

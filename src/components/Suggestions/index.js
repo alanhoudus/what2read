@@ -22,7 +22,6 @@ const Suggestions = () => {
   const suggestionsList = useSelector((state) => state.books.suggestionsList);
   const suggestionsLoading = useSelector((state) => state.books.suggestionsDataLoading);
   const booksListLoading = useSelector((state) => state.books.booksListDataLoading);
-  console.log(booksListLoading);
 
   return (
     <div className="suggestions">
