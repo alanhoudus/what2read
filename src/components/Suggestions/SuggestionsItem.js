@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { frenchizeDate } from '../../selectors/books';
 
-const SuggestionsItem = ({ book }) => (
+const SuggestionsItem = ({ book, createdAt }) => (
   <div className="suggestions-history book">
     <Link
       to={`/livre/${book.isbn}`}
@@ -9,7 +10,7 @@ const SuggestionsItem = ({ book }) => (
     >
       <img className="suggestions-history book-cover" src={book.cover} alt="couverture du livre" />
       <h3 className="suggestions-history book-title">{book.title}</h3>
-      <h4 className="suggestions-history book-date">{book.createdAt}</h4>
+      <h4 className="suggestions-history book-date">Suggéré le {frenchizeDate(createdAt)}</h4>
     </Link>
   </div>
 );
@@ -21,6 +22,7 @@ SuggestionsItem.propTypes = {
     isbn: PropTypes.string.isRequired,
     createdAt: PropTypes.string,
   }).isRequired,
+  createdAt: PropTypes.string.isRequired,
 };
 
 export default SuggestionsItem;

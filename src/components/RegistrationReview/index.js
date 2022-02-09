@@ -63,7 +63,8 @@ const RegistrationReview = () => {
           </Link>
         </div>
         <Field
-          id="title"
+          id="reviewtitle"
+          name="reviewtitle"
           type="text"
           placeholder="Mets un titre à ta review"
           className="addReview-field title"
@@ -83,6 +84,8 @@ const RegistrationReview = () => {
           <TextArea
             placeholder="Texte de la review"
             className="addReview-field content"
+            name="addreview"
+            id="addreview"
             value={inputContentReview}
             onChange={(newContent) => {
               const actionUpdate = updateWriteReview(book.isbn, newContent);

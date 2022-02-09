@@ -20,7 +20,7 @@ const SuggestedBook = () => {
     <div className="suggestedbook">
       <h2 className="suggestedbook-title">Suggestion du jour</h2>
       <div className="suggestedbook-infos">
-        <img className="suggestedbook-cover" alt="Chtulhu couverture" src={suggestedBook.cover} />
+        <img className="suggestedbook-cover" alt="Couverture du livre" src={suggestedBook.cover} />
         <h3 className="suggestedbook-booktitle">{ suggestedBook.title}</h3>
         <div className="suggestedbook-summary">
           <p>{ suggestedBook.description}</p>
