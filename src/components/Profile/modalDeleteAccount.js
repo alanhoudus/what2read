@@ -30,7 +30,7 @@ const ModaleDeleteAccount = ({ setIsModal }) => {
                 }}
 
               >
-                oui
+                Oui
               </button>
             </Link>
             <button
@@ -40,7 +40,7 @@ const ModaleDeleteAccount = ({ setIsModal }) => {
                 setIsModal(false);
               }}
             >
-              non
+              Non
             </button>
           </div>
         </div>

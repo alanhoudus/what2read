@@ -13,8 +13,6 @@ const SuggestedBook = () => {
   const booksListIsLoading = useSelector((state) => state.books.booksListDataLoading);
   const suggestedBook = useSelector((state) => state.books.suggestedBookOfTheDay);
 
-  console.log('suggestedBooks', suggestedBook);
-
   if (booksListIsLoading) {
     return <Loader />;
   }

@@ -26,7 +26,7 @@ const authMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           // If the inputs are correct, store the nickname, token etc into the state
-          console.log(response);
+          // console.log(response);
           store.dispatch(saveUserData(
             response.data.token,
             store.getState().userLogin.username,
@@ -64,7 +64,7 @@ const authMiddleware = (store) => (next) => (action) => {
             response.data.email,
             response.data.description,
           ));
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());

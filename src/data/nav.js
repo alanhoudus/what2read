@@ -1,8 +1,8 @@
 export const LOGGED_OUT_USER_NAV = [
   {
     name: 'Se connecter',
-    key: 'connection',
-    to: '/connection',
+    key: 'connexion',
+    to: '/connexion',
   },
   {
     name: 'S\'inscrire',

@@ -1,0 +1,112 @@
+@use '../../styles/vars';
+
+// responsive mobile first
+@media (max-width: 768px) {
+  .profile {
+    &-contentGroup {
+      padding: calc(vars.$gutter * 2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: calc(vars.$gutter * 2);
+      margin-right: calc(vars.$gutter * 3);
+      padding: calc(vars.$gutter * 1);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+  
+  }
+  .book-reviews {
+    display: flex;
+    flex-wrap: wrap;
+
+    &.book {
+
+      &-cover {
+        display: none;
+      }
+    }
+    &.author {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      &--avatar {
+        border-radius: 50%;
+        width: 50px;
+      }
+  }
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .profile {
+    &-contentGroup{
+      margin: calc(vars.$gutter * 2);
+      margin-right: calc(vars.$gutter * 5);
+      padding: calc(vars.$gutter * 1);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      width: 90%;
+
+    }
+    &-content {
+
+      &.avatar {
+        width: 200px;
+        height: 200px;
+
+        background-color: vars.$secondaryColor;
+        border-radius: 50%;
+        padding: 5px;
+      }
+    }
+  }
+
+  .book-reviews {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > h2 {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    &.singlereview{
+      width: 90%;
+    }
+
+    &.book {
+      width: 20%;
+      
+      &-cover {
+        width: 200px;
+        float: left;
+      }
+    }
+
+    &.review {
+      width: 70%;
+    }
+
+    &.author{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      &--avatar {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+  }
+  
+  
+}
+
+@media (min-width: 768px) and (max-width: 1330px) {
+  .book-reviews.book {
+    margin-right: 25%;
+    width: 20%;
+  }
+}

@@ -26,6 +26,9 @@ import {
   ADD_FAVORIS_USER,
   DELETE_FAVORIS_USER,
   DELETE_USER_ACCOUNT,
+  GET_OTHER_USER_DATA,
+  otherProfileLoaded,
+  saveOtherProfileData,
 } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
@@ -48,7 +51,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       )
         .then((response) => {
           store.dispatch(handleEmptyInput());
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
@@ -66,7 +69,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
@@ -84,7 +87,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log("user", response);
+          // console.log("user", response);
           store.dispatch(saveUserProfileData(
             response.data.email,
             response.data.picture,
@@ -112,7 +115,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(saveUserFavoritesData(
             response.data,
           ));
@@ -136,7 +139,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(saveUserReadingsData(
             response.data,
           ));
@@ -160,7 +163,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(saveUserReviewsData(
             response.data,
           ));
@@ -187,7 +190,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
@@ -205,7 +208,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
@@ -229,7 +232,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
@@ -251,7 +254,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
@@ -272,11 +275,11 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
-          console.log(action.isbn);
+          // console.log(action.isbn);
         });
       break;
     }
@@ -291,7 +294,7 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
@@ -309,10 +312,33 @@ const profilApiMiddleware = (store) => (next) => (action) => {
         },
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
         })
         .catch((error) => {
           console.log(error.toJSON());
+        });
+      break;
+    }
+    case GET_OTHER_USER_DATA: {
+      console.log(action.id);
+      axios.get(
+        // URL
+        `http://localhost:8000/api/user/${action.id}`,
+      )
+        .then((response) => {
+          console.log(response);
+          store.dispatch(saveOtherProfileData(
+            response.data.username,
+            response.data.presentation,
+            response.data.picture,
+            response.data.reviews,
+          ));
+        })
+        .catch((error) => {
+          console.log(error.toJSON());
+        })
+        .finally(() => {
+          store.dispatch(otherProfileLoaded());
         });
       break;
     }

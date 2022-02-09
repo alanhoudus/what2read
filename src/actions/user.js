@@ -35,6 +35,26 @@ export const ADD_BOOK_TO_READINGS = 'ADD_BOOK_TO_READINGS';
 export const REMOVE_BOOK_FROM_READINGS = 'REMOVE_BOOK_FROM_READINGS';
 export const DELETE_USER_ACCOUNT = 'DELETE_USER_ACCOUNT';
 export const HANDLE_USER_ALREADY_EXIST = 'HANDLE_USER_ALREADY_EXIST';
+export const GET_OTHER_USER_DATA = 'GET_OTHER_USER_DATA';
+export const OTHER_PROFILE_LOADED = 'OTHER_PROFILE_LOADED';
+export const SAVE_OTHER_PROFILE_DATA = 'SAVE_OTHER_PROFILE_DATA';
+
+export const saveOtherProfileData = (username, description, picture, reviews) => ({
+  type: SAVE_OTHER_PROFILE_DATA,
+  username,
+  description,
+  picture,
+  reviews,
+});
+
+export const otherProfileLoaded = () => ({
+  type: OTHER_PROFILE_LOADED,
+});
+
+export const getOtherUserData = (id) => ({
+  type: GET_OTHER_USER_DATA,
+  id,
+});
 
 export const handleUserAlreadyExist = () => ({
   type: HANDLE_USER_ALREADY_EXIST,

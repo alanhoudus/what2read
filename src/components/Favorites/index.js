@@ -39,7 +39,7 @@ const Favorites = () => {
   }, [token]);
   // If user isn't logged in, redirect to the login
   if (!isLogged) {
-    return <Navigate to="/connection" />;
+    return <Navigate to="/connexion" />;
   }
   if (favoritesLoading) {
     return <Loader />;
