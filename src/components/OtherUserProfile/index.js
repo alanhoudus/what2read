@@ -1,7 +1,7 @@
 // hooks
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Loader from '../App/Loader';
 import Separator from '../Reusables/Separator';
 import { getOtherUserData } from '../../actions/user';
@@ -16,8 +16,10 @@ const OtherUserProfile = () => {
   const avatar = useSelector((state) => state.otherUserProfile.picture);
   const reviews = useSelector((state) => state.otherUserProfile.reviews);
   const profileIsLoading = useSelector((state) => state.otherUserProfile.otherProfileIsLoading);
+  const profileNotFound = useSelector((state) => state.otherUserProfile.profileError);
   const { userId } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getOtherUserData(userId));
@@ -25,6 +27,9 @@ const OtherUserProfile = () => {
 
   if (profileIsLoading) {
     return <Loader />;
+  }
+  if (profileNotFound) {
+    navigate('/profilenotfound');
   }
   return (
     <div>

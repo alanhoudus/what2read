@@ -29,6 +29,7 @@ import {
   GET_OTHER_USER_DATA,
   otherProfileLoaded,
   saveOtherProfileData,
+  otherProfileError,
 } from '../actions/user';
 
 const profilApiMiddleware = (store) => (next) => (action) => {
@@ -320,25 +321,23 @@ const profilApiMiddleware = (store) => (next) => (action) => {
       break;
     }
     case GET_OTHER_USER_DATA: {
-      console.log(action.id);
       axios.get(
         // URL
         `http://localhost:8000/api/user/${action.id}`,
       )
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(saveOtherProfileData(
             response.data.username,
             response.data.presentation,
             response.data.picture,
             response.data.reviews,
           ));
+          store.dispatch(otherProfileLoaded());
         })
         .catch((error) => {
           console.log(error.toJSON());
-        })
-        .finally(() => {
-          store.dispatch(otherProfileLoaded());
+          store.dispatch(otherProfileError());
         });
       break;
     }

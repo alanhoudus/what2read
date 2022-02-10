@@ -38,6 +38,11 @@ export const HANDLE_USER_ALREADY_EXIST = 'HANDLE_USER_ALREADY_EXIST';
 export const GET_OTHER_USER_DATA = 'GET_OTHER_USER_DATA';
 export const OTHER_PROFILE_LOADED = 'OTHER_PROFILE_LOADED';
 export const SAVE_OTHER_PROFILE_DATA = 'SAVE_OTHER_PROFILE_DATA';
+export const OTHER_PROFILE_ERROR = 'OTHER_PROFILE_ERROR';
+
+export const otherProfileError = () => ({
+  type: OTHER_PROFILE_ERROR,
+});
 
 export const saveOtherProfileData = (username, description, picture, reviews) => ({
   type: SAVE_OTHER_PROFILE_DATA,

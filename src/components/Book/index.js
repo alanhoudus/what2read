@@ -34,12 +34,11 @@ const Book = () => {
           <div className="book-content description">
             <img alt="book-cover" src={book.cover} className="book-content cover" />
             <div className="book-content infos">
-              <div className="book-content infos-subtitle">Sous-titre : {book.subtitle}</div>
-              <div className="book-content infos-author">Auteur : {authors}</div>
-              <div className="book-content infos-date">Date de parution : {frenchizeDate(book.publicationDate)}</div>
-              <div className="book-content infos-editor">Edition : {book.publisher}</div>
-              <div className="book-content infos-isbn">IBSN : {book.isbn}</div>
-              <div className="book-content infos-nbpages">Nombre de pages :</div>
+              <div className="book-content infos-subtitle"><strong>Sous-titre :</strong> {book.subtitle}</div>
+              <div className="book-content infos-author"><strong>Auteur :</strong> {authors}</div>
+              <div className="book-content infos-date"><strong>Date de parution :</strong> {frenchizeDate(book.publicationDate)}</div>
+              <div className="book-content infos-editor"><strong>Edition :</strong> {book.publisher}</div>
+              <div className="book-content infos-isbn"><strong>IBSN :</strong> {book.isbn}</div>
               <div className="book-content infos">
                 <GenresList genresList={book.genres} />
               </div>

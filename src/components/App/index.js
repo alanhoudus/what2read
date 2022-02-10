@@ -46,7 +46,6 @@ const App = () => {
   const isLogged = useSelector((state) => state.userProfile.logged);
   const token = useSelector((state) => state.userProfile.token);
   const dispatch = useDispatch();
-
   const location = useLocation();
   // pour chaque rendu ou l'url a changé
   useEffect(() => {

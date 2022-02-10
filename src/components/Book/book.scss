@@ -2,6 +2,9 @@
 
 // responsive mobile first
 @media (max-width: 768px) {
+  strong {
+    font-weight: bolder;
+  }
   .book {
     display: flex;
 
@@ -31,6 +34,9 @@
 
 // responsive desktop
 @media (min-width: 768px) {
+  strong {
+    font-weight: bolder;
+  }
   .book{
     margin: 0 calc(vars.$gutter * 1.5);
     padding-top: calc(vars.$gutter * 1);
