@@ -1,4 +1,4 @@
-import { OTHER_PROFILE_LOADED, SAVE_OTHER_PROFILE_DATA } from '../actions/user';
+import { OTHER_PROFILE_ERROR, OTHER_PROFILE_LOADED, SAVE_OTHER_PROFILE_DATA } from '../actions/user';
 
 export const initialState = {
   username: '',
@@ -6,6 +6,7 @@ export const initialState = {
   picture: '',
   reviews: [],
   otherProfileIsLoading: true,
+  profileError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -14,6 +15,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         otherProfileIsLoading: false,
+        profileError: false,
+      };
+    case OTHER_PROFILE_ERROR:
+      return {
+        ...state,
+        profileError: true,
       };
     case SAVE_OTHER_PROFILE_DATA:
       return {
