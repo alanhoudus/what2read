@@ -1,31 +1,57 @@
 // hooks
-import { useState } from 'react';
-// import icon
-import { Search as SearchIcon } from 'react-feather';
+import { useDispatch, useSelector } from 'react-redux';
 // import components
-import Field from '../Field';
+import Loader from '../App/Loader';
 import SearchList from './SearchList';
+import SearchField from '../Reusables/SearchField';
+
+// actions
+import { searchedBooksList, updateSearchBookValue } from '../../actions/search';
+
+// selectors
+import { findSearchedBooks } from '../../selectors/books';
+
 // import scss
 import './search.scss';
-// mock data
-import SEARCHED_BOOKS_LIST from '../../data/search';
 
 const Search = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [searchedBooksList, setSearchedBooksList] = useState(SEARCHED_BOOKS_LIST);
+  const searchedBooks = useSelector((state) => state.bookSearch.searchedBooksList);
+  const isLoading = useSelector((state) => state.books.booksListDataLoading);
+  const userInput = useSelector((state) => state.bookSearch.inputSearch);
+  const booksList = useSelector((state) => state.books.booksList);
+  const dispatch = useDispatch();
 
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div className="search">
-      <div className="search-input">
-        <Field type="text" className="search-input--field" placeholder="Tolkien" />
-        <button type="submit" className="search-input--submit">
-          <SearchIcon color="white" size="20" />
-        </button>
-      </div>
+      <form
+        className="search-input"
+        onSubmit={(e) => {
+          e.preventDefault();
+          const userSearchedBooksList = findSearchedBooks(booksList, userInput);
+          dispatch(searchedBooksList(userSearchedBooksList));
+        }}
+      >
+        <SearchField
+          type="text"
+          className="search--field"
+          name="inputSearch"
+          id="inputSearch"
+          placeholder="Ma recherche..."
+          value={userInput}
+          onChange={(identifier, newValue) => {
+            const action = updateSearchBookValue(identifier, newValue);
+            dispatch(action);
+            const userSearchedBooksList = findSearchedBooks(booksList, userInput);
+            dispatch(searchedBooksList(userSearchedBooksList));
+          }}
+        />
+      </form>
       <div className="search-books">
-        <SearchList searchedBooksList={searchedBooksList} />
+        <SearchList searchedBooksList={searchedBooks} />
       </div>
-      <button type="button" className="search-showMore">Voir plus</button>
     </div>
   );
 };

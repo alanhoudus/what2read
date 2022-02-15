@@ -1,0 +1,77 @@
+@use '../../../styles/vars';
+
+// responsive mobile first
+@media (max-width: 768px) {
+  .popupinfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: calc(50% - 170px);
+
+    background-color: vars.$secondaryColor;
+    border: 1px solid vars.$fontColor;
+    border-radius: 10px;
+
+    width: 300px;
+    height: 75px;
+    
+    padding: calc(vars.$gutter * 1);
+    margin: calc(vars.$gutter * 1) calc(vars.$gutter * 1) 0 0;
+    animation: connection-info-pop-up 7s
+
+  }
+
+  @keyframes connection-info-pop-up {
+    0%{
+      opacity: 0;
+    }
+  
+    50%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+ .popupinfo {
+   
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   top: 0;
+   right: 5%;
+
+   border-radius: 10px;
+   background-color: vars.$secondaryColor;
+
+   width: 300px;
+   height: 75px;
+
+   padding: calc(vars.$gutter * 1);
+   margin: calc(vars.$gutter * 1) calc(vars.$gutter * 1) 0 0;
+
+   animation: connection-info-slidein 7s
+ }
+}
+
+@keyframes connection-info-slidein {
+  0%{
+    top: -15%;
+  }
+
+  55%{
+    top: 0%;
+  }
+  100%{
+    top: -15%;
+  }
+}

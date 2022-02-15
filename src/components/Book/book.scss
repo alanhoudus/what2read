@@ -2,8 +2,10 @@
 
 // responsive mobile first
 @media (max-width: 768px) {
+  strong {
+    font-weight: bolder;
+  }
   .book {
-    color: vars.$fontColor;
     display: flex;
 
     &-user-profile {
@@ -15,71 +17,37 @@
     }
     &-content {
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
-
-
-      &.title {
-        font-size: 1.5em;
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
-      }
-      &.tag {
-        display: inline;
-        &-genre-a {
-          color: vars.$mainColor;
-          background-color: vars.$thirdColor;
-          border-radius: 30px;
-          border: #000 1px solid;
-          font-size: 1em;
-          padding: 7px;
-        }
-        &-genre-b {
-          color: vars.$secondaryColor;
-          background-color: vars.$fourthColor;
-          margin-bottom: vars.$gutter;
-          border-radius: 30px;
-          border: #000 1px solid;
-          font-size: 1em;
-          padding: 7px;
-        }
-      }
     }
-    &-lign {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
+
+    &-buttonReview {
+      color: vars.$secondaryColor;
+      background-color: vars.$fourthColor;
+      border-radius: 30px;
+      max-width: 80%;
+      font-size: calc(vars.$fontSize * 1);;
+      padding: calc(vars.$gutter * 0.5);
+      margin-top: calc(vars.$gutter * 4);
+      border: none;
     }
   }
 }
 
 // responsive desktop
 @media (min-width: 768px) {
+  strong {
+    font-weight: bolder;
+  }
   .book{
-    // to have the content not hidden by the nav menu on desktop
-    padding-top: 1em;
-    font-size: 1.3em;
-    color: vars.$fontColor;
-
-    &-title {
-    margin-left: 8%;
-    }
+    margin: 0 calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
+    
     &-content {
       &.description {
         display: flex;
         flex-wrap: wrap;
       }
     }
-    &-user-profile {
-      width: 70px;
-      height: auto;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #fff;
-      border-radius: 50%;
-      padding: 10px;
-    }
+
     &-contentGroup {
         margin: 0 calc(vars.$gutter * 1.5);
         padding-top: calc(vars.$gutter * 1);
@@ -87,38 +55,23 @@
     &-content {
       margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
 
-      &.title {
-        font-size: 1.5em;
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
-      }
-      &.tag {
-        display: inline;
-        &-genre-a {
-          color: vars.$mainColor;
-          background-color: vars.$thirdColor;
-          border-radius: 30px;
-          border: #000 1px solid;
-          font-size: 1em;
-          padding: 7px;
-        }
-        &-genre-b {
-          color: vars.$secondaryColor;
-          background-color: vars.$fourthColor;
-          margin-bottom: vars.$gutter;
-          border-radius: 30px;
-          border: #000 1px solid;
-          font-size: 1em;
-          padding: 7px;
-        }
+      &.cover {
+        width: 300px;
+        height: 450px;
+        border: #000 1px solid;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
     }
-    &-lign {
-      margin: auto;
-      width: 50%;
-      height: 2px;
-      background-color: black;
-    }  
+
+    &-buttonReview {
+      color: vars.$secondaryColor;
+      background-color: vars.$fourthColor;
+      border-radius: 30px;
+      width: 80%;
+      font-size: calc(vars.$fontSize * 1);;
+      padding: calc(vars.$gutter * 0.5);
+      margin-top: calc(vars.$gutter * 8);
+      border: none;
+    }
   }
 }

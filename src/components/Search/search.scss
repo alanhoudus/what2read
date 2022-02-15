@@ -6,65 +6,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: vars.$fontColor;
-    &-input {
-      display: flex;
-      margin-top: calc(vars.$gutter *  1);
-      &--field {
-        background-color: white;
-        color: vars.$fontColor;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: calc(vars.$gutter * 1.5);
-        padding: 0.3em;
-      }
-      &--submit {
-        background-color: vars.$secondaryColor;
-        border: none;
-        border-radius: 4px;
-        width: 3em;
-        height: 2.2em;
-      }
-    }
 
     &-books {
-      width: 40%;
+      width: 50%;
     }
 
     &-book {
       width:100%;
-      margin-bottom: calc(vars.$gutter * 1);
-      &--title {
-        text-align: center;
-        padding: calc(vars.$gutter * 1) 0;
+      position: relative;
+      
+      &>img {
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
-    }
-  // hide the last 3 books on mobile, its just for the static integration
-    &-book:nth-last-child(-n+6) {
-      display: none;
+
+      &-starAdd {
+        position: absolute;
+        right: 10px;
+        top:10px;
+      }
+      &--subtitle {
+        margin-bottom: calc(vars.$gutter *1.5);
+      }
     }
 
     &-book:hover {
       cursor: pointer;
-    }
-
-    &-img {
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    }
-
-    &-showMore {
-      background-color: vars.$mainColor;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      color: vars.$fontColor;
-      font-size: 1em;
-      width: 35%;
-      height: 2em;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: calc(vars.$gutter * 1);
-    }
+    } 
   }
 }
 
@@ -74,75 +41,43 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: vars.$fontColor;
-    // show the last 6 books on desktop, its just for the static integration
-    &-book:nth-last-child(-n+6) {
-      display: block;
-    }
-    &-input {
-      display: flex;
-      margin-top: calc(vars.$gutter *  2);
-      &--field {
-        background-color: white;
-        color: vars.$fontColor;
-        font-size: 1em;
-        border: none;
-        border-radius: 5px;
-        margin-bottom: calc(vars.$gutter * 1.5);
-        margin-right: calc(vars.$gutter * 2);
-        padding: 0.3em;
-      }
-      &--submit {
-        background-color: vars.$secondaryColor;
-        border: none;
-        border-radius: 4px;
-        height: 2.2em;
-        display: flex;
-        align-items: center;
-        width: 8em;
-        color: vars.$thirdColor;
-      }
-      &--submit::after {
-        content: "Rechercher";
-      }
-    }
 
     &-books {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      width: 80%;
+      justify-content: space-evenly;
+      margin: calc(vars.$gutter *1);
+      width: 95%;
     }
-
     &-book {
-      flex-basis: 25%;
-      margin: calc(vars.$gutter * 1);
+      width: 300px;
+      position: relative;
 
-      &--title {
+      h3, h4 {
         text-align: center;
-        padding: calc(vars.$gutter * 1) 0;
       }
-    }
-
-    &-book:hover {
-      cursor: pointer;
-    }
-
-    &-img {
-      width: 100%;
+      &--subtitle {
+        margin-bottom: calc(vars.$gutter *1.5);
+      }
+      &.cover-img {
+      position: relative;
       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    }
+      width: 300px;
+      height: 450px;
+      }
 
-    &-showMore {
-      background-color: vars.$mainColor;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-      color: vars.$fontColor;
-      font-size: 1em;
-      width: 35%;
-      height: 2em;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: calc(vars.$gutter * 1);
+      &-starAdd {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      }
+      &-starAdd:hover {
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5);
+      }
     }
   }
 }

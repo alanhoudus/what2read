@@ -2,25 +2,18 @@
 
 @media (max-width: 768px) {
   .reviews {
-    margin-top: calc(vars.$gutter * 2);
-
-    & > h1 {
-      font-size: calc(vars.$fontSize * 2);
-    }
-
     &-wrapper {
 
       &--singlereview {
-        color: vars.$fontColor;
-        margin-top: calc(vars.$gutter * 2);
+        color: vars.$fontParagraph;
+        margin: calc(vars.$gutter * 2);
         margin-bottom: calc(vars.$gutter * 5);
         padding: calc(vars.$gutter * 2);
         text-align: center;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
         &-infos {
-          & > h2 {
-            font-size: calc(vars.$fontSize * 1.5);
+          & > h3 {  
             text-align: left;
             position: relative;
           }
@@ -28,7 +21,6 @@
           & > p {
             margin-top: calc(vars.$gutter *1);
             text-align: left;
-            color: black;
           }
 
           &--buttons {
@@ -36,12 +28,21 @@
           }
         }
 
-        & > img {
-          display: none;
-    
+        &-img {
+          display: none;    
         }
       }
     }
+  }
+  .button-edit {
+    width: 35px;
+    height: 35px;
+    margin: 0 .3em;
+  }
+  .button-delete {
+    width: 35px;
+    height: 35px;
+    margin: 0 .3em;
   }
 }
 
@@ -51,23 +52,21 @@
     padding-top: calc(vars.$gutter * 2);
     margin: 0 calc(vars.$gutter * 4) calc(vars.$gutter * 2) calc(vars.$gutter * 2);
 
-    & > h1 {
-      font-size: calc(vars.$fontSize * 2);
-      color: vars.$fontColor;
-    }
-
     &-wrapper {
 
       &--singlereview {
         display: grid;
         grid-template-columns: repeat(3, 33%);
         grid-template-rows: repeat(7, 14%);
-        color: vars.$fontColor;
         margin-top: calc(vars.$gutter * 2);
         margin-bottom: calc(vars.$gutter * 5);
         padding: calc(vars.$gutter * 2);
         text-align: center;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+        &-title {
+          display: none;
+        }
 
         &-infos {
           padding-left: calc(vars.$gutter * 0.5);
@@ -80,8 +79,7 @@
             right: 0;
           }
 
-          & > h2 {
-            font-size: calc(vars.$fontSize * 1.5);
+          & > h4 {
             text-align: left;
             grid-row: 1 / 2;
           }
@@ -89,12 +87,11 @@
           & > p {
             margin-top: calc(vars.$gutter *1);
             text-align: left;
-            color: black;
             grid-row: 2 / 3;
           }
         }
 
-        & > img {
+        &-img {
           width: 50%;
           grid-column: 1 / 2;
           grid-row: 1 / 4;
@@ -102,6 +99,14 @@
         }
       }
     }
+  }
+
+  .button-delete:hover {
+    cursor: pointer;
+  }
+
+  .button-edit:hover {
+    cursor: pointer;
   }
 }
 

@@ -1,14 +1,17 @@
-export const PROFILE_NAV = [
+export const LOGGED_OUT_USER_NAV = [
   {
     name: 'Se connecter',
-    key: 'connection',
-    to: '/connection',
+    key: 'connexion',
+    to: '/connexion',
   },
   {
     name: 'S\'inscrire',
     key: 'inscription',
     to: '/inscription',
   },
+];
+
+export const LOGGED_IN_USER_PROFILE_NAV = [
   {
     name: 'Mon profil',
     key: 'profil',
@@ -29,6 +32,11 @@ export const PROFILE_NAV = [
     key: 'mes-favoris',
     to: '/profil/favoris',
   },
+  {
+    name: 'Se déconnecter',
+    key: 'deconnexion',
+    to: '/',
+  },
 ];
 
 export const REGULAR_NAV = [
@@ -46,10 +54,5 @@ export const REGULAR_NAV = [
     name: 'Recherche',
     key: 'recherche',
     to: '/recherche',
-  },
-  {
-    name: 'Nous contacter',
-    key: 'contact',
-    to: '/contact',
   },
 ];

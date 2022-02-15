@@ -1,48 +1,44 @@
-// == Import
-import { Link } from 'react-router-dom';
-import './suggestions.scss';
+// == Import : local
+// hooks
+// import { useState } from 'react';
+import { useSelector } from 'react-redux';
+
+// components
+import Suggestion from './SuggestionsList';
 import SuggestedBook from '../Home/SuggestedBook';
+import Separator from '../Reusables/Separator';
+import Loader from '../App/Loader';
+
+// mock data
+// import { SUGGESTIONS_LIST } from '../../data/suggestions';
+
+// scss
+import './suggestions.scss';
 
 // == Composant
-const Suggestions = () => (
-  <div className="suggestions">
-    <SuggestedBook />
-    <div className="suggestions-separator" />
-    <div className="suggestions-history">
-      <div className="suggestions-history book">
-        <Link
-          to="/livre"
-          key="1"
-        >
-          <img className="suggestions-history book-cover" src="https://products-images.di-static.com/image/vincent-ferre-lire-j/9782266242912-475x500-1.webp" alt="couverture du livre" />
-          <h3 className="suggestions-history book-title">Lire J. R. R. Tolkien</h3>
-          <h4 className="suggestions-history book-title">10.02.2022</h4>
-        </Link>
-      </div>
-      <div className="suggestions-history book">
-        <Link
-          to="/livre"
-          key="1"
-        >
-          <img className="suggestions-history book-cover" src="https://products-images.di-static.com/image/vincent-ferre-lire-j/9782266242912-475x500-1.webp" alt="couverture du livre" />
-          <h3 className="suggestions-history book-title">Lire J. R. R. Tolkien</h3>
-          <h4 className="suggestions-history book-title">10.02.2022</h4>
-        </Link>
-      </div>
-      <div className="suggestions-history book">
-        <Link
-          to="/livre"
-          key="1"
-        >
-          <img className="suggestions-history book-cover" src="https://products-images.di-static.com/image/vincent-ferre-lire-j/9782266242912-475x500-1.webp" alt="couverture du livre" />
-          <h3 className="suggestions-history book-title">Lire J. R. R. Tolkien</h3>
-          <h4 className="suggestions-history book-title">10.02.2022</h4>
-        </Link>
+const Suggestions = () => {
+  // eslint-disable-next-line no-unused-vars
+  // const [suggestionsList, setSuggestionsList] = useState(SUGGESTIONS_LIST);
+  const suggestionsList = useSelector((state) => state.books.suggestionsList);
+  const suggestionsLoading = useSelector((state) => state.books.suggestionsDataLoading);
+  const booksListLoading = useSelector((state) => state.books.booksListDataLoading);
+
+  return (
+    <div className="suggestions">
+      {booksListLoading
+        ? <Loader />
+        : <SuggestedBook />}
+      <Separator />
+      <div className="suggestions-history">
+        <div className="suggestions-history books">
+          {suggestionsLoading
+            ? <Loader />
+            : <Suggestion suggestionsList={suggestionsList} />}
+        </div>
       </div>
     </div>
-    <button type="button" className="suggestions-showMore">Voir plus</button>
-  </div>
-);
+  );
+};
 
 // == Export
 export default Suggestions;

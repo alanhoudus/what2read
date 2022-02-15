@@ -1,0 +1,58 @@
+@use '../../../styles/vars';
+
+// responsive mobile first
+@media (max-width: 768px) {
+  .search {
+    display: flex;
+    margin-top: calc(vars.$gutter *  1);
+    &--field {
+      background-color: vars.$fontColor;
+      color: vars.$secondaryColor;
+      font-size: calc(vars.$gutter * 1);
+      border: none;
+      border-radius: 5px;
+      padding: 0.3em;
+    }
+    &--submit {
+      background-color: vars.$secondaryColor;
+      border: none;
+      border-radius: 4px;
+      width: calc(vars.$gutter * 3);
+      height: calc(vars.$gutter * 2.2);
+    }
+  }
+}
+
+// responsive desktop
+@media (min-width: 768px) {
+  .search {
+    display: flex;
+    align-self: center;
+    padding-top: calc(vars.$gutter *  2);
+    
+    &--field {
+      background-color: vars.$fontColor;
+      font-size: calc(vars.$gutter * 1);
+      border: none;
+      border-radius: 5px;
+      padding: calc(vars.$gutter * 0.3);
+      margin: calc(vars.$gutter *0.1);
+    }
+    &--submit {
+      background-color: vars.$secondaryColor;
+      border: none;
+      border-radius: 4px;
+      height: calc(vars.$gutter * 2.2);
+      display: flex;
+      align-items: center;
+      width: calc(vars.$gutter * 8);
+      color: vars.$thirdColor;
+      padding: calc(vars.$gutter * 0.3);
+      margin: calc(vars.$gutter *0.1);
+    }
+    &--submit::after {
+      content: "Rechercher";
+      padding: calc(vars.$gutter * 0.3);
+    }
+  }
+}

@@ -1,21 +1,75 @@
 @use 'reset';
 @use 'vars';
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Quintessential&display=swap');
 
 body {
   font-family: sans-serif;
   background-color: vars.$mainColor;
   width: 100vw;
   height: 100vh;
+  color: vars.$fontParagraph;
 }
 
-/* 
-  // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
+h1,h2,h3,h4 {
+  color: vars.$fontColor;
+  font-weight: bold;
+  font-family: 'Quintessential', cursive;
+}
+p {
+  padding: calc(vars.$gutter * 0.5);
+  text-indent: 1em;
+}
+
+// responsive mobile first
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(vars.$gutter * 2);
+    margin-bottom: calc(vars.$gutter * 1.6);
+    padding-top: calc(vars.$gutter * 1);
+    margin-left: 8%;
+    text-align: center;
   }
 
-  body {
-    font-family: 'Roboto', sans-serif;
+  h2 {
+    font-size: calc(vars.$gutter * 1.7);
+    margin-bottom: calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
+    text-align: center;
   }
-*/
+
+  h3 {
+    font-size: calc(vars.$fontSize * 1.4);
+    padding: calc(vars.$gutter * 0.5);
+    text-align: center;
+  }
+
+  h4 {
+    font-size: calc(vars.$fontSize * 1.2);
+    font-style: italic;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  h1 {
+    margin-bottom: calc(vars.$gutter * 1.5);
+    padding-top: 1em;
+    font-size: calc(vars.$fontSize * 2.5);
+    text-align: center;
+  }
+
+  h2 {
+    font-size: calc(vars.$fontSize * 1.7);
+    margin-bottom: calc(vars.$gutter * 1.5);
+    padding-top: calc(vars.$gutter * 1);
+  }
+
+  h3 {
+    font-size: calc(vars.$fontSize * 1.4);
+    padding: calc(vars.$gutter * 0.5);
+  }
+
+  h4 {
+    font-size: calc(vars.$fontSize * 1.2);
+    font-style: italic;
+  }
+}

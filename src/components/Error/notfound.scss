@@ -1,0 +1,141 @@
+@use '../../styles/vars';
+
+// @media (max-width: 768px) { 
+//   .notfound {
+//     text-align: center;
+//   }
+// }
+
+// @media (min-width: 768px) { 
+
+// }
+
+
+.bookAnimation {
+  top: 125px;
+  left: 36%;
+  transform-style: preserve-3d;
+  position: relative;
+  height: 400px;
+  cursor: pointer;
+  backface-visibility: visible;
+  z-index: 0;
+
+  &-logo {
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    left: 100px;
+    top: 30px;
+  }
+
+  &-title {
+    font-size: 30px;
+    margin-left: 35px;
+    max-width: 30%;
+    position: absolute;
+    bottom: 120px;
+    z-index: 1;
+  }
+
+  &-link {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: calc(vars.$gutter * 3);
+    color: vars.$mainColor;
+  }
+  &-link:hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1.1);
+    color: vars.$thirdColor;
+  }
+}
+
+.front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 300px;
+  height: 100%;
+  top: 0; left: 0;
+  transform-origin: left center;
+  transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+}
+
+.front, .back {
+  background: vars.$secondaryColor;
+}
+
+.front, .page1, .page3, .page5 {
+  border-bottom-right-radius: .5em;
+  border-top-right-radius: .5em;
+}
+
+.back, .page2, .page4, .page6 {
+  border-bottom-right-radius: .5em;
+  border-top-right-radius: .5em;
+}
+
+.page1 { 
+  background: #efefef;
+}
+
+.page2 {
+  background: #efefef;
+}
+
+.page3 {
+  background: #f5f5f5;
+}
+
+.page4 {
+  background: #f5f5f5;
+}
+
+.page5 {
+  background: #fafafa;
+}
+
+.page6 {
+  background: #fdfdfd;
+}
+
+.bookAnimation:hover .front {
+  transform: rotateY(-160deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+}
+
+.bookAnimation:hover .page1 {
+  transform: rotateY(-150deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+}
+
+.bookAnimation:hover .page2 {
+  transform: rotateY(-30deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+}
+
+.bookAnimation:hover .page3 {
+  transform: rotateY(-140deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+}
+
+.bookAnimation:hover .page4 {
+  transform: rotateY(-40deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+}
+
+.bookAnimation:hover .page5 {
+  transform: rotateY(-130deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+}
+
+.bookAnimation:hover .page6 {
+  transform: rotateY(-50deg) scale(1.1);
+  box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+}
+
+.bookAnimation:hover .back {
+  transform: rotateY(-20deg) scale(1.1);
+}

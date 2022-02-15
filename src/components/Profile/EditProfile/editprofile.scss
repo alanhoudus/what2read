@@ -2,42 +2,55 @@
 
 // responsive mobile first
 @media (max-width: 768px) {
-  .profile {
-    color: vars.$fontColor;
-    display: flex;
+  .editprofile {
+    &-contentGroup {
+      padding: calc(vars.$gutter * 2);
+      margin: calc(vars.$gutter * 2);
+      margin-right: calc(vars.$gutter * 3);
+      padding: calc(vars.$gutter * 1);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
 
     &-logo {
       display: none;
     }
-    &-contentGroup {
-        margin: 0 calc(vars.$gutter * 1.5);
-        padding-top: calc(vars.$gutter * 1);
-    }
-    &-content {
-      margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
 
+    &-content {
       &.avatar {
         width: 200px;
-        height: auto;
-        background-color: #fff;
         border-radius: 50%;
-        padding: 10px;
+        background-color: #fff;
+        display: block;
+        padding: calc(vars.$gutter * 0.5);
       }
-      &.title {
-        font-size: 1.5em;
-        color: vars.$thirdColor;
-        font-weight: bold;
-        margin-bottom: calc(vars.$gutter * 1.5);
+      &.edit-presentation {
+        margin-left: calc(vars.$gutter * 0.8)
       }
-      &.subtitle {
-        font-size: 1.2em;
-        color: vars.$thirdColor;
-        font-weight: bold;
+
+      &.button {
+        color: vars.$mainColor;
+        background-color: vars.$thirdColor;
         margin-bottom: vars.$gutter;
-      }
-      &-button {
-        background-color: vars.$mainColor;
+        border-radius: 30px;
+        font-size: calc(vars.$gutter * 1);
+        padding: 10px;
         border: none;
+      }
+      &.input {
+        background-color: vars.$secondaryColor;
+        border: none;
+        height: calc(vars.$gutter * 2);
+        border-radius: 5px;
+        color: vars.$fontColor;
+        margin-bottom: calc(vars.$gutter * 1.5);
+        margin-right: calc(vars.$gutter * 1);
+  
+        &.description {
+          text-align: left;
+          width: 70vw;
+          height: 20vh;
+          font-size: calc(vars.$fontSize * 1);
+        }
       }
     }
   }
@@ -45,58 +58,52 @@
 
 // responsive desktop
 @media (min-width: 768px) {
-  .profile {
-    // to have the content not hidden by the nav menu on desktop
-    left: 20%;
-    font-size: 1.3em;
-    color: vars.$fontColor;
-
-    &-title {
-    display: flex;
-    align-self: flex-start;
-    margin-left: 8%;
-    }
-
-    &-logo {
-      width: 70px;
-      height: auto;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: #fff;
-      border-radius: 50%;
-      padding: 10px;
-    }
+  .editprofile {
     &-contentGroup {
-      margin: 0 calc(vars.$gutter * 1.5);
-      padding-top: calc(vars.$gutter * 1);
-  }
-  &-content {
-    margin: 0 calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5) calc(vars.$gutter * 1.5);
+      margin: calc(vars.$gutter * 2);
+      margin-right: calc(vars.$gutter * 5);
+      padding: calc(vars.$gutter * 1);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
 
-    &.avatar {
-      width: 200px;
-      height: auto;
-      background-color: #fff;
-      border-radius: 50%;
-      padding: 10px;
-    }
-    &.title {
-      font-size: 1.5em;
-      color: vars.$thirdColor;
-      font-weight: bold;
-      margin-bottom: calc(vars.$gutter * 1.5);
-    }
-    &.subtitle {
-      font-size: 1.2em;
-      color: vars.$thirdColor;
-      font-weight: bold;
-      margin-bottom: vars.$gutter;
-    }
-    &-button {
-      background-color: vars.$mainColor;
-      border: none;
+    &-content {
+      &.edit-presentation {
+        margin-left: calc(vars.$gutter * 0.8)
+      }
+
+      &.avatar {
+        width: 200px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: block;
+        padding: calc(vars.$gutter * 0.5);
+      }
+
+      &.button {
+        color: vars.$mainColor;
+        background-color: vars.$thirdColor;
+        margin-bottom: vars.$gutter;
+        border-radius: 30px;
+        border: none;
+        font-size: calc(vars.$gutter * 1);
+        padding: 10px;
+      }
+
+      &.input {
+        background-color: vars.$secondaryColor;
+        border: none;
+        height: calc(vars.$gutter * 2);
+        border-radius: 5px;
+        color: vars.$fontColor;
+        margin-bottom: calc(vars.$gutter * 1.5);
+        margin-right: calc(vars.$gutter * 1);
+
+        &.description {
+          text-align: left;
+          width: 50vw;
+          height: 20vh;
+        }
+      }
     }
   }
-}
 }

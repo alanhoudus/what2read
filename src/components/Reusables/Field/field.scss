@@ -1,0 +1,14 @@
+@use 'src/styles/vars';
+
+input, textarea {
+    font-family: inherit;
+}
+.search {
+  &-field {
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(vars.$gutter *1);
+  }
+}
+
+
