@@ -89,4 +89,4 @@ The web application is also available in mobile, as it was designed in mobile fi
 
 ## Thank you ! ✨
 
-Thank you for visiting, this project is a work in progress, as we will add more functionalities in the future. Such as a like counter, a back office to moderate users and reviews, filter on search and more !
+Thank you for visiting this project !
